@@ -3,143 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Israel Fractal — Choose Language · בחר שפה · اختر لغتك</title>
+<title>Israel Fractal · Choose language</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&family=Cairo:wght@400;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Noto+Serif+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root { --paper: #faf8f3; --ink: #0a0a0a; --rule: #c4beb0; --muted: #6b6557; --red: #a01818; }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Sora', sans-serif; background: #000; color: #f5f5f7; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; -webkit-font-smoothing: antialiased; }
-
-  .container { max-width: 900px; width: 100%; }
-  .intro { text-align: center; margin-bottom: 60px; }
-  .flag { font-size: 80px; margin-bottom: 24px; }
-  h1 {
-    font-family: 'Sora', sans-serif;
-    font-size: 56px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, #ffd700 0%, #0071e3 50%, #34d399 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .subtitle { font-size: 18px; color: #888; font-weight: 500; max-width: 600px; margin: 0 auto 8px; line-height: 1.5; }
-  .meta { font-size: 13px; color: #555; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
-
-  .lang-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .lang-card {
-    background: #1a1a1a;
-    border-radius: 24px;
-    padding: 40px 32px;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #222;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  body {
+    font-family: 'Frank Ruhl Libre', serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
     display: flex;
     flex-direction: column;
-    gap: 12px;
   }
-  .lang-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--c1), var(--c2));
-    opacity: 0;
-    transition: opacity 0.3s;
+  .meta-top {
+    padding: 20px 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule);
   }
-  .lang-card:hover { transform: translateY(-6px); border-color: #333; background: #202020; }
-  .lang-card:hover::before { opacity: 1; }
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: calc(100vh - 100px);
+  }
+  main a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 48px;
+    text-decoration: none;
+    color: inherit;
+    border-left: 1px solid var(--rule);
+    transition: background 0.3s;
+    position: relative;
+  }
+  main a:first-child { border-left: none; }
+  main a:hover { background: #f3eee2; }
+  main a:hover .enter { color: var(--red); }
 
-  .lang-card.he { --c1: #0071e3; --c2: #00b4d8; direction: rtl; text-align: right; }
-  .lang-card.en { --c1: #34d399; --c2: #0071e3; }
-  .lang-card.ar { --c1: #ff6b6b; --c2: #ffd700; direction: rtl; text-align: right; }
+  .lang-he { direction: rtl; text-align: right; }
+  .lang-ar { direction: rtl; text-align: right; font-family: 'Noto Serif Arabic', 'Frank Ruhl Libre', serif; }
 
-  .lang-card .emoji { font-size: 40px; }
-  .lang-card .name { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 700; color: #f5f5f7; letter-spacing: -0.02em; }
-  .lang-card .native {
-    font-size: 28px; font-weight: 700; color: #fff;
-    margin-top: -4px;
+  .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
   }
-  .lang-card.he .native { font-family: 'Heebo', sans-serif; }
-  .lang-card.en .native { font-family: 'Sora', sans-serif; }
-  .lang-card.ar .native { font-family: 'Cairo', sans-serif; }
-  .lang-card .desc { font-size: 13px; color: #777; font-weight: 500; line-height: 1.5; margin-top: auto; }
 
-  .lang-card .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #0071e3;
-    margin-top: 12px;
-    transition: gap 0.2s;
+  .language-name {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-top: 48px;
+    color: var(--ink);
   }
-  .lang-card:hover .cta { gap: 10px; color: #4fc3f7; }
+
+  .lang-en .language-name { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-style: italic; }
+  .lang-he .language-name { font-family: 'Frank Ruhl Libre', serif; }
+  .lang-ar .language-name { font-family: 'Noto Serif Arabic', serif; }
+
+  .lede {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-top: 20px;
+    max-width: 32ch;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .enter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 32px;
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+  }
 
   footer {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #555;
-    font-size: 12px;
-    text-align: center;
+    padding: 20px 40px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
   }
-  footer a { color: #888; text-decoration: none; }
+  footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  footer a:hover { color: var(--red); }
 
-  @media (max-width: 700px) {
-    h1 { font-size: 36px; }
-    .lang-grid { grid-template-columns: 1fr; }
-    .lang-card { padding: 28px 24px; }
-    .flag { font-size: 60px; }
+  @media (max-width: 820px) {
+    main { grid-template-columns: 1fr; }
+    main a { border-left: none; border-top: 1px solid var(--rule); padding: 40px 24px; }
+    main a:first-child { border-top: none; }
+    .language-name { font-size: 56px; margin-top: 24px; }
+    .meta-top, footer { padding: 16px 24px; }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="intro">
-    <div class="flag">🇮🇱</div>
-    <h1>Israel Fractal</h1>
-    <p class="subtitle">Holistic Research of Israeli Institutions, Leaders & Sectors — 78 years mapped through Data Fluidity methodology.</p>
-    <p class="meta">32 Documents · 79,500 Data Points · 1948–2026</p>
-  </div>
-
-  <div class="lang-grid">
-    <a href="he/" class="lang-card he">
-      <div class="emoji">🇮🇱</div>
-      <div class="name">Hebrew</div>
-      <div class="native">עברית</div>
-      <div class="desc">המחקר המלא בעברית — כל 32 המסמכים, 79,500 נקודות מדידה, 17 מדדי Data Fluidity.</div>
-      <div class="cta">כניסה למחקר ←</div>
-    </a>
-
-    <a href="en/" class="lang-card en">
-      <div class="emoji">🇺🇸</div>
-      <div class="name">English</div>
-      <div class="native">English</div>
-      <div class="desc">Complete research in English — all key findings, PM rankings, sector analysis, and action plans.</div>
-      <div class="cta">Enter Research →</div>
-    </a>
-
-    <a href="ar/" class="lang-card ar">
-      <div class="emoji">🇵🇸</div>
-      <div class="name">Arabic</div>
-      <div class="native">العربية</div>
-      <div class="desc">البحث الكامل بالعربية — جميع النتائج الرئيسية، تصنيفات القادة، وخطط العمل.</div>
-      <div class="cta">دخول البحث ←</div>
-    </a>
-  </div>
+<div class="meta-top">
+  <span>ישראל פרקטלית · Israel Fractal · إسرائيل الفركتالية</span>
+  <span>מחקר 1948—2026</span>
 </div>
 
+<main>
+  <a href="he/" class="lang-he">
+    <div>
+      <div class="num">01 · HEB</div>
+      <div class="language-name">עברית</div>
+    </div>
+    <div>
+      <p class="lede">
+        המחקר המלא: שלושים ושניים מסמכים, שבעים ותשע אלף נקודות מדידה, שבעה־עשר מדדים.
+      </p>
+      <div class="enter">כניסה למחקר</div>
+    </div>
+  </a>
+
+  <a href="en/" class="lang-en">
+    <div>
+      <div class="num">02 · ENG</div>
+      <div class="language-name">English</div>
+    </div>
+    <div>
+      <p class="lede">
+        A fractal diagnosis of Israel's governance across 78 years. Thirty-two documents. Seventy-nine thousand measurements.
+      </p>
+      <div class="enter">Open the research</div>
+    </div>
+  </a>
+
+  <a href="ar/" class="lang-ar">
+    <div>
+      <div class="num">03 · ARA</div>
+      <div class="language-name">العربية</div>
+    </div>
+    <div>
+      <p class="lede">
+        تشخيص فركتالي لحوكمة إسرائيل عبر ثمانية وسبعين عامًا. اثنتان وثلاثون وثيقة. تسعة وسبعون ألف نقطة قياس.
+      </p>
+      <div class="enter">فتح البحث</div>
+    </div>
+  </a>
+</main>
+
 <footer>
-  © 2026 · <a href="https://github.com/udihem78-maker/animated-eureka">Research Source Repository</a>
+  <span>© 2026 · udihem78@gmail.com</span>
+  <span><a href="https://github.com/udihem78-maker/animated-eureka">source / 32 docs</a></span>
 </footer>
 
 </body>
