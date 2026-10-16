@@ -301,6 +301,81 @@
     letter-spacing: 0.02em;
   }
 
+  /* === POWER MAP SECTION === */
+  .power-map {
+    max-width: 1180px;
+    margin: 0 auto 60px;
+    padding: 0 32px;
+  }
+  .power-domain {
+    display: grid;
+    grid-template-columns: 200px 1fr 180px;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .power-domain:last-child { border-bottom: none; }
+  .power-domain-label {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .power-domain-label .count {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+  .power-domain-content {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .power-domain-content .takeaway {
+    display: block;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .power-domain-content .takeaway em {
+    font-style: italic;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .power-domain-content .names {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .power-domain-flag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-align: left;
+    direction: ltr;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  .power-domain-flag .ratio {
+    display: block;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .power-domain-flag .ratio.red { color: var(--red); }
+  .power-domain-flag .ratio.olive { color: var(--olive); }
+
   /* === DIRECT ADDRESS === */
   .address {
     max-width: 900px;
@@ -400,6 +475,9 @@
     footer { grid-template-columns: 1fr; padding: 40px 20px; }
     .meta-bar { padding: 12px 20px; font-size: 10px; }
     .meta-bar .langs { gap: 12px; }
+    .power-domain { grid-template-columns: 1fr; padding: 20px 0; gap: 12px; }
+    .power-domain-flag { text-align: right; direction: rtl; }
+    .power-map { padding: 0 20px; }
   }
 </style>
 </head>
@@ -512,8 +590,9 @@
   <div class="index-list">
     <a href="#pms"><span>13 ראשי הממשלה</span><span class="num">01</span></a>
     <a href="#findings"><span>חמש מסקנות קריטיות</span><span class="num">02</span></a>
-    <a href="#address"><span>הודעה לאזרח</span><span class="num">03</span></a>
-    <a href="#reports"><span>הורדת המחקר</span><span class="num">04</span></a>
+    <a href="#power"><span>מפת הכוח — תקשורת, הון, משפט</span><span class="num">03</span></a>
+    <a href="#address"><span>הודעה לאזרח</span><span class="num">04</span></a>
+    <a href="#reports"><span>הורדת המחקר</span><span class="num">05</span></a>
   </div>
 </nav>
 
@@ -627,7 +706,112 @@
   </article>
 </div>
 
-<!-- SECTION 03: ADDRESS -->
+<!-- SECTION 2.5: POWER MAP -->
+<header class="section-head" id="power">
+  <div class="section-num">03 · מפת הכוח</div>
+  <h2>מי שולט במה. בלי מסכות.</h2>
+</header>
+
+<div class="power-map">
+
+  <div class="power-domain">
+    <div class="power-domain-label">
+      תקשורת
+      <span class="count">6 בעלויות · 85% מהצריכה</span>
+    </div>
+    <div class="power-domain-content">
+      <span class="takeaway">שישה בעלים שולטים ב־<em>85%</em> מצריכת החדשות של עשרה מיליון ישראלים.</span>
+      התקשורת המקצועית (כאן 11, הארץ, ידיעות) בציון ממוצע 7.5. ערוץ 14 בציון 2.5 — הנמוך בתקשורת הישראלית. מדד "העיסוק בעיקר" ירד מ־85% ב־1965 ל־30% ב־2026.
+      <div class="names">אדלסון · אלוביץ' (קרס) · מילצ'ן · מוזס · שוקן · קשת+רשת</div>
+    </div>
+    <div class="power-domain-flag">
+      <span class="ratio red">×2.5</span>
+      קוטביות שפה<br>פי שתיים וחצי מ־1990
+    </div>
+  </div>
+
+  <div class="power-domain">
+    <div class="power-domain-label">
+      הון ובנקים
+      <span class="count">50 אילי הון · 5 בנקים</span>
+    </div>
+    <div class="power-domain-content">
+      <span class="takeaway">חמישה בנקים מחזיקים ב־<em>93%</em> מהבנקאות. גובים ₪21 מיליארד עמלות בשנה — פי עשרה מהבריטי.</span>
+      חמישים אילי הון מרכזיים: אייל עופר (₪42B), מילצ'ן, אדלסון יורשים, פאקר. בנק הפועלים ולאומי: NCR 0.77—0.82 — לוקחים יותר ממה שתורמים.
+      <div class="names">הון בבחירות 2015—25: ₪600M+ · פרשות 1000, 2000, 4000 הורשעו/בעמידה</div>
+    </div>
+    <div class="power-domain-flag">
+      <span class="ratio red">0.86</span>
+      NCR בנקאות<br>אוליגופול שגוזל
+    </div>
+  </div>
+
+  <div class="power-domain">
+    <div class="power-domain-label">
+      משפט וחוק
+      <span class="count">15 שופטי עליון · 20 "המועדון"</span>
+    </div>
+    <div class="power-domain-content">
+      <span class="takeaway">עשרים עורכי דין מייצגים את <em>80% מאילי ההון והפוליטיקאים</em>. יחס ההרשעה שלהם: 35%. של סנגור ציבורי: 90%. של בדואים: 99%.</span>
+      בית המשפט העליון החזיק מעמד תחת הפיכה — 75% מפסיקותיו נגד הממשלה. אבל "משחק החוק" של המועדון יוצר צדק דיפרנציאלי.
+      <div class="names">כספי · יניב · חן · חדד · בן־צור · שימרון (הורשע)</div>
+    </div>
+    <div class="power-domain-flag">
+      <span class="ratio red">×2.57</span>
+      יחס הרשעה<br>סנגור ציבורי מול "המועדון"
+    </div>
+  </div>
+
+  <div class="power-domain">
+    <div class="power-domain-label">
+      מובילי דעה
+      <span class="count">500 קולות · 10 מיליון דעות</span>
+    </div>
+    <div class="power-domain-content">
+      <span class="takeaway">חמש־מאות קולות מרכזיים מעצבים את דעת ציבור של <em>עשרה מיליון</em> ישראלים. 20% מהם מייצרים 80% מהתפוצה.</span>
+      קוטביות השיח עלתה מ־3/10 ב־1990 ל־8.5/10 ב־2026. שוק ההסתה: ₪1.5—2 מיליארד בשנה. פיזור: כל ציבור צורך את "התקשורת שלו" — אין יותר דיאלוג כלל־לאומי.
+    </div>
+    <div class="power-domain-flag">
+      <span class="ratio red">8.5/10</span>
+      קוטביות שיח<br>היסטורית
+    </div>
+  </div>
+
+  <div class="power-domain">
+    <div class="power-domain-label">
+      חברות גדולות
+      <span class="count">100 חברות · NCR</span>
+    </div>
+    <div class="power-domain-content">
+      <span class="takeaway">הייטק הישראלי תורם פי <em>12.8</em> ממה שהוא לוקח. הבנקים והמונופולים הציבוריים: 0.9 — לוקחים יותר.</span>
+      NICE Ltd במקום ראשון (NCR 29.1). Check Point (20.2), טבע (14.4). רכבת ישראל (0.75) ובנק הפועלים (0.77) בתחתית. פוטנציאל אבוד: ₪23B לשנה לציבור אם האוליגופול יורד.
+      <div class="names">NICE · Check Point · טבע · אלביט · ICL · Tower · חברת החשמל</div>
+    </div>
+    <div class="power-domain-flag">
+      <span class="ratio olive">×12.8</span>
+      הייטק<br>הכלכלה הגלובלית
+    </div>
+  </div>
+
+  <div class="power-domain">
+    <div class="power-domain-label">
+      עמותות ואיגודים
+      <span class="count">30,000 עמותות · ₪45B</span>
+    </div>
+    <div class="power-domain-content">
+      <span class="takeaway">"לתת" ו"יד שרה" במקום ראשון (NCR 28—32). <em>קהלת פולסי</em> — תקציב ₪40M, גרמה נזק של ₪85 מיליארד בהפיכה המשפטית.</span>
+      חמישים עמותות NCR<1 גוזלות ₪8 מיליארד שנתי מהציבור. רשתות החינוך החרדי (אל־המעיין, חינוך עצמאי) בציון 0.5 — מחנכות 85K ילדים ללא ליבת מתמטיקה ואנגלית.
+      <div class="names">לתת · יד שרה · פתחון לב · "אחים לנשק" (NCR 25) · קהלת (0.4)</div>
+    </div>
+    <div class="power-domain-flag">
+      <span class="ratio red">₪85B</span>
+      נזק קהלת<br>מתקציב של ₪40M
+    </div>
+  </div>
+
+</div>
+
+<!-- SECTION 04: DIRECT ADDRESS -->
 <section class="address" id="address" aria-label="הודעה לאזרח">
   <div class="big">
     אתה חזק יותר מהממשלה שלך.<br>
@@ -639,9 +823,9 @@
   <div class="attr">— מסקנה 5 · ישראל פרקטלית · אוקטובר 2026</div>
 </section>
 
-<!-- SECTION 04: REPORTS -->
+<!-- SECTION 05: REPORTS -->
 <header class="section-head" id="reports">
-  <div class="section-num">04 · הורדות</div>
+  <div class="section-num">05 · הורדות</div>
   <h2>המחקר, לקריאה או להעברה.</h2>
 </header>
 
