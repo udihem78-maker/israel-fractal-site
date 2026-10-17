@@ -3,165 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Israel Fractal · Choose language</title>
+<title>Israel Fractal · Research 1948—2026</title>
+<meta name="description" content="A fractal measurement of 78 years of Israeli governance. 40 research documents, 17 metrics, 84,100 measurement points. Methodology: Data Fluidity (F = D×U/R).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Noto+Serif+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --paper: #faf8f3; --ink: #0a0a0a; --rule: #c4beb0; --muted: #6b6557; --red: #a01818; }
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Frank Ruhl Libre', serif;
-    background: var(--paper);
-    color: var(--ink);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    flex-direction: column;
-  }
-  .meta-top {
-    padding: 20px 40px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--rule);
-  }
-  main {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    min-height: calc(100vh - 100px);
-  }
-  main a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 60px 48px;
-    text-decoration: none;
-    color: inherit;
-    border-left: 1px solid var(--rule);
-    transition: background 0.3s;
-    position: relative;
-  }
-  main a:first-child { border-left: none; }
-  main a:hover { background: #f3eee2; }
-  main a:hover .enter { color: var(--red); }
+  :root { --bg:#ffffff; --ink:#111; --text:#222; --muted:#666; --faint:#999; --rule:#d0d0d0; --rule-light:#e8e8e8; --panel:#f6f6f4; --accent:#c01818; --olive:#4a6d1a; }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; }
+  header.site { border-bottom:1px solid var(--ink); padding:20px 40px; display:flex; justify-content:space-between; align-items:baseline; }
+  .mark { font-size:15px; font-weight:600; color:var(--ink); }
+  .mark .sub { color:var(--muted); font-weight:400; margin-left:12px; }
+  .meta { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; }
 
-  .lang-he { direction: rtl; text-align: right; }
-  .lang-ar { direction: rtl; text-align: right; font-family: 'Noto Serif Arabic', 'Frank Ruhl Libre', serif; }
+  main { max-width:1080px; margin:0 auto; padding:56px 40px 32px; width:100%; }
 
-  .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
+  .doc-title { border-bottom:2px solid var(--ink); padding-bottom:32px; margin-bottom:40px; }
+  .doc-title .pre { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+  h1 { font-size:36px; font-weight:700; line-height:1.2; color:var(--ink); letter-spacing:-0.01em; max-width:28ch; margin-bottom:12px; }
+  .doc-title .subtitle { font-size:17px; color:var(--muted); font-weight:400; max-width:60ch; }
 
-  .language-name {
-    font-size: 72px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-top: 48px;
-    color: var(--ink);
-  }
+  .trust { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--rule); margin-bottom:40px; }
+  .trust .cell { padding:16px 20px; border-right:1px solid var(--rule); }
+  .trust .cell:last-child { border-right:none; }
+  .trust .v { font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:var(--ink); line-height:1; }
+  .trust .v.accent { color:var(--accent); }
+  .trust .l { font-size:11.5px; color:var(--muted); margin-top:7px; line-height:1.45; }
 
-  .lang-en .language-name { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-style: italic; }
-  .lang-he .language-name { font-family: 'Frank Ruhl Libre', serif; }
-  .lang-ar .language-name { font-family: 'Noto Serif Arabic', serif; }
+  .lang-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--rule); margin-bottom:40px; }
+  .lang-card { padding:28px 28px 24px; border-right:1px solid var(--rule); text-decoration:none; color:inherit; transition:background 0.15s; display:flex; flex-direction:column; min-height:220px; }
+  .lang-card:last-child { border-right:none; }
+  .lang-card:hover { background:var(--panel); }
+  .lang-card:hover .enter { color:var(--accent); }
+  .lang-card .code { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+  .lang-card .name { font-size:34px; font-weight:600; color:var(--ink); line-height:1; margin-bottom:6px; }
+  .lang-card .native { font-size:12.5px; color:var(--muted); margin-bottom:16px; font-family:'IBM Plex Mono',monospace; }
+  .lang-card .lede { font-size:14px; color:var(--text); line-height:1.55; flex:1; margin-bottom:20px; }
+  .lang-card .enter { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; transition:color 0.15s; }
+  .lang-card .enter::after { content:" →"; }
 
-  .lede {
-    font-size: 18px;
-    line-height: 1.4;
-    margin-top: 20px;
-    max-width: 32ch;
-    color: var(--ink);
-    font-weight: 400;
-  }
+  .lang-he { font-family:'Rubik',sans-serif; direction:rtl; text-align:right; }
+  .lang-he .enter::after { content:" ←"; }
+  .lang-ar { font-family:'Noto Sans Arabic',sans-serif; direction:rtl; text-align:right; }
+  .lang-ar .enter::after { content:" ←"; }
 
-  .enter {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 32px;
-    letter-spacing: 0.02em;
-    transition: color 0.3s;
-  }
+  .sections { display:grid; grid-template-columns:3fr 2fr; gap:40px; margin-bottom:40px; }
+  .sections h3 { font-size:12px; font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); font-weight:500; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--ink); }
+  .about p { font-size:14.5px; color:var(--text); margin-bottom:10px; max-width:62ch; }
+  .about p strong { font-weight:600; color:var(--ink); }
+  .about .formula { font-family:'IBM Plex Mono',monospace; font-size:13px; background:#fcf4e8; padding:2px 8px; border:1px solid #e4d08a; border-radius:2px; display:inline-block; font-weight:500; }
 
-  footer {
-    padding: 20px 40px;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-  }
-  footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
-  footer a:hover { color: var(--red); }
+  .sources-mini { }
+  .sources-mini ul { list-style:none; }
+  .sources-mini li { font-size:13px; padding:5px 0; color:var(--text); border-bottom:1px dotted var(--rule-light); line-height:1.5; }
+  .sources-mini li:last-child { border-bottom:none; }
+  .sources-mini li::before { content:"·"; color:var(--muted); margin-right:8px; }
+  .sources-mini .more { font-size:11.5px; color:var(--muted); margin-top:10px; font-family:'IBM Plex Mono',monospace; }
+  .sources-mini .more a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px; }
 
-  @media (max-width: 820px) {
-    main { grid-template-columns: 1fr; }
-    main a { border-left: none; border-top: 1px solid var(--rule); padding: 40px 24px; }
-    main a:first-child { border-top: none; }
-    .language-name { font-size: 56px; margin-top: 24px; }
-    .meta-top, footer { padding: 16px 24px; }
+  .downloads { border:1px solid var(--rule); padding:20px 24px; margin-bottom:32px; }
+  .downloads h3 { font-size:12px; font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); font-weight:500; margin-bottom:14px; }
+  .dl-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px 16px; }
+  .dl-grid a { font-size:13px; color:var(--ink); text-decoration:none; padding:6px 10px; border:1px solid var(--rule); background:var(--bg); font-family:'IBM Plex Mono',monospace; display:flex; justify-content:space-between; align-items:center; gap:8px; transition:all 0.15s; }
+  .dl-grid a:hover { border-color:var(--ink); background:var(--panel); }
+  .dl-grid a .size { font-size:10.5px; color:var(--muted); }
+
+  footer { margin-top:auto; border-top:1px solid var(--ink); padding:20px 40px; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; color:var(--muted); gap:24px; flex-wrap:wrap; }
+  footer a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px; }
+  footer a:hover { text-decoration-color:var(--accent); }
+  footer .colophon { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.03em; text-align:right; }
+
+  @media (max-width:900px) {
+    main { padding:32px 20px 20px; }
+    header.site { padding:14px 20px; flex-direction:column; align-items:flex-start; gap:4px; }
+    h1 { font-size:26px; }
+    .doc-title .subtitle { font-size:15px; }
+    .trust { grid-template-columns:repeat(2,1fr); }
+    .trust .cell:nth-child(2) { border-right:none; }
+    .trust .cell:nth-child(3), .trust .cell:nth-child(4) { border-top:1px solid var(--rule); }
+    .lang-grid { grid-template-columns:1fr; }
+    .lang-card { border-right:none; border-bottom:1px solid var(--rule); min-height:auto; }
+    .lang-card:last-child { border-bottom:none; }
+    .sections { grid-template-columns:1fr; gap:28px; }
+    .dl-grid { grid-template-columns:repeat(2,1fr); }
+    footer { padding:16px 20px; }
+    footer .colophon { text-align:left; }
   }
 </style>
 </head>
 <body>
 
-<div class="meta-top">
-  <span>ישראל פרקטלית · Israel Fractal · إسرائيل الفركتالية</span>
-  <span>מחקר 1948—2026</span>
-</div>
+<header class="site">
+  <div class="mark">Israel Fractal <span class="sub">· Research</span></div>
+  <div class="meta">V2 · OCT 2026 · F = D×U/R</div>
+</header>
 
 <main>
-  <a href="he/" class="lang-he">
-    <div>
-      <div class="num">01 · HEB</div>
-      <div class="language-name">עברית</div>
-    </div>
-    <div>
-      <p class="lede">
-        המחקר המלא: שלושים ושניים מסמכים, שבעים ותשע אלף נקודות מדידה, שבעה־עשר מדדים.
-      </p>
-      <div class="enter">כניסה למחקר</div>
-    </div>
-  </a>
 
-  <a href="en/" class="lang-en">
-    <div>
-      <div class="num">02 · ENG</div>
-      <div class="language-name">English</div>
-    </div>
-    <div>
-      <p class="lede">
-        A fractal diagnosis of Israel's governance across 78 years. Thirty-two documents. Seventy-nine thousand measurements.
-      </p>
-      <div class="enter">Open the research</div>
-    </div>
-  </a>
+<div class="doc-title">
+  <div class="pre">INDEPENDENT RESEARCH · 1948—2026 · 40 DOCUMENTS</div>
+  <h1>Israel 1948—2026: A fractal measurement of governance.</h1>
+  <div class="subtitle">
+    A quantitative diagnosis of 78 years of Israeli governance. 13 prime ministers,
+    15 public systems, 48 sectors, 100 companies, 30,000 NGOs — measured on 17 indicators.
+  </div>
+</div>
 
-  <a href="ar/" class="lang-ar">
-    <div>
-      <div class="num">03 · ARA</div>
-      <div class="language-name">العربية</div>
-    </div>
-    <div>
-      <p class="lede">
-        تشخيص فركتالي لحوكمة إسرائيل عبر ثمانية وسبعين عامًا. اثنتان وثلاثون وثيقة. تسعة وسبعون ألف نقطة قياس.
-      </p>
-      <div class="enter">فتح البحث</div>
-    </div>
+<div class="trust">
+  <div class="cell"><div class="v">40</div><div class="l">Research documents</div></div>
+  <div class="cell"><div class="v">84,100</div><div class="l">Measurement points</div></div>
+  <div class="cell"><div class="v">17</div><div class="l">Quantitative metrics</div></div>
+  <div class="cell"><div class="v accent">16</div><div class="l">Primary data sources</div></div>
+</div>
+
+<div class="lang-grid">
+  <a href="he/" class="lang-card lang-he">
+    <div class="code">01 · HEB</div>
+    <div class="name">עברית</div>
+    <div class="native">Hebrew edition</div>
+    <div class="lede">הדו"ח המלא בעברית: מתודולוגיה, 16 מקורות ראשוניים, 17 מדדים, 6 תחומים של מפת כוח.</div>
+    <div class="enter">כניסה למחקר</div>
   </a>
+  <a href="en/" class="lang-card lang-en">
+    <div class="code">02 · ENG</div>
+    <div class="name">English</div>
+    <div class="native">English edition</div>
+    <div class="lede">The complete report: methodology, 16 primary sources, 17 metrics, a 6-domain power map, and reproducible data.</div>
+    <div class="enter">Open the research</div>
+  </a>
+  <a href="ar/" class="lang-card lang-ar">
+    <div class="code">03 · ARA</div>
+    <div class="name">العربية</div>
+    <div class="native">Arabic edition</div>
+    <div class="lede">التقرير الكامل بالعربية: المنهجية، 16 مصدراً أولياً، 17 مؤشراً، خريطة القوة في 6 مجالات.</div>
+    <div class="enter">فتح البحث</div>
+  </a>
+</div>
+
+<div class="sections">
+  <div class="about">
+    <h3>About the research</h3>
+    <p>
+      This report applies <strong>Ehud Hemli's Data Fluidity methodology</strong> (DUR Principle)
+      to Israeli governance. The core measurement:
+      <span class="formula">F = D × U / R</span> — value fluidity as a function of
+      decision quality (D) × realized public utility (U) ÷ systemic friction (R).
+    </p>
+    <p>
+      Every unit of analysis — each prime minister, public system, sector, company, union, NGO —
+      is scored on 17 quantitative indicators drawn <strong>strictly from primary sources</strong>:
+      Israeli government records, regulatory filings, international indices, and peer-reviewed research.
+    </p>
+    <p>
+      The research is independent and reproducible. All 40 source documents, 17 calculation
+      algorithms, and raw data are published under the MIT license. Every number traces back
+      to its source.
+    </p>
+  </div>
+
+  <div class="sources-mini">
+    <h3>Primary sources</h3>
+    <ul>
+      <li>Israeli Central Bureau of Statistics (CBS)</li>
+      <li>Bank of Israel annual reports</li>
+      <li>State Comptroller · 85+ reports, 1995—2026</li>
+      <li>Israel Securities Authority filings</li>
+      <li>Knesset.gov.il · votes, protocols, queries</li>
+      <li>State Attorney's Office yearbooks</li>
+      <li>OECD Economic Surveys of Israel</li>
+      <li>IMF Article IV · World Bank WGI</li>
+      <li>V-Dem Institute · University of Gothenburg</li>
+      <li>Freedom House · Transparency International</li>
+    </ul>
+    <div class="more">+6 more → <a href="en/#methodology">full methodology</a></div>
+  </div>
+</div>
+
+<div class="downloads">
+  <h3>Downloads</h3>
+  <div class="dl-grid">
+    <a href="reports/israel-fractal-he.pdf">PDF · HE <span class="size">268K</span></a>
+    <a href="reports/israel-fractal-en.pdf">PDF · EN <span class="size">413K</span></a>
+    <a href="reports/israel-fractal-ar.pdf">PDF · AR <span class="size">481K</span></a>
+    <a href="reports/v2/israel-fractal-full-he.docx">DOCX <span class="size">20K</span></a>
+    <a href="reports/v2/israel-fractal-full.pptx">PPTX <span class="size">52K</span></a>
+    <a href="reports/v2/israel-fractal-full.epub">EPUB <span class="size">16K</span></a>
+    <a href="reports/v2/israel-fractal-full.md">Markdown <span class="size">18K</span></a>
+    <a href="https://github.com/udihem78-maker/animated-eureka">GitHub <span class="size">40 docs</span></a>
+  </div>
+</div>
+
 </main>
 
 <footer>
-  <span>© 2026 · udihem78@gmail.com</span>
-  <span><a href="https://github.com/udihem78-maker/animated-eureka">source / 32 docs</a></span>
+  <span>Independent research · <a href="https://github.com/udihem78-maker/animated-eureka">animated-eureka</a> · udihem78@gmail.com · MIT license</span>
+  <span class="colophon">V2 · OCT 2026 · 40 DOCS COMPILED</span>
 </footer>
 
 </body>
