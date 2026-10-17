@@ -4,860 +4,939 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ישראל פרקטלית · מחקר 1948—2026</title>
-<meta name="description" content="מחקר הוליסטי של 78 שנות שלטון ישראלי. 32 מסמכים. 79,500 נקודות מדידה. ציון ה-F של ישראל צנח מ-100 ל-0.6.">
+<meta name="description" content="מחקר הוליסטי של שבעים ושמונה שנות שלטון ישראלי. ציון F של ישראל צנח מ־100 ל־0.6.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Assistant:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #faf8f3;
-    --ink: #0a0a0a;
-    --rule: #c4beb0;
-    --rule-soft: #e3ddd1;
-    --muted: #6b6557;
-    --blue: #1a3a6b;
-    --red: #a01818;
-    --olive: #58632b;
+    --paper: #faf7f0;
+    --paper-dark: #f0ebe0;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --muted: #8b8578;
+    --rule: #d4ccbe;
+    --red: #9d2929;
+    --red-soft: #c84444;
+    --olive: #4a5d1f;
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Assistant', sans-serif;
     background: var(--paper);
     color: var(--ink);
     direction: rtl;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.55;
-    font-feature-settings: "kern" 1;
+    font-size: 17px;
+    line-height: 1.65;
   }
+  ::selection { background: var(--red); color: var(--paper); }
 
-  /* === TOP METADATA BAR === */
-  .meta-bar {
-    border-bottom: 1px solid var(--rule);
-    padding: 14px 32px;
+  /* ─── TOP BAR ─── */
+  .topbar {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .topbar .mark {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .topbar .mark span { color: var(--red-soft); }
+  .topbar nav { display: flex; gap: 2px; }
+  .topbar nav a {
     color: var(--muted);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    font-weight: 500;
   }
-  .meta-bar .brand { color: var(--ink); font-weight: 500; letter-spacing: 0.02em; }
-  .meta-bar .langs { display: flex; gap: 20px; }
-  .meta-bar .langs a { color: var(--muted); text-decoration: none; }
-  .meta-bar .langs a:hover { color: var(--ink); }
-  .meta-bar .langs a.active { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+  .topbar nav a:hover { color: var(--paper); }
+  .topbar nav a.active { background: var(--red); color: var(--paper); }
 
-  /* === HERO === */
-  .hero {
-    max-width: 1180px;
+  .container {
+    max-width: 1040px;
     margin: 0 auto;
-    padding: 80px 32px 60px;
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 60px;
-    align-items: end;
+    padding: 0 40px;
   }
 
-  .hero-text {
-    position: relative;
+  /* ─── HERO ─── */
+  .hero {
+    padding: 100px 40px 80px;
+    max-width: 1040px;
+    margin: 0 auto;
   }
-  .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+  .hero-tag {
+    font-size: 14px;
     color: var(--red);
-    letter-spacing: 0.03em;
-    margin-bottom: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    letter-spacing: 0.02em;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--red);
+    vertical-align: middle;
+    margin-left: 12px;
+    margin-bottom: 4px;
   }
   .hero-title {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: clamp(44px, 7vw, 92px);
+    font-size: clamp(56px, 9vw, 128px);
     font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.015em;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
     color: var(--ink);
+    margin-bottom: 20px;
   }
-  .hero-title .q {
-    display: block;
-    color: var(--red);
+  .hero-title em {
     font-style: italic;
     font-weight: 500;
+    color: var(--red);
   }
   .hero-lede {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 1.4;
+    color: var(--ink-soft);
+    max-width: 48ch;
+    font-weight: 400;
+    margin-top: 36px;
+  }
+  .hero-lede strong { color: var(--ink); font-weight: 700; }
+
+  /* ─── CHART ─── */
+  .chart-wrap {
+    max-width: 1040px;
+    margin: 60px auto 100px;
+    padding: 0 40px;
+  }
+  .chart-caption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    direction: ltr;
+    text-align: right;
+  }
+  .chart {
+    background: var(--paper);
+    position: relative;
+    height: 540px;
+    width: 100%;
+  }
+  .chart svg { width: 100%; height: 100%; display: block; }
+
+  /* ─── NUMBERS BAND ─── */
+  .numbers {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px;
+    margin: 60px 0;
+  }
+  .numbers-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  .num-cell { }
+  .num-value {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--paper);
+  }
+  .num-value.accent { color: var(--red-soft); font-style: italic; }
+  .num-label {
+    font-size: 14px;
+    color: #a09a8d;
+    margin-top: 14px;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  /* ─── SECTION ─── */
+  section { padding: 80px 0; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  .sec-head {
+    max-width: 1040px;
+    margin: 0 auto 48px;
+    padding: 0 40px;
+  }
+  .sec-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--red);
+    font-weight: 500;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+    direction: ltr;
+    text-align: right;
+  }
+  .sec-head h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
     color: var(--ink);
-    margin-top: 28px;
-    max-width: 44ch;
+    max-width: 20ch;
+  }
+  .sec-head p {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin-top: 18px;
     font-weight: 400;
   }
 
-  /* === THE CHART (the hero visual) === */
-  .decline-chart {
-    position: relative;
-    height: 440px;
-    padding: 20px 0;
-  }
-
-  .decline-chart svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  /* === INDEX / TOC === */
-  .index {
-    max-width: 1180px;
-    margin: 40px auto;
-    padding: 32px;
-    border-top: 2px solid var(--ink);
-    border-bottom: 1px solid var(--rule);
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-  .index-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
-  .index-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 4px 32px;
-  }
-  .index-list a {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px dotted var(--rule);
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 15px;
-  }
-  .index-list a:hover { color: var(--red); }
-  .index-list a .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  /* === STATS BAND === */
-  .stats-band {
-    max-width: 1180px;
-    margin: 60px auto;
-    padding: 0 32px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-right: 1px solid var(--rule);
-  }
-  .stat {
-    padding: 32px;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    border-left: 1px solid var(--rule);
-    background: var(--paper);
-  }
-  .stat-num {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 52px;
-    font-weight: 900;
-    line-height: 1;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-  }
-  .stat-label {
-    font-family: 'Assistant', sans-serif;
-    font-size: 14px;
-    color: var(--muted);
-    margin-top: 12px;
-    font-weight: 500;
-  }
-  .stat.accent .stat-num { color: var(--red); }
-
-  /* === SECTION HEADINGS === */
-  .section-head {
-    max-width: 1180px;
-    margin: 100px auto 32px;
-    padding: 0 32px;
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 48px;
-    align-items: baseline;
-    border-bottom: 2px solid var(--ink);
-    padding-bottom: 20px;
-  }
-  .section-head .section-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
-  .section-head h2 {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 44px;
-    font-weight: 500;
-    line-height: 1.05;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-
-  /* === PM TABLE === */
-  .pm-table-wrap {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
+  /* ─── PM TABLE ─── */
+  .pm-table-wrap { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
   .pm-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 15px;
   }
-  .pm-table th {
+  .pm-table thead th {
     text-align: right;
-    padding: 14px 16px 10px 16px;
-    font-family: 'JetBrains Mono', monospace;
+    padding: 14px 0 10px;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     color: var(--muted);
     font-weight: 500;
+    border-bottom: 2px solid var(--ink);
     letter-spacing: 0.02em;
-    border-bottom: 1px solid var(--ink);
   }
-  .pm-table th.right-align { text-align: left; }
+  .pm-table thead th.score-head { text-align: left; }
+  .pm-table thead th.rank-head { width: 60px; }
+  .pm-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.15s;
+  }
+  .pm-table tbody tr:hover { background: var(--paper-dark); }
   .pm-table td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--rule-soft);
+    padding: 20px 0;
     vertical-align: baseline;
   }
-  .pm-table tr:hover td { background: #f3eee2; }
-  .pm-table .rank-col { width: 50px; color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
-  .pm-table .name-col { font-family: 'Frank Ruhl Libre', serif; font-size: 20px; font-weight: 500; }
-  .pm-table .years-col { color: var(--muted); font-size: 14px; }
-  .pm-table .score-col {
+  .pm-table td.rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .pm-table td.name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .pm-table td.years {
+    color: var(--muted);
+    font-size: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .pm-table td.score {
     text-align: left;
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
   }
-  .pm-table tr.first td { padding-top: 18px; }
-  .pm-table .score-col.s-excellent { color: var(--olive); }
-  .pm-table .score-col.s-good { color: #4a5d1f; }
-  .pm-table .score-col.s-medium { color: var(--muted); }
-  .pm-table .score-col.s-poor { color: #8b5a1a; }
-  .pm-table .score-col.s-critical { color: var(--red); font-weight: 900; }
-  .pm-table tr.critical td { background: #faeeee; }
+  .pm-table td.score.s9 { color: var(--olive); }
+  .pm-table td.score.s7 { color: #5a7030; }
+  .pm-table td.score.s6 { color: var(--ink-soft); }
+  .pm-table td.score.s5 { color: #a06420; }
+  .pm-table td.score.s4 { color: #c84a1a; }
+  .pm-table tr.critical { background: #faecec; }
+  .pm-table tr.critical td.score { color: var(--red); font-style: italic; font-weight: 900; }
+  .pm-table tr.critical:hover { background: #f7e2e2; }
 
-  /* === FINDINGS === */
-  .findings {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
+  /* ─── FINDINGS ─── */
+  .findings { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
   .finding {
-    display: grid;
-    grid-template-columns: 100px 1fr 180px;
-    gap: 32px;
-    padding: 32px 0;
+    padding: 48px 0;
     border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 32px;
     align-items: start;
   }
   .finding:last-child { border-bottom: none; }
   .finding-num {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 48px;
+    font-size: 88px;
     font-weight: 900;
-    line-height: 1;
+    line-height: 0.85;
     color: var(--red);
-    letter-spacing: -0.02em;
+    font-style: italic;
+    letter-spacing: -0.04em;
   }
-  .finding-body h3 {
+  .finding h3 {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .finding-body p {
-    font-size: 16px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
     color: var(--ink);
-    line-height: 1.55;
+  }
+  .finding p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
     max-width: 60ch;
   }
-  .finding-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    text-align: left;
-    letter-spacing: 0.02em;
-  }
 
-  /* === POWER MAP SECTION === */
-  .power-map {
-    max-width: 1180px;
-    margin: 0 auto 60px;
-    padding: 0 32px;
-  }
-  .power-domain {
-    display: grid;
-    grid-template-columns: 200px 1fr 180px;
-    gap: 32px;
-    padding: 28px 0;
+  /* ─── POWER MAP ─── */
+  .power-map { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
+  .power-row {
+    padding: 56px 0;
     border-bottom: 1px solid var(--rule);
-    align-items: start;
   }
-  .power-domain:last-child { border-bottom: none; }
-  .power-domain-label {
+  .power-row:last-child { border-bottom: none; }
+  .power-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 24px;
+  }
+  .power-title {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 22px;
+    font-size: 32px;
     font-weight: 700;
-    color: var(--ink);
+    line-height: 1.1;
     letter-spacing: -0.01em;
+    color: var(--ink);
   }
-  .power-domain-label .count {
+  .power-title .count {
     display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
     color: var(--muted);
     font-weight: 400;
-    margin-top: 6px;
+    margin-top: 8px;
     letter-spacing: 0.02em;
+    direction: ltr;
+    text-align: right;
   }
-  .power-domain-content {
+  .power-stat {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-align: center;
+    min-width: 180px;
+    direction: ltr;
+  }
+  .power-stat.red { color: var(--red); }
+  .power-stat.olive { color: var(--olive); }
+  .power-stat .unit {
+    display: block;
+    font-family: 'Assistant', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 0;
+    direction: rtl;
+    text-align: center;
+  }
+  .power-body {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 60ch;
+    font-weight: 400;
+  }
+  .power-body em { font-style: italic; color: var(--red); font-weight: 700; }
+  .power-detail {
     font-size: 15px;
     line-height: 1.65;
-    color: var(--ink);
+    color: var(--ink-soft);
+    margin-top: 16px;
+    max-width: 68ch;
   }
-  .power-domain-content .takeaway {
-    display: block;
+  .power-names {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 20px;
+    letter-spacing: 0.01em;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  /* ─── ADDRESS BLOCK ─── */
+  .address-wrap {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 120px 40px;
+  }
+  .address {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .address-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--red-soft);
+    margin-bottom: 40px;
+    direction: ltr;
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+  .address-body {
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 10px;
-    color: var(--ink);
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.25;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    max-width: 22ch;
   }
-  .power-domain-content .takeaway em {
-    font-style: italic;
-    color: var(--red);
+  .address-body strong {
+    color: var(--red-soft);
     font-weight: 700;
   }
-  .power-domain-content .names {
-    color: var(--muted);
-    font-size: 14px;
-    margin-top: 6px;
-  }
-  .power-domain-flag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-align: left;
-    direction: ltr;
-    letter-spacing: 0.02em;
-    color: var(--muted);
-  }
-  .power-domain-flag .ratio {
+  .address-year {
     display: block;
     font-family: 'Frank Ruhl Libre', serif;
-    font-size: 36px;
+    font-size: clamp(80px, 14vw, 180px);
     font-weight: 900;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.05em;
     line-height: 1;
-    margin-bottom: 4px;
-  }
-  .power-domain-flag .ratio.red { color: var(--red); }
-  .power-domain-flag .ratio.olive { color: var(--olive); }
-
-  /* === DIRECT ADDRESS === */
-  .address {
-    max-width: 900px;
-    margin: 100px auto;
-    padding: 60px 32px;
-    text-align: start;
-    border-top: 3px solid var(--ink);
-    border-bottom: 3px solid var(--ink);
-  }
-  .address .big {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 500;
-    line-height: 1.25;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .address .big strong {
-    font-weight: 900;
-    color: var(--red);
-  }
-  .address .big .q {
-    display: block;
-    font-size: clamp(48px, 7vw, 76px);
-    font-weight: 900;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    line-height: 1;
-    margin-top: 24px;
-  }
-  .address .attr {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 32px;
-    letter-spacing: 0.02em;
+    margin-top: 40px;
+    color: var(--paper);
   }
 
-  /* === DOWNLOAD BAR === */
-  .download-bar {
-    max-width: 1180px;
-    margin: 60px auto;
-    padding: 32px;
+  /* ─── DOWNLOADS ─── */
+  .downloads-wrap { padding: 80px 0; }
+  .downloads-grid {
+    max-width: 1040px;
+    margin: 40px auto 0;
+    padding: 0 40px;
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 48px;
-    align-items: start;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
   }
-  .download-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.02em; }
-  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px 32px; }
-  .downloads a {
+  .dl-item {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 12px 0;
-    border-bottom: 1px dotted var(--rule);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
     text-decoration: none;
     color: var(--ink);
-    font-size: 15px;
+    transition: all 0.2s;
   }
-  .downloads a:hover { color: var(--red); }
-  .downloads a .format { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
-
-  /* === FOOTER === */
-  footer {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 60px 32px 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    border-top: 2px solid var(--ink);
-    font-size: 13px;
+  .dl-item:nth-child(odd) { border-left: 1px solid var(--rule); padding-left: 20px; }
+  .dl-item:nth-child(even) { padding-right: 20px; }
+  .dl-item:hover { color: var(--red); background: var(--paper-dark); }
+  .dl-item .dl-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .dl-item .dl-fmt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
     color: var(--muted);
+    direction: ltr;
   }
-  footer a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
-  footer a:hover { text-decoration-color: var(--red); }
-  footer .colophon { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
 
-  /* === RESPONSIVE === */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
-    .decline-chart { height: 320px; }
-    .index { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
-    .stats-band { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
-    .section-head { grid-template-columns: 1fr; padding: 0 20px; gap: 12px; margin-top: 60px; }
-    .finding { grid-template-columns: 60px 1fr; }
-    .finding-tag { grid-column: 1 / -1; }
-    .pm-table-wrap { padding: 0 20px; }
-    .pm-table { font-size: 13px; }
-    .pm-table .name-col { font-size: 16px; }
-    .pm-table .score-col { font-size: 22px; }
-    .pm-table .years-col { display: none; }
-    .download-bar { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
-    footer { grid-template-columns: 1fr; padding: 40px 20px; }
-    .meta-bar { padding: 12px 20px; font-size: 10px; }
-    .meta-bar .langs { gap: 12px; }
-    .power-domain { grid-template-columns: 1fr; padding: 20px 0; gap: 12px; }
-    .power-domain-flag { text-align: right; direction: rtl; }
-    .power-map { padding: 0 20px; }
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: var(--muted);
+    padding: 60px 40px 40px;
+    margin-top: 60px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  footer .foot-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+  }
+  footer p { max-width: 56ch; }
+  footer a { color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--muted); }
+  footer a:hover { border-color: var(--red-soft); color: var(--red-soft); }
+  footer .colophon {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    direction: ltr;
+    text-align: right;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 780px) {
+    .topbar { padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+    .topbar nav { gap: 0; }
+    .container, .hero, .chart-wrap, .sec-head, .pm-table-wrap, .findings, .power-map, .downloads-grid { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 60px; padding-bottom: 40px; }
+    .hero-title { font-size: 56px; }
+    .hero-lede { font-size: 20px; margin-top: 24px; }
+    .chart { height: 300px; }
+    .numbers-inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .num-value { font-size: 48px; }
+    .sec-head h2 { font-size: 36px; }
+    .sec-head p { font-size: 18px; }
+    .pm-table td.years { display: none; }
+    .pm-table td.name { font-size: 18px; }
+    .pm-table td.score { font-size: 28px; }
+    .finding { grid-template-columns: 60px 1fr; gap: 20px; padding: 32px 0; }
+    .finding-num { font-size: 56px; }
+    .finding h3 { font-size: 24px; }
+    .finding p { font-size: 16px; }
+    .power-top { grid-template-columns: 1fr; gap: 16px; }
+    .power-stat { text-align: right; min-width: 0; font-size: 48px; }
+    .power-stat .unit { text-align: right; }
+    .power-title { font-size: 26px; }
+    .power-body { font-size: 18px; }
+    .address-wrap { padding: 80px 20px; }
+    footer { padding: 40px 20px 30px; }
+    footer .foot-inner { grid-template-columns: 1fr; }
+    footer .colophon { text-align: right; }
+    .dl-item:nth-child(odd) { border-left: none; padding-left: 0; }
   }
 </style>
 </head>
 <body>
 
-<nav class="meta-bar">
-  <span class="brand">ישראל פרקטלית · מחקר 1948—2026</span>
-  <div class="langs">
+<div class="topbar">
+  <div class="mark">ישראל <span>פרקטלית</span></div>
+  <nav>
     <a href="." class="active">עברית</a>
     <a href="../en/">English</a>
     <a href="../ar/">العربية</a>
-  </div>
-</nav>
+  </nav>
+</div>
 
-<!-- HERO: THE CHART IS THE DESIGN -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-text">
-    <div class="hero-eyebrow">מדד Data Fluidity · הרמלי · F = D×U/R</div>
-    <h1 class="hero-title">
-      שבעים ושמונה
-      <span class="q">שנים של ירידה.</span>
-    </h1>
-    <p class="hero-lede">
-      ציון ה־F של מדינת ישראל צנח מ־100 ב־1948 ל־0.6 ב־2026. פי מאה ושבעים.
-      המחקר הזה ממפה כל ראש ממשלה, כל מוסד, כל מגזר — דרך שבעה־עשר מדדים.
-    </p>
-  </div>
+  <div class="hero-tag">מחקר הוליסטי · F = D×U/R · הרמלי</div>
+  <h1 class="hero-title">שבעים ושמונה<br><em>שנים של ירידה.</em></h1>
+  <p class="hero-lede">
+    ציון ה־F של מדינת ישראל צנח מ־<strong>100</strong> ב־1948
+    ל־<strong>0.6</strong> ב־2026. פי מאה ושבעים. המחקר הזה ממפה
+    כל ראש ממשלה, כל מוסד, כל מגזר — דרך שבעה־עשר מדדים.
+  </p>
+</section>
 
-  <div class="decline-chart">
-    <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" aria-labelledby="chart-title" role="img">
-      <title id="chart-title">ציון F של ישראל 1948—2026</title>
-
-      <!-- Grid lines -->
-      <g stroke="#e3ddd1" stroke-width="1" stroke-dasharray="2,4">
-        <line x1="40" y1="60" x2="590" y2="60"/>
-        <line x1="40" y1="160" x2="590" y2="160"/>
-        <line x1="40" y1="260" x2="590" y2="260"/>
-        <line x1="40" y1="360" x2="590" y2="360"/>
+<!-- CHART -->
+<div class="chart-wrap">
+  <div class="chart-caption">Fig. 01 · F score of Israel, 1948—2026 · source: Data Fluidity analysis</div>
+  <div class="chart">
+    <svg viewBox="0 0 1000 500" preserveAspectRatio="none">
+      <!-- Grid -->
+      <g stroke="#d4ccbe" stroke-width="1" stroke-dasharray="2,4">
+        <line x1="60" y1="40" x2="960" y2="40"/>
+        <line x1="60" y1="130" x2="960" y2="130"/>
+        <line x1="60" y1="220" x2="960" y2="220"/>
+        <line x1="60" y1="310" x2="960" y2="310"/>
       </g>
 
-      <!-- Y axis labels -->
-      <g fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">
-        <text x="30" y="64" text-anchor="end">100</text>
-        <text x="30" y="164" text-anchor="end">75</text>
-        <text x="30" y="264" text-anchor="end">50</text>
-        <text x="30" y="364" text-anchor="end">25</text>
-        <text x="30" y="408" text-anchor="end">0</text>
+      <!-- Y labels -->
+      <g fill="#8b8578" font-family="IBM Plex Mono, monospace" font-size="13">
+        <text x="50" y="46" text-anchor="end">100</text>
+        <text x="50" y="136" text-anchor="end">75</text>
+        <text x="50" y="226" text-anchor="end">50</text>
+        <text x="50" y="316" text-anchor="end">25</text>
+        <text x="50" y="406" text-anchor="end">0</text>
       </g>
 
-      <!-- Baseline -->
-      <line x1="40" y1="400" x2="590" y2="400" stroke="#0a0a0a" stroke-width="1.5"/>
+      <!-- Baseline + axis -->
+      <line x1="60" y1="400" x2="960" y2="400" stroke="#1a1a1a" stroke-width="2"/>
 
       <!-- Decline curve -->
-      <path d="M 60 60 L 160 162 L 240 240 L 320 290 L 400 325 L 460 350 L 530 390"
-            fill="none" stroke="#0a0a0a" stroke-width="2.5"/>
+      <path d="M 90 40 L 240 140 L 390 230 L 540 280 L 690 320 L 820 350 L 920 395"
+            fill="none" stroke="#1a1a1a" stroke-width="3"/>
 
-      <!-- Point markers + labels -->
-      <g font-family="Assistant, sans-serif" font-size="12" fill="#0a0a0a">
-        <!-- 1948 -->
-        <circle cx="60" cy="60" r="5" fill="#0a0a0a"/>
-        <text x="60" y="42" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="14" font-weight="700">100</text>
-        <text x="60" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1948</text>
+      <!-- Fill under curve (subtle) -->
+      <path d="M 90 40 L 240 140 L 390 230 L 540 280 L 690 320 L 820 350 L 920 395 L 920 400 L 90 400 Z"
+            fill="#9d2929" fill-opacity="0.06"/>
 
-        <!-- 1967 -->
-        <circle cx="160" cy="162" r="4" fill="#0a0a0a"/>
-        <text x="160" y="146" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="13" font-weight="700">27</text>
-        <text x="160" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1967</text>
+      <!-- Points -->
+      <circle cx="90" cy="40" r="6" fill="#1a1a1a"/>
+      <circle cx="240" cy="140" r="5" fill="#1a1a1a"/>
+      <circle cx="390" cy="230" r="5" fill="#1a1a1a"/>
+      <circle cx="540" cy="280" r="5" fill="#1a1a1a"/>
+      <circle cx="690" cy="320" r="5" fill="#1a1a1a"/>
+      <circle cx="820" cy="350" r="5" fill="#1a1a1a"/>
+      <circle cx="920" cy="395" r="10" fill="#9d2929"/>
 
-        <!-- 1977 -->
-        <circle cx="240" cy="240" r="4" fill="#0a0a0a"/>
-        <text x="240" y="224" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="13" font-weight="700">11</text>
-        <text x="240" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1977</text>
-
-        <!-- 1995 -->
-        <circle cx="320" cy="290" r="4" fill="#0a0a0a"/>
-        <text x="320" y="274" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="13" font-weight="700">13</text>
-        <text x="320" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1995</text>
-
-        <!-- 2009 -->
-        <circle cx="400" cy="325" r="4" fill="#0a0a0a"/>
-        <text x="400" y="309" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="13" font-weight="700">4.3</text>
-        <text x="400" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">2009</text>
-
-        <!-- 2022 -->
-        <circle cx="460" cy="350" r="4" fill="#0a0a0a"/>
-        <text x="460" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">2022</text>
-
-        <!-- 2026 — THE collapse -->
-        <circle cx="530" cy="390" r="7" fill="#a01818"/>
-        <text x="530" y="378" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-size="18" font-weight="900" fill="#a01818">0.6</text>
-        <text x="530" y="420" text-anchor="middle" fill="#a01818" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2026</text>
+      <!-- F value labels above points -->
+      <g font-family="Frank Ruhl Libre, serif" font-weight="900" fill="#1a1a1a">
+        <text x="90" y="25" text-anchor="middle" font-size="22">100</text>
+        <text x="240" y="128" text-anchor="middle" font-size="18">27</text>
+        <text x="390" y="218" text-anchor="middle" font-size="18">11</text>
+        <text x="540" y="268" text-anchor="middle" font-size="18">13</text>
+        <text x="690" y="308" text-anchor="middle" font-size="16">4.3</text>
+        <text x="820" y="338" text-anchor="middle" font-size="14" fill="#8b8578">2.5</text>
       </g>
 
-      <!-- PM annotations -->
-      <g font-family="Assistant, sans-serif" font-size="10" fill="#6b6557">
-        <text x="68" y="80" font-style="italic">בן־גוריון</text>
-        <text x="168" y="182" font-style="italic">אשכול</text>
-        <text x="248" y="260" font-style="italic">בגין</text>
-        <text x="328" y="310" font-style="italic">רבין</text>
-        <text x="408" y="345" font-style="italic">נתניהו 2</text>
-        <text x="470" y="382" font-style="italic" fill="#a01818" font-weight="700">נתניהו 6</text>
+      <!-- X labels (year) -->
+      <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#8b8578">
+        <text x="90" y="422" text-anchor="middle">1948</text>
+        <text x="240" y="422" text-anchor="middle">1967</text>
+        <text x="390" y="422" text-anchor="middle">1977</text>
+        <text x="540" y="422" text-anchor="middle">1995</text>
+        <text x="690" y="422" text-anchor="middle">2009</text>
+        <text x="820" y="422" text-anchor="middle">2022</text>
+      </g>
+
+      <!-- PM names (small, below points) -->
+      <g font-family="Assistant, sans-serif" font-size="13" fill="#4a4a4a" font-weight="500">
+        <text x="90" y="62" text-anchor="middle">בן־גוריון</text>
+        <text x="240" y="162" text-anchor="middle">אשכול</text>
+        <text x="390" y="252" text-anchor="middle">בגין</text>
+        <text x="540" y="302" text-anchor="middle">רבין</text>
+        <text x="690" y="342" text-anchor="middle">נתניהו 2</text>
+      </g>
+
+      <!-- END ANNOTATION: dedicated callout for 2026/Netanyahu 6/0.6 -->
+      <g>
+        <!-- callout line from endpoint to label -->
+        <line x1="920" y1="395" x2="920" y2="438" stroke="#9d2929" stroke-width="1"/>
+        <text x="920" y="455" text-anchor="middle" font-family="Frank Ruhl Libre, serif"
+              font-weight="900" font-style="italic" font-size="30" fill="#9d2929">0.6</text>
+        <text x="920" y="476" text-anchor="middle" font-family="Assistant, sans-serif"
+              font-weight="700" font-size="12" fill="#9d2929">נתניהו 6 · 2026</text>
       </g>
     </svg>
   </div>
+</div>
+
+<!-- NUMBERS BAND -->
+<div class="numbers">
+  <div class="numbers-inner">
+    <div class="num-cell">
+      <div class="num-value">40</div>
+      <div class="num-label">מסמכי מחקר</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-value">84K</div>
+      <div class="num-label">נקודות מדידה כמותיות</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-value">1,250</div>
+      <div class="num-label">מנהיגים דורגו</div>
+    </div>
+    <div class="num-cell">
+      <div class="num-value accent">170×</div>
+      <div class="num-label">הפרש פרקטלי · בן־גוריון מול נתניהו 6</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: PM TABLE -->
+<section>
+  <div class="sec-head">
+    <div class="sec-eyebrow">01 · Prime Ministers</div>
+    <h2>כל שלושה־עשר ראשי הממשלה, דורגו.</h2>
+    <p>מתוך 13 ראשי ממשלה היסטוריים, שישה־עשר כניסות — בן־גוריון בראש בציון 9.5. נתניהו השישית בתחתית, 2.0.</p>
+  </div>
+
+  <div class="pm-table-wrap">
+    <table class="pm-table">
+      <thead>
+        <tr>
+          <th class="rank-head">#</th>
+          <th>ראש הממשלה</th>
+          <th>תקופה</th>
+          <th class="score-head">ציון</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">01</td><td class="name">דוד בן־גוריון</td><td class="years">1948—1963</td><td class="score s9">9.5</td></tr>
+        <tr><td class="rank">02</td><td class="name">לוי אשכול</td><td class="years">1963—1969</td><td class="score s9">8.9</td></tr>
+        <tr><td class="rank">03</td><td class="name">יצחק רבין, שנייה</td><td class="years">1992—1995</td><td class="score s9">8.2</td></tr>
+        <tr><td class="rank">04</td><td class="name">משה שרת</td><td class="years">1954—1955</td><td class="score s7">7.5</td></tr>
+        <tr><td class="rank">05</td><td class="name">יצחק רבין, ראשונה</td><td class="years">1974—1977</td><td class="score s7">7.2</td></tr>
+        <tr><td class="rank">06</td><td class="name">נפתלי בנט ויאיר לפיד</td><td class="years">2021—2022</td><td class="score s7">7.0</td></tr>
+        <tr><td class="rank">07</td><td class="name">אריאל שרון</td><td class="years">2001—2006</td><td class="score s7">6.5</td></tr>
+        <tr><td class="rank">08</td><td class="name">מנחם בגין</td><td class="years">1977—1983</td><td class="score s7">6.3</td></tr>
+        <tr><td class="rank">09</td><td class="name">גולדה מאיר</td><td class="years">1969—1974</td><td class="score s6">6.2</td></tr>
+        <tr><td class="rank">10</td><td class="name">שמעון פרס</td><td class="years">1984—1996</td><td class="score s6">6.0</td></tr>
+        <tr><td class="rank">11</td><td class="name">יצחק שמיר</td><td class="years">1983—1992</td><td class="score s6">5.5</td></tr>
+        <tr><td class="rank">12</td><td class="name">אהוד ברק</td><td class="years">1999—2001</td><td class="score s6">5.3</td></tr>
+        <tr><td class="rank">13</td><td class="name">אהוד אולמרט</td><td class="years">2006—2009</td><td class="score s5">4.8</td></tr>
+        <tr><td class="rank">14</td><td class="name">בנימין נתניהו, ראשונה</td><td class="years">1996—1999</td><td class="score s5">4.6</td></tr>
+        <tr><td class="rank">15</td><td class="name">בנימין נתניהו, 2—5</td><td class="years">2009—2021</td><td class="score s4">3.9</td></tr>
+        <tr class="critical"><td class="rank">16</td><td class="name">בנימין נתניהו, שישית</td><td class="years">2022—2026</td><td class="score">2.0</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
-<!-- INDEX / TABLE OF CONTENTS -->
-<nav class="index" aria-label="תוכן העניינים">
-  <div class="index-label">תוכן המחקר</div>
-  <div class="index-list">
-    <a href="#pms"><span>13 ראשי הממשלה</span><span class="num">01</span></a>
-    <a href="#findings"><span>חמש מסקנות קריטיות</span><span class="num">02</span></a>
-    <a href="#power"><span>מפת הכוח — תקשורת, הון, משפט</span><span class="num">03</span></a>
-    <a href="#address"><span>הודעה לאזרח</span><span class="num">04</span></a>
-    <a href="#reports"><span>הורדת המחקר</span><span class="num">05</span></a>
+<!-- SECTION 2: FINDINGS -->
+<section>
+  <div class="sec-head">
+    <div class="sec-eyebrow">02 · Findings</div>
+    <h2>חמש אבחנות קריטיות.</h2>
   </div>
-</nav>
 
-<!-- STATS BAND -->
-<section class="stats-band" aria-label="היקף המחקר">
-  <div class="stat">
-    <div class="stat-num">32</div>
-    <div class="stat-label">מסמכי מחקר</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">79,500</div>
-    <div class="stat-label">נקודות מדידה</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">1,250</div>
-    <div class="stat-label">מנהיגים דורגו</div>
-  </div>
-  <div class="stat accent">
-    <div class="stat-num">×170</div>
-    <div class="stat-label">ירידת F בן־גוריון→נתניהו 6</div>
+  <div class="findings">
+
+    <article class="finding">
+      <div class="finding-num">1</div>
+      <div>
+        <h3>פער פרקטלי של פי מאה ושבעים.</h3>
+        <p>בשבעים ושמונה שנים, מהממשלה הזמנית ועד נתניהו השישית, ציון ה־F של ישראל ירד מ־100 ל־0.6. העקומה אקספוננציאלית — זו מגמה, לא תאונה.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="finding-num">2</div>
+      <div>
+        <h3>שליש מהמוסדות כבר בקריסה.</h3>
+        <p>מתוך חמש־עשרה מערכות ציבוריות שנותחו, שש פועלות מתחת לנקודת הקריסה שלהן: המשטרה (F=5), פיקוד דרום (8), הפרקליטות (8), הרבנות (8), החינוך (10), הרווחה (10).</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="finding-num">3</div>
+      <div>
+        <h3>שישים וחמישה אחוז מהמגזרים בקריסה.</h3>
+        <p>הפלסטינים בעזה חיים ב־F=0.1. הבדואים ב־F=1. חילוני ילידי ב־F=1.7. השונות הפנימית: פי מאתיים שישים ושבעה. ישראל־פלסטין היא החברה המפולגת ביותר בעולם המערבי.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="finding-num">4</div>
+      <div>
+        <h3>הנזק המצטבר: שני טריליון שקל.</h3>
+        <p>תשע־עשרה שנות שלטון של בנימין נתניהו. השפעה פיסקלית נטו: מינוס 666 מיליארד. נזק עקיף: מינוס 210 מיליארד. חוב שהצטבר: 735 מיליארד. סה״כ: תשעים ושלושה אחוז מתוצר שנתי אחד.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="finding-num">5</div>
+      <div>
+        <h3>האזרח חזק פי ארבעה־עשר מהממשלה.</h3>
+        <p>האזרח הישראלי הממוצע מתפקד ב־F=8.5. הממשלה הנוכחית ב־F=0.6. הפער משמעותי. הגורל של ישראל אינו בידי השלטון. הוא בידי מי שבוחר אותו.</p>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<!-- SECTION 01: PMs -->
-<header class="section-head" id="pms">
-  <div class="section-num">01 · ראשי ממשלה</div>
-  <h2>כל שלושה־עשר ראשי הממשלה, דורגו.</h2>
-</header>
-
-<div class="pm-table-wrap">
-  <table class="pm-table" aria-label="דירוג ראשי ממשלה">
-    <thead>
-      <tr>
-        <th class="rank-col">#</th>
-        <th>ראש הממשלה</th>
-        <th>שנים</th>
-        <th class="right-align">ציון</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="first"><td class="rank-col">01</td><td class="name-col">דוד בן־גוריון</td><td class="years-col">1948—1963 · 14 שנה</td><td class="score-col s-excellent">9.5</td></tr>
-      <tr><td class="rank-col">02</td><td class="name-col">לוי אשכול</td><td class="years-col">1963—1969 · 7 שנה</td><td class="score-col s-excellent">8.9</td></tr>
-      <tr><td class="rank-col">03</td><td class="name-col">יצחק רבין, קדנציה שנייה</td><td class="years-col">1992—1995 · 3 שנה</td><td class="score-col s-excellent">8.2</td></tr>
-      <tr><td class="rank-col">04</td><td class="name-col">משה שרת</td><td class="years-col">1954—1955 · 1.2 שנה</td><td class="score-col s-good">7.5</td></tr>
-      <tr><td class="rank-col">05</td><td class="name-col">יצחק רבין, קדנציה ראשונה</td><td class="years-col">1974—1977 · 3 שנה</td><td class="score-col s-good">7.2</td></tr>
-      <tr><td class="rank-col">06</td><td class="name-col">נפתלי בנט ויאיר לפיד</td><td class="years-col">2021—2022 · 1.5 שנה</td><td class="score-col s-good">7.0</td></tr>
-      <tr><td class="rank-col">07</td><td class="name-col">אריאל שרון</td><td class="years-col">2001—2006 · 5 שנה</td><td class="score-col s-good">6.5</td></tr>
-      <tr><td class="rank-col">08</td><td class="name-col">מנחם בגין</td><td class="years-col">1977—1983 · 6.3 שנה</td><td class="score-col s-good">6.3</td></tr>
-      <tr><td class="rank-col">09</td><td class="name-col">גולדה מאיר</td><td class="years-col">1969—1974 · 5 שנה</td><td class="score-col s-medium">6.2</td></tr>
-      <tr><td class="rank-col">10</td><td class="name-col">שמעון פרס</td><td class="years-col">1984—1996 · 2.7 שנה</td><td class="score-col s-medium">6.0</td></tr>
-      <tr><td class="rank-col">11</td><td class="name-col">יצחק שמיר</td><td class="years-col">1983—1992 · 4.7 שנה</td><td class="score-col s-medium">5.5</td></tr>
-      <tr><td class="rank-col">12</td><td class="name-col">אהוד ברק</td><td class="years-col">1999—2001 · 1.6 שנה</td><td class="score-col s-medium">5.3</td></tr>
-      <tr><td class="rank-col">13</td><td class="name-col">אהוד אולמרט</td><td class="years-col">2006—2009 · 2.9 שנה</td><td class="score-col s-poor">4.8</td></tr>
-      <tr><td class="rank-col">14</td><td class="name-col">בנימין נתניהו, קדנציה ראשונה</td><td class="years-col">1996—1999 · 3 שנה</td><td class="score-col s-poor">4.6</td></tr>
-      <tr><td class="rank-col">15</td><td class="name-col">בנימין נתניהו, קדנציות 2—5</td><td class="years-col">2009—2021 · 12 שנה</td><td class="score-col s-poor">3.9</td></tr>
-      <tr class="critical"><td class="rank-col">16</td><td class="name-col">בנימין נתניהו, קדנציה שישית</td><td class="years-col">2022—2026 · 4 שנה</td><td class="score-col s-critical">2.0</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- SECTION 02: FINDINGS -->
-<header class="section-head" id="findings">
-  <div class="section-num">02 · מסקנות</div>
-  <h2>חמש אבחנות שהמחקר מעלה, מספור בלבד.</h2>
-</header>
-
-<div class="findings">
-  <article class="finding">
-    <div class="finding-num">1</div>
-    <div class="finding-body">
-      <h3>פער פרקטלי של פי מאה שבעים.</h3>
-      <p>בעשרים ושמונה שנים, מהממשלה הזמנית ועד נתניהו ה־שישי, ציון ה־F של ישראל ירד מ־100 ל־0.6. מגמה אקספוננציאלית, לא תאונה.</p>
-    </div>
-    <div class="finding-tag">מדד F · DUR</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">2</div>
-    <div class="finding-body">
-      <h3>שליש מהמוסדות כבר בקריסה.</h3>
-      <p>מתוך 15 מערכות ציבוריות שנותחו, שש מתפקדות מתחת לנקודת הקריסה שלהן: המשטרה (F=5), פיקוד דרום (8), הפרקליטות (8), הרבנות (8), החינוך (10), והרווחה (10).</p>
-    </div>
-    <div class="finding-tag">מערכות · קריסה</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">3</div>
-    <div class="finding-body">
-      <h3>שישים וחמישה אחוז מהמגזרים — בקריסה.</h3>
-      <p>הפלסטינים בעזה חיים ב־F=0.1. הבדואים ב־F=1. החילוני הילידי ב־F=1.7. השונות הפנימית: פי מאתיים שישים ושבעה. ישראל־פלסטין היא החברה המפולגת ביותר בעולם המערבי.</p>
-    </div>
-    <div class="finding-tag">מגזרים · שוויון</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">4</div>
-    <div class="finding-body">
-      <h3>הנזק המצטבר: שני טריליון שקל.</h3>
-      <p>תשע־עשרה שנות שלטון של בנימין נתניהו. השפעה פיסקלית נטו מצטברת: מינוס שש מאות שישים ושישה מיליארד. נזק עקיף נוסף: מינוס מאתיים ועשרה. חוב שהצטבר: שבע מאות שלושים וחמישה. סך הכל: תשעים ושלושה אחוז מתוצר שנתי אחד.</p>
-    </div>
-    <div class="finding-tag">כספים · נתניהו</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">5</div>
-    <div class="finding-body">
-      <h3>האזרח חזק פי ארבעה־עשר מהממשלה.</h3>
-      <p>האזרח הישראלי הממוצע מתפקד ב־F=8.5. הממשלה הנוכחית ב־F=0.6. הפער משמעותי. הגורל של ישראל אינו בידי השלטון. הוא בידי מי שבוחר אותו.</p>
-    </div>
-    <div class="finding-tag">אזרח · 2027</div>
-  </article>
-</div>
-
-<!-- SECTION 2.5: POWER MAP -->
-<header class="section-head" id="power">
-  <div class="section-num">03 · מפת הכוח</div>
-  <h2>מי שולט במה. בלי מסכות.</h2>
-</header>
-
-<div class="power-map">
-
-  <div class="power-domain">
-    <div class="power-domain-label">
-      תקשורת
-      <span class="count">6 בעלויות · 85% מהצריכה</span>
-    </div>
-    <div class="power-domain-content">
-      <span class="takeaway">שישה בעלים שולטים ב־<em>85%</em> מצריכת החדשות של עשרה מיליון ישראלים.</span>
-      התקשורת המקצועית (כאן 11, הארץ, ידיעות) בציון ממוצע 7.5. ערוץ 14 בציון 2.5 — הנמוך בתקשורת הישראלית. מדד "העיסוק בעיקר" ירד מ־85% ב־1965 ל־30% ב־2026.
-      <div class="names">אדלסון · אלוביץ' (קרס) · מילצ'ן · מוזס · שוקן · קשת+רשת</div>
-    </div>
-    <div class="power-domain-flag">
-      <span class="ratio red">×2.5</span>
-      קוטביות שפה<br>פי שתיים וחצי מ־1990
-    </div>
+<!-- SECTION 3: POWER MAP -->
+<section>
+  <div class="sec-head">
+    <div class="sec-eyebrow">03 · Power Map</div>
+    <h2>מי שולט במה. בלי מסכות.</h2>
+    <p>שישה תחומים, מיפוי מלא. שמות ממקורות פתוחים בלבד.</p>
   </div>
 
-  <div class="power-domain">
-    <div class="power-domain-label">
-      הון ובנקים
-      <span class="count">50 אילי הון · 5 בנקים</span>
-    </div>
-    <div class="power-domain-content">
-      <span class="takeaway">חמישה בנקים מחזיקים ב־<em>93%</em> מהבנקאות. גובים ₪21 מיליארד עמלות בשנה — פי עשרה מהבריטי.</span>
-      חמישים אילי הון מרכזיים: אייל עופר (₪42B), מילצ'ן, אדלסון יורשים, פאקר. בנק הפועלים ולאומי: NCR 0.77—0.82 — לוקחים יותר ממה שתורמים.
-      <div class="names">הון בבחירות 2015—25: ₪600M+ · פרשות 1000, 2000, 4000 הורשעו/בעמידה</div>
-    </div>
-    <div class="power-domain-flag">
-      <span class="ratio red">0.86</span>
-      NCR בנקאות<br>אוליגופול שגוזל
-    </div>
-  </div>
+  <div class="power-map">
 
-  <div class="power-domain">
-    <div class="power-domain-label">
-      משפט וחוק
-      <span class="count">15 שופטי עליון · 20 "המועדון"</span>
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">
+          תקשורת
+          <span class="count">6 owners · 85% of consumption</span>
+        </div>
+        <div class="power-stat red">
+          85%
+          <span class="unit">צריכת חדשות בידי שישה בעלים</span>
+        </div>
+      </div>
+      <p class="power-body">
+        שישה בעלים שולטים ב־<em>85%</em> מצריכת החדשות של עשרה מיליון ישראלים.
+        התקשורת המקצועית בציון ממוצע 7.5. ערוץ 14 בציון 2.5.
+      </p>
+      <p class="power-detail">
+        מדד "העיסוק בעיקר" בחדשות ירד מ־85% ב־1965 ל־30% ב־2026.
+        קוטביות השפה גדלה פי שתיים וחצי מ־1990.
+      </p>
+      <div class="power-names">אדלסון · אלוביץ׳ (קרס) · מילצ׳ן · מוזס · שוקן · קשת+רשת</div>
     </div>
-    <div class="power-domain-content">
-      <span class="takeaway">עשרים עורכי דין מייצגים את <em>80% מאילי ההון והפוליטיקאים</em>. יחס ההרשעה שלהם: 35%. של סנגור ציבורי: 90%. של בדואים: 99%.</span>
-      בית המשפט העליון החזיק מעמד תחת הפיכה — 75% מפסיקותיו נגד הממשלה. אבל "משחק החוק" של המועדון יוצר צדק דיפרנציאלי.
-      <div class="names">כספי · יניב · חן · חדד · בן־צור · שימרון (הורשע)</div>
-    </div>
-    <div class="power-domain-flag">
-      <span class="ratio red">×2.57</span>
-      יחס הרשעה<br>סנגור ציבורי מול "המועדון"
-    </div>
-  </div>
 
-  <div class="power-domain">
-    <div class="power-domain-label">
-      מובילי דעה
-      <span class="count">500 קולות · 10 מיליון דעות</span>
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">
+          הון ובנקים
+          <span class="count">50 capital owners · 5 banks</span>
+        </div>
+        <div class="power-stat red">
+          0.86
+          <span class="unit">NCR בנקאות · גוזלים יותר ממה שתורמים</span>
+        </div>
+      </div>
+      <p class="power-body">
+        חמישה בנקים מחזיקים ב־<em>93%</em> מהבנקאות וגובים ₪21 מיליארד
+        עמלות בשנה — פי עשרה מהבריטי.
+      </p>
+      <p class="power-detail">
+        חמישים אילי הון מרכזיים. הון בבחירות 2015—2025: ₪600 מיליון מהון פרטי.
+        פרשות 1000, 2000, 4000, 3000 — חלקן הורשעו.
+      </p>
+      <div class="power-names">עופר · מילצ׳ן · אדלסון יורשים · פאקר · בלבטניק · תשובה · שגיא</div>
     </div>
-    <div class="power-domain-content">
-      <span class="takeaway">חמש־מאות קולות מרכזיים מעצבים את דעת ציבור של <em>עשרה מיליון</em> ישראלים. 20% מהם מייצרים 80% מהתפוצה.</span>
-      קוטביות השיח עלתה מ־3/10 ב־1990 ל־8.5/10 ב־2026. שוק ההסתה: ₪1.5—2 מיליארד בשנה. פיזור: כל ציבור צורך את "התקשורת שלו" — אין יותר דיאלוג כלל־לאומי.
-    </div>
-    <div class="power-domain-flag">
-      <span class="ratio red">8.5/10</span>
-      קוטביות שיח<br>היסטורית
-    </div>
-  </div>
 
-  <div class="power-domain">
-    <div class="power-domain-label">
-      חברות גדולות
-      <span class="count">100 חברות · NCR</span>
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">
+          משפט ו״המועדון״
+          <span class="count">15 Supreme Court · 20 top lawyers</span>
+        </div>
+        <div class="power-stat red">
+          2.57×
+          <span class="unit">יחס הרשעה · סנגור ציבורי מול המועדון</span>
+        </div>
+      </div>
+      <p class="power-body">
+        עשרים עורכי דין מייצגים את <em>80% מאילי ההון והפוליטיקאים</em>.
+        יחס ההרשעה שלהם: 35%. של סנגור ציבורי: 90%. של בדואים: 99%.
+      </p>
+      <p class="power-detail">
+        בית המשפט העליון החזיק מעמד תחת הפיכה — 75% מפסיקותיו נגד הממשלה 37.
+        חוק הצדק הפרקטלי: יחס הרשעה = 100% − (השקעה במשפט × 0.015).
+      </p>
+      <div class="power-names">כספי · יניב · חן · חדד · בן־צור · שימרון (הורשע) · אגמון · טוטונג׳י</div>
     </div>
-    <div class="power-domain-content">
-      <span class="takeaway">הייטק הישראלי תורם פי <em>12.8</em> ממה שהוא לוקח. הבנקים והמונופולים הציבוריים: 0.9 — לוקחים יותר.</span>
-      NICE Ltd במקום ראשון (NCR 29.1). Check Point (20.2), טבע (14.4). רכבת ישראל (0.75) ובנק הפועלים (0.77) בתחתית. פוטנציאל אבוד: ₪23B לשנה לציבור אם האוליגופול יורד.
-      <div class="names">NICE · Check Point · טבע · אלביט · ICL · Tower · חברת החשמל</div>
-    </div>
-    <div class="power-domain-flag">
-      <span class="ratio olive">×12.8</span>
-      הייטק<br>הכלכלה הגלובלית
-    </div>
-  </div>
 
-  <div class="power-domain">
-    <div class="power-domain-label">
-      עמותות ואיגודים
-      <span class="count">30,000 עמותות · ₪45B</span>
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">
+          מובילי דעה
+          <span class="count">500 voices · 10M opinions</span>
+        </div>
+        <div class="power-stat red">
+          8.5
+          <span class="unit">קוטביות שיח · מתוך 10 · 3.0 ב־1990</span>
+        </div>
+      </div>
+      <p class="power-body">
+        <em>חמש־מאות קולות</em> מרכזיים מעצבים את דעת ציבור של עשרה מיליון
+        ישראלים. 20% מהם מייצרים 80% מהתפוצה.
+      </p>
+      <p class="power-detail">
+        שוק ההסתה: ₪1.5—2 מיליארד בשנה. אין יותר דיאלוג כלל־לאומי —
+        כל ציבור צורך את התקשורת שלו.
+      </p>
     </div>
-    <div class="power-domain-content">
-      <span class="takeaway">"לתת" ו"יד שרה" במקום ראשון (NCR 28—32). <em>קהלת פולסי</em> — תקציב ₪40M, גרמה נזק של ₪85 מיליארד בהפיכה המשפטית.</span>
-      חמישים עמותות NCR<1 גוזלות ₪8 מיליארד שנתי מהציבור. רשתות החינוך החרדי (אל־המעיין, חינוך עצמאי) בציון 0.5 — מחנכות 85K ילדים ללא ליבת מתמטיקה ואנגלית.
-      <div class="names">לתת · יד שרה · פתחון לב · "אחים לנשק" (NCR 25) · קהלת (0.4)</div>
-    </div>
-    <div class="power-domain-flag">
-      <span class="ratio red">₪85B</span>
-      נזק קהלת<br>מתקציב של ₪40M
-    </div>
-  </div>
 
-</div>
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">
+          100 החברות הגדולות
+          <span class="count">NCR analysis · contribution vs extraction</span>
+        </div>
+        <div class="power-stat olive">
+          12.8×
+          <span class="unit">הייטק תורם פי 12.8 ממה שלוקח</span>
+        </div>
+      </div>
+      <p class="power-body">
+        <em>NICE</em> במקום ראשון (NCR 29.1), <em>Check Point</em> (20.2), <em>טבע</em> (14.4).
+        בתחתית: רכבת ישראל (0.75), בנק הפועלים (0.77).
+      </p>
+      <p class="power-detail">
+        פוטנציאל אבוד: ₪23 מיליארד בשנה אם האוליגופול יורד ל־NCR 2.
+        חוק הריכוזיות: ככל שהענף מרוכז, NCR יורד.
+      </p>
+      <div class="power-names">NICE · Check Point · טבע · אלביט · ICL · Tower · חברת החשמל</div>
+    </div>
 
-<!-- SECTION 04: DIRECT ADDRESS -->
-<section class="address" id="address" aria-label="הודעה לאזרח">
-  <div class="big">
-    אתה חזק יותר מהממשלה שלך.<br>
-    פי ארבעה־עשר, לפי המחקר.<br>
-    השאלה האמיתית אינה אם ישראל יכולה להתאושש.<br>
-    השאלה היא <strong>אם תבחר כך</strong>.
-    <span class="q">2027.</span>
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">
+          עמותות ואיגודים
+          <span class="count">30,000 NGOs · ₪45B budget</span>
+        </div>
+        <div class="power-stat red">
+          2,125×
+          <span class="unit">אפקט קהלת · ₪40M תקציב, ₪85B נזק</span>
+        </div>
+      </div>
+      <p class="power-body">
+        <em>״לתת״, ״יד שרה״, ״פתחון לב״</em> תורמות NCR 28—32.
+        קהלת פולסי — תקציב של ארבעים מיליון, נזק של שמונים וחמישה מיליארד
+        בהפיכה המשפטית.
+      </p>
+      <p class="power-detail">
+        חמישים עמותות NCR&lt;1 גוזלות ₪8 מיליארד שנתי מהציבור.
+        רשתות החינוך החרדי (אל־המעיין, חינוך עצמאי) בציון 0.5.
+      </p>
+      <div class="power-names">לתת · יד שרה · פתחון לב · אחים לנשק · יד ושם · קהלת · אל־המעיין</div>
+    </div>
+
   </div>
-  <div class="attr">— מסקנה 5 · ישראל פרקטלית · אוקטובר 2026</div>
 </section>
 
-<!-- SECTION 05: REPORTS -->
-<header class="section-head" id="reports">
-  <div class="section-num">05 · הורדות</div>
-  <h2>המחקר, לקריאה או להעברה.</h2>
-</header>
-
-<div class="download-bar">
-  <div class="download-label">
-    הדוח המכליל, שבעה פורמטים.<br>כולם מכילים אותו תוכן.
-  </div>
-  <div class="downloads">
-    <a href="../reports/israel-fractal-he.pdf"><span>דוח בעברית</span><span class="format">PDF · 297K</span></a>
-    <a href="../reports/israel-fractal-en.pdf"><span>Report in English</span><span class="format">PDF · 321K</span></a>
-    <a href="../reports/israel-fractal-ar.pdf"><span>تقرير بالعربية</span><span class="format">PDF · 578K</span></a>
-    <a href="../reports/israel-fractal-he.docx"><span>לעריכה ב־Word</span><span class="format">DOCX</span></a>
-    <a href="../reports/israel-fractal.pptx"><span>מצגת</span><span class="format">PPTX</span></a>
-    <a href="../reports/israel-fractal.epub"><span>לקוראים אלקטרוניים</span><span class="format">EPUB</span></a>
-    <a href="../reports/israel-fractal.md"><span>המקור</span><span class="format">MD</span></a>
-    <a href="https://github.com/udihem78-maker/animated-eureka"><span>כל 32 המסמכים</span><span class="format">GitHub</span></a>
+<!-- SECTION 4: ADDRESS -->
+<div class="address-wrap" id="address">
+  <div class="address">
+    <div class="address-eyebrow">04 · The question</div>
+    <div class="address-body">
+      אתה חזק יותר מהממשלה שלך — פי ארבעה־עשר, לפי המחקר.
+      השאלה האמיתית אינה אם ישראל יכולה להתאושש.
+      היא <strong>אם תבחר כך</strong>.
+      <span class="address-year">2027.</span>
+    </div>
   </div>
 </div>
+
+<!-- SECTION 5: DOWNLOADS -->
+<section class="downloads-wrap">
+  <div class="sec-head">
+    <div class="sec-eyebrow">05 · Reports</div>
+    <h2>המחקר — לקריאה, לעריכה, להעברה.</h2>
+    <p>הדוח המכליל זמין בשבעה פורמטים. כולם מכילים אותו תוכן.</p>
+  </div>
+
+  <div class="downloads-grid">
+    <a class="dl-item" href="../reports/v2/israel-fractal-full-he.pdf"><span class="dl-name">דוח בעברית</span><span class="dl-fmt">PDF · 284K</span></a>
+    <a class="dl-item" href="../reports/israel-fractal-en.pdf"><span class="dl-name">Report in English</span><span class="dl-fmt">PDF</span></a>
+    <a class="dl-item" href="../reports/israel-fractal-ar.pdf"><span class="dl-name">تقرير بالعربية</span><span class="dl-fmt">PDF</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full-he.docx"><span class="dl-name">לעריכה ב־Word</span><span class="dl-fmt">DOCX</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full.pptx"><span class="dl-name">מצגת</span><span class="dl-fmt">PPTX</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full.epub"><span class="dl-name">לקוראים אלקטרוניים</span><span class="dl-fmt">EPUB</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full.md"><span class="dl-name">מקור markdown</span><span class="dl-fmt">MD</span></a>
+    <a class="dl-item" href="https://github.com/udihem78-maker/animated-eureka"><span class="dl-name">כל ארבעים המסמכים</span><span class="dl-fmt">GitHub</span></a>
+  </div>
+</section>
 
 <footer>
-  <div>
-    <p>המחקר נערך בעזרת מתודולוגיית Data Fluidity של אהוד חמלי. המסקנות אינן של Anthropic ואינן מייצגות עמדה פוליטית, אלא מתעדות מצב כפי שהוא עולה מהנתונים.</p>
-    <p style="margin-top: 20px;">
-      מחקר מקור: <a href="https://github.com/udihem78-maker/animated-eureka">animated-eureka</a><br>
-      דיזיין: Hebrew Bauhaus · Frank Ruhl Libre, Assistant, JetBrains Mono<br>
-      מחבר: udihem78@gmail.com
-    </p>
-  </div>
-  <div class="colophon">
-    <p>Colophon</p>
-    <p>Typeset in Frank Ruhl Libre (display),<br>Assistant (text), and JetBrains Mono (metadata).</p>
-    <p style="margin-top: 20px;">Compiled October 2026.</p>
+  <div class="foot-inner">
+    <div>
+      <p>המחקר נערך בעזרת מתודולוגיית Data Fluidity של אהוד חמלי. ההערכות מבוססות על דפוסי התנהגות ציבורית מתועדים ואינן מייצגות עמדה פוליטית.</p>
+      <p style="margin-top: 24px;">
+        מקור: <a href="https://github.com/udihem78-maker/animated-eureka">animated-eureka</a>
+        · מחבר: udihem78@gmail.com
+      </p>
+    </div>
+    <div class="colophon">
+      <p>Set in Frank Ruhl Libre (display),<br>Assistant (text), IBM Plex Mono (metadata).</p>
+      <p style="margin-top: 20px;">Hebrew edition.<br>October 2026.</p>
+    </div>
   </div>
 </footer>
 

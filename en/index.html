@@ -3,335 +3,426 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Israel Fractal · A Diagnosis in Seventeen Measures · 1948—2026</title>
-<meta name="description" content="A holistic research of 78 years of Israeli governance. Israel's F score fell from 100 to 0.6. Thirty-two documents. Seventy-nine thousand measurements.">
+<title>Israel Fractal · Research 1948—2026</title>
+<meta name="description" content="A holistic diagnosis of 78 years of Israeli governance. Israel's F score fell from 100 to 0.6.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #faf8f3;
-    --ink: #0a0a0a;
-    --rule: #c4beb0;
-    --rule-soft: #e3ddd1;
-    --muted: #6b6557;
-    --red: #a01818;
-    --olive: #58632b;
+    --paper: #faf7f0;
+    --paper-dark: #f0ebe0;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --muted: #8b8578;
+    --rule: #d4ccbe;
+    --red: #9d2929;
+    --red-soft: #c84444;
+    --olive: #4a5d1f;
   }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.55;
-  }
+  body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; font-size: 17px; line-height: 1.65; }
+  ::selection { background: var(--red); color: var(--paper); }
 
-  .meta-bar { border-bottom: 1px solid var(--rule); padding: 14px 32px; display: flex; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
-  .meta-bar .brand { color: var(--ink); font-weight: 500; }
-  .meta-bar .langs { display: flex; gap: 20px; }
-  .meta-bar .langs a { color: var(--muted); text-decoration: none; }
-  .meta-bar .langs a:hover { color: var(--ink); }
-  .meta-bar .langs a.active { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+  .topbar { background: var(--ink); color: var(--paper); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  .topbar .mark { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+  .topbar .mark span { color: var(--red-soft); font-style: italic; }
+  .topbar nav { display: flex; gap: 2px; }
+  .topbar nav a { color: var(--muted); text-decoration: none; padding: 6px 14px; border-radius: 2px; transition: all 0.2s; font-weight: 500; }
+  .topbar nav a:hover { color: var(--paper); }
+  .topbar nav a.active { background: var(--red); color: var(--paper); }
 
-  .hero { max-width: 1180px; margin: 0 auto; padding: 80px 32px 60px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: end; }
-  .hero-text { position: relative; }
-  .hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: 0.02em; margin-bottom: 24px; }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 7vw, 96px); font-weight: 500; line-height: 0.95; letter-spacing: -0.02em; color: var(--ink); }
-  .hero-title .q { display: block; color: var(--red); font-style: italic; font-weight: 500; }
-  .hero-lede { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.4; color: var(--ink); margin-top: 28px; max-width: 44ch; font-weight: 400; font-style: italic; }
+  .hero { padding: 100px 40px 80px; max-width: 1040px; margin: 0 auto; }
+  .hero-tag { font-size: 14px; color: var(--red); font-weight: 600; margin-bottom: 32px; letter-spacing: 0.02em; font-family: 'IBM Plex Mono', monospace; }
+  .hero-tag::after { content: ''; display: inline-block; width: 32px; height: 2px; background: var(--red); vertical-align: middle; margin-right: 12px; margin-bottom: 4px; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(56px, 9vw, 128px); font-weight: 500; line-height: 0.95; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 20px; }
+  .hero-title em { font-style: italic; font-weight: 500; color: var(--red); }
+  .hero-lede { font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.4; color: var(--ink-soft); max-width: 46ch; font-weight: 400; margin-top: 36px; font-style: italic; }
+  .hero-lede strong { color: var(--ink); font-weight: 600; font-style: normal; }
 
-  .decline-chart { position: relative; height: 440px; padding: 20px 0; }
-  .decline-chart svg { width: 100%; height: 100%; display: block; }
+  .chart-wrap { max-width: 1040px; margin: 60px auto 100px; padding: 0 40px; }
+  .chart-caption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+  .chart { background: var(--paper); position: relative; height: 540px; width: 100%; }
+  .chart svg { width: 100%; height: 100%; display: block; }
 
-  .index { max-width: 1180px; margin: 40px auto; padding: 32px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
-  .index-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
-  .index-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4px 32px; }
-  .index-list a { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px dotted var(--rule); color: var(--ink); text-decoration: none; font-size: 15px; }
-  .index-list a:hover { color: var(--red); }
-  .index-list a .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  .numbers { background: var(--ink); color: var(--paper); padding: 60px 40px; margin: 60px 0; }
+  .numbers-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+  .num-value { font-family: 'Cormorant Garamond', serif; font-size: 76px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: var(--paper); }
+  .num-value.accent { color: var(--red-soft); font-style: italic; }
+  .num-label { font-size: 14px; color: #a09a8d; margin-top: 14px; font-weight: 400; line-height: 1.45; }
 
-  .stats-band { max-width: 1180px; margin: 60px auto; padding: 0 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-right: 1px solid var(--rule); }
-  .stat { padding: 32px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-left: 1px solid var(--rule); background: var(--paper); }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 700; line-height: 1; color: var(--ink); letter-spacing: -0.02em; }
-  .stat-label { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); margin-top: 12px; font-weight: 500; }
-  .stat.accent .stat-num { color: var(--red); font-style: italic; }
+  section { padding: 80px 0; }
+  section + section { border-top: 1px solid var(--rule); }
 
-  .section-head { max-width: 1180px; margin: 100px auto 32px; padding: 0 32px; display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: baseline; border-bottom: 2px solid var(--ink); padding-bottom: 20px; }
-  .section-head .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
-  .section-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500; line-height: 1.05; color: var(--ink); letter-spacing: -0.01em; }
+  .sec-head { max-width: 1040px; margin: 0 auto 48px; padding: 0 40px; }
+  .sec-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--red); font-weight: 500; margin-bottom: 16px; letter-spacing: 0.02em; }
+  .sec-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; color: var(--ink); max-width: 22ch; }
+  .sec-head p { font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.45; color: var(--ink-soft); max-width: 60ch; margin-top: 18px; font-weight: 400; font-style: italic; }
 
-  .pm-table-wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-  .pm-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  .pm-table th { text-align: left; padding: 14px 16px 10px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--ink); }
-  .pm-table th.right { text-align: right; }
-  .pm-table td { padding: 14px 16px; border-bottom: 1px solid var(--rule-soft); vertical-align: baseline; }
-  .pm-table tr:hover td { background: #f3eee2; }
-  .pm-table .rank-col { width: 50px; color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
-  .pm-table .name-col { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; }
-  .pm-table .years-col { color: var(--muted); font-size: 14px; }
-  .pm-table .score-col { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
-  .pm-table .score-col.s-excellent { color: var(--olive); }
-  .pm-table .score-col.s-good { color: #4a5d1f; }
-  .pm-table .score-col.s-medium { color: var(--muted); }
-  .pm-table .score-col.s-poor { color: #8b5a1a; }
-  .pm-table .score-col.s-critical { color: var(--red); font-weight: 900; font-style: italic; }
-  .pm-table tr.critical td { background: #faeeee; }
+  .pm-table-wrap { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
+  .pm-table { width: 100%; border-collapse: collapse; }
+  .pm-table thead th { text-align: left; padding: 14px 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); font-weight: 500; border-bottom: 2px solid var(--ink); letter-spacing: 0.02em; }
+  .pm-table thead th.score-head { text-align: right; }
+  .pm-table thead th.rank-head { width: 60px; }
+  .pm-table tbody tr { border-bottom: 1px solid var(--rule); transition: background 0.15s; }
+  .pm-table tbody tr:hover { background: var(--paper-dark); }
+  .pm-table td { padding: 20px 0; vertical-align: baseline; }
+  .pm-table td.rank { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted); font-weight: 500; }
+  .pm-table td.name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; letter-spacing: -0.01em; }
+  .pm-table td.years { color: var(--muted); font-size: 14px; font-family: 'IBM Plex Mono', monospace; }
+  .pm-table td.score { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .pm-table td.score.s9 { color: var(--olive); }
+  .pm-table td.score.s7 { color: #5a7030; }
+  .pm-table td.score.s6 { color: var(--ink-soft); }
+  .pm-table td.score.s5 { color: #a06420; }
+  .pm-table td.score.s4 { color: #c84a1a; }
+  .pm-table tr.critical { background: #faecec; }
+  .pm-table tr.critical td.score { color: var(--red); font-style: italic; font-weight: 900; }
 
-  .findings { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-  .finding { display: grid; grid-template-columns: 100px 1fr 180px; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .findings { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
+  .finding { padding: 48px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 100px 1fr; gap: 32px; align-items: start; }
   .finding:last-child { border-bottom: none; }
-  .finding-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; line-height: 1; color: var(--red); font-style: italic; }
-  .finding-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
-  .finding-body p { font-size: 16px; color: var(--ink); line-height: 1.6; max-width: 60ch; }
-  .finding-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-align: right; }
+  .finding-num { font-family: 'Cormorant Garamond', serif; font-size: 96px; font-weight: 700; line-height: 0.85; color: var(--red); font-style: italic; letter-spacing: -0.03em; }
+  .finding h3 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 14px; color: var(--ink); }
+  .finding p { font-size: 18px; line-height: 1.65; color: var(--ink-soft); max-width: 62ch; }
 
-  .address { max-width: 900px; margin: 100px auto; padding: 60px 32px; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
-  .address .big { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 500; line-height: 1.25; color: var(--ink); letter-spacing: -0.01em; font-style: italic; }
-  .address .big strong { font-weight: 700; color: var(--red); font-style: normal; }
-  .address .big .q { display: block; font-size: clamp(48px, 7vw, 80px); font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1; margin-top: 24px; font-style: normal; }
-  .address .attr { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 32px; }
+  .power-map { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
+  .power-row { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+  .power-row:last-child { border-bottom: none; }
+  .power-top { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: baseline; margin-bottom: 24px; }
+  .power-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; line-height: 1.1; letter-spacing: -0.015em; color: var(--ink); }
+  .power-title .count { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 8px; letter-spacing: 0.02em; }
+  .power-stat { font-family: 'Cormorant Garamond', serif; font-size: 76px; font-weight: 700; line-height: 0.9; letter-spacing: -0.03em; text-align: center; min-width: 200px; font-style: italic; }
+  .power-stat.red { color: var(--red); }
+  .power-stat.olive { color: var(--olive); font-style: normal; }
+  .power-stat .unit { display: block; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--muted); font-weight: 500; margin-top: 10px; letter-spacing: 0; font-style: normal; text-align: center; }
+  .power-body { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.45; color: var(--ink); max-width: 62ch; font-weight: 400; font-style: italic; }
+  .power-body em { font-style: normal; color: var(--red); font-weight: 700; }
+  .power-detail { font-size: 15px; line-height: 1.65; color: var(--ink-soft); margin-top: 16px; max-width: 68ch; }
+  .power-names { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 20px; letter-spacing: 0.01em; padding-top: 12px; border-top: 1px dashed var(--rule); }
 
-  .download-bar { max-width: 1180px; margin: 60px auto; padding: 32px; display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .download-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); line-height: 1.6; }
-  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px 32px; }
-  .downloads a { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px dotted var(--rule); text-decoration: none; color: var(--ink); font-size: 15px; }
-  .downloads a:hover { color: var(--red); }
-  .downloads a .format { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  .address-wrap { background: var(--ink); color: var(--paper); padding: 120px 40px; }
+  .address { max-width: 1040px; margin: 0 auto; }
+  .address-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--red-soft); margin-bottom: 40px; letter-spacing: 0.02em; }
+  .address-body { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4.8vw, 60px); line-height: 1.25; font-weight: 400; letter-spacing: -0.015em; max-width: 22ch; font-style: italic; }
+  .address-body strong { color: var(--red-soft); font-weight: 700; font-style: normal; }
+  .address-year { display: block; font-family: 'Cormorant Garamond', serif; font-size: clamp(80px, 14vw, 180px); font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-top: 40px; color: var(--paper); font-style: normal; }
 
-  footer { max-width: 1180px; margin: 0 auto; padding: 60px 32px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; border-top: 2px solid var(--ink); font-size: 13px; color: var(--muted); }
-  footer a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
-  footer a:hover { text-decoration-color: var(--red); }
-  footer .colophon { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .downloads-wrap { padding: 80px 0; }
+  .downloads-grid { max-width: 1040px; margin: 40px auto 0; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; }
+  .dl-item { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); transition: all 0.2s; }
+  .dl-item:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 20px; }
+  .dl-item:nth-child(even) { padding-left: 20px; }
+  .dl-item:hover { color: var(--red); background: var(--paper-dark); }
+  .dl-item .dl-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; }
+  .dl-item .dl-fmt { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
 
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
-    .decline-chart { height: 320px; }
-    .index { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
-    .stats-band { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
-    .section-head { grid-template-columns: 1fr; padding: 0 20px; gap: 12px; margin-top: 60px; }
-    .finding { grid-template-columns: 60px 1fr; }
-    .finding-tag { grid-column: 1 / -1; text-align: left; }
-    .pm-table-wrap { padding: 0 20px; }
-    .pm-table .years-col { display: none; }
-    .download-bar { grid-template-columns: 1fr; padding: 20px; }
-    footer { grid-template-columns: 1fr; padding: 40px 20px; }
+  footer { background: var(--ink); color: var(--muted); padding: 60px 40px 40px; margin-top: 60px; font-size: 14px; line-height: 1.75; }
+  footer .foot-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
+  footer p { max-width: 56ch; }
+  footer a { color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--muted); }
+  footer a:hover { border-color: var(--red-soft); color: var(--red-soft); }
+  footer .colophon { font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.8; }
+
+  @media (max-width: 780px) {
+    .topbar { padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+    .hero, .chart-wrap, .sec-head, .pm-table-wrap, .findings, .power-map, .downloads-grid { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 60px; padding-bottom: 40px; }
+    .hero-title { font-size: 56px; }
+    .hero-lede { font-size: 22px; margin-top: 24px; }
+    .chart { height: 300px; }
+    .numbers-inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .num-value { font-size: 48px; }
+    .sec-head h2 { font-size: 38px; }
+    .sec-head p { font-size: 18px; }
+    .pm-table td.years { display: none; }
+    .pm-table td.name { font-size: 18px; }
+    .pm-table td.score { font-size: 28px; }
+    .finding { grid-template-columns: 60px 1fr; gap: 20px; padding: 32px 0; }
+    .finding-num { font-size: 60px; }
+    .finding h3 { font-size: 26px; }
+    .finding p { font-size: 16px; }
+    .power-top { grid-template-columns: 1fr; gap: 16px; }
+    .power-stat { text-align: left; min-width: 0; font-size: 56px; }
+    .power-stat .unit { text-align: left; }
+    .power-title { font-size: 28px; }
+    .power-body { font-size: 20px; }
+    .address-wrap { padding: 80px 20px; }
+    footer { padding: 40px 20px 30px; }
+    footer .foot-inner { grid-template-columns: 1fr; }
+    .dl-item:nth-child(odd) { border-right: none; padding-right: 0; }
+    .dl-item:nth-child(even) { padding-left: 0; }
   }
 </style>
 </head>
 <body>
 
-<nav class="meta-bar">
-  <span class="brand">Israel Fractal · Research 1948—2026</span>
-  <div class="langs">
+<div class="topbar">
+  <div class="mark">Israel <span>Fractal</span></div>
+  <nav>
     <a href="../he/">עברית</a>
     <a href="." class="active">English</a>
     <a href="../ar/">العربية</a>
-  </div>
-</nav>
+  </nav>
+</div>
 
 <section class="hero">
-  <div class="hero-text">
-    <div class="hero-eyebrow">Data Fluidity · Hemli DUR · F = D × U / R</div>
-    <h1 class="hero-title">
-      Seventy-eight
-      <span class="q">years of decline.</span>
-    </h1>
-    <p class="hero-lede">
-      Israel's F score fell from 100 in 1948 to 0.6 in 2026. A hundred and seventy times smaller.
-      This research maps every prime minister, every institution, every sector — through seventeen measures.
-    </p>
-  </div>
+  <div class="hero-tag">Research · F = D×U/R · Hemli DUR</div>
+  <h1 class="hero-title">Seventy-eight<br><em>years of decline.</em></h1>
+  <p class="hero-lede">
+    Israel's F score fell from <strong>100</strong> in 1948 to <strong>0.6</strong> in 2026.
+    A hundred and seventy times smaller. This research maps every prime minister,
+    every institution, every sector — through seventeen measures.
+  </p>
+</section>
 
-  <div class="decline-chart">
-    <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" aria-labelledby="chart-title" role="img">
-      <title id="chart-title">Israel's F score, 1948 to 2026</title>
-      <g stroke="#e3ddd1" stroke-width="1" stroke-dasharray="2,4">
-        <line x1="40" y1="60" x2="590" y2="60"/>
-        <line x1="40" y1="160" x2="590" y2="160"/>
-        <line x1="40" y1="260" x2="590" y2="260"/>
-        <line x1="40" y1="360" x2="590" y2="360"/>
+<div class="chart-wrap">
+  <div class="chart-caption">Fig. 01 · F score of Israel, 1948—2026 · source: Data Fluidity analysis</div>
+  <div class="chart">
+    <svg viewBox="0 0 1000 500" preserveAspectRatio="none">
+      <g stroke="#d4ccbe" stroke-width="1" stroke-dasharray="2,4">
+        <line x1="60" y1="40" x2="960" y2="40"/><line x1="60" y1="130" x2="960" y2="130"/>
+        <line x1="60" y1="220" x2="960" y2="220"/><line x1="60" y1="310" x2="960" y2="310"/>
       </g>
-      <g fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">
-        <text x="30" y="64" text-anchor="end">100</text>
-        <text x="30" y="164" text-anchor="end">75</text>
-        <text x="30" y="264" text-anchor="end">50</text>
-        <text x="30" y="364" text-anchor="end">25</text>
-        <text x="30" y="408" text-anchor="end">0</text>
+      <g fill="#8b8578" font-family="IBM Plex Mono, monospace" font-size="13">
+        <text x="50" y="46" text-anchor="end">100</text>
+        <text x="50" y="136" text-anchor="end">75</text>
+        <text x="50" y="226" text-anchor="end">50</text>
+        <text x="50" y="316" text-anchor="end">25</text>
+        <text x="50" y="406" text-anchor="end">0</text>
       </g>
-      <line x1="40" y1="400" x2="590" y2="400" stroke="#0a0a0a" stroke-width="1.5"/>
-      <path d="M 60 60 L 160 162 L 240 240 L 320 290 L 400 325 L 460 350 L 530 390" fill="none" stroke="#0a0a0a" stroke-width="2.5"/>
-      <g font-family="Inter, sans-serif" font-size="12" fill="#0a0a0a">
-        <circle cx="60" cy="60" r="5" fill="#0a0a0a"/><text x="60" y="42" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" font-weight="700">100</text>
-        <text x="60" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1948</text>
-        <circle cx="160" cy="162" r="4" fill="#0a0a0a"/><text x="160" y="146" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700">27</text>
-        <text x="160" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1967</text>
-        <circle cx="240" cy="240" r="4" fill="#0a0a0a"/><text x="240" y="224" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700">11</text>
-        <text x="240" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1977</text>
-        <circle cx="320" cy="290" r="4" fill="#0a0a0a"/><text x="320" y="274" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700">13</text>
-        <text x="320" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">1995</text>
-        <circle cx="400" cy="325" r="4" fill="#0a0a0a"/><text x="400" y="309" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700">4.3</text>
-        <text x="400" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">2009</text>
-        <circle cx="460" cy="350" r="4" fill="#0a0a0a"/>
-        <text x="460" y="420" text-anchor="middle" fill="#6b6557" font-family="JetBrains Mono, monospace" font-size="10">2022</text>
-        <circle cx="530" cy="390" r="7" fill="#a01818"/>
-        <text x="530" y="378" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" font-weight="900" font-style="italic" fill="#a01818">0.6</text>
-        <text x="530" y="420" text-anchor="middle" fill="#a01818" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2026</text>
+      <line x1="60" y1="400" x2="960" y2="400" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 90 40 L 240 140 L 390 230 L 540 280 L 690 320 L 820 350 L 920 395" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+      <path d="M 90 40 L 240 140 L 390 230 L 540 280 L 690 320 L 820 350 L 920 395 L 920 400 L 90 400 Z" fill="#9d2929" fill-opacity="0.06"/>
+      <circle cx="90" cy="40" r="6" fill="#1a1a1a"/><circle cx="240" cy="140" r="5" fill="#1a1a1a"/>
+      <circle cx="390" cy="230" r="5" fill="#1a1a1a"/><circle cx="540" cy="280" r="5" fill="#1a1a1a"/>
+      <circle cx="690" cy="320" r="5" fill="#1a1a1a"/><circle cx="820" cy="350" r="5" fill="#1a1a1a"/>
+      <circle cx="920" cy="395" r="10" fill="#9d2929"/>
+      <g font-family="Cormorant Garamond, serif" font-weight="700" fill="#1a1a1a">
+        <text x="90" y="25" text-anchor="middle" font-size="24">100</text>
+        <text x="240" y="128" text-anchor="middle" font-size="20">27</text>
+        <text x="390" y="218" text-anchor="middle" font-size="20">11</text>
+        <text x="540" y="268" text-anchor="middle" font-size="20">13</text>
+        <text x="690" y="308" text-anchor="middle" font-size="18">4.3</text>
+        <text x="820" y="338" text-anchor="middle" font-size="14" fill="#8b8578">2.5</text>
       </g>
-      <g font-family="Cormorant Garamond, serif" font-size="12" fill="#6b6557" font-style="italic">
-        <text x="68" y="80">Ben-Gurion</text>
-        <text x="168" y="182">Eshkol</text>
-        <text x="248" y="260">Begin</text>
-        <text x="328" y="310">Rabin</text>
-        <text x="408" y="345">Netanyahu 2</text>
-        <text x="470" y="382" fill="#a01818" font-weight="700">Netanyahu 6</text>
+      <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#8b8578">
+        <text x="90" y="422" text-anchor="middle">1948</text>
+        <text x="240" y="422" text-anchor="middle">1967</text>
+        <text x="390" y="422" text-anchor="middle">1977</text>
+        <text x="540" y="422" text-anchor="middle">1995</text>
+        <text x="690" y="422" text-anchor="middle">2009</text>
+        <text x="820" y="422" text-anchor="middle">2022</text>
+      </g>
+      <g font-family="Cormorant Garamond, serif" font-size="14" font-style="italic" fill="#4a4a4a">
+        <text x="90" y="62" text-anchor="middle">Ben-Gurion</text>
+        <text x="240" y="162" text-anchor="middle">Eshkol</text>
+        <text x="390" y="252" text-anchor="middle">Begin</text>
+        <text x="540" y="302" text-anchor="middle">Rabin</text>
+        <text x="690" y="342" text-anchor="middle">Netanyahu 2</text>
+      </g>
+      <g>
+        <line x1="920" y1="395" x2="920" y2="438" stroke="#9d2929" stroke-width="1"/>
+        <text x="920" y="455" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="900" font-style="italic" font-size="34" fill="#9d2929">0.6</text>
+        <text x="920" y="476" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#9d2929">Netanyahu 6 · 2026</text>
       </g>
     </svg>
   </div>
-</section>
-
-<nav class="index" aria-label="Table of contents">
-  <div class="index-label">Contents</div>
-  <div class="index-list">
-    <a href="#pms"><span>Thirteen prime ministers</span><span class="num">01</span></a>
-    <a href="#findings"><span>Five critical findings</span><span class="num">02</span></a>
-    <a href="#address"><span>A direct address</span><span class="num">03</span></a>
-    <a href="#reports"><span>Download the research</span><span class="num">04</span></a>
-  </div>
-</nav>
-
-<section class="stats-band" aria-label="Scope">
-  <div class="stat"><div class="stat-num">32</div><div class="stat-label">Research documents</div></div>
-  <div class="stat"><div class="stat-num">79,500</div><div class="stat-label">Data points measured</div></div>
-  <div class="stat"><div class="stat-num">1,250</div><div class="stat-label">Leaders ranked</div></div>
-  <div class="stat accent"><div class="stat-num">×170</div><div class="stat-label">F decline Ben-Gurion → Netanyahu 6</div></div>
-</section>
-
-<header class="section-head" id="pms">
-  <div class="section-num">01 · Prime ministers</div>
-  <h2>Every one of the thirteen, scored.</h2>
-</header>
-
-<div class="pm-table-wrap">
-  <table class="pm-table">
-    <thead><tr><th class="rank-col">#</th><th>Prime Minister</th><th>Term</th><th class="right">Score</th></tr></thead>
-    <tbody>
-      <tr><td class="rank-col">01</td><td class="name-col">David Ben-Gurion</td><td class="years-col">1948—1963 · 14 years</td><td class="score-col s-excellent">9.5</td></tr>
-      <tr><td class="rank-col">02</td><td class="name-col">Levi Eshkol</td><td class="years-col">1963—1969 · 7 years</td><td class="score-col s-excellent">8.9</td></tr>
-      <tr><td class="rank-col">03</td><td class="name-col">Yitzhak Rabin, second term</td><td class="years-col">1992—1995 · 3 years</td><td class="score-col s-excellent">8.2</td></tr>
-      <tr><td class="rank-col">04</td><td class="name-col">Moshe Sharett</td><td class="years-col">1954—1955 · 1.2 years</td><td class="score-col s-good">7.5</td></tr>
-      <tr><td class="rank-col">05</td><td class="name-col">Yitzhak Rabin, first term</td><td class="years-col">1974—1977 · 3 years</td><td class="score-col s-good">7.2</td></tr>
-      <tr><td class="rank-col">06</td><td class="name-col">Naftali Bennett and Yair Lapid</td><td class="years-col">2021—2022 · 1.5 years</td><td class="score-col s-good">7.0</td></tr>
-      <tr><td class="rank-col">07</td><td class="name-col">Ariel Sharon</td><td class="years-col">2001—2006 · 5 years</td><td class="score-col s-good">6.5</td></tr>
-      <tr><td class="rank-col">08</td><td class="name-col">Menachem Begin</td><td class="years-col">1977—1983 · 6.3 years</td><td class="score-col s-good">6.3</td></tr>
-      <tr><td class="rank-col">09</td><td class="name-col">Golda Meir</td><td class="years-col">1969—1974 · 5 years</td><td class="score-col s-medium">6.2</td></tr>
-      <tr><td class="rank-col">10</td><td class="name-col">Shimon Peres</td><td class="years-col">1984—1996 · 2.7 years</td><td class="score-col s-medium">6.0</td></tr>
-      <tr><td class="rank-col">11</td><td class="name-col">Yitzhak Shamir</td><td class="years-col">1983—1992 · 4.7 years</td><td class="score-col s-medium">5.5</td></tr>
-      <tr><td class="rank-col">12</td><td class="name-col">Ehud Barak</td><td class="years-col">1999—2001 · 1.6 years</td><td class="score-col s-medium">5.3</td></tr>
-      <tr><td class="rank-col">13</td><td class="name-col">Ehud Olmert</td><td class="years-col">2006—2009 · 2.9 years</td><td class="score-col s-poor">4.8</td></tr>
-      <tr><td class="rank-col">14</td><td class="name-col">Benjamin Netanyahu, first term</td><td class="years-col">1996—1999 · 3 years</td><td class="score-col s-poor">4.6</td></tr>
-      <tr><td class="rank-col">15</td><td class="name-col">Benjamin Netanyahu, terms two through five</td><td class="years-col">2009—2021 · 12 years</td><td class="score-col s-poor">3.9</td></tr>
-      <tr class="critical"><td class="rank-col">16</td><td class="name-col">Benjamin Netanyahu, sixth term</td><td class="years-col">2022—2026 · 4 years</td><td class="score-col s-critical">2.0</td></tr>
-    </tbody>
-  </table>
 </div>
 
-<header class="section-head" id="findings">
-  <div class="section-num">02 · Findings</div>
-  <h2>Five diagnoses the research arrives at.</h2>
-</header>
-
-<div class="findings">
-  <article class="finding">
-    <div class="finding-num">1</div>
-    <div class="finding-body">
-      <h3>A fractal gap of one hundred and seventy.</h3>
-      <p>In seventy-eight years, from the provisional government to Netanyahu's sixth term, Israel's F score fell from 100 to 0.6. The curve is exponential — this is a trend, not an accident.</p>
-    </div>
-    <div class="finding-tag">F metric · DUR</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">2</div>
-    <div class="finding-body">
-      <h3>A third of institutions already in collapse.</h3>
-      <p>Of fifteen public systems analyzed, six operate below their collapse threshold: the police (F=5), Southern Command (8), the state prosecution (8), the Rabbinate (8), education (10), and welfare (10).</p>
-    </div>
-    <div class="finding-tag">Institutions</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">3</div>
-    <div class="finding-body">
-      <h3>Sixty-five percent of sectors — in collapse.</h3>
-      <p>Palestinians in Gaza live at F=0.1. Bedouin at F=1. Native secular Israelis at F=1.7. Internal variance: two hundred and sixty-seven times. Israel-Palestine is the most fragmented society in the Western world.</p>
-    </div>
-    <div class="finding-tag">Sectors · equity</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">4</div>
-    <div class="finding-body">
-      <h3>Cumulative damage: two trillion shekels.</h3>
-      <p>Nineteen years of Benjamin Netanyahu's rule. Cumulative net fiscal impact: minus 666 billion. Indirect damage: minus 210 billion. Debt accumulated: plus 735 billion. In total, ninety-three percent of a single year's GDP.</p>
-    </div>
-    <div class="finding-tag">Fiscal</div>
-  </article>
-
-  <article class="finding">
-    <div class="finding-num">5</div>
-    <div class="finding-body">
-      <h3>The citizen is fourteen times stronger than the government.</h3>
-      <p>The average Israeli citizen operates at F=8.5. The current government, at F=0.6. The gap is substantial. The fate of Israel is not in the hands of those who govern. It is in the hands of those who elect them.</p>
-    </div>
-    <div class="finding-tag">Citizen · 2027</div>
-  </article>
+<div class="numbers">
+  <div class="numbers-inner">
+    <div><div class="num-value">40</div><div class="num-label">Research documents</div></div>
+    <div><div class="num-value">84K</div><div class="num-label">Quantitative measurements</div></div>
+    <div><div class="num-value">1,250</div><div class="num-label">Leaders ranked</div></div>
+    <div><div class="num-value accent">170×</div><div class="num-label">Fractal gap · Ben-Gurion to Netanyahu 6</div></div>
+  </div>
 </div>
 
-<section class="address" id="address">
-  <div class="big">
-    You are stronger than your government.<br>
-    Fourteen times stronger, by the measurements.<br>
-    The real question is not whether Israel can recover.<br>
-    The question is <strong>whether you will choose to</strong>.
-    <span class="q">2027.</span>
+<section>
+  <div class="sec-head">
+    <div class="sec-eyebrow">01 · Prime Ministers</div>
+    <h2>Every one of the thirteen, scored.</h2>
+    <p>Of 13 historical prime ministers, 16 entries — Ben-Gurion leads at 9.5. Netanyahu 6 at the bottom, 2.0.</p>
   </div>
-  <div class="attr">— Finding 5 · Israel Fractal · October 2026</div>
+  <div class="pm-table-wrap">
+    <table class="pm-table">
+      <thead><tr><th class="rank-head">#</th><th>Prime Minister</th><th>Term</th><th class="score-head">Score</th></tr></thead>
+      <tbody>
+        <tr><td class="rank">01</td><td class="name">David Ben-Gurion</td><td class="years">1948—1963</td><td class="score s9">9.5</td></tr>
+        <tr><td class="rank">02</td><td class="name">Levi Eshkol</td><td class="years">1963—1969</td><td class="score s9">8.9</td></tr>
+        <tr><td class="rank">03</td><td class="name">Yitzhak Rabin, 2nd term</td><td class="years">1992—1995</td><td class="score s9">8.2</td></tr>
+        <tr><td class="rank">04</td><td class="name">Moshe Sharett</td><td class="years">1954—1955</td><td class="score s7">7.5</td></tr>
+        <tr><td class="rank">05</td><td class="name">Yitzhak Rabin, 1st term</td><td class="years">1974—1977</td><td class="score s7">7.2</td></tr>
+        <tr><td class="rank">06</td><td class="name">Naftali Bennett and Yair Lapid</td><td class="years">2021—2022</td><td class="score s7">7.0</td></tr>
+        <tr><td class="rank">07</td><td class="name">Ariel Sharon</td><td class="years">2001—2006</td><td class="score s7">6.5</td></tr>
+        <tr><td class="rank">08</td><td class="name">Menachem Begin</td><td class="years">1977—1983</td><td class="score s7">6.3</td></tr>
+        <tr><td class="rank">09</td><td class="name">Golda Meir</td><td class="years">1969—1974</td><td class="score s6">6.2</td></tr>
+        <tr><td class="rank">10</td><td class="name">Shimon Peres</td><td class="years">1984—1996</td><td class="score s6">6.0</td></tr>
+        <tr><td class="rank">11</td><td class="name">Yitzhak Shamir</td><td class="years">1983—1992</td><td class="score s6">5.5</td></tr>
+        <tr><td class="rank">12</td><td class="name">Ehud Barak</td><td class="years">1999—2001</td><td class="score s6">5.3</td></tr>
+        <tr><td class="rank">13</td><td class="name">Ehud Olmert</td><td class="years">2006—2009</td><td class="score s5">4.8</td></tr>
+        <tr><td class="rank">14</td><td class="name">Benjamin Netanyahu, 1st term</td><td class="years">1996—1999</td><td class="score s5">4.6</td></tr>
+        <tr><td class="rank">15</td><td class="name">Benjamin Netanyahu, terms 2—5</td><td class="years">2009—2021</td><td class="score s4">3.9</td></tr>
+        <tr class="critical"><td class="rank">16</td><td class="name">Benjamin Netanyahu, 6th term</td><td class="years">2022—2026</td><td class="score">2.0</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
-<header class="section-head" id="reports">
-  <div class="section-num">04 · Downloads</div>
-  <h2>The research, to read or to pass on.</h2>
-</header>
+<section>
+  <div class="sec-head">
+    <div class="sec-eyebrow">02 · Findings</div>
+    <h2>Five critical diagnoses.</h2>
+  </div>
+  <div class="findings">
+    <article class="finding">
+      <div class="finding-num">1</div>
+      <div>
+        <h3>A fractal gap of one hundred and seventy.</h3>
+        <p>In seventy-eight years, from the provisional government to Netanyahu's sixth term, Israel's F score fell from 100 to 0.6. The curve is exponential — this is a trend, not an accident.</p>
+      </div>
+    </article>
+    <article class="finding">
+      <div class="finding-num">2</div>
+      <div>
+        <h3>A third of institutions already in collapse.</h3>
+        <p>Of fifteen public systems analyzed, six operate below their collapse threshold: the police (F=5), Southern Command (8), the state prosecution (8), the Rabbinate (8), education (10), and welfare (10).</p>
+      </div>
+    </article>
+    <article class="finding">
+      <div class="finding-num">3</div>
+      <div>
+        <h3>Sixty-five percent of sectors — in collapse.</h3>
+        <p>Palestinians in Gaza live at F=0.1. Bedouin at F=1. Native secular Israelis at F=1.7. Internal variance: two hundred and sixty-seven times. Israel-Palestine is the most fragmented society in the Western world.</p>
+      </div>
+    </article>
+    <article class="finding">
+      <div class="finding-num">4</div>
+      <div>
+        <h3>Cumulative damage: two trillion shekels.</h3>
+        <p>Nineteen years of Benjamin Netanyahu's rule. Cumulative net fiscal impact: minus 666 billion. Indirect damage: minus 210 billion. Debt accumulated: 735 billion. Total: ninety-three percent of one year's GDP.</p>
+      </div>
+    </article>
+    <article class="finding">
+      <div class="finding-num">5</div>
+      <div>
+        <h3>The citizen is fourteen times stronger than the government.</h3>
+        <p>The average Israeli citizen operates at F=8.5. The current government, at F=0.6. The gap is substantial. The fate of Israel is not in the hands of those who govern. It is in the hands of those who elect them.</p>
+      </div>
+    </article>
+  </div>
+</section>
 
-<div class="download-bar">
-  <div class="download-label">The master report, in seven formats.<br>All contain the same content.</div>
-  <div class="downloads">
-    <a href="../reports/israel-fractal-en.pdf"><span>Report in English</span><span class="format">PDF · 321K</span></a>
-    <a href="../reports/israel-fractal-he.pdf"><span>דוח בעברית</span><span class="format">PDF · 297K</span></a>
-    <a href="../reports/israel-fractal-ar.pdf"><span>تقرير بالعربية</span><span class="format">PDF · 578K</span></a>
-    <a href="../reports/israel-fractal-en.docx"><span>Edit in Word</span><span class="format">DOCX</span></a>
-    <a href="../reports/israel-fractal.pptx"><span>Presentation</span><span class="format">PPTX</span></a>
-    <a href="../reports/israel-fractal.epub"><span>For e-readers</span><span class="format">EPUB</span></a>
-    <a href="../reports/israel-fractal.md"><span>Source</span><span class="format">MD</span></a>
-    <a href="https://github.com/udihem78-maker/animated-eureka"><span>All 32 documents</span><span class="format">GitHub</span></a>
+<section>
+  <div class="sec-head">
+    <div class="sec-eyebrow">03 · Power Map</div>
+    <h2>Who controls what. Without masks.</h2>
+    <p>Six domains, mapped in full. Names from open sources only.</p>
+  </div>
+  <div class="power-map">
+
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">Media<span class="count">6 owners · 85% of consumption</span></div>
+        <div class="power-stat red">85%<span class="unit">News consumption held by six owners</span></div>
+      </div>
+      <p class="power-body">Six owners control <em>85%</em> of the news consumption of ten million Israelis. Professional media averages 7.5. Channel 14 scores 2.5.</p>
+      <p class="power-detail">The "substance focus" index of news dropped from 85% in 1965 to 30% in 2026. Language polarity grew 2.5× since 1990.</p>
+      <div class="power-names">Adelson · Elovitch (collapsed) · Milchen · Mozes · Shocken · Keshet+Reshet</div>
+    </div>
+
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">Capital & Banks<span class="count">50 capital owners · 5 banks</span></div>
+        <div class="power-stat red">0.86<span class="unit">Banking NCR · extract more than contribute</span></div>
+      </div>
+      <p class="power-body">Five banks hold <em>93%</em> of banking and collect ₪21 billion in excess fees per year — ten times the British equivalent.</p>
+      <p class="power-detail">Fifty central capital owners. Private capital in 2015—2025 elections: 600M+ ILS. Cases 1000, 2000, 4000, 3000 — some convicted.</p>
+      <div class="power-names">Ofer · Milchen · Adelson heirs · Packer · Blavatnik · Tshuva · Sagi</div>
+    </div>
+
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">Law & "The Club"<span class="count">15 Supreme Court · 20 top lawyers</span></div>
+        <div class="power-stat red">2.57×<span class="unit">Conviction gap · Public Defender vs the Club</span></div>
+      </div>
+      <p class="power-body">Twenty lawyers represent <em>80% of capital owners and politicians</em>. Their conviction rate: 35%. Public defender: 90%. Bedouin: 99%.</p>
+      <p class="power-detail">The Supreme Court held under judicial overhaul — 75% of its rulings against government 37. Fractal justice law: conviction% = 100% − (legal investment × 0.015).</p>
+      <div class="power-names">Caspi · Yaniv · Chen · Haddad · Ben-Zur · Shimron (convicted) · Agmon · Totonji</div>
+    </div>
+
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">Opinion Leaders<span class="count">500 voices · 10M opinions</span></div>
+        <div class="power-stat red">8.5<span class="unit">Discourse polarity · out of 10 · 3.0 in 1990</span></div>
+      </div>
+      <p class="power-body"><em>Five hundred voices</em> shape the public opinion of ten million Israelis. 20% of them generate 80% of distribution.</p>
+      <p class="power-detail">Incitement market: 1.5—2 billion ILS per year. No more national dialogue — each public consumes its own media.</p>
+    </div>
+
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">100 Largest Companies<span class="count">NCR · contribution vs extraction</span></div>
+        <div class="power-stat olive">12.8×<span class="unit">Hi-tech contributes 12.8× what it extracts</span></div>
+      </div>
+      <p class="power-body"><em>NICE</em> ranks first (NCR 29.1), <em>Check Point</em> (20.2), <em>Teva</em> (14.4). At the bottom: Israel Railways (0.75), Bank Hapoalim (0.77).</p>
+      <p class="power-detail">Lost potential: 23 billion ILS per year if the oligopoly falls to NCR 2. Concentration law: as the sector concentrates, NCR drops.</p>
+      <div class="power-names">NICE · Check Point · Teva · Elbit · ICL · Tower · Israel Electric Corp</div>
+    </div>
+
+    <div class="power-row">
+      <div class="power-top">
+        <div class="power-title">Unions & NGOs<span class="count">30,000 NGOs · ₪45B budget</span></div>
+        <div class="power-stat red">2,125×<span class="unit">Kohelet effect · 40M budget, 85B damage</span></div>
+      </div>
+      <p class="power-body"><em>Latet, Yad Sarah, Pitchon Lev</em> contribute NCR 28—32. Kohelet Policy Forum — a 40 million budget caused 85 billion in judicial-overhaul damage.</p>
+      <p class="power-detail">Fifty NGOs with NCR&lt;1 extract 8 billion ILS per year from the public. Haredi education networks (Al-HaMa'ayan, Chinuch Atzmai) score 0.5.</p>
+      <div class="power-names">Latet · Yad Sarah · Pitchon Lev · Brothers in Arms · Yad Vashem · Kohelet · Al-HaMa'ayan</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="address-wrap">
+  <div class="address">
+    <div class="address-eyebrow">04 · The question</div>
+    <div class="address-body">
+      You are stronger than your government — fourteen times stronger, by the research. The real question is not whether Israel can recover. It is <strong>whether you will choose to</strong>.
+      <span class="address-year">2027.</span>
+    </div>
   </div>
 </div>
+
+<section class="downloads-wrap">
+  <div class="sec-head">
+    <div class="sec-eyebrow">05 · Reports</div>
+    <h2>The research — to read, to edit, to pass on.</h2>
+    <p>The master report is available in seven formats. All contain the same content.</p>
+  </div>
+  <div class="downloads-grid">
+    <a class="dl-item" href="../reports/israel-fractal-en.pdf"><span class="dl-name">Report in English</span><span class="dl-fmt">PDF</span></a>
+    <a class="dl-item" href="../reports/israel-fractal-he.pdf"><span class="dl-name">דוח בעברית</span><span class="dl-fmt">PDF</span></a>
+    <a class="dl-item" href="../reports/israel-fractal-ar.pdf"><span class="dl-name">تقرير بالعربية</span><span class="dl-fmt">PDF</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full-he.docx"><span class="dl-name">Edit in Word</span><span class="dl-fmt">DOCX</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full.pptx"><span class="dl-name">Presentation</span><span class="dl-fmt">PPTX</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full.epub"><span class="dl-name">For e-readers</span><span class="dl-fmt">EPUB</span></a>
+    <a class="dl-item" href="../reports/v2/israel-fractal-full.md"><span class="dl-name">Markdown source</span><span class="dl-fmt">MD</span></a>
+    <a class="dl-item" href="https://github.com/udihem78-maker/animated-eureka"><span class="dl-name">All forty documents</span><span class="dl-fmt">GitHub</span></a>
+  </div>
+</section>
 
 <footer>
-  <div>
-    <p>The research is conducted using the Data Fluidity methodology by Ehud Hemli. Conclusions are not those of Anthropic and do not represent a political position — they document a situation as it emerges from the data.</p>
-    <p style="margin-top: 20px;">
-      Source research: <a href="https://github.com/udihem78-maker/animated-eureka">animated-eureka</a><br>
-      Design: Cormorant Garamond (display), Inter (text), JetBrains Mono (metadata)<br>
-      Author: udihem78@gmail.com
-    </p>
-  </div>
-  <div class="colophon">
-    <p>Colophon</p>
-    <p>Typeset in Cormorant Garamond, Inter, and JetBrains Mono.</p>
-    <p style="margin-top: 20px;">Compiled October 2026.</p>
+  <div class="foot-inner">
+    <div>
+      <p>Research conducted using Ehud Hemli's Data Fluidity methodology. Assessments are based on documented public behavior patterns and do not represent a political position.</p>
+      <p style="margin-top: 24px;">Source: <a href="https://github.com/udihem78-maker/animated-eureka">animated-eureka</a> · Author: udihem78@gmail.com</p>
+    </div>
+    <div class="colophon">
+      <p>Set in Cormorant Garamond (display),<br>Inter (text), IBM Plex Mono (metadata).</p>
+      <p style="margin-top: 20px;">English edition.<br>October 2026.</p>
+    </div>
   </div>
 </footer>
 
