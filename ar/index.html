@@ -87,6 +87,24 @@
   .scope li { font-size:14px; padding:4px 0; line-height:1.6; }
   .scope li b { font-family:'IBM Plex Mono',monospace; color:var(--ink); font-weight:600; display:inline-block; min-width:60px; direction:ltr; }
   .limits { font-size:13.5px; color:var(--muted); max-width:68ch; padding:12px 16px; border-right:2px solid var(--rule); background:#fafafa; }
+  .process-list { list-style:none; counter-reset:proc; margin:10px 0 24px; padding:0; }
+  .process-list li { counter-increment:proc; padding:12px 0; border-bottom:1px solid var(--rule-light); font-size:14.5px; line-height:1.7; display:grid; grid-template-columns:44px 1fr; gap:14px; max-width:70ch; }
+  .process-list li:last-child { border-bottom:none; }
+  .process-list li::before { content:counter(proc,decimal-leading-zero); font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); padding-top:3px; direction:ltr; text-align:right; }
+  .process-list li strong { color:var(--ink); font-weight:600; }
+  .explainer-table { width:100%; border-collapse:collapse; font-size:14px; margin:16px 0 20px; }
+  .explainer-table th { text-align:right; padding:10px 12px; background:var(--panel); font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--muted); border-bottom:1px solid var(--ink); vertical-align:baseline; }
+  .explainer-table td { padding:12px; border-bottom:1px solid var(--rule-light); vertical-align:baseline; font-size:14px; line-height:1.65; }
+  .explainer-table td.var { width:160px; direction:ltr; text-align:right; padding-right:0; }
+  .explainer-table td.var .metric { font-size:13px; padding:4px 10px; }
+  .explainer-table .high { color:var(--olive); }
+  .explainer-table .low { color:var(--accent); }
+  .intro-grid { display:grid; grid-template-columns:auto 1fr; gap:10px 20px; margin:10px 0 18px; max-width:72ch; }
+  .intro-grid dt { font-weight:600; color:var(--ink); font-size:14.5px; padding-top:2px; white-space:nowrap; }
+  .intro-grid dd { font-size:14.5px; line-height:1.7; color:var(--text); padding-bottom:8px; border-bottom:1px solid var(--rule-light); }
+  .intro-grid dd:last-child { border-bottom:none; }
+  .divider { border:none; border-top:2px solid var(--ink); margin:48px 0 32px; padding:0; text-align:center; position:relative; }
+  .divider::after { content:"النتائج"; position:absolute; top:-10px; right:50%; transform:translateX(50%); background:var(--bg); padding:0 16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--muted); }
   .kv { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--rule); margin:16px 0 32px; }
   .kv .kv-cell { padding:16px 18px; border-left:1px solid var(--rule); }
   .kv .kv-cell:first-child { border-left:none; }
@@ -138,71 +156,130 @@
 <main>
 
 <div class="doc-title">
-  <div class="meta">V2 · OCT 2026 · 40 docs · F = D×U/R</div>
+  <div class="meta">V2 · OCT 2026 · 40 docs · 16 primary sources · MIT license</div>
   <h1>إسرائيل 1948—2026: قياس فراكتالي للأداء الحكومي</h1>
-  <div class="subtitle">تقرير شامل عن 78 عاماً من الحكم · 40 وثيقة · 84,000 نقطة قياس</div>
+  <div class="subtitle">بحث أكاديمي مستقل · منهجية Data Fluidity · 84,100 نقطة قياس</div>
 </div>
 
 <div class="abstract">
   <div class="abs-label">ملخص</div>
   <p>
-    يفحص هذا البحث جميع رؤساء الوزراء الثلاثة عشر، و15 منظومة عامة، و48 قطاعاً اجتماعياً،
-    و100 مؤسسة اقتصادية، باستخدام منهجية Data Fluidity (الحملي). انخفضت درجة
-    <strong>F</strong> لإسرائيل من <span class="num">100</span> عام 1948 إلى
-    <span class="num">0.6</span> عام 2026 — انخفاض بمعدل <span class="num">×170</span>.
-    ثلث المؤسسات تعمل تحت نقطة الانهيار؛ <span class="num">65%</span> من القطاعات في حالة انهيار.
+    يطبق هذا البحث منهجية <strong>Data Fluidity</strong> التي طوّرها إيهود حملي لقياس
+    الأداء الحكومي على المستوى المنظومي. درجة F (سيولة القيمة؛
+    <span class="num">F = D × U / R</span>) تُحسب لـ 78 عاماً من الحكم في إسرائيل وعلى خمس
+    وحدات تحليل: 13 رئيس وزراء، 15 منظومة عامة، 48 قطاعاً اجتماعياً، 100 أكبر شركة،
+    و30,000 جمعية.
   </p>
   <p>
-    الضرر المالي التراكمي لـ 19 سنة من حكم بنيامين نتنياهو:
-    <span class="num">₪−666B</span> (صافي)، إضافة إلى <span class="num">₪−210B</span>
-    من الضرر غير المباشر. متوسط درجة المواطن:
-    <span class="num">F=8.5</span> — <span class="num">×14</span> من درجة الحكومة الحالية.
+    جُمعت البيانات الخام من <strong>16 مصدراً أولياً</strong> (CBS، بنك إسرائيل، مراقب الدولة،
+    هيئة الأوراق المالية، سجل الشركات، OECD، IMF، V-Dem وغيرها)، وخضعت للتحقق المتقاطع
+    والتوحيد لتصبح <strong>84,100 نقطة قياس</strong>، وحُسبت عبر 17 مؤشراً فرعياً من
+    المنهجية. تظهر النتائج العددية ابتداءً من القسم 05. جميع الخوارزميات والبيانات
+    قابلة للتكرار الكامل.
   </p>
 </div>
 
 <nav class="toc" aria-label="فهرس المحتويات">
   <h4>Table of Contents</h4>
   <ol>
-    <li><a href="#data">البيانات الأساسية</a></li>
-    <li><a href="#methodology">المنهجية والمصادر</a></li>
-    <li><a href="#chart">اتجاه F · 1948—2026</a></li>
-    <li><a href="#pms">ترتيب رؤساء الوزراء</a></li>
-    <li><a href="#findings">النتائج الرئيسية</a></li>
-    <li><a href="#power">خريطة القوة · 6 مجالات</a></li>
-    <li><a href="#reports">تحميل التقرير</a></li>
+    <li><a href="#about">عن البحث</a></li>
+    <li><a href="#method">المنهجية — كيف نقيس الأداء الحكومي</a></li>
+    <li><a href="#sources">عملية القياس ومصادر البيانات</a></li>
+    <li><a href="#scope">النطاق والحدود</a></li>
+    <li><a href="#chart">نتيجة · اتجاه F · 1948—2026</a></li>
+    <li><a href="#pms">نتيجة · ترتيب رؤساء الوزراء</a></li>
+    <li><a href="#findings">نتيجة · النتائج وخريطة القوة</a></li>
+    <li><a href="#reports">تحميلات ومراجع</a></li>
   </ol>
 </nav>
 
-<!-- 1. BASE DATA -->
-<section id="data">
-  <h2><span class="sec-no">01</span>البيانات الأساسية</h2>
-  <div class="kv">
-    <div class="kv-cell"><div class="kv-v">40</div><div class="kv-l">وثائق بحثية</div></div>
-    <div class="kv-cell"><div class="kv-v">84,100</div><div class="kv-l">نقطة قياس</div></div>
-    <div class="kv-cell"><div class="kv-v">1,250</div><div class="kv-l">قائد تم تصنيفه</div></div>
-    <div class="kv-cell"><div class="kv-v accent">170×</div><div class="kv-l">انخفاض F · 1948→2026</div></div>
-  </div>
-  <p>
-    يستخدم البحث 17 مؤشراً كمياً مستنبطاً من مبدأ <strong>Data Fluidity</strong>
-    (F = D×U/R، مبدأ DUR). كل رقم مستند إلى مصدر أولي أو إفصاح تنظيمي ملزم.
-    للاطلاع على القائمة الكاملة للمؤشرات والمصادر وحدود البحث، انظر
-    <a href="#methodology">المنهجية والمصادر</a>.
-  </p>
+<!-- 01. ABOUT THE RESEARCH -->
+<section id="about">
+  <h2><span class="sec-no">01</span>عن البحث</h2>
+
+  <dl class="intro-grid">
+    <dt>ما هذا البحث.</dt>
+    <dd>تقرير كمي عن 78 عاماً من الحكم في إسرائيل، 1948—2026. كل وحدة تحليل — رئيس وزراء،
+    منظومة عامة، قطاع اجتماعي، شركة، جمعية — تحصل على درجة واحدة (<strong>F</strong>) تلخّص
+    17 مؤشراً فرعياً، مبنية جميعها على بيانات من مصادر أولية مفتوحة وقابلة للتحقق.</dd>
+
+    <dt>لماذا هو ضروري.</dt>
+    <dd>يميل النقاش العام حول أداء الحكومة إلى أن يكون ثنائياً (جيد/سيئ)، أو حدثياً (حدث مركزي
+    واحد)، أو حزبياً. يفحص هذا البحث الأداء الحكومي على مستوى المنظومة — بشكل متسق عبر الفترات،
+    وعبر وحدات التحليل، ومستقلاً عن الهوية السياسية.</dd>
+
+    <dt>ما الجديد فيه.</dt>
+    <dd>تطبيق موحد لمنهجية Data Fluidity على خمس وحدات تحليل متوازية؛ مقارنة مباشرة لـ 13 رئيس
+    وزراء على المؤشرات ذاتها؛ تحليل المساهمة مقابل الاستخراج (NCR) لأكبر 100 شركة و30,000
+    جمعية؛ قابلية تكرار كاملة (كود + بيانات).</dd>
+
+    <dt>ما ليس هذا البحث.</dt>
+    <dd>ليس حكماً قضائياً. ليس تقييماً للنوايا الفردية. ليس بديلاً عن الانتخابات العامة.
+    مؤشر تخليقي الهدف منه دعم النقاش القائم على الأدلة، لا إغلاقه.</dd>
+
+    <dt>من كتبه.</dt>
+    <dd>بحث مستقل بقلم udihem78@gmail.com تحت رخصة MIT. ليس للباحث أي ارتباط بأي حزب أو حكومة
+    أو مؤسسة عامة. وثائق المصدر الـ 40 و17 خوارزمية الحساب والبيانات الخام متاحة علنياً في
+    <a href="https://github.com/udihem78-maker/animated-eureka">github.com/udihem78-maker/animated-eureka</a>.</dd>
+  </dl>
 </section>
 
-<!-- 2. METHODOLOGY & SOURCES -->
-<section id="methodology">
-  <h2><span class="sec-no">02</span>المنهجية والمصادر</h2>
+<!-- 02. METHODOLOGY -->
+<section id="method">
+  <h2><span class="sec-no">02</span>المنهجية — كيف نقيس الأداء الحكومي</h2>
+
+  <h3>الفكرة الأساسية</h3>
   <p>
-    يطبق البحث منهجية <strong>Data Fluidity</strong> (مبدأ DUR) التي طوّرها إيهود حملي
-    لتحليل أداء الأنظمة الحكومية. الصيغة الأساسية:
-    <span class="formula">F = D × U / R</span> — سيولة القيمة كدالة لجودة القرارات
-    (<b>D</b>) × المنفعة العامة المحققة (<b>U</b>) ÷ الاحتكاك المنظومي (<b>R</b>).
-    كل وحدة تحليل (رئيس وزراء، منظومة، قطاع، شركة) تُقاس بـ 17 مؤشراً كمياً مستنبطاً حصراً
-    من مصادر أولية.
+    الحكم، في أي مستوى، هو عملية ترجمة القرارات إلى منفعة عامة. كلما كانت هذه الترجمة أكثر
+    سلاسة وكفاءة — كان الأداء الحكومي أفضل. تقوم منهجية <strong>Data Fluidity</strong>
+    (سيولة القيمة) التي طوّرها إيهود حملي بقياس هذا التدفق في ثلاثة مكونات:
   </p>
 
-  <h3>17 مؤشر التحليل</h3>
+  <table class="explainer-table">
+    <thead>
+      <tr>
+        <th>المكوّن</th>
+        <th>ما يقيسه</th>
+        <th class="high">درجة عالية =</th>
+        <th class="low">درجة منخفضة =</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="var"><span class="metric"><b>D</b>Decision quality</span></td>
+        <td>جودة القرارات المتخذة</td>
+        <td class="high">قرارات مبنية على أدلة، متناسقة، متأنية</td>
+        <td class="low">اندفاعية، سياسية، غير منسقة</td>
+      </tr>
+      <tr>
+        <td class="var"><span class="metric"><b>U</b>Utility realized</span></td>
+        <td>المنفعة العامة المتحققة فعلاً</td>
+        <td class="high">القرارات وصلت إلى الجمهور وأثّرت</td>
+        <td class="low">القرارات بقيت على الورق</td>
+      </tr>
+      <tr>
+        <td class="var"><span class="metric"><b>R</b>Resistance</span></td>
+        <td>الاحتكاك المنظومي في الطريق</td>
+        <td class="high">بيروقراطية سلسة وفعّالة</td>
+        <td class="low">بيروقراطية متشابكة، مبدّدة، معيقة</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>الصيغة</h3>
+  <p>
+    الدرجة الكلية لكل وحدة تحليل: <span class="formula">F = (D × U) / R</span>.
+    كلما كانت القرارات أفضل (D) وكانت المنفعة أكبر (U) نسبة إلى الاحتكاك (R)، ارتفعت درجة F.
+    المقياس: <strong>0 إلى 100</strong>. درجة <span class="num">100</span> = منظومة مثالية
+    (غير موجودة في الواقع). أعلى من <span class="num">25</span> = أداء سليم. أقل من
+    <span class="num">12</span> = عتبة الانهيار.
+  </p>
+
+  <h3>17 مؤشراً فرعياً</h3>
+  <p>
+    تتكوّن المكونات D و U و R بحد ذاتها من 14 مؤشراً فرعياً — بإجمالي 17 مؤشراً كمياً. كل مؤشر
+    يُحسب من 3 إلى 15 نقطة بيانات خام مستقاة من مصادر أولية.
+  </p>
   <div class="metrics-grid">
     <span class="metric"><b>F</b>Fluidity</span>
     <span class="metric"><b>D</b>Decision quality</span>
@@ -225,11 +302,25 @@
     <span class="metric"><b>NCR</b>Net Contribution Ratio</span>
   </div>
   <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
-    كل رقم في هذا التقرير قابل للتتبع — إلى مصدره، إلى صيغة حسابية، إلى مؤشر فرعي.
-    المنهجية الكاملة: <a href="https://github.com/udihem78-maker/animated-eureka/blob/main/methodology/README.md">methodology/README.md</a>.
+    التعريف الكامل لكل مؤشر، صيغة الحساب والمصادر:
+    <a href="https://github.com/udihem78-maker/animated-eureka/blob/main/methodology/README.md">methodology/README.md</a>.
   </p>
+</section>
 
-  <h3>المصادر الأولية</h3>
+<!-- 03. SOURCES & PROCESS -->
+<section id="sources">
+  <h2><span class="sec-no">03</span>عملية القياس ومصادر البيانات</h2>
+
+  <h3>خطوات العمل · خمس مراحل</h3>
+  <ol class="process-list">
+    <li><div><strong>الجمع.</strong> سحب البيانات الخام من 16 مصدراً أولياً (مذكورة أدناه). سحوبات أصلية، لا عبر وسطاء.</div></li>
+    <li><div><strong>التحقق المتقاطع.</strong> كل رقم مؤكد من مصدرين مستقلين على الأقل. الفروقات موثّقة، وليست مُطمَسة.</div></li>
+    <li><div><strong>التوحيد.</strong> تحويل العملات إلى شيكل 2026، تعديل مؤشر الأسعار، التكييف الديموغرافي والزمني.</div></li>
+    <li><div><strong>الحساب.</strong> تطبيق خوارزميات القياس الـ 17 على البيانات الموحّدة. كود مفتوح تحت رخصة MIT.</div></li>
+    <li><div><strong>التجميع.</strong> تركيب درجة F من مكونات D و U و R لكل من وحدات التحليل الـ 1,350.</div></li>
+  </ol>
+
+  <h3>16 مصدراً أولياً</h3>
   <ol class="sources">
     <li>دائرة الإحصاء المركزية الإسرائيلية (CBS) — الكتب الإحصائية السنوية، 1948—2026</li>
     <li>بنك إسرائيل — التقارير السنوية وتحليل النظام المصرفي</li>
@@ -246,8 +337,18 @@
     <li>منظمة الشفافية الدولية — مؤشر إدراك الفساد</li>
     <li>المعهد الإسرائيلي للديمقراطية — مؤشر الديمقراطية الإسرائيلية</li>
     <li>مركز طاوب لدراسات السياسة الاجتماعية — الحوليات السنوية</li>
-    <li>منشورات مراكز الفكر (شاملة منتدى كوهيلت) — لتحليل الاستقطاب</li>
+    <li>منشورات مراكز الفكر (شاملة منتدى كوهيلت، لتحليل الاستقطاب)</li>
   </ol>
+
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>ما لا يستخدمه هذا البحث.</strong> لا يستخدم استطلاعات الرأي كمصدر رئيسي، ولا الشبكات
+    الاجتماعية، ولا الصحافة (إلا للتحقق المتقاطع). فقط المصادر التي يمكن منها إعادة بناء الحساب.
+  </p>
+</section>
+
+<!-- 04. SCOPE & LIMITS -->
+<section id="scope">
+  <h2><span class="sec-no">04</span>النطاق والحدود</h2>
 
   <h3>نطاق البحث</h3>
   <ul class="scope">
@@ -274,12 +375,19 @@
   <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
     وثائق المصدر الـ 40، و17 خوارزمية الحساب، والبيانات الخام متاحة علنياً تحت رخصة MIT:
     <a href="https://github.com/udihem78-maker/animated-eureka">github.com/udihem78-maker/animated-eureka</a>.
+    كل رقم في هذا التقرير قابل للتتبع إلى مصدره.
   </p>
 </section>
 
-<!-- 3. CHART -->
+<hr class="divider">
+
+<!-- 05. F TREND -->
 <section id="chart">
-  <h2><span class="sec-no">03</span>اتجاه F في إسرائيل · 1948—2026</h2>
+  <h2><span class="sec-no">05</span>نتيجة · اتجاه F · 1948—2026</h2>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
+    النتيجة الأولى: درجة F لإسرائيل كدالة في الزمن، محسوبة كمتوسط مرجّح على 13 رئيس وزراء
+    و15 منظومة عامة. التفسير يلي الرسم البياني.
+  </p>
   <figure>
     <div class="fig-cap">Fig. 01 · <b>Israel F score</b> · source: Data Fluidity analysis, 40-document corpus</div>
     <div class="chart">
@@ -323,9 +431,9 @@
   </p>
 </section>
 
-<!-- 4. PM TABLE -->
+<!-- 06. PM TABLE -->
 <section id="pms">
-  <h2><span class="sec-no">04</span>ترتيب رؤساء الوزراء</h2>
+  <h2><span class="sec-no">06</span>نتيجة · ترتيب رؤساء الوزراء</h2>
   <p>13 رئيس وزراء، 16 دخولاً (دورات منفصلة لرابين ونتنياهو).</p>
   <table>
     <caption>Tab. 01 · PM Score</caption>
@@ -355,9 +463,10 @@
   </p>
 </section>
 
-<!-- 5. FINDINGS -->
+<!-- 07. FINDINGS + POWER MAP -->
 <section id="findings">
-  <h2><span class="sec-no">05</span>النتائج الرئيسية</h2>
+  <h2><span class="sec-no">07</span>نتيجة · النتائج وخريطة القوة</h2>
+  <h3>النتائج الرئيسية</h3>
   <div class="findings">
     <div class="find"><div class="n">1</div><div><h4>انخفاض أسِّي في درجة F، ×170 خلال 78 عاماً.</h4><p>اتجاه متكرر، وليس حدثاً. المنحنى متشابه عبر الفترات الثلاث الرئيسية (1948—67، 1967—95، 1995—2026).</p></div></div>
     <div class="find"><div class="n">2</div><div><h4>ثلث المؤسسات العامة دون نقطة الانهيار.</h4><p>الشرطة (F=5)، القيادة الجنوبية (8)، نيابة الدولة (8)، الحاخامية (8)، التعليم (10)، الرفاه (10). عتبة الانهيار: F=12.</p></div></div>
@@ -365,12 +474,9 @@
     <div class="find"><div class="n">4</div><div><h4>الضرر التراكمي في عهد نتنياهو: ₪2 تريليون.</h4><p>صافي NFI ₪−666B · ID ₪−210B · دين متراكم ₪735B. المجموع نحو 93% من ناتج محلي سنوي كامل.</p></div></div>
     <div class="find"><div class="n">5</div><div><h4>المواطن ×14 حكومته.</h4><p>متوسط F للمواطن: 8.5. F للحكومة 37: 0.6. مصير إسرائيل ليس بأيدي الحاكمين — بل بأيدي من يختارهم.</p></div></div>
   </div>
-</section>
 
-<!-- 6. POWER MAP -->
-<section id="power">
-  <h2><span class="sec-no">06</span>خريطة القوة · 6 مجالات</h2>
-  <p>القياسات مستمدة من سجل الشركات، هيئة الأوراق المالية، منشورات مفتوحة. الأسماء من الدور العام فقط.</p>
+  <h3 style="margin-top:40px;">خريطة القوة · 6 مجالات</h3>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">القياسات مستمدة من سجل الشركات، هيئة الأوراق المالية، منشورات مفتوحة. الأسماء من الدور العام فقط.</p>
 
   <div class="domain">
     <div>
@@ -432,15 +538,15 @@
   </div>
 </section>
 
-<!-- 7. REPORTS -->
+<!-- 08. REPORTS -->
 <section id="reports">
-  <h2><span class="sec-no">07</span>تحميل التقرير</h2>
+  <h2><span class="sec-no">08</span>تحميلات ومراجع</h2>
   <table>
     <thead><tr><th>الصيغة</th><th>الوصف</th><th class="n">الحجم</th></tr></thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير الملخّص بالعربية</td><td class="n">481K</td></tr>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>النسخة العبرية</td><td class="n">268K</td></tr>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">413K</td></tr>
+      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير الملخّص بالعربية</td><td class="n">655K</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>النسخة العبرية</td><td class="n">342K</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">530K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX</a></td><td>للتحرير في Word</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>عرض تقديمي (تلقائي)</td><td class="n">52K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.epub">EPUB</a></td><td>للقراء الإلكترونية</td><td class="n">16K</td></tr>

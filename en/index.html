@@ -87,6 +87,24 @@
   .scope li { font-size:14px; padding:4px 0; line-height:1.55; }
   .scope li b { font-family:'IBM Plex Mono',monospace; color:var(--ink); font-weight:600; display:inline-block; min-width:60px; }
   .limits { font-size:13.5px; color:var(--muted); max-width:68ch; padding:12px 16px; border-left:2px solid var(--rule); background:#fafafa; }
+  .process-list { list-style:none; counter-reset:proc; margin:10px 0 24px; padding:0; }
+  .process-list li { counter-increment:proc; padding:12px 0; border-bottom:1px solid var(--rule-light); font-size:14.5px; line-height:1.6; display:grid; grid-template-columns:44px 1fr; gap:14px; max-width:70ch; }
+  .process-list li:last-child { border-bottom:none; }
+  .process-list li::before { content:counter(proc,decimal-leading-zero); font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); padding-top:3px; }
+  .process-list li strong { color:var(--ink); font-weight:600; }
+  .explainer-table { width:100%; border-collapse:collapse; font-size:14px; margin:16px 0 20px; }
+  .explainer-table th { text-align:left; padding:10px 12px; background:var(--panel); font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--muted); border-bottom:1px solid var(--ink); vertical-align:baseline; }
+  .explainer-table td { padding:12px; border-bottom:1px solid var(--rule-light); vertical-align:baseline; font-size:14px; line-height:1.55; }
+  .explainer-table td.var { width:160px; padding-left:0; }
+  .explainer-table td.var .metric { font-size:13px; padding:4px 10px; }
+  .explainer-table .high { color:var(--olive); }
+  .explainer-table .low { color:var(--accent); }
+  .intro-grid { display:grid; grid-template-columns:auto 1fr; gap:10px 20px; margin:10px 0 18px; max-width:72ch; }
+  .intro-grid dt { font-weight:600; color:var(--ink); font-size:14.5px; padding-top:2px; white-space:nowrap; }
+  .intro-grid dd { font-size:14.5px; line-height:1.6; color:var(--text); padding-bottom:8px; border-bottom:1px solid var(--rule-light); }
+  .intro-grid dd:last-child { border-bottom:none; }
+  .divider { border:none; border-top:2px solid var(--ink); margin:48px 0 32px; padding:0; text-align:center; position:relative; }
+  .divider::after { content:"FINDINGS"; position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--bg); padding:0 16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
   .kv { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--rule); margin:16px 0 32px; }
   .kv .kv-cell { padding:16px 18px; border-right:1px solid var(--rule); }
   .kv .kv-cell:last-child { border-right:none; }
@@ -136,69 +154,137 @@
 <main>
 
 <div class="doc-title">
-  <div class="meta">V2 · OCT 2026 · 40 docs · F = D×U/R</div>
+  <div class="meta">V2 · OCT 2026 · 40 docs · 16 primary sources · MIT license</div>
   <h1>Israel 1948—2026: A fractal measurement of governance.</h1>
-  <div class="subtitle">A summary of 78 years of state function · 40 documents · 84,000 measurement points</div>
+  <div class="subtitle">Independent academic research · Data Fluidity methodology · 84,100 measurement points</div>
 </div>
 
 <div class="abstract">
   <div class="abs-label">Abstract</div>
   <p>
-    This research examines all 13 prime ministers, 15 public systems, 48 sectors, and 100 economic
-    enterprises through the Hemli Data Fluidity methodology. Israel's <strong>F</strong> score
-    fell from <span class="num">100</span> in 1948 to <span class="num">0.6</span> in 2026 — a
-    <span class="num">170×</span> decline. One third of institutions operate below their collapse
-    threshold; <span class="num">65%</span> of sectors are in collapse.
+    This research applies the <strong>Data Fluidity</strong> methodology developed by Ehud Hemli
+    to the systemic quantification of governance. The F score (value fluidity;
+    <span class="num">F = D × U / R</span>) is computed for 78 years of Israeli governance across
+    five units of analysis: 13 prime ministers, 15 public systems, 48 social sectors,
+    100 largest companies, and 30,000 NGOs.
   </p>
   <p>
-    Cumulative fiscal impact of Netanyahu's 19 years in office: <span class="num">₪−666B</span>
-    (net), plus <span class="num">₪−210B</span> in indirect damage. Average citizen score:
-    <span class="num">F=8.5</span> — <span class="num">14×</span> higher than the current government.
+    Raw data was collected from <strong>16 primary sources</strong> (CBS, Bank of Israel,
+    State Comptroller, Israel Securities Authority, Registrar of Companies, OECD, IMF, V-Dem,
+    and others), cross-verified and normalized into <strong>84,100 measurement points</strong>,
+    and computed through the 17 sub-indicators of the methodology. Numerical results begin at
+    section 05. All algorithms and data are fully reproducible.
   </p>
 </div>
 
 <nav class="toc">
   <h4>Table of Contents</h4>
   <ol>
-    <li><a href="#data">Baseline data</a></li>
-    <li><a href="#methodology">Methodology & sources</a></li>
-    <li><a href="#chart">F trend · 1948—2026</a></li>
-    <li><a href="#pms">Prime minister rankings</a></li>
-    <li><a href="#findings">Key findings</a></li>
-    <li><a href="#power">Power map · 6 domains</a></li>
-    <li><a href="#reports">Report downloads</a></li>
+    <li><a href="#about">About the research</a></li>
+    <li><a href="#method">Methodology — how we measure governance</a></li>
+    <li><a href="#sources">Measurement process & data sources</a></li>
+    <li><a href="#scope">Scope & limitations</a></li>
+    <li><a href="#chart">Finding · F trend · 1948—2026</a></li>
+    <li><a href="#pms">Finding · Prime minister rankings</a></li>
+    <li><a href="#findings">Finding · Key findings & power map</a></li>
+    <li><a href="#reports">Downloads & references</a></li>
   </ol>
 </nav>
 
-<section id="data">
-  <h2><span class="sec-no">01</span>Baseline data</h2>
-  <div class="kv">
-    <div class="kv-cell"><div class="kv-v">40</div><div class="kv-l">Research documents</div></div>
-    <div class="kv-cell"><div class="kv-v">84,100</div><div class="kv-l">Measurement points</div></div>
-    <div class="kv-cell"><div class="kv-v">1,250</div><div class="kv-l">Leaders ranked</div></div>
-    <div class="kv-cell"><div class="kv-v accent">170×</div><div class="kv-l">F decline · 1948→2026</div></div>
-  </div>
-  <p>
-    The research applies 17 quantitative metrics derived from the <strong>Data Fluidity</strong>
-    principle (F = D×U/R). Every figure is grounded in a primary source or mandatory regulatory
-    disclosure. For the full metric list, sources, and research limitations see
-    <a href="#methodology">Methodology & sources</a>.
-  </p>
+<!-- 01. ABOUT -->
+<section id="about">
+  <h2><span class="sec-no">01</span>About the research</h2>
+
+  <dl class="intro-grid">
+    <dt>What this is.</dt>
+    <dd>A quantitative report on 78 years of Israeli governance, 1948—2026. Each unit of
+    analysis — prime minister, public system, social sector, company, NGO — receives a single
+    score (<strong>F</strong>) summarizing 17 sub-indicators, all drawn from open and verifiable
+    primary sources.</dd>
+
+    <dt>Why it is needed.</dt>
+    <dd>Public debate about government performance tends to be dichotomous (good/bad),
+    event-driven (one defining event), or partisan. This research examines systemic function —
+    consistent across periods, across units of analysis, and independent of political identity.</dd>
+
+    <dt>What is new.</dt>
+    <dd>Uniform application of the Data Fluidity methodology across five parallel units of
+    analysis; direct comparison of all 13 prime ministers on identical metrics;
+    contribution-vs-extraction (NCR) analysis of the 100 largest companies and 30,000 NGOs;
+    full reproducibility (code + data).</dd>
+
+    <dt>What this is not.</dt>
+    <dd>Not a legal judgment. Not an assessment of individual intent. Not a substitute for
+    public elections. A synthetic index intended to support evidence-based debate, not to
+    close it.</dd>
+
+    <dt>Who wrote it.</dt>
+    <dd>Independent research by udihem78@gmail.com under the MIT license. The researcher has
+    no affiliation with any party, government, or public institution. The 40 source documents,
+    17 calculation algorithms, and raw data are publicly available at
+    <a href="https://github.com/udihem78-maker/animated-eureka">github.com/udihem78-maker/animated-eureka</a>.</dd>
+  </dl>
 </section>
 
-<!-- 2. METHODOLOGY & SOURCES -->
-<section id="methodology">
-  <h2><span class="sec-no">02</span>Methodology & sources</h2>
+<!-- 02. METHODOLOGY -->
+<section id="method">
+  <h2><span class="sec-no">02</span>Methodology — how we measure governance</h2>
+
+  <h3>The core idea</h3>
   <p>
-    This research applies Ehud Hemli's <strong>Data Fluidity</strong> methodology (DUR Principle)
-    to the analysis of governance systems. The core formula is
-    <span class="formula">F = D × U / R</span> — value fluidity as a function of
-    decision quality (<b>D</b>) × realized public utility (<b>U</b>) ÷ systemic friction (<b>R</b>).
-    Each unit of analysis (prime minister, public system, sector, company) is measured on
-    17 quantitative indicators derived strictly from primary sources.
+    Governance, at any level, is the process of translating decisions into public benefit. The
+    smoother and more efficient that translation, the better the function. Ehud Hemli's
+    <strong>Data Fluidity</strong> methodology quantifies this flow in three components:
   </p>
 
-  <h3>17 analytical metrics</h3>
+  <table class="explainer-table">
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>What it measures</th>
+        <th class="high">High score =</th>
+        <th class="low">Low score =</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="var"><span class="metric"><b>D</b>Decision quality</span></td>
+        <td>Quality of decisions made</td>
+        <td class="high">Evidence-based, coordinated, deliberate</td>
+        <td class="low">Impulsive, political, uncoordinated</td>
+      </tr>
+      <tr>
+        <td class="var"><span class="metric"><b>U</b>Utility realized</span></td>
+        <td>Public benefit actually delivered</td>
+        <td class="high">Decisions reach the public and have effect</td>
+        <td class="low">Decisions remain on paper</td>
+      </tr>
+      <tr>
+        <td class="var"><span class="metric"><b>R</b>Resistance</span></td>
+        <td>Systemic friction along the path</td>
+        <td class="high">Smooth, efficient bureaucracy</td>
+        <td class="low">Entangled, wasteful, blocking bureaucracy</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The formula</h3>
+  <p>
+    The composite score for each unit of analysis:
+    <span class="formula">F = (D × U) / R</span>.
+    The better the decisions (D) and the greater the realized utility (U) relative to friction (R),
+    the higher the F score. Scale: <strong>0 to 100</strong>. A score of
+    <span class="num">100</span> = ideal system (not observed in practice). Above
+    <span class="num">25</span> = functional governance. Below <span class="num">12</span> =
+    collapse threshold.
+  </p>
+
+  <h3>The 17 sub-indicators</h3>
+  <p>
+    The D, U, R components themselves are composed from 14 sub-indicators — 17 quantitative
+    metrics in total. Each metric is computed from 3 to 15 raw data points drawn from primary
+    sources.
+  </p>
   <div class="metrics-grid">
     <span class="metric"><b>F</b>Fluidity</span>
     <span class="metric"><b>D</b>Decision quality</span>
@@ -221,11 +307,25 @@
     <span class="metric"><b>NCR</b>Net Contribution Ratio</span>
   </div>
   <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
-    Every number in this report is traceable — to its source, to a formula, to a sub-metric.
-    Full methodology: <a href="https://github.com/udihem78-maker/animated-eureka/blob/main/methodology/README.md">methodology/README.md</a>.
+    Full definition, formula, and sources for each metric:
+    <a href="https://github.com/udihem78-maker/animated-eureka/blob/main/methodology/README.md">methodology/README.md</a>.
   </p>
+</section>
 
-  <h3>Primary sources</h3>
+<!-- 03. SOURCES & PROCESS -->
+<section id="sources">
+  <h2><span class="sec-no">03</span>Measurement process & data sources</h2>
+
+  <h3>Working process · five steps</h3>
+  <ol class="process-list">
+    <li><div><strong>Collection.</strong> Raw data pulled from 16 primary sources (listed below). Original pulls, no intermediate aggregators.</div></li>
+    <li><div><strong>Cross-verification.</strong> Every figure confirmed against at least two independent sources. Discrepancies are documented, not smoothed over.</div></li>
+    <li><div><strong>Normalization.</strong> Currencies converted to 2026 ILS, CPI-adjusted, demographically and period-adjusted.</div></li>
+    <li><div><strong>Computation.</strong> The 17 measurement algorithms are applied to the normalized data. Open source under MIT license.</div></li>
+    <li><div><strong>Aggregation.</strong> F score composed from D, U, R components for each of the 1,350 units of analysis.</div></li>
+  </ol>
+
+  <h3>16 primary sources</h3>
   <ol class="sources">
     <li>Israel Central Bureau of Statistics (CBS) — statistical yearbooks, 1948—2026</li>
     <li>Bank of Israel — annual reports and banking-system breakdowns</li>
@@ -242,8 +342,19 @@
     <li>Transparency International — Corruption Perceptions Index</li>
     <li>Israel Democracy Institute — Israeli Democracy Index</li>
     <li>Taub Center for Social Policy Studies — annual compendia</li>
-    <li>Think-tank publications (incl. Kohelet Forum) — for polarity analysis</li>
+    <li>Think-tank publications (incl. Kohelet Forum, for polarity analysis)</li>
   </ol>
+
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>What this research does not use.</strong> No opinion polling as a primary source,
+    no social media, no press reporting (except for cross-verification). Only sources from
+    which the computation can be reproduced.
+  </p>
+</section>
+
+<!-- 04. SCOPE & LIMITS -->
+<section id="scope">
+  <h2><span class="sec-no">04</span>Scope & limitations</h2>
 
   <h3>Research scope</h3>
   <ul class="scope">
@@ -271,11 +382,18 @@
     The 40 source documents, 17 calculation algorithms, and raw underlying data are publicly
     available under the MIT license:
     <a href="https://github.com/udihem78-maker/animated-eureka">github.com/udihem78-maker/animated-eureka</a>.
+    Every number in this report traces back to its source.
   </p>
 </section>
 
+<hr class="divider">
+
 <section id="chart">
-  <h2><span class="sec-no">03</span>Israel F trend · 1948—2026</h2>
+  <h2><span class="sec-no">05</span>Finding · F trend · 1948—2026</h2>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
+    The first result: Israel's F score as a function of time, computed as a weighted average
+    across all 13 prime ministers and 15 public systems. Interpretation follows the chart.
+  </p>
   <figure>
     <div class="fig-cap">Fig. 01 · <b>Israel F score</b> · source: Data Fluidity analysis, 40-document corpus</div>
     <div class="chart">
@@ -317,7 +435,7 @@
 </section>
 
 <section id="pms">
-  <h2><span class="sec-no">04</span>Prime minister rankings</h2>
+  <h2><span class="sec-no">06</span>Finding · Prime minister rankings</h2>
   <p>13 prime ministers, 16 entries (separate terms for Rabin and Netanyahu).</p>
   <table>
     <caption>Tab. 01 · PM Score</caption>
@@ -345,7 +463,8 @@
 </section>
 
 <section id="findings">
-  <h2><span class="sec-no">05</span>Key findings</h2>
+  <h2><span class="sec-no">07</span>Finding · Key findings & power map</h2>
+  <h3>Key findings</h3>
   <div class="findings">
     <div class="find"><div class="n">1</div><div><h4>Exponential F decline, ×170 over 78 years.</h4><p>A repeated trend, not an event. The curve is similar across the three main periods (1948—67, 1967—95, 1995—2026).</p></div></div>
     <div class="find"><div class="n">2</div><div><h4>One third of public institutions below collapse threshold.</h4><p>Police (F=5), Southern Command (8), State Prosecution (8), Rabbinate (8), Education (10), Welfare (10). Collapse threshold: F=12.</p></div></div>
@@ -353,11 +472,9 @@
     <div class="find"><div class="n">4</div><div><h4>Netanyahu-era cumulative damage: ₪2 trillion.</h4><p>Net NFI ₪−666B · ID ₪−210B · accumulated debt ₪735B. Total approximately 93% of one annual GDP.</p></div></div>
     <div class="find"><div class="n">5</div><div><h4>The citizen is ×14 the government.</h4><p>Average citizen F: 8.5. Government 37 F: 0.6. Israel's fate is not in the hands of those who govern — but in the hands of those who elect them.</p></div></div>
   </div>
-</section>
 
-<section id="power">
-  <h2><span class="sec-no">06</span>Power map · 6 domains</h2>
-  <p>Measurements drawn from Registrar of Companies, Israel Securities Authority, open publications. Names from public roles only.</p>
+  <h3 style="margin-top:40px;">Power map · 6 domains</h3>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">Measurements drawn from Registrar of Companies, Israel Securities Authority, open publications. Names from public roles only.</p>
 
   <div class="domain">
     <div class="stat"><div class="v">85%</div><div class="l">News consumption<br>held by 6 owners</div></div>
@@ -420,13 +537,13 @@
 </section>
 
 <section id="reports">
-  <h2><span class="sec-no">07</span>Report downloads</h2>
+  <h2><span class="sec-no">08</span>Downloads & references</h2>
   <table>
     <thead><tr><th>Format</th><th>Description</th><th class="n">Size</th></tr></thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Summary report, print format</td><td class="n">413K</td></tr>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>Hebrew edition</td><td class="n">268K</td></tr>
-      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>Arabic edition</td><td class="n">481K</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Summary report, print format</td><td class="n">530K</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>Hebrew edition</td><td class="n">342K</td></tr>
+      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>Arabic edition</td><td class="n">655K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX</a></td><td>Word, editable</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>Slide deck (auto-generated)</td><td class="n">52K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.epub">EPUB</a></td><td>For e-readers</td><td class="n">16K</td></tr>
