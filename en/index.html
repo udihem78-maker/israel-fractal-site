@@ -7,12 +7,68 @@
 <meta name="description" content="78 years of Israeli governance measured. F score fell from 100 to 0.6.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#ffffff; --ink:#111; --text:#222; --muted:#666; --faint:#999; --rule:#d0d0d0; --rule-light:#e8e8e8; --panel:#f6f6f4; --accent:#c01818; --olive:#4a6d1a; }
+  :root {
+    --bg:#ffffff; --ink:#0f0e0d; --text:#1f1e1c; --muted:#665e58; --faint:#a19a93;
+    --rule:#c9c2bb; --rule-light:#e8e3dd; --panel:#f5f1ea; --paper:#faf7f0;
+    --accent:#a01818; --olive:#4a6d1a;
+    --display:'Fraunces','Georgia',serif;
+    --sans:'Inter','Helvetica Neue',sans-serif;
+    --mono:'IBM Plex Mono','Menlo',monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0f0e0d; --ink:#faf7f0; --text:#e8e3dd; --muted:#a19a93; --faint:#665e58;
+      --rule:#3a3632; --rule-light:#26231f; --panel:#1a1816; --paper:#16140f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0f0e0d; --ink:#faf7f0; --text:#e8e3dd; --muted:#a19a93; --faint:#665e58;
+    --rule:#3a3632; --rule-light:#26231f; --panel:#1a1816; --paper:#16140f;
+    color-scheme: dark;
+  }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
-  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  body { font-family: var(--sans); background:var(--bg); color:var(--text); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; font-feature-settings: "kern" 1; }
+  .num, table td.n, .mono { font-feature-settings: "tnum" 1, "lnum" 1; }
+
+  /* ─── HERO ─── */
+  .hero { display: grid; grid-template-columns: minmax(0, 320px) 1fr; gap: 48px; padding: 48px 0 40px; margin: 0 0 24px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); align-items: center; }
+  .hero .big-f { font-family: var(--display); font-size: clamp(96px, 16vw, 180px); font-weight: 400; line-height: 0.85; color: var(--accent); letter-spacing: -0.045em; font-feature-settings: "lnum" 1, "tnum" 1; }
+  .hero .big-f .label { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px; font-weight: 500; }
+  .hero .narr { font-family: var(--display); font-size: clamp(18px, 2.2vw, 24px); line-height: 1.4; color: var(--ink); font-weight: 400; max-width: 50ch; }
+  .hero .narr b { font-weight: 700; color: var(--accent); }
+  .hero .narr .k { font-family: var(--mono); font-weight: 500; display: inline-block; }
+  .hero .foot { grid-column: 1 / -1; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; padding-top: 20px; border-top: 1px solid var(--rule); }
+
+  /* ─── PULL QUOTE ─── */
+  .pullquote { margin: 56px auto; max-width: 68ch; padding: 36px 0 32px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); text-align: center; }
+  .pullquote .q { font-family: var(--display); font-size: clamp(22px, 2.6vw, 30px); font-weight: 400; line-height: 1.3; color: var(--ink); letter-spacing: -0.005em; text-wrap: balance; font-style: italic; }
+  .pullquote .q em { color: var(--accent); font-weight: 500; font-style: italic; }
+  .pullquote .src { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 20px; }
+
+  /* ─── PHASE DIVIDER ─── */
+  .phase-divider { margin: 80px 0 48px; padding: 36px 0; text-align: center; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: var(--paper); position: relative; }
+  .phase-divider .num { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
+  .phase-divider .label { font-family: var(--display); font-size: clamp(36px, 5vw, 56px); font-weight: 400; color: var(--accent); letter-spacing: -0.02em; line-height: 1; font-style: italic; }
+  .phase-divider .sub { font-family: var(--sans); font-size: 14px; color: var(--muted); margin-top: 14px; max-width: 60ch; margin-inline: auto; line-height: 1.5; }
+
+  /* ─── INLINE BAR IN TABLES ─── */
+  table td.bar { position: relative; overflow: visible; }
+  table td.bar .barfill { position: absolute; top: 50%; left: 0; transform: translateY(-50%); height: 22px; background: linear-gradient(to right, color-mix(in oklab, var(--accent) 20%, transparent), color-mix(in oklab, var(--accent) 8%, transparent)); border-left: 2px solid var(--accent); z-index: 0; pointer-events: none; border-radius: 1px; }
+  table td.bar.olive .barfill { background: linear-gradient(to right, color-mix(in oklab, var(--olive) 22%, transparent), color-mix(in oklab, var(--olive) 8%, transparent)); border-left-color: var(--olive); }
+  table td.bar .label { position: relative; z-index: 1; display: inline-block; padding: 0 6px; font-family: var(--mono); font-weight: 600; font-size: 14px; }
+
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; gap: 24px; padding: 28px 0 24px; }
+    .hero .big-f { font-size: 72px; text-align: center; }
+    .phase-divider { padding: 24px 16px; margin: 56px -16px 32px; }
+    .phase-divider .label { font-size: 28px; }
+    .pullquote { padding: 24px 0; margin: 36px auto; }
+    .pullquote .q { font-size: 20px; }
+  }
   header.site { border-bottom:1px solid var(--ink); padding:20px 32px; display:flex; justify-content:space-between; align-items:center; }
   .mark { font-size:15px; font-weight:600; color:var(--ink); }
   .mark .sub { color:var(--muted); font-weight:400; margin-left:12px; }
@@ -155,8 +211,25 @@
 
 <div class="doc-title">
   <div class="meta">V2 · OCT 2026 · 40 docs · 16 primary sources · MIT license</div>
-  <h1>Israel 1948—2026: A fractal measurement of governance.</h1>
-  <div class="subtitle">Independent academic research · Data Fluidity methodology · 84,100 measurement points</div>
+  <h1 style="font-family: var(--display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -0.02em; max-width: 28ch;">Israel 1948—2026: A fractal measurement of governance.</h1>
+  <div class="subtitle" style="font-family: var(--display); font-weight: 400; font-size: 19px; margin-top: 14px; font-style: italic;">Independent academic research · Data Fluidity methodology · 84,100 measurement points</div>
+</div>
+
+<div class="hero">
+  <div class="big-f">
+    0.6
+    <span class="label">F · ISRAEL · 2026</span>
+  </div>
+  <div class="narr">
+    Israel's <b>F</b> score fell from <span class="k">100</span> in 1948 to <span class="k">0.6</span>
+    in 2026 — a <span class="k">×170</span> decline. This is the aggregate publication of 40 research
+    documents on <span class="k">1,350</span> units of analysis: <span class="k">13</span> prime
+    ministers, <span class="k">15</span> public systems, <span class="k">48</span> sectors,
+    <span class="k">100</span> largest companies, and <span class="k">30,000</span> NGOs.
+  </div>
+  <div class="foot">
+    F = D × U / R · DATA FLUIDITY METHODOLOGY · EHUD HEMLI · 2026
+  </div>
 </div>
 
 <div class="abstract">
@@ -203,6 +276,12 @@
     <li><a href="#reports">Downloads & references</a></li>
   </ol>
 </nav>
+
+<div class="phase-divider" style="margin-top:40px;">
+  <div class="num">PART I · OF III</div>
+  <div class="label">Methodology</div>
+  <div class="sub">Four chapters: About the research · How we measure governance · Measurement process &amp; sources · Scope &amp; limitations.</div>
+</div>
 
 <!-- 01. ABOUT -->
 <section id="about">
@@ -399,7 +478,16 @@
   </p>
 </section>
 
-<hr class="divider">
+<div class="phase-divider">
+  <div class="num">PART II · OF III</div>
+  <div class="label">Findings</div>
+  <div class="sub">Fourteen chapters of numerical results: historical F trend, prime minister rankings, 12 public systems, 1,250 leaders, 100 companies, 80 NGOs, and more.</div>
+</div>
+
+<div class="pullquote">
+  <div class="q">"A decision without benefit is only a slogan. Benefit without friction does not exist. <em>Friction is the measure.</em>"</div>
+  <div class="src">EHUD HEMLI · DATA FLUIDITY METHODOLOGY</div>
+</div>
 
 <section id="chart">
   <h2><span class="sec-no">05</span>Finding · F trend · 1948—2026</h2>
@@ -493,18 +581,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="notable"><td class="rank">01</td><td>Military & security apparatus</td><td class="n">5.8</td><td>moderate</td></tr>
-      <tr class="notable"><td class="rank">02</td><td>Judiciary (Supreme + district)</td><td class="n">5.4</td><td>moderate</td></tr>
-      <tr><td class="rank">03</td><td>Tax Authority</td><td class="n">4.6</td><td>weak</td></tr>
-      <tr><td class="rank">04</td><td>Welfare & National Insurance</td><td class="n">4.0</td><td>weak</td></tr>
-      <tr><td class="rank">05</td><td>Local authorities (257)</td><td class="n">4.0</td><td>weak</td></tr>
-      <tr><td class="rank">06</td><td>Knesset (legislature)</td><td class="n">3.3</td><td>weak</td></tr>
-      <tr><td class="rank">07</td><td>Education system</td><td class="n">3.3</td><td>weak</td></tr>
-      <tr><td class="rank">08</td><td>Public companies + media</td><td class="n">3.3</td><td>weak</td></tr>
-      <tr><td class="rank">09</td><td>Executive branch (Government)</td><td class="n">3.1</td><td>weak</td></tr>
-      <tr class="warning"><td class="rank">10</td><td>Israel Police</td><td class="n">2.8</td><td>collapse</td></tr>
-      <tr class="warning"><td class="rank">11</td><td>Prison service (IPS)</td><td class="n">2.5</td><td>collapse</td></tr>
-      <tr class="warning"><td class="rank">12</td><td>Rabbinate & religion system</td><td class="n">2.0</td><td>collapse</td></tr>
+      <tr class="notable"><td class="rank">01</td><td>Military & security apparatus</td><td class="bar olive"><span class="barfill" style="width:58%"></span><span class="label">5.8</span></td><td>moderate</td></tr>
+      <tr class="notable"><td class="rank">02</td><td>Judiciary (Supreme + district)</td><td class="bar olive"><span class="barfill" style="width:54%"></span><span class="label">5.4</span></td><td>moderate</td></tr>
+      <tr><td class="rank">03</td><td>Tax Authority</td><td class="bar"><span class="barfill" style="width:46%"></span><span class="label">4.6</span></td><td>weak</td></tr>
+      <tr><td class="rank">04</td><td>Welfare & National Insurance</td><td class="bar"><span class="barfill" style="width:40%"></span><span class="label">4.0</span></td><td>weak</td></tr>
+      <tr><td class="rank">05</td><td>Local authorities (257)</td><td class="bar"><span class="barfill" style="width:40%"></span><span class="label">4.0</span></td><td>weak</td></tr>
+      <tr><td class="rank">06</td><td>Knesset (legislature)</td><td class="bar"><span class="barfill" style="width:33%"></span><span class="label">3.3</span></td><td>weak</td></tr>
+      <tr><td class="rank">07</td><td>Education system</td><td class="bar"><span class="barfill" style="width:33%"></span><span class="label">3.3</span></td><td>weak</td></tr>
+      <tr><td class="rank">08</td><td>Public companies + media</td><td class="bar"><span class="barfill" style="width:33%"></span><span class="label">3.3</span></td><td>weak</td></tr>
+      <tr><td class="rank">09</td><td>Executive branch (Government)</td><td class="bar"><span class="barfill" style="width:31%"></span><span class="label">3.1</span></td><td>weak</td></tr>
+      <tr class="warning"><td class="rank">10</td><td>Israel Police</td><td class="bar"><span class="barfill" style="width:28%"></span><span class="label">2.8</span></td><td>collapse</td></tr>
+      <tr class="warning"><td class="rank">11</td><td>Prison service (IPS)</td><td class="bar"><span class="barfill" style="width:25%"></span><span class="label">2.5</span></td><td>collapse</td></tr>
+      <tr class="warning"><td class="rank">12</td><td>Rabbinate & religion system</td><td class="bar"><span class="barfill" style="width:20%"></span><span class="label">2.0</span></td><td>collapse</td></tr>
     </tbody>
   </table>
   <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
@@ -1384,6 +1472,12 @@
   </p>
 </section>
 
+<div class="phase-divider">
+  <div class="num">PART III · OF III</div>
+  <div class="label">Appendices</div>
+  <div class="sub">240+ named individuals · 13 tables: Shin Bet, Mossad, IDF chiefs of staff, police commissioners, BOI governors, presidents, attorneys general, chief rabbis, Supreme Court presidents, 25 greatest leaders, 20 cities, 20 tycoons, 2027 candidates.</div>
+</div>
+
 <!-- 19. APPENDICES -->
 <section id="appendices">
   <h2><span class="sec-no">19</span>Appendices · Full name lists & scoring</h2>
@@ -1760,8 +1854,8 @@
   <table>
     <thead><tr><th>Format</th><th>Description</th><th class="n">Size</th></tr></thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Summary report, print format</td><td class="n">1.6M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>Hebrew edition</td><td class="n">1.4M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Summary report, print format</td><td class="n">1.7M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>Hebrew edition</td><td class="n">1.7M</td></tr>
       <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>Arabic edition</td><td class="n">1.8M</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX</a></td><td>Word, editable</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>Slide deck (auto-generated)</td><td class="n">52K</td></tr>

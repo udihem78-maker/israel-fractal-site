@@ -7,31 +7,295 @@
 <meta name="description" content="מחקר של 78 שנות שלטון ישראלי. ציון F ירד מ־100 ל־0.6.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
-    --ink: #111;
-    --text: #222;
-    --muted: #666;
-    --faint: #999;
-    --rule: #d0d0d0;
-    --rule-light: #e8e8e8;
-    --panel: #f6f6f4;
-    --accent: #c01818;
+    --ink: #0f0e0d;
+    --text: #1f1e1c;
+    --muted: #665e58;
+    --faint: #a19a93;
+    --rule: #c9c2bb;
+    --rule-light: #e8e3dd;
+    --panel: #f5f1ea;
+    --accent: #a01818;
     --olive: #4a6d1a;
+    --paper: #faf7f0;
+    --display: 'Frank Ruhl Libre', 'Georgia', serif;
+    --sans: 'Rubik', 'Helvetica Neue', sans-serif;
+    --mono: 'IBM Plex Mono', 'Menlo', monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f0e0d; --ink: #faf7f0; --text: #e8e3dd; --muted: #a19a93; --faint: #665e58;
+      --rule: #3a3632; --rule-light: #26231f; --panel: #1a1816; --paper: #16140f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f0e0d; --ink: #faf7f0; --text: #e8e3dd; --muted: #a19a93; --faint: #665e58;
+    --rule: #3a3632; --rule-light: #26231f; --panel: #1a1816; --paper: #16140f;
+    color-scheme: dark;
   }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Rubik', sans-serif;
+    font-family: var(--sans);
     background: var(--bg);
     color: var(--text);
     direction: rtl;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1, "tnum" 0;
+  }
+  .num, table td.n, .mono { font-feature-settings: "tnum" 1, "lnum" 1; }
+
+  /* ─── HERO ─── */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) 1fr;
+    gap: 48px;
+    padding: 48px 0 40px;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    align-items: center;
+  }
+  .hero .big-f {
+    font-family: var(--display);
+    font-size: clamp(96px, 16vw, 180px);
+    font-weight: 400;
+    line-height: 0.85;
+    color: var(--accent);
+    letter-spacing: -0.045em;
+    direction: ltr;
+    text-align: right;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+  }
+  .hero .big-f .label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  .hero .narr {
+    font-family: var(--display);
+    font-size: clamp(18px, 2.2vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    font-weight: 400;
+    max-width: 44ch;
+  }
+  .hero .narr b { font-weight: 700; color: var(--accent); }
+  .hero .narr .k { font-family: var(--mono); font-weight: 500; direction: ltr; display: inline-block; }
+  .hero .foot {
+    grid-column: 1 / -1;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    direction: ltr;
+    text-align: right;
+  }
+
+  /* ─── PULL QUOTE ─── */
+  .pullquote {
+    margin: 56px auto;
+    max-width: 68ch;
+    padding: 36px 0 32px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-align: center;
+  }
+  .pullquote .q {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .pullquote .q em { color: var(--accent); font-style: italic; font-weight: 500; }
+  .pullquote .src {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 20px;
+    direction: ltr;
+  }
+
+  /* ─── PHASE DIVIDER (replaces thin horizontal rule) ─── */
+  .phase-divider {
+    margin: 80px 0 48px;
+    padding: 36px 0;
+    text-align: center;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+    position: relative;
+  }
+  .phase-divider .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    direction: ltr;
+  }
+  .phase-divider .label {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .phase-divider .label em { font-style: italic; }
+  .phase-divider .sub {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 14px;
+    max-width: 60ch;
+    margin-inline: auto;
+    line-height: 1.5;
+  }
+
+  /* ─── CHAPTER OPENER (optional for key sections) ─── */
+  .chapter-opener {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    padding: 32px 0 24px;
+    margin-bottom: 24px;
+    border-top: 1px solid var(--ink);
+    align-items: baseline;
+  }
+  .chapter-opener .numbox {
+    font-family: var(--display);
+    font-size: clamp(60px, 10vw, 110px);
+    font-weight: 400;
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    direction: ltr;
+    font-feature-settings: "tnum" 1;
+    min-width: 100px;
+    text-align: right;
+  }
+  .chapter-opener .body h2 {
+    font-family: var(--display);
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    border: none;
+    padding: 0;
+  }
+  .chapter-opener .body .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    direction: ltr;
+    text-align: right;
+  }
+  .chapter-opener .body .lede {
+    font-family: var(--display);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 56ch;
+    font-weight: 400;
+  }
+
+  /* ─── INLINE BAR IN TABLES ─── */
+  table td.bar {
+    position: relative;
+    overflow: visible;
+  }
+  table td.bar .barfill {
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+    height: 22px;
+    background: linear-gradient(to left, color-mix(in oklab, var(--accent) 20%, transparent), color-mix(in oklab, var(--accent) 8%, transparent));
+    border-right: 2px solid var(--accent);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 1px;
+  }
+  table td.bar.olive .barfill {
+    background: linear-gradient(to left, color-mix(in oklab, var(--olive) 22%, transparent), color-mix(in oklab, var(--olive) 8%, transparent));
+    border-right-color: var(--olive);
+  }
+  table td.bar .label {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 6px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 14px;
+    direction: ltr;
+  }
+
+  /* ─── KEY STAT CALLOUT (margin figure) ─── */
+  .keyfig {
+    display: inline-flex;
+    gap: 14px;
+    align-items: baseline;
+    padding: 12px 18px;
+    background: var(--paper);
+    border-right: 3px solid var(--accent);
+    margin: 10px 0 20px;
+    direction: ltr;
+    max-width: 100%;
+  }
+  .keyfig .v {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .keyfig .l {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+    direction: rtl;
+    max-width: 40ch;
+  }
+
+  /* ─── RESPONSIVE for new components ─── */
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; gap: 24px; padding: 28px 0 24px; }
+    .hero .big-f { font-size: 72px; text-align: center; }
+    .hero .narr { font-size: 17px; }
+    .chapter-opener { grid-template-columns: 1fr; gap: 8px; }
+    .chapter-opener .numbox { font-size: 54px; text-align: right; }
+    .phase-divider { padding: 24px 16px; margin: 56px -16px 32px; }
+    .phase-divider .label { font-size: 28px; }
+    .pullquote { padding: 24px 0; margin: 36px auto; }
+    .pullquote .q { font-size: 20px; }
   }
 
   /* ─── HEADER ─── */
@@ -629,8 +893,25 @@
 
 <div class="doc-title">
   <div class="meta">V2 · OCT 2026 · 40 docs · 16 primary sources · MIT license</div>
-  <h1>ישראל 1948—2026: מדידה פרקטלית של תפקוד שלטוני</h1>
-  <div class="subtitle">מחקר אקדמי עצמאי · מתודולוגיית Data Fluidity · 84,100 נקודות מדידה</div>
+  <h1 style="font-family: var(--display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -0.02em; max-width: 24ch;">ישראל 1948—2026: מדידה פרקטלית של תפקוד שלטוני</h1>
+  <div class="subtitle" style="font-family: var(--display); font-weight: 400; font-size: 19px; margin-top: 14px;">מחקר אקדמי עצמאי · מתודולוגיית Data Fluidity · 84,100 נקודות מדידה</div>
+</div>
+
+<div class="hero">
+  <div class="big-f">
+    0.6
+    <span class="label">F · ISRAEL · 2026</span>
+  </div>
+  <div class="narr">
+    ציון <b>F</b> של מדינת ישראל ירד מ־<span class="k">100</span> ב־1948
+    ל־<span class="k">0.6</span> ב־2026 — ירידה של <span class="k">×170</span>.
+    זהו הפרסום המכליל של 40 מסמכי מחקר על <span class="k">1,350</span> יחידות ניתוח:
+    <span class="k">13</span> ראשי ממשלה, <span class="k">15</span> מערכות ציבוריות,
+    <span class="k">48</span> מגזרים, <span class="k">100</span> חברות ו־<span class="k">30,000</span> עמותות.
+  </div>
+  <div class="foot">
+    F = D × U / R · DATA FLUIDITY METHODOLOGY · EHUD HEMLI · 2026
+  </div>
 </div>
 
 <div class="abstract">
@@ -675,6 +956,12 @@
     <li><a href="#reports">הורדות ומקורות</a></li>
   </ol>
 </nav>
+
+<div class="phase-divider" style="margin-top:40px;">
+  <div class="num">PART I · OF III</div>
+  <div class="label"><em>מתודולוגיה</em></div>
+  <div class="sub">4 פרקים: על המחקר · איך מודדים תפקוד שלטוני · איך בוצעה המדידה · היקף ומגבלות.</div>
+</div>
 
 <!-- 01. ABOUT THE RESEARCH -->
 <section id="about">
@@ -861,7 +1148,16 @@
   </p>
 </section>
 
-<hr class="divider">
+<div class="phase-divider">
+  <div class="num">PART II · OF III</div>
+  <div class="label"><em>ממצאים</em></div>
+  <div class="sub">14 פרקים של תוצאות מספריות: מגמת F היסטורית, דירוג ראשי ממשלה, 12 מערכות ציבוריות, 1,250 מנהיגים, 100 חברות, 80 עמותות, ועוד.</div>
+</div>
+
+<div class="pullquote">
+  <div class="q">"החלטה ללא תועלת היא רק סיסמה. תועלת ללא חיכוך לא קיימת. <em>החיכוך הוא המדד.</em>"</div>
+  <div class="src">EHUD HEMLI · DATA FLUIDITY METHODOLOGY</div>
+</div>
 
 <!-- 05. F TREND -->
 
@@ -998,18 +1294,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="notable"><td class="rank">01</td><td>צבא ומערכת הביטחון</td><td class="n">5.8</td><td>בינוני</td></tr>
-      <tr class="notable"><td class="rank">02</td><td>מערכת המשפט (עליון + מחוזי)</td><td class="n">5.4</td><td>בינוני</td></tr>
-      <tr><td class="rank">03</td><td>רשות המסים (מס הכנסה)</td><td class="n">4.6</td><td>לקוי</td></tr>
-      <tr><td class="rank">04</td><td>רווחה וביטוח לאומי</td><td class="n">4.0</td><td>לקוי</td></tr>
-      <tr><td class="rank">05</td><td>רשויות מקומיות (257 רשויות)</td><td class="n">4.0</td><td>לקוי</td></tr>
-      <tr><td class="rank">06</td><td>הכנסת (רשות מחוקקת)</td><td class="n">3.3</td><td>לקוי</td></tr>
-      <tr><td class="rank">07</td><td>מערכת החינוך</td><td class="n">3.3</td><td>לקוי</td></tr>
-      <tr><td class="rank">08</td><td>חברות ציבוריות + תקשורת</td><td class="n">3.3</td><td>לקוי</td></tr>
-      <tr><td class="rank">09</td><td>הממשלה (רשות מבצעת)</td><td class="n">3.1</td><td>לקוי</td></tr>
-      <tr class="warning"><td class="rank">10</td><td>משטרת ישראל</td><td class="n">2.8</td><td>קריסה</td></tr>
-      <tr class="warning"><td class="rank">11</td><td>שב"ס (שירות בתי הסוהר)</td><td class="n">2.5</td><td>קריסה</td></tr>
-      <tr class="warning"><td class="rank">12</td><td>רבנות ומערכת הדת</td><td class="n">2.0</td><td>קריסה</td></tr>
+      <tr class="notable"><td class="rank">01</td><td>צבא ומערכת הביטחון</td><td class="bar olive"><span class="barfill" style="width:58%"></span><span class="label">5.8</span></td><td>בינוני</td></tr>
+      <tr class="notable"><td class="rank">02</td><td>מערכת המשפט (עליון + מחוזי)</td><td class="bar olive"><span class="barfill" style="width:54%"></span><span class="label">5.4</span></td><td>בינוני</td></tr>
+      <tr><td class="rank">03</td><td>רשות המסים (מס הכנסה)</td><td class="bar"><span class="barfill" style="width:46%"></span><span class="label">4.6</span></td><td>לקוי</td></tr>
+      <tr><td class="rank">04</td><td>רווחה וביטוח לאומי</td><td class="bar"><span class="barfill" style="width:40%"></span><span class="label">4.0</span></td><td>לקוי</td></tr>
+      <tr><td class="rank">05</td><td>רשויות מקומיות (257 רשויות)</td><td class="bar"><span class="barfill" style="width:40%"></span><span class="label">4.0</span></td><td>לקוי</td></tr>
+      <tr><td class="rank">06</td><td>הכנסת (רשות מחוקקת)</td><td class="bar"><span class="barfill" style="width:33%"></span><span class="label">3.3</span></td><td>לקוי</td></tr>
+      <tr><td class="rank">07</td><td>מערכת החינוך</td><td class="bar"><span class="barfill" style="width:33%"></span><span class="label">3.3</span></td><td>לקוי</td></tr>
+      <tr><td class="rank">08</td><td>חברות ציבוריות + תקשורת</td><td class="bar"><span class="barfill" style="width:33%"></span><span class="label">3.3</span></td><td>לקוי</td></tr>
+      <tr><td class="rank">09</td><td>הממשלה (רשות מבצעת)</td><td class="bar"><span class="barfill" style="width:31%"></span><span class="label">3.1</span></td><td>לקוי</td></tr>
+      <tr class="warning"><td class="rank">10</td><td>משטרת ישראל</td><td class="bar"><span class="barfill" style="width:28%"></span><span class="label">2.8</span></td><td>קריסה</td></tr>
+      <tr class="warning"><td class="rank">11</td><td>שב"ס (שירות בתי הסוהר)</td><td class="bar"><span class="barfill" style="width:25%"></span><span class="label">2.5</span></td><td>קריסה</td></tr>
+      <tr class="warning"><td class="rank">12</td><td>רבנות ומערכת הדת</td><td class="bar"><span class="barfill" style="width:20%"></span><span class="label">2.0</span></td><td>קריסה</td></tr>
     </tbody>
   </table>
   <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
@@ -1875,6 +2171,12 @@
   </p>
 </section>
 
+<div class="phase-divider">
+  <div class="num">PART III · OF III</div>
+  <div class="label"><em>נספחים</em></div>
+  <div class="sub">240+ שמות מלאים · 13 טבלאות: ראשי שב"כ, המוסד, רמטכ"לים, מפכ"לים, נגידי בנק ישראל, נשיאים, יועצים משפטיים, רבנים, שופטי עליון, 25 הגדולים, 20 ערים, 20 אילי הון, מועמדי 2027.</div>
+</div>
+
 <!-- 19. APPENDICES -->
 <section id="appendices">
   <h2><span class="sec-no">19</span>נספחים · רשימות שמות וניקוד מלא</h2>
@@ -2283,8 +2585,8 @@
       <tr><th>פורמט</th><th>תיאור</th><th class="n">גודל</th></tr>
     </thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>דו"ח מכליל, עיצוב מודפס</td><td class="n">1.4M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">1.6M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>דו"ח מכליל, עיצוב מודפס</td><td class="n">1.7M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">1.7M</td></tr>
       <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير بالعربية</td><td class="n">1.8M</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX עברית</a></td><td>לעריכה ב־Word</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>מצגת (אוטומטית)</td><td class="n">52K</td></tr>
