@@ -273,6 +273,7 @@
     <li><a href="#crime">Finding · Organized crime & systemic impact</a></li>
     <li><a href="#rfactors">Finding · Friction, terror, funding, Israel's position</a></li>
     <li><a href="#citizen">Finding · The citizen's reality — money, time, separation of powers</a></li>
+    <li><a href="#inforflow">Meta · Information-flow engineering · teach, don't persuade</a></li>
     <li><a href="#network">Finding · Power network map</a></li>
     <li><a href="#appendices">Appendices · Full name lists & scoring</a></li>
     <li><a href="#findings">Finding · Key findings</a></li>
@@ -2038,9 +2039,186 @@
   </p>
 </section>
 
-<!-- 21. CORRUPTION NETWORK -->
+<!-- 21. INFORMATION-FLOW ENGINEERING -->
+<section id="inforflow">
+  <h2><span class="sec-no">21</span>Meta · Information-flow engineering · teach, don't persuade</h2>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
+    A meta chapter that examines itself: how is the research built so that it <em>teaches</em>
+    — rather than <em>persuades</em> — and lets the reader choose. Six sub-questions:
+    (a) the difference · (b) information-flow architecture · (c) four reading paths · (d) how to
+    compute your own F · (e) how to challenge the findings · (f) coverage audit — what we covered,
+    what is missing.
+  </p>
+
+  <h3>21.1 · Persuasion vs. teaching</h3>
+  <table>
+    <caption>Tab. 64 · Persuasion vs. teaching · design choices</caption>
+    <thead><tr><th>Dimension</th><th>Persuasion (rhetoric)</th><th>Teaching (method)</th></tr></thead>
+    <tbody>
+      <tr><td>Unit of message</td><td>The conclusion</td><td>Datum + formula</td></tr>
+      <tr><td>Reader's role</td><td>Accept / reject</td><td>Compute / choose</td></tr>
+      <tr><td>Degree of certainty</td><td>Absolute ("the truth")</td><td>Falsifiable (CIs, limits)</td></tr>
+      <tr><td>Sources</td><td>Hidden / in margins</td><td>Accessible · each datum sourced</td></tr>
+      <tr><td>Research limitations</td><td>Suppressed</td><td>Shown first (see section 04)</td></tr>
+      <tr><td>Recommendations</td><td>"Do X"</td><td>"If X — then Y; if ¬X — then ¬Y"</td></tr>
+      <tr><td>Tools for the reader</td><td>None</td><td>F = D×U/R formula that applies to your own life</td></tr>
+      <tr><td>Time scale</td><td>Momentary · campaign</td><td>Multi-year · 78 years</td></tr>
+      <tr><td>Emotion</td><td>Activated</td><td>Not relevant · numbers only</td></tr>
+      <tr><td>Effect on voter autonomy</td><td>Narrows</td><td>Widens</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>The core principle</strong>: this research does not provide conclusions — it provides
+    <strong>tools to create conclusions</strong>. If Government 37's F score is 2.0 — that is not
+    a recommendation to vote against it; it is evidence that the formula yields 2.0, given these
+    data, under this method. The reader is entitled to challenge any one of those three.
+  </p>
+
+  <h3>21.2 · Information-flow architecture · 3 layers</h3>
+  <table>
+    <caption>Tab. 65 · 3-layer information architecture</caption>
+    <thead><tr><th>Layer</th><th>Content</th><th>Where in the research</th><th>What the reader can do</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Layer 1 · Raw data</strong></td><td>Payslips, Knesset votes, ISA filings, State Prosecution yearbooks</td><td>GitHub · 40 source documents</td><td>Dig to the source, verify independently</td></tr>
+      <tr><td><strong>Layer 2 · Method + computation</strong></td><td>17 indicators · F formula · NCR, NFI, GQS algorithms</td><td>Section 02 (Methodology) · README.md</td><td>Reproduce the computation</td></tr>
+      <tr><td><strong>Layer 3 · Results · interpretation</strong></td><td>Scores, rankings, findings</td><td>Sections 05—20 (Findings)</td><td>Challenge, reinterpret, compute your own F</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>Important property</strong>: every datum in sections 05—20 is <strong>fully
+    traceable</strong> through layer 2 (method) to layer 1 (source data). There is no
+    "take my word for it". There is: here is the datum · here is the formula · here is the result ·
+    if you disagree, compute differently.
+  </p>
+
+  <h3>21.3 · Four reading paths · by need</h3>
+  <table>
+    <caption>Tab. 66 · 4 reading paths · by reader need</caption>
+    <thead><tr><th>Path</th><th>Reading time</th><th>Sections</th><th>For a reader who—</th></tr></thead>
+    <tbody>
+      <tr><td>A · "The headline"</td><td>2 minutes</td><td>Opening (0.6) + 05 (F trend) + 24 (findings)</td><td>Wants the finding in one line</td></tr>
+      <tr><td>B · "What it means for me"</td><td>8 minutes</td><td>+ Section 20 (citizen's reality) + 09 (trust)</td><td>Wants to understand personal impact</td></tr>
+      <tr><td>C · "I want to understand the method"</td><td>25 minutes</td><td>+ Sections 02—04 (methodology) + 06 (PMs) + 07 (institutions)</td><td>Wants to check if the analysis is serious</td></tr>
+      <tr><td>D · "I want everything"</td><td>2—3 hours</td><td>All 25 sections · 240+ names · 3 PDFs</td><td>Researcher / journalist / civic activist</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>No preferred path</strong>. The research supports all in parallel — but
+    <strong>aims at those who choose C or D</strong> (the deep reader). If a path-A reader walks
+    away with "Israel is in crisis" — that is the <em>least</em> the research wanted to convey.
+    The goal: that readers graduate to path C/D.
+  </p>
+
+  <h3>21.4 · Compute your own F</h3>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    The F = D × U / R formula works at the citizen level. Here are 5 questions that will give
+    you your own F:
+  </p>
+  <table>
+    <caption>Tab. 67 · Compute your own F · 5-question self-assessment</caption>
+    <thead><tr><th>Component</th><th>Question</th><th>Answer scale</th></tr></thead>
+    <tbody>
+      <tr><td><strong>D1</strong></td><td>How many of your decisions in the past month were based on data (vs. "gut feel")?</td><td>0—10</td></tr>
+      <tr><td><strong>D2</strong></td><td>How many of your decisions were coordinated with others whom they affect?</td><td>0—10</td></tr>
+      <tr><td><strong>U1</strong></td><td>How many of your decisions reached actual results (rather than remaining "ideas")?</td><td>0—10</td></tr>
+      <tr><td><strong>U2</strong></td><td>Was the result actually good in your eyes (not just what you expected)?</td><td>0—10</td></tr>
+      <tr><td><strong>R</strong></td><td>How much systemic friction (money, bureaucracy, time) stood in the way?</td><td>1—10 (1 = smooth · 10 = blocked)</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    <strong>Compute</strong>: D = (D1 + D2) / 2 · U = (U1 + U2) / 2 · F = D × U / R.
+    The average Israeli citizen: D=5, U=4, R=3 → F = 6.7.
+    Government 37: D=2, U=2, R=10 → F = 0.4. Gap ×16.
+    <strong>If your F is above 5</strong> — you function better than the government. That is the
+    key: even when the larger system is weak, you can act.
+  </p>
+
+  <h3>21.5 · How to challenge the findings · 5 legitimate ways</h3>
+  <table>
+    <caption>Tab. 68 · 5 legitimate ways to challenge the findings</caption>
+    <thead><tr><th>#</th><th>Type of challenge</th><th>How to do it</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td>Challenge the datum</td><td>Go to the source in layer 1 (GitHub). If you find an error — open an Issue</td></tr>
+      <tr><td>02</td><td>Challenge the indicator</td><td>Propose a different score for D/U/R. The result will update automatically</td></tr>
+      <tr><td>03</td><td>Challenge the method</td><td>Present an alternative method · run it on the same data</td></tr>
+      <tr><td>04</td><td>Challenge the interpretation</td><td>Same data — different historical context</td></tr>
+      <tr><td>05</td><td>Challenge the scope</td><td>"X, Y, Z are missing" — we'll add them in the next edition</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>All 5 ways are welcome</strong>. There is no commitment to the research's conclusions;
+    there is commitment to method transparency. MIT license allows fork, modify, distribute.
+    <a href="https://github.com/udihem78-maker/animated-eureka">github.com/udihem78-maker/animated-eureka</a>.
+  </p>
+
+  <h3>21.6 · Coverage audit · what we covered, what is missing</h3>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    Honest disclosure: this research is ambitious but not exhaustive. Here's what we covered,
+    and what we haven't.
+  </p>
+  <table>
+    <caption>Tab. 69 · Coverage audit · covered vs. not yet</caption>
+    <thead><tr><th>Domain</th><th>Coverage</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr class="notable"><td>Methodology · DUR · 17 indicators</td><td>✓ Full</td><td>Sections 02—04</td></tr>
+      <tr class="notable"><td>13 prime ministers</td><td>✓ Full</td><td>Section 06, appendix</td></tr>
+      <tr class="notable"><td>12 public institutions</td><td>✓ Full</td><td>Section 07</td></tr>
+      <tr class="notable"><td>1,250 leaders</td><td>✓ 240+ by name</td><td>Sections 08, 23</td></tr>
+      <tr class="notable"><td>100 companies NCR</td><td>✓ Top/Bottom 10 + sectors</td><td>Section 10</td></tr>
+      <tr class="notable"><td>80 unions and NGOs</td><td>✓ Top/Bottom 10</td><td>Section 11</td></tr>
+      <tr class="notable"><td>Media, capital, "The Club"</td><td>✓</td><td>Sections 12—13</td></tr>
+      <tr class="notable"><td>Academia + 48 colleges</td><td>✓ Named</td><td>Section 14</td></tr>
+      <tr class="notable"><td>Full judicial system</td><td>✓ 11 instances</td><td>Section 15</td></tr>
+      <tr class="notable"><td>48 sectors</td><td>✓</td><td>Section 16</td></tr>
+      <tr class="notable"><td>Oct 7 · crime · R-factors · terror · funding</td><td>✓</td><td>Sections 17—19</td></tr>
+      <tr class="notable"><td>Citizen's reality · money · time · powers</td><td>✓</td><td>Section 20</td></tr>
+      <tr><td>Healthcare system (190 hospitals)</td><td>⚠ Partial</td><td>In the margins · deserves a section</td></tr>
+      <tr><td>Environment · climate crisis · water</td><td>⚠ Partial</td><td>One of the big gaps</td></tr>
+      <tr><td>Jewish diaspora (14M)</td><td>⚠ Partial</td><td>US, European, Russian diasporas</td></tr>
+      <tr><td>Ethiopian community (165K)</td><td>⚠ Minimal</td><td>Systemic discrimination · needs a section</td></tr>
+      <tr><td>Mental health post-10/7</td><td>⚠ Mentioned</td><td>15K+ soldier PTSD, 25K civilians</td></tr>
+      <tr><td>Future scenarios 2026—2035</td><td>⚠ Partial</td><td>Covered in 4 scenarios (10/50/30/10%)</td></tr>
+      <tr class="warning"><td>Age/gender/class slice — across every system</td><td>✗ Missing</td><td>Cross-cutting slice not done</td></tr>
+      <tr class="warning"><td>Shadow economy (black market)</td><td>✗ Missing</td><td>₪80B+/yr undocumented</td></tr>
+      <tr class="warning"><td>Defense budget sliced (per branch)</td><td>✗ Missing</td><td>₪100B+ without transparency</td></tr>
+      <tr class="warning"><td>Commercial cyber industry</td><td>✗ Missing</td><td>Pegasus, NSO, Cellebrite · ₪10B+</td></tr>
+      <tr class="warning"><td>Kibbutz system (255 kibbutzim)</td><td>✗ Missing</td><td>125K residents</td></tr>
+      <tr class="warning"><td>Equality metrics (Gini by sector)</td><td>✗ Missing</td><td>Internal breakdown</td></tr>
+      <tr class="warning"><td>Reform evaluation (A/B testing)</td><td>✗ Missing</td><td>Policy simulations</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>What is "full coverage"?</strong> Impossible in one research project. The research
+    covered ~70% of the theoretical scope of "Israel as a system". Major gaps: health,
+    environment, diaspora, shadow economy, gender/age. Open to contribution: GitHub.
+  </p>
+
+  <h3>The meta conclusion</h3>
+  <div class="keyfig">
+    <div class="v">0 conclusions</div>
+    <div class="l">The research does not supply conclusions — it supplies tools to create conclusions · your F is yours</div>
+  </div>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>The only commitment of the research</strong>: method transparency. There is no
+    commitment to conclusions. The reader is entitled (and invited) to challenge any datum, any
+    indicator, any interpretation. <strong>The research's success is measured by</strong>:
+    (a) how many people computed their own F · (b) how many started an evidence-based discussion ·
+    (c) how many rejected the research on methodological (not emotional) grounds · (d) how many
+    other researchers extended/improved/challenged it.
+    <strong>"A research that persuades is propaganda. A research that teaches is democracy."</strong>
+  </p>
+
+  <p style="font-size:12.5px; color:var(--muted); max-width:68ch; margin-top:16px; border-top:1px solid var(--rule-light); padding-top:12px;">
+    <strong>Methodological background</strong>: Information Flow Engineering · Edward Tufte
+    (The Visual Display of Quantitative Information, 1983) · Hans Rosling (Gapminder, Factfulness
+    2018) · Donella Meadows (Thinking in Systems, 2008) · Daniel Kahneman (Thinking, Fast and
+    Slow, 2011) · Nassim Taleb (The Black Swan, 2007).
+  </p>
+</section>
+
+<!-- 22. CORRUPTION NETWORK -->
 <section id="network">
-  <h2><span class="sec-no">21</span>Finding · Power network map</h2>
+  <h2><span class="sec-no">22</span>Finding · Power network map</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     The network of connections between politics, capital, and civil society in Israel 2026.
     The chain starts with foreign money, passes through think tanks and politics, and ends
@@ -2085,7 +2263,7 @@
 
 <!-- 19. APPENDICES -->
 <section id="appendices">
-  <h2><span class="sec-no">22</span>Appendices · Full name lists & scoring</h2>
+  <h2><span class="sec-no">23</span>Appendices · Full name lists & scoring</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     Full name lists for the main leadership cohorts — 240+ named individuals with detailed F
     scoring. Each score comes from 17 Data Fluidity indicators. Rows highlighted in olive =
@@ -2440,7 +2618,7 @@
 
 <!-- 20. FINDINGS -->
 <section id="findings">
-  <h2><span class="sec-no">23</span>Finding · Key findings</h2>
+  <h2><span class="sec-no">24</span>Finding · Key findings</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     The five aggregate findings drawn from the analyses above. Each finding is detailed in its relevant section.
   </p>
@@ -2455,13 +2633,13 @@
 </section>
 
 <section id="reports">
-  <h2><span class="sec-no">24</span>Downloads & references</h2>
+  <h2><span class="sec-no">25</span>Downloads & references</h2>
   <table>
     <thead><tr><th>Format</th><th>Description</th><th class="n">Size</th></tr></thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Summary report, print format</td><td class="n">2.1M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>Hebrew edition</td><td class="n">2.1M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>Arabic edition</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Summary report, print format</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>Hebrew edition</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>Arabic edition</td><td class="n">2.4M</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX</a></td><td>Word, editable</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>Slide deck (auto-generated)</td><td class="n">52K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.epub">EPUB</a></td><td>For e-readers</td><td class="n">16K</td></tr>

@@ -953,6 +953,7 @@
     <li><a href="#crime">ממצא · פשיעה מאורגנת והשפעתה המערכתית</a></li>
     <li><a href="#rfactors">ממצא · חיכוך, טרור, מימון ומקום המדינה</a></li>
     <li><a href="#citizen">ממצא · מציאות האזרח — כסף, זמן, הפרדת רשויות</a></li>
+    <li><a href="#inforflow">מתא · הנדסת זרימת מידע · ללמד, לא לשכנע</a></li>
     <li><a href="#network">ממצא · מפת רשת הכוח</a></li>
     <li><a href="#appendices">נספחים · רשימות שמות וניקוד מלא</a></li>
     <li><a href="#findings">ממצא · אבחנות מרכזיות</a></li>
@@ -2722,9 +2723,189 @@
   </p>
 </section>
 
-<!-- 21. CORRUPTION NETWORK -->
+<!-- 21. INFORMATION-FLOW ENGINEERING -->
+<section id="inforflow">
+  <h2><span class="sec-no">21</span>מתא · הנדסת זרימת מידע · ללמד, לא לשכנע</h2>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
+    פרק מתא (meta) שבוחן את עצמו: איך בנוי המחקר כך שילמד — לא ישכנע — ויאפשר לקורא לבחור.
+    שש תת־שאלות: (א) מה ההבדל · (ב) ארכיטקטורת זרימת המידע · (ג) ארבעה נתיבי קריאה · (ד) איך
+    לחשב F משלך · (ה) איך לחלוק על הממצאים · (ו) אודיט כיסוי — מה כיסינו ומה חסר.
+  </p>
+
+  <h3>21.1 · ההבדל בין לשכנע ללמד</h3>
+  <table>
+    <caption>Tab. 64 · Persuasion vs. teaching · design choices</caption>
+    <thead>
+      <tr>
+        <th>ממד</th>
+        <th>שכנוע (רטוריקה)</th>
+        <th>הוראה (מתודה)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>יחידת המסר</td><td>המסקנה</td><td>הנתון + הנוסחה</td></tr>
+      <tr><td>תפקיד הקורא</td><td>לקבל / לדחות</td><td>לחשב / לבחור</td></tr>
+      <tr><td>מידת הודאות</td><td>מוחלטת ("האמת")</td><td>סתירה אפשרית (CI, מגבלות)</td></tr>
+      <tr><td>מקורות</td><td>מוסתרים / בשוליים</td><td>נגישים · לכל נתון מקור</td></tr>
+      <tr><td>מגבלות המחקר</td><td>נדחות</td><td>מוצגות ראשונה (ראו פרק 04)</td></tr>
+      <tr><td>המלצות</td><td>"עשה X"</td><td>"אם X — אז Y; אם −X — אז −Y"</td></tr>
+      <tr><td>כלים לקורא</td><td>אין</td><td>הנוסחה F = D×U/R שעובדת גם על חייך</td></tr>
+      <tr><td>סולם זמן</td><td>רגעי · קמפיין</td><td>רב־שנתי · 78 שנה</td></tr>
+      <tr><td>רגש</td><td>מופעל</td><td>לא רלוונטי · מספרים בלבד</td></tr>
+      <tr><td>אפקט על אוטונומיית הבוחר</td><td>מצטמצם</td><td>מתרחב</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>העיקרון המרכזי</strong>: המחקר הזה לא מספק מסקנות — הוא מספק <strong>כלים ליצור
+    מסקנות</strong>. אם ציון F של ממשלה 37 הוא 2.0 — זו אינה המלצה להצביע נגדה; זו ראיה שהנוסחה
+    נותנת 2.0, בהתחשב בנתונים האלה, לפי המתודה הזו. הקורא רשאי לחלוק על כל אחד משלושת האלה.
+  </p>
+
+  <h3>21.2 · ארכיטקטורת זרימת המידע · 3 שכבות</h3>
+  <table>
+    <caption>Tab. 65 · 3-layer information architecture</caption>
+    <thead><tr><th>שכבה</th><th>תוכן</th><th>איפה במחקר</th><th>מה הקורא יכול לעשות</th></tr></thead>
+    <tbody>
+      <tr><td><strong>שכבה 1 · נתוני גלם</strong></td><td>תלושי שכר, הצבעות כנסת, דיווחי רשות ני"ע, שנתוני פרקליטות</td><td>GitHub · 40 מסמכי מקור</td><td>לרדת למקור, לבדוק עצמאית</td></tr>
+      <tr><td><strong>שכבה 2 · מתודה + חישוב</strong></td><td>17 מדדים · נוסחת F · אלגוריתמי NCR, NFI, GQS</td><td>פרק 02 (מתודולוגיה) · README.md</td><td>לשחזר את החישוב בעצמו</td></tr>
+      <tr><td><strong>שכבה 3 · תוצאות · פרשנות</strong></td><td>ציונים, דירוגים, אבחנות</td><td>פרקים 05—20 (ממצאים)</td><td>לחלוק, לפרש אחרת, לחשב F משלך</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>תכונה חשובה</strong>: כל נתון בפרק 05—20 ניתן ל<strong>רידוד מלא</strong> דרך
+    שכבה 2 (המתודה) אל שכבה 1 (נתוני המקור). אין "אני אומר לך". יש "הנה הנתון · הנה הנוסחה ·
+    הנה התוצאה · אם לא תסכים, חשב אחרת."
+  </p>
+
+  <h3>21.3 · ארבעה נתיבי קריאה · לפי צורך</h3>
+  <table>
+    <caption>Tab. 66 · 4 reading paths · by reader need</caption>
+    <thead><tr><th>נתיב</th><th>זמן קריאה</th><th>פרקים</th><th>לקורא ש־</th></tr></thead>
+    <tbody>
+      <tr><td>א · "הכותרת"</td><td>2 דקות</td><td>פתיחה (0.6) + 05 (מגמת F) + 23 (אבחנות)</td><td>רוצה לדעת מה הממצא בשורה אחת</td></tr>
+      <tr><td>ב · "מה זה אומר עליי"</td><td>8 דקות</td><td>+ פרק 20 (מציאות האזרח) + 09 (אמון)</td><td>רוצה להבין את ההשפעה עליו אישית</td></tr>
+      <tr><td>ג · "אני רוצה להבין את המתודה"</td><td>25 דקות</td><td>+ פרקים 02—04 (מתודולוגיה) + 06 (ראשי ממשלה) + 07 (מערכות)</td><td>רוצה לבדוק אם הניתוח רציני</td></tr>
+      <tr><td>ד · "אני רוצה הכל"</td><td>2—3 שעות</td><td>כל 24 הפרקים · 240+ שמות · 3 PDF</td><td>חוקר / עיתונאי / פעיל ציבורי</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>אין נתיב מועדף</strong>. המחקר תומך בכולם במקביל — אבל <strong>מכוון למי שיבחר ג
+    או ד</strong> (קורא מעמיק). אם קורא נתיב א יוצא עם "ישראל במשבר" — זה הכי מעט שהמחקר רצה
+    להעביר. המטרה: שהקוראים יהפכו לנתיב ג/ד.
+  </p>
+
+  <h3>21.4 · איך לחשב את ה־F של עצמך</h3>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    הנוסחה F = D × U / R עובדת ברמת האזרח. הנה 5 שאלות שיתנו לך F משלך:
+  </p>
+  <table>
+    <caption>Tab. 67 · Compute your own F · 5-question self-assessment</caption>
+    <thead><tr><th>רכיב</th><th>שאלה</th><th>סקאלת תשובה</th></tr></thead>
+    <tbody>
+      <tr><td><strong>D1</strong></td><td>כמה החלטות שלך בחודש האחרון מבוססות על נתונים (מול "תחושת בטן")?</td><td>0—10</td></tr>
+      <tr><td><strong>D2</strong></td><td>כמה מההחלטות שלך מתואמות עם אנשים אחרים שהחלטתך משפיעה עליהם?</td><td>0—10</td></tr>
+      <tr><td><strong>U1</strong></td><td>כמה מההחלטות שלך הגיעו לתוצאה בפועל (ולא נותרו "רעיונות")?</td><td>0—10</td></tr>
+      <tr><td><strong>U2</strong></td><td>האם התוצאה טובה מעיניך בפועל (לא רק מה שחשבת מראש)?</td><td>0—10</td></tr>
+      <tr><td><strong>R</strong></td><td>כמה חיכוך מערכתי (כסף, בירוקרטיה, זמן) עמד בדרך?</td><td>1—10 (1 = חלק · 10 = חסום)</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    <strong>חישוב</strong>: D = (D1 + D2) / 2 · U = (U1 + U2) / 2 · F = D × U / R.
+    האזרח הישראלי הממוצע: D=5, U=4, R=3 → F = 6.7.
+    הממשלה 37: D=2, U=2, R=10 → F = 0.4. פער ×16.
+    <strong>אם ה־F שלך גבוה מ־5</strong> — אתה מתפקד טוב יותר מהממשלה. זה המפתח: גם כשהמערכת
+    הגדולה חלשה, אתה יכול לפעול.
+  </p>
+
+  <h3>21.5 · איך לחלוק על ממצאי המחקר · 5 דרכים לגיטימיות</h3>
+  <table>
+    <caption>Tab. 68 · 5 legitimate ways to challenge the findings</caption>
+    <thead><tr><th>#</th><th>סוג חלוקה</th><th>איך לעשות</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td>חלוקה על הנתון</td><td>לך למקור בשכבה 1 (GitHub). אם מצאת שגיאה — פתח Issue</td></tr>
+      <tr><td>02</td><td>חלוקה על המדד</td><td>הצע ציון אחר לרכיב D/U/R. התוצאה תשתנה אוטומטית</td></tr>
+      <tr><td>03</td><td>חלוקה על המתודה</td><td>הצג מתודה אלטרנטיבית · הפעל אותה על אותם נתונים</td></tr>
+      <tr><td>04</td><td>חלוקה על הפרשנות</td><td>הנתונים אותם — ההקשר ההיסטורי שונה</td></tr>
+      <tr><td>05</td><td>חלוקה על ההיקף</td><td>"חסר X, Y, Z" — נוסיף במהדורה הבאה</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>כל 5 הדרכים ברוכות</strong>. אין מחויבות למסקנות המחקר, יש מחויבות לשקיפות המתודה.
+    MIT license מאפשר fork, שינוי, הפצה.
+    <a href="https://github.com/udihem78-maker/animated-eureka">github.com/udihem78-maker/animated-eureka</a>.
+  </p>
+
+  <h3>21.6 · אודיט כיסוי · מה כיסינו ומה חסר</h3>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    חשיפה כנה: המחקר שאפתני אך לא ממצה. הנה מה שכיסינו, ומה שעדיין לא.
+  </p>
+  <table>
+    <caption>Tab. 69 · Coverage audit · covered vs. not yet</caption>
+    <thead>
+      <tr>
+        <th>תחום</th>
+        <th>כיסוי</th>
+        <th>הערה</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="notable"><td>מתודולוגיה · DUR · 17 מדדים</td><td>✓ מלא</td><td>פרקים 02—04</td></tr>
+      <tr class="notable"><td>13 ראשי ממשלה</td><td>✓ מלא</td><td>פרק 06, נספח</td></tr>
+      <tr class="notable"><td>12 מערכות ציבוריות</td><td>✓ מלא</td><td>פרק 07</td></tr>
+      <tr class="notable"><td>1,250 מנהיגים</td><td>✓ 240+ בשם</td><td>פרקים 08, 22</td></tr>
+      <tr class="notable"><td>100 חברות NCR</td><td>✓ Top/Bottom 10 + ענפים</td><td>פרק 10</td></tr>
+      <tr class="notable"><td>80 ארגוני עובדים ועמותות</td><td>✓ Top/Bottom 10</td><td>פרק 11</td></tr>
+      <tr class="notable"><td>תקשורת, הון, "המועדון"</td><td>✓</td><td>פרקים 12—13</td></tr>
+      <tr class="notable"><td>אקדמיה + 48 מכללות</td><td>✓ בשם</td><td>פרק 14</td></tr>
+      <tr class="notable"><td>מערכת המשפט המלאה</td><td>✓ 11 ערכאות</td><td>פרק 15</td></tr>
+      <tr class="notable"><td>48 מגזרים</td><td>✓</td><td>פרק 16</td></tr>
+      <tr class="notable"><td>7/10 · פשיעה · R-factors · טרור · מימון</td><td>✓</td><td>פרקים 17—19</td></tr>
+      <tr class="notable"><td>מציאות האזרח · כסף · זמן · הפרדת רשויות</td><td>✓</td><td>פרק 20</td></tr>
+      <tr><td>מערכת הבריאות (190 בתי"ח)</td><td>⚠ חלקי</td><td>בשוליים · ראוי לפרק</td></tr>
+      <tr><td>סביבה · משבר אקלים · מים</td><td>⚠ חלקי</td><td>אחד הפערים הגדולים</td></tr>
+      <tr><td>יהודי התפוצות (14M)</td><td>⚠ חלקי</td><td>פזורה אמריקאית, אירופית, רוסית</td></tr>
+      <tr><td>אוכלוסייה אתיופית (165K)</td><td>⚠ מועט</td><td>אפליה שיטתית · נדרש פרק</td></tr>
+      <tr><td>בריאות הנפש אחרי 7/10</td><td>⚠ נזכר</td><td>15K+ חיילי PTSD, 25K אזרחים</td></tr>
+      <tr><td>תחזיות עתיד · תרחישים 2026—2035</td><td>⚠ חלקי</td><td>פיזור ב-4 תרחישים (10/50/30/10%)</td></tr>
+      <tr class="warning"><td>פילוח גיל/מגדר/מעמד — חוצה כל מערכת</td><td>✗ חסר</td><td>פילוח "חוצה" לא נעשה</td></tr>
+      <tr class="warning"><td>כלכלת הצללים (black economy)</td><td>✗ חסר</td><td>₪80B+/שנה בלתי מתועדים</td></tr>
+      <tr class="warning"><td>תקציב ביטחון מפולח (לכל זרוע)</td><td>✗ חסר</td><td>₪100B+ בלי שקיפות</td></tr>
+      <tr class="warning"><td>תעשיית הסייבר האזרחי</td><td>✗ חסר</td><td>Pegasus, NSO, Cellebrite · ₪10B+</td></tr>
+      <tr class="warning"><td>מערכת הקיבוצים (255 קיבוצים)</td><td>✗ חסר</td><td>125K תושבים</td></tr>
+      <tr class="warning"><td>מדדי השוויון (Gini לפי מגזר)</td><td>✗ חסר</td><td>פילוח פנימי</td></tr>
+      <tr class="warning"><td>הערכת רפורמות אפשריות (A/B testing)</td><td>✗ חסר</td><td>סימולציות מדיניות</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>מהו "כיסוי מלא"?</strong> בלתי אפשרי במחקר אחד. המחקר כיסה ~70% מהיקף התיאורטי של
+    "מדינת ישראל כמערכת". פערים גדולים: בריאות, סביבה, פזורה, כלכלת צללים, מגדר/גיל. פתוח
+    לתרומה: GitHub.
+  </p>
+
+  <h3>המסקנה המטא</h3>
+  <div class="keyfig">
+    <div class="v">0 מסקנות</div>
+    <div class="l">המחקר אינו מספק מסקנות — הוא מספק כלים ליצור מסקנות · F שלך הוא שלך</div>
+  </div>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>המחויבות היחידה של המחקר</strong>: שקיפות המתודה. אין מחויבות למסקנות. הקורא רשאי
+    (ומוזמן) לחלוק על כל נתון, כל מדד, כל פרשנות. <strong>הצלחת המחקר נמדדת ב־</strong>:
+    (א) כמה אנשים חישבו F משלהם · (ב) כמה אנשים התחילו דיון מבוסס־ראיה · (ג) כמה אנשים דחו
+    את המחקר מסיבות מתודולוגיות (לא רגשיות) · (ד) כמה חוקרים אחרים הרחיבו/שיפרו/חלקו.
+    <strong>"מחקר שמשכנע הוא תעמולה. מחקר שמלמד הוא דמוקרטיה."</strong>
+  </p>
+
+  <p style="font-size:12.5px; color:var(--muted); max-width:68ch; margin-top:16px; border-top:1px solid var(--rule-light); padding-top:12px;">
+    <strong>רקע מתודי</strong>: הנדסת זרימת מידע (Information Flow Engineering) · Edward Tufte
+    (The Visual Display of Quantitative Information, 1983) · Hans Rosling (Gapminder, Factfulness
+    2018) · Donella Meadows (Thinking in Systems, 2008) · Daniel Kahneman (Thinking, Fast and
+    Slow, 2011) · Nassim Taleb (The Black Swan, 2007).
+  </p>
+</section>
+
+<!-- 22. CORRUPTION NETWORK -->
 <section id="network">
-  <h2><span class="sec-no">21</span>ממצא · מפת רשת הכוח</h2>
+  <h2><span class="sec-no">22</span>ממצא · מפת רשת הכוח</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     רשת הקשרים בין פוליטיקה, הון וחברה אזרחית בישראל 2026. השרשרת מתחילה בכסף זר, עוברת
     דרך מכוני מחשבה ופוליטיקה, ומסתיימת בשלטון המדיני והציבור.
@@ -2768,7 +2949,7 @@
 
 <!-- 19. APPENDICES -->
 <section id="appendices">
-  <h2><span class="sec-no">22</span>נספחים · רשימות שמות וניקוד מלא</h2>
+  <h2><span class="sec-no">23</span>נספחים · רשימות שמות וניקוד מלא</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     רשימות שמות מלאות לקבוצות המנהיגות המרכזיות — 240+ שמות עם ניקוד F מפורט. כל ציון
     מבוסס על 17 מדדי Data Fluidity. השמות המודגשים בירוק = ציון 9.0+. השמות המודגשים
@@ -3122,7 +3303,7 @@
 
 <!-- 20. FINDINGS -->
 <section id="findings">
-  <h2><span class="sec-no">23</span>ממצא · אבחנות מרכזיות</h2>
+  <h2><span class="sec-no">24</span>ממצא · אבחנות מרכזיות</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     חמש האבחנות המרכזיות המצטברות מכלל הניתוחים לעיל. פירוט מופיע בכל פרק רלוונטי.
   </p>
@@ -3168,15 +3349,15 @@
 
 <!-- 21. REPORTS -->
 <section id="reports">
-  <h2><span class="sec-no">24</span>הורדות ומקורות</h2>
+  <h2><span class="sec-no">25</span>הורדות ומקורות</h2>
   <table>
     <thead>
       <tr><th>פורמט</th><th>תיאור</th><th class="n">גודל</th></tr>
     </thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>דו"ח מכליל, עיצוב מודפס</td><td class="n">2.1M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">2.1M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير بالعربية</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>דו"ח מכליל, עיצוב מודפס</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير بالعربية</td><td class="n">2.4M</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX עברית</a></td><td>לעריכה ב־Word</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>מצגת (אוטומטית)</td><td class="n">52K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.epub">EPUB</a></td><td>לקוראים אלקטרוניים</td><td class="n">16K</td></tr>

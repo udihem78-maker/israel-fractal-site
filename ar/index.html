@@ -270,6 +270,7 @@
     <li><a href="#crime">نتيجة · الجريمة المنظمة وتأثيرها المنظومي</a></li>
     <li><a href="#rfactors">نتيجة · الاحتكاك، الإرهاب، التمويل، ومكانة الدولة</a></li>
     <li><a href="#citizen">نتيجة · واقع المواطن — المال، الوقت، فصل السلطات</a></li>
+    <li><a href="#inforflow">ميتا · هندسة تدفق المعلومات · تعليم لا إقناع</a></li>
     <li><a href="#network">نتيجة · خريطة شبكة القوة</a></li>
     <li><a href="#appendices">ملاحق · قوائم أسماء كاملة وتصنيف</a></li>
     <li><a href="#findings">نتيجة · أهم النتائج</a></li>
@@ -1722,9 +1723,140 @@
   </p>
 </section>
 
-<!-- 21. CORRUPTION NETWORK -->
+<!-- 21. INFORMATION-FLOW ENGINEERING -->
+<section id="inforflow">
+  <h2><span class="sec-no">21</span>ميتا · هندسة تدفق المعلومات · تعليم لا إقناع</h2>
+  <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
+    فصل ميتا يفحص نفسه: كيف بُني البحث ليعلّم — لا يُقنع — ويترك للقارئ حرية الاختيار.
+    ستة أسئلة فرعية: (أ) الفرق · (ب) هندسة تدفق المعلومات · (ج) أربعة مسارات قراءة · (د) كيف
+    تحسب F الخاص بك · (هـ) كيف تعترض على النتائج · (و) تدقيق التغطية — ما غطيناه وما ينقص.
+  </p>
+
+  <h3>21.1 · الفرق بين الإقناع والتعليم</h3>
+  <table>
+    <caption>Tab. 64 · Persuasion vs. teaching</caption>
+    <thead><tr><th>البُعد</th><th>إقناع (بلاغة)</th><th>تعليم (منهجية)</th></tr></thead>
+    <tbody>
+      <tr><td>وحدة الرسالة</td><td>الاستنتاج</td><td>البيان + الصيغة</td></tr>
+      <tr><td>دور القارئ</td><td>قبول / رفض</td><td>حساب / اختيار</td></tr>
+      <tr><td>درجة اليقين</td><td>مطلقة ("الحقيقة")</td><td>قابلة للنقض (فواصل ثقة، حدود)</td></tr>
+      <tr><td>المصادر</td><td>مخفية / هامشية</td><td>متاحة · لكل بيان مصدر</td></tr>
+      <tr><td>حدود البحث</td><td>مُقَمَّعة</td><td>تُعرض أولاً (انظر القسم 04)</td></tr>
+      <tr><td>التوصيات</td><td>"افعل X"</td><td>"إذا X — فـ Y؛ إذا ليس X — فليس Y"</td></tr>
+      <tr><td>أدوات القارئ</td><td>لا شيء</td><td>صيغة F = D×U/R تعمل على حياتك</td></tr>
+      <tr><td>مقياس الزمن</td><td>لحظي · حملة</td><td>متعدد السنوات · 78 عاماً</td></tr>
+      <tr><td>العاطفة</td><td>مُفعَّلة</td><td>غير ذات صلة · أرقام فقط</td></tr>
+      <tr><td>الأثر على استقلالية الناخب</td><td>يُضيّق</td><td>يُوسّع</td></tr>
+    </tbody>
+  </table>
+
+  <h3>21.2 · هندسة تدفق المعلومات · 3 طبقات</h3>
+  <table>
+    <caption>Tab. 65 · 3-layer information architecture</caption>
+    <thead><tr><th>الطبقة</th><th>المحتوى</th><th>مكانه في البحث</th><th>ما يستطيع القارئ فعله</th></tr></thead>
+    <tbody>
+      <tr><td><strong>الطبقة 1 · بيانات خام</strong></td><td>قسائم رواتب، تصويتات كنيست، إفصاحات ISA، حوليات نيابة الدولة</td><td>GitHub · 40 وثيقة مصدر</td><td>النزول للمصدر، التحقق مستقلاً</td></tr>
+      <tr><td><strong>الطبقة 2 · منهجية + حساب</strong></td><td>17 مؤشراً · صيغة F · خوارزميات NCR, NFI, GQS</td><td>القسم 02 (المنهجية) · README.md</td><td>إعادة إنتاج الحساب</td></tr>
+      <tr><td><strong>الطبقة 3 · نتائج · تفسير</strong></td><td>درجات، تصنيفات، نتائج</td><td>الأقسام 05—20 (النتائج)</td><td>الاعتراض، إعادة التفسير، حساب F الخاص</td></tr>
+    </tbody>
+  </table>
+
+  <h3>21.3 · أربعة مسارات قراءة · حسب الحاجة</h3>
+  <table>
+    <caption>Tab. 66 · 4 reading paths</caption>
+    <thead><tr><th>المسار</th><th>وقت القراءة</th><th>الأقسام</th><th>للقارئ الذي —</th></tr></thead>
+    <tbody>
+      <tr><td>أ · "العنوان"</td><td>دقيقتان</td><td>الافتتاح (0.6) + 05 + 24</td><td>يريد النتيجة في سطر واحد</td></tr>
+      <tr><td>ب · "ما يعنيه لي"</td><td>8 دقائق</td><td>+ القسم 20 (واقع المواطن) + 09 (الثقة)</td><td>يريد فهم التأثير الشخصي</td></tr>
+      <tr><td>ج · "أريد فهم المنهجية"</td><td>25 دقيقة</td><td>+ الأقسام 02—04 + 06 + 07</td><td>يريد التحقق من جدية التحليل</td></tr>
+      <tr><td>د · "أريد كل شيء"</td><td>2—3 ساعات</td><td>كل الأقسام الـ 25 · +240 اسماً · 3 PDF</td><td>باحث / صحفي / ناشط مدني</td></tr>
+    </tbody>
+  </table>
+
+  <h3>21.4 · كيف تحسب F الخاص بك</h3>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    صيغة F = D × U / R تعمل على مستوى المواطن. إليك 5 أسئلة تعطيك F الخاص بك:
+  </p>
+  <table>
+    <caption>Tab. 67 · Compute your own F</caption>
+    <thead><tr><th>المكوّن</th><th>السؤال</th><th>مقياس الإجابة</th></tr></thead>
+    <tbody>
+      <tr><td><strong>D1</strong></td><td>كم من قراراتك في الشهر الماضي استندت إلى بيانات (مقابل "الإحساس")؟</td><td>0—10</td></tr>
+      <tr><td><strong>D2</strong></td><td>كم من قراراتك كانت منسقة مع الآخرين الذين تؤثر فيهم؟</td><td>0—10</td></tr>
+      <tr><td><strong>U1</strong></td><td>كم من قراراتك وصلت إلى نتائج فعلية (ولم تبقَ "أفكاراً")؟</td><td>0—10</td></tr>
+      <tr><td><strong>U2</strong></td><td>هل كانت النتيجة جيدة فعلاً في نظرك (ليس فقط ما توقعته)؟</td><td>0—10</td></tr>
+      <tr><td><strong>R</strong></td><td>كم من الاحتكاك المنظومي (المال، البيروقراطية، الوقت) وقف في الطريق؟</td><td>1—10 (1 = سلس · 10 = محجوب)</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:14px; color:var(--text); max-width:68ch;">
+    <strong>الحساب</strong>: D = (D1 + D2) / 2 · U = (U1 + U2) / 2 · F = D × U / R.
+    المواطن الإسرائيلي المتوسط: D=5, U=4, R=3 → F = 6.7.
+    الحكومة 37: D=2, U=2, R=10 → F = 0.4. فجوة ×16.
+    <strong>إذا كان F الخاص بك أعلى من 5</strong> — فأنت تعمل أفضل من الحكومة. هذا هو المفتاح:
+    حتى عندما تكون المنظومة الأكبر ضعيفة، يمكنك التصرف.
+  </p>
+
+  <h3>21.5 · كيف تعترض على النتائج · 5 طرق مشروعة</h3>
+  <table>
+    <caption>Tab. 68 · 5 legitimate ways to challenge</caption>
+    <thead><tr><th>#</th><th>نوع الاعتراض</th><th>كيف</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td>اعتراض على البيان</td><td>اذهب إلى المصدر في الطبقة 1 (GitHub). إن وجدت خطأ — افتح Issue</td></tr>
+      <tr><td>02</td><td>اعتراض على المؤشر</td><td>اقترح درجة أخرى لمكوّن D/U/R. تتحدث النتيجة تلقائياً</td></tr>
+      <tr><td>03</td><td>اعتراض على المنهجية</td><td>قدّم منهجية بديلة · شغّلها على البيانات نفسها</td></tr>
+      <tr><td>04</td><td>اعتراض على التفسير</td><td>البيانات نفسها — السياق التاريخي مختلف</td></tr>
+      <tr><td>05</td><td>اعتراض على النطاق</td><td>"X، Y، Z ناقصة" — سنضيفها في الإصدار التالي</td></tr>
+    </tbody>
+  </table>
+
+  <h3>21.6 · تدقيق التغطية · ما غطّينا وما ينقص</h3>
+  <table>
+    <caption>Tab. 69 · Coverage audit</caption>
+    <thead><tr><th>المجال</th><th>التغطية</th><th>ملاحظة</th></tr></thead>
+    <tbody>
+      <tr class="notable"><td>المنهجية · DUR · 17 مؤشراً</td><td>✓ كاملة</td><td>الأقسام 02—04</td></tr>
+      <tr class="notable"><td>13 رئيس وزراء</td><td>✓ كاملة</td><td>القسم 06، الملحق</td></tr>
+      <tr class="notable"><td>12 منظومة عامة</td><td>✓ كاملة</td><td>القسم 07</td></tr>
+      <tr class="notable"><td>1,250 قائداً</td><td>✓ +240 بالاسم</td><td>الأقسام 08، 23</td></tr>
+      <tr class="notable"><td>100 شركة NCR</td><td>✓ Top/Bottom 10 + قطاعات</td><td>القسم 10</td></tr>
+      <tr class="notable"><td>80 نقابة وجمعية</td><td>✓ Top/Bottom 10</td><td>القسم 11</td></tr>
+      <tr class="notable"><td>الإعلام، رأس المال، "النادي"</td><td>✓</td><td>الأقسام 12—13</td></tr>
+      <tr class="notable"><td>الأكاديميا + 48 كلية</td><td>✓ بالاسم</td><td>القسم 14</td></tr>
+      <tr class="notable"><td>المنظومة القضائية الكاملة</td><td>✓ 11 درجة</td><td>القسم 15</td></tr>
+      <tr class="notable"><td>48 قطاعاً</td><td>✓</td><td>القسم 16</td></tr>
+      <tr class="notable"><td>7/10 · جريمة · R-factors · إرهاب · تمويل</td><td>✓</td><td>الأقسام 17—19</td></tr>
+      <tr class="notable"><td>واقع المواطن</td><td>✓</td><td>القسم 20</td></tr>
+      <tr><td>منظومة الصحة (190 مستشفى)</td><td>⚠ جزئي</td><td>في الهوامش · يستحق قسماً</td></tr>
+      <tr><td>البيئة · أزمة المناخ · المياه</td><td>⚠ جزئي</td><td>أحد الفجوات الكبرى</td></tr>
+      <tr><td>يهود الشتات (14 مليون)</td><td>⚠ جزئي</td><td>الشتات الأمريكي، الأوروبي، الروسي</td></tr>
+      <tr><td>الجالية الإثيوبية (165 ألفاً)</td><td>⚠ قليل</td><td>تمييز منهجي · يحتاج قسماً</td></tr>
+      <tr><td>الصحة النفسية بعد 10/7</td><td>⚠ مذكور</td><td>+15 ألف جندي PTSD، 25 ألف مدني</td></tr>
+      <tr><td>سيناريوهات المستقبل 2026—2035</td><td>⚠ جزئي</td><td>مغطى في 4 سيناريوهات</td></tr>
+      <tr class="warning"><td>تقسيم العمر/الجنس/الطبقة — عبر كل منظومة</td><td>✗ ناقص</td><td>التقسيم المتقاطع لم يُنجز</td></tr>
+      <tr class="warning"><td>الاقتصاد الأسود</td><td>✗ ناقص</td><td>+₪80B/سنة غير موثق</td></tr>
+      <tr class="warning"><td>ميزانية الدفاع المفصلة (لكل ذراع)</td><td>✗ ناقصة</td><td>+₪100B بدون شفافية</td></tr>
+      <tr class="warning"><td>صناعة السايبر المدنية</td><td>✗ ناقصة</td><td>Pegasus، NSO، Cellebrite · +₪10B</td></tr>
+      <tr class="warning"><td>منظومة الكيبوتس (255 كيبوتس)</td><td>✗ ناقصة</td><td>125 ألف ساكن</td></tr>
+    </tbody>
+  </table>
+
+  <h3>الخلاصة الميتا</h3>
+  <p style="font-size:14.5px; color:var(--text); max-width:68ch;">
+    <strong>0 استنتاجات</strong>: البحث لا يقدم استنتاجات — يقدم أدوات لإنشاء استنتاجات.
+    F الخاص بك هو لك. الالتزام الوحيد للبحث: شفافية المنهجية. لا التزام بالاستنتاجات. القارئ
+    مُخوّل (ومدعو) للاعتراض على أي بيان، أي مؤشر، أي تفسير.
+    <strong>"البحث الذي يُقنع هو دعاية. البحث الذي يُعلّم هو ديمقراطية."</strong>
+  </p>
+
+  <p style="font-size:12.5px; color:var(--muted); max-width:68ch; margin-top:16px; border-top:1px solid var(--rule-light); padding-top:12px;">
+    <strong>الخلفية المنهجية</strong>: هندسة تدفق المعلومات · Edward Tufte · Hans Rosling
+    (Factfulness) · Donella Meadows (Thinking in Systems) · Daniel Kahneman · Nassim Taleb.
+  </p>
+</section>
+
+<!-- 22. CORRUPTION NETWORK -->
 <section id="network">
-  <h2><span class="sec-no">21</span>نتيجة · خريطة شبكة القوة</h2>
+  <h2><span class="sec-no">22</span>نتيجة · خريطة شبكة القوة</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     شبكة الصلات بين السياسة ورأس المال والمجتمع المدني في إسرائيل 2026. تبدأ السلسلة بالمال
     الأجنبي، تمر عبر مراكز الفكر والسياسة، وتنتهي في المستويات الدبلوماسية والشعبية.
@@ -1763,7 +1895,7 @@
 
 <!-- 19. APPENDICES -->
 <section id="appendices">
-  <h2><span class="sec-no">22</span>ملاحق · قوائم أسماء كاملة وتصنيف</h2>
+  <h2><span class="sec-no">23</span>ملاحق · قوائم أسماء كاملة وتصنيف</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     قوائم أسماء كاملة للمجموعات القيادية الرئيسية — أكثر من 240 اسماً مع تصنيف F مفصل.
     الأسماء الخضراء = درجة 9.0+. الأسماء الحمراء = درجة أقل من 5.
@@ -2091,7 +2223,7 @@
 
 <!-- 20. FINDINGS -->
 <section id="findings">
-  <h2><span class="sec-no">23</span>نتيجة · أهم النتائج</h2>
+  <h2><span class="sec-no">24</span>نتيجة · أهم النتائج</h2>
   <p style="color:var(--muted); font-size:14.5px; max-width:68ch;">
     خمس النتائج المجمعة المستخلصة من التحليلات أعلاه. التفاصيل في كل قسم ذي صلة.
   </p>
@@ -2107,13 +2239,13 @@
 
 <!-- 18. REPORTS -->
 <section id="reports">
-  <h2><span class="sec-no">24</span>تحميلات ومراجع</h2>
+  <h2><span class="sec-no">25</span>تحميلات ومراجع</h2>
   <table>
     <thead><tr><th>الصيغة</th><th>الوصف</th><th class="n">الحجم</th></tr></thead>
     <tbody>
-      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير الملخّص بالعربية</td><td class="n">2.2M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>النسخة العبرية</td><td class="n">2.1M</td></tr>
-      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">2.1M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-ar.pdf">PDF العربية</a></td><td>التقرير الملخّص بالعربية</td><td class="n">2.4M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-he.pdf">PDF עברית</a></td><td>النسخة العبرية</td><td class="n">2.2M</td></tr>
+      <tr><td><a href="../reports/israel-fractal-en.pdf">PDF English</a></td><td>Research summary, English</td><td class="n">2.2M</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full-he.docx">DOCX</a></td><td>للتحرير في Word</td><td class="n">20K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.pptx">PPTX</a></td><td>عرض تقديمي (تلقائي)</td><td class="n">52K</td></tr>
       <tr><td><a href="../reports/v2/israel-fractal-full.epub">EPUB</a></td><td>للقراء الإلكترونية</td><td class="n">16K</td></tr>
