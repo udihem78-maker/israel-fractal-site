@@ -11,16 +11,16 @@
 <style>
   :root {
     --bg: #ffffff;
-    --ink: #0f0e0d;
-    --text: #1f1e1c;
-    --muted: #665e58;
-    --faint: #a19a93;
-    --rule: #c9c2bb;
-    --rule-light: #e8e3dd;
-    --panel: #f5f1ea;
-    --accent: #a01818;
-    --olive: #4a6d1a;
-    --paper: #faf7f0;
+    --ink: #0a0908;
+    --text: #15130f;
+    --muted: #5a524b;
+    --faint: #8e8680;
+    --rule: #bfb6ad;
+    --rule-light: #e4ddd3;
+    --panel: #f0ebe0;
+    --accent: #9a1818;
+    --olive: #3f6013;
+    --paper: #f8f4ea;
     --display: 'Frank Ruhl Libre', 'Georgia', serif;
     --sans: 'Rubik', 'Helvetica Neue', sans-serif;
     --mono: 'IBM Plex Mono', 'Menlo', monospace;
@@ -44,11 +44,28 @@
     background: var(--bg);
     color: var(--text);
     direction: rtl;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "kern" 1, "tnum" 0;
+    text-rendering: optimizeLegibility;
   }
+  main { padding-block: 56px 96px; }
+  section { margin-bottom: 72px; }
+  section h2 { font-size: 25px; margin-bottom: 24px; padding-bottom: 14px; }
+  section h3 { font-size: 18px; font-weight: 700; color: var(--ink); margin: 32px 0 14px; letter-spacing: -0.005em; }
+  section p { font-size: 17px; line-height: 1.7; margin-bottom: 14px; max-width: 68ch; }
+  table { font-size: 15px; margin: 20px 0 28px; }
+  table th { padding: 12px 14px; font-size: 12px; letter-spacing: 0.05em; }
+  table td { padding: 11px 14px; line-height: 1.55; }
+  table caption { font-size: 11.5px; padding: 10px 0; letter-spacing: 0.03em; }
+  table tr.notable td { background: rgba(74,109,26,0.06); }
+  table tr.warning td { background: rgba(154,24,24,0.07); }
+  figure .fig-cap { font-size: 12.5px; padding: 11px 18px; }
+  .toc { margin-bottom: 56px; padding: 24px 28px; }
+  .toc h4 { font-size: 11.5px; margin-bottom: 16px; letter-spacing: 0.1em; }
+  .toc li { font-size: 15px; padding: 2px 0; }
+  .toc a:hover { background: var(--paper); padding: 2px 6px; margin: -2px -6px; }
   .num, table td.n, .mono { font-feature-settings: "tnum" 1, "lnum" 1; }
 
   /* ─── HERO ─── */
@@ -85,11 +102,11 @@
   }
   .hero .narr {
     font-family: var(--display);
-    font-size: clamp(18px, 2.2vw, 24px);
-    line-height: 1.4;
+    font-size: clamp(19px, 2.3vw, 26px);
+    line-height: 1.45;
     color: var(--ink);
     font-weight: 400;
-    max-width: 44ch;
+    max-width: 46ch;
   }
   .hero .narr b { font-weight: 700; color: var(--accent); }
   .hero .narr .k { font-family: var(--mono); font-weight: 500; direction: ltr; display: inline-block; }
@@ -268,9 +285,14 @@
     direction: ltr;
     max-width: 100%;
   }
+  .keyfig {
+    padding: 18px 22px;
+    margin: 20px 0 28px;
+    gap: 20px;
+  }
   .keyfig .v {
     font-family: var(--display);
-    font-size: 32px;
+    font-size: 44px;
     font-weight: 500;
     color: var(--accent);
     line-height: 1;
@@ -278,11 +300,11 @@
   }
   .keyfig .l {
     font-family: var(--sans);
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.4;
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.5;
     direction: rtl;
-    max-width: 40ch;
+    max-width: 46ch;
   }
 
   /* ─── RESPONSIVE for new components ─── */
