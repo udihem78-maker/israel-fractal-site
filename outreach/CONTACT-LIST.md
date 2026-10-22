@@ -293,7 +293,7 @@ Subject: [אישי] ישראל פרקטלית · פרסום מחקר · F=0.6 ·
 
 בכבוד,
 אהוד חמלי
-udihem78@gmail.com
+enh@hemligroups.com
 ```
 
 ---

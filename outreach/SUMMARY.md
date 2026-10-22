@@ -14,7 +14,7 @@
 - **78 שנות שלטון** נמדדו (1948—2026)
 - **56 סעיפי מחקר** · **125,000 נקודות מדידה** · **40 מקורות ראשוניים**
 - **מתודולוגיית Data Fluidity:** F = D × U / R (זרימת ערך)
-- **הכנה:** אהוד חמלי (udihem78@gmail.com) · MIT License
+- **הכנה:** אהוד חמלי (enh@hemligroups.com) · MIT License
 
 ### 10 המספרים המרכזיים
 | # | הממצא | המספר |
@@ -50,7 +50,7 @@
 - **78 years of governance** measured (1948—2026)
 - **56 research sections** · **125,000 measurement points** · **40 primary sources**
 - **Methodology:** Data Fluidity · F = D × U / R
-- **By:** Ehud Hemli (udihem78@gmail.com) · MIT License · fully reproducible
+- **By:** Ehud Hemli (enh@hemligroups.com) · MIT License · fully reproducible
 
 ### 10 headline numbers
 | # | Finding | Number |
@@ -86,7 +86,7 @@ NIS 170B/year freed with working diplomacy. NIS 63B/year redirected from "robber
 - **78 عاماً من الحكم** تم قياسها (1948—2026)
 - **56 قسماً بحثياً** · **125,000 نقطة قياس** · **40 مصدراً أولياً**
 - **المنهجية:** Data Fluidity · F = D × U / R
-- **بواسطة:** إيهود حملي (udihem78@gmail.com) · رخصة MIT
+- **بواسطة:** إيهود حملي (enh@hemligroups.com) · رخصة MIT
 
 ### 10 أرقام رئيسية
 | # | النتيجة | الرقم |

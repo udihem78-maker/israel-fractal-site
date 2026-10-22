@@ -111,7 +111,7 @@ Recommended: `israel-fractal.com`
 
 ## 📝 License
 
-Content: © 2026 udihem78@gmail.com — Attribution required
+Content: © 2026 enh@hemligroups.com — Attribution required
 Design system: MIT (Apple Bento Grid by Joe Hu)
 
 ---
