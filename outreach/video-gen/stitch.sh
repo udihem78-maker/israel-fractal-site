@@ -31,6 +31,12 @@ ffmpeg -y -f concat -safe 0 -i "$OUT/concat.txt" -c copy "$OUT/final-24s-no-audi
 echo "✅ Final: $OUT/final-24s-no-audio.mp4"
 echo "   Next: add narration with ElevenLabs or in-app voice-over, then post."
 
-# For adding narration (3 TTS files from ElevenLabs/OpenAI/Google):
-# ffmpeg -i final-24s-no-audio.mp4 -i narration-combined.mp3 \
-#   -map 0:v -map 1:a -c:v copy -c:a aac -shortest final-with-audio.mp4
+# Mux with ElevenLabs narration (run `node narrate.mjs all` first)
+for LANG in he en; do
+  if [ -f "$OUT/narration-$LANG-combined.mp3" ]; then
+    ffmpeg -y -i "$OUT/final-24s-no-audio.mp4" -i "$OUT/narration-$LANG-combined.mp3" \
+      -map 0:v -map 1:a -c:v copy -c:a aac -shortest \
+      "$OUT/final-$LANG.mp4"
+    echo "✅ Final with audio ($LANG): $OUT/final-$LANG.mp4"
+  fi
+done

@@ -4,19 +4,20 @@
 
 ## Setup
 
-1. Get an API key at https://fal.ai/dashboard/keys
-2. Add it to the session as a secret:
-   - Session title bar (cloud icon) → **Edit** → **API credentials**
-   - `FAL_KEY=<your-key>`
-3. Reopen the session.
+Add both API keys as session secrets:
+1. **Fal.ai** (video): https://fal.ai/dashboard/keys → `FAL_KEY=...`
+2. **ElevenLabs** (voice): https://elevenlabs.io/app/settings/api-keys → `ELEVENLABS_API_KEY=...`
+3. Optional custom voice IDs: `ELEVENLABS_VOICE_HE=...`, `ELEVENLABS_VOICE_EN=...` (defaults picked for the languages)
+
+Where to add: session title bar (cloud icon) → **Edit** → **API credentials**. Reopen the session.
 
 ## Run
 
 ```bash
 cd outreach/video-gen
-node generate.mjs all              # all 3 scenes (~$12, ~15 min total)
-node generate.mjs scene1-hook      # single scene
-./stitch.sh                        # concatenate to final-24s-no-audio.mp4
+node generate.mjs all              # 3 Veo-3 scenes (~$12, ~15 min)
+node narrate.mjs all               # ElevenLabs TTS he+en (~$0.50)
+./stitch.sh                        # concat + mux → final-he.mp4 + final-en.mp4
 ```
 
 ## Output
