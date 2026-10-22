@@ -1,0 +1,46 @@
+{
+  "scenes": [
+    {
+      "id": "scene1-hook",
+      "duration_seconds": 8,
+      "aspect_ratio": "9:16",
+      "model": "fal-ai/veo3",
+      "prompt": "Cinematic animation of a huge glowing red number '0.6' slowly pulsing in the center of a dark black-ink background, with Hebrew text 'ציון התפקוד של ישראל 2026' appearing below it in warm paper-white serif font. Slow zoom-in, dust particles float in the air, dramatic documentary feel, moody atmospheric lighting, 24fps cinematic. Below: small text 'ב־1948 היה 100 · ירידה פי 170'. Palette: deep ink black (#0a0908), paper white (#f8f4ea), blood red (#9a1818), olive green (#3f6013) for accent. Serious, documentary, Netflix-doc aesthetic.",
+      "negative_prompt": "cartoon, anime, happy, bright, lens flare, text artifacts",
+      "narration_he": "ישראל 2026 — ציון תפקוד מדינתי: אפס־נקודה־שש. ב־1948 הציון היה מאה. ירדנו פי 170.",
+      "narration_en": "Israel 2026 — state function score: zero point six. In 1948 it was one hundred. A 170-fold drop."
+    },
+    {
+      "id": "scene2-robbery",
+      "duration_seconds": 8,
+      "aspect_ratio": "9:16",
+      "model": "fal-ai/veo3",
+      "prompt": "Cinematic animation showing stacks of Israeli shekel banknotes being carried away by shadowy figures, flowing from boxes labeled 'elderly', 'women', 'children', 'disabled' (in Hebrew: קשישים · נשים · ילדים · נכים) toward dark distant warehouses. Huge glowing red text '₪10 טריליון' appears center-top. Documentary photo-realism, moody lighting, slow dolly shot, dust in the air, 24fps cinematic. Palette: deep ink black, paper white, blood red for the number, muted olive accents. Serious, investigative journalism feel.",
+      "negative_prompt": "cartoon, anime, happy, bright, lens flare",
+      "narration_he": "שבעה עשרה טריליון שקל נגזלו מהפגיעים ב־78 שנה. לכל ישראלי חסר בממוצע מיליון ורבע שקל.",
+      "narration_en": "Ten trillion shekels taken from the vulnerable over 78 years. Every citizen is missing on average 1.25 million shekels."
+    },
+    {
+      "id": "scene3-fix",
+      "duration_seconds": 8,
+      "aspect_ratio": "9:16",
+      "model": "fal-ai/veo3",
+      "prompt": "Cinematic animation of green arrows flowing from boxes labeled 'war budget' and 'corruption' back to boxes labeled 'children', 'elderly', 'disabled', 'women' (Hebrew: ילדים · קשישים · נכים · נשים). A rising OECD-blue line chart in the background shows Israel's score climbing from 0.6 toward 15. Huge green text '₪170B/שנה' appears top. Hopeful but serious documentary feel, soft golden hour lighting breaking through dark clouds, 24fps cinematic. Palette: olive green (#3f6013), paper white (#f8f4ea), warm gold accents, dark ink background. Serious optimism.",
+      "negative_prompt": "cartoon, anime, happy, bright, lens flare, over-saturated",
+      "narration_he": "התיקון אפשרי. בתוך 12 שנה, הפער עם OECD נסגר. זה בחירה פוליטית.",
+      "narration_en": "The fix is possible. Within 12 years, the OECD gap closes. It's a political choice."
+    }
+  ],
+  "common": {
+    "resolution": "1080x1920",
+    "fps": 24,
+    "site_url": "https://udihem78-maker.github.io/israel-fractal-site/",
+    "author": "Ehud Hemli",
+    "palette": {
+      "ink": "#0a0908",
+      "paper": "#f8f4ea",
+      "red": "#9a1818",
+      "olive": "#3f6013"
+    }
+  }
+}
