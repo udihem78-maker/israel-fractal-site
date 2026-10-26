@@ -10,6 +10,130 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root { --bg:#ffffff; --ink:#0a0908; --text:#15130f; --muted:#5a524b; --faint:#8e8680; --rule:#bfb6ad; --rule-light:#e4ddd3; --panel:#f0ebe0; --paper:#f8f4ea; --accent:#9a1818; --olive:#3f6013; }
+
+  /* ─── HERO · cinematic Netflix-doc opening ─── */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 60px 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(154,24,24,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(63,96,19,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #a89e94;
+    margin-bottom: 48px;
+  }
+  .hero .score {
+    font-family: 'Rubik', serif;
+    font-weight: 700;
+    font-size: clamp(180px, 32vw, 440px);
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    margin: 0;
+    text-shadow: 0 2px 40px rgba(154,24,24,0.3);
+  }
+  .hero .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--paper);
+    margin-top: 24px;
+    opacity: 0.9;
+  }
+  .hero .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--olive);
+    margin: 36px auto;
+  }
+  .hero .factline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--paper);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  .hero .factline strong { color: #e8d8c0; font-weight: 500; }
+  .hero .formula-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #a89e94;
+    margin-top: 40px;
+    letter-spacing: 0.08em;
+  }
+  .hero .signature {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #70645c;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .hero .lang-picker {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .hero .lang-picker a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--paper);
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid #403832;
+    transition: border-color 0.2s, background 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .hero .lang-picker a:hover {
+    border-color: var(--accent);
+    background: rgba(154,24,24,0.12);
+  }
+  .hero .lang-picker a .arrow { opacity: 0.5; margin: 0 6px; }
+  .hero .scroll-cue {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #70645c;
+    text-transform: uppercase;
+    margin-top: 80px;
+  }
+  @media (max-width: 720px) {
+    .hero { padding: 40px 20px; min-height: 90vh; }
+    .hero .eyebrow { margin-bottom: 32px; font-size: 10px; letter-spacing: 0.18em; }
+    .hero .score { font-size: clamp(150px, 48vw, 300px); }
+    .hero .label { font-size: 11px; margin-top: 16px; }
+    .hero .divider { margin: 24px auto; }
+    .hero .factline { font-size: 12px; }
+    .hero .formula-line { font-size: 11px; margin-top: 24px; }
+    .hero .lang-picker { margin-top: 36px; gap: 10px; }
+    .hero .lang-picker a { padding: 10px 20px; font-size: 13px; }
+    .hero .scroll-cue { margin-top: 48px; }
+  }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; text-rendering: optimizeLegibility; }
   header.site { border-bottom:1px solid var(--ink); padding:20px 40px; display:flex; justify-content:space-between; align-items:baseline; }
@@ -126,6 +250,23 @@
 </style>
 </head>
 <body>
+
+<section class="hero">
+  <div class="eyebrow">Israel · State Function Score · 2026</div>
+  <div class="score">0.6</div>
+  <div class="label">F = D · U / R</div>
+  <div class="divider"></div>
+  <div class="factline"><strong>1948:</strong> 100  ·  <strong>2026:</strong> 0.6  ·  <strong>Δ:</strong> ↓ 170×</div>
+  <div class="factline"><strong>Ω = U / R</strong>  crossed  <strong>e/(1+e) = 0.73106</strong>  in  2016</div>
+  <div class="formula-line">125,000 measurement points  ·  40 primary sources  ·  MIT License</div>
+  <div class="signature">Ehud Naftali Hemli  ·  Hemli Principle  ·  Falsifiable by design</div>
+  <div class="lang-picker">
+    <a href="/israel-fractal-site/he/">עברית <span class="arrow">→</span></a>
+    <a href="/israel-fractal-site/en/">English <span class="arrow">→</span></a>
+    <a href="/israel-fractal-site/ar/">العربية <span class="arrow">→</span></a>
+  </div>
+  <div class="scroll-cue">↓ Methodology below</div>
+</section>
 
 <header class="site">
   <div class="mark">Israel Fractal <span class="sub">· Research</span></div>
