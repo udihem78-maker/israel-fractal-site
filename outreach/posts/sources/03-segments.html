@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
+         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:80px; }
+  body::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 20% 30%, rgba(154,24,24,0.1) 0%, transparent 50%); }
+  .wrap { position:relative; z-index:1; width:100%; }
+  .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; margin-bottom:12px; text-align:center; }
+  h1 { font-family:'Playfair Display',serif; font-weight:700; font-size:52px; color:#f8f4ea; text-align:center; margin-bottom:60px; letter-spacing:-0.01em; }
+  h1 .num { color:#9a1818; }
+  .bars { display:flex; flex-direction:column; gap:22px; max-width:1040px; margin:0 auto; }
+  .bar { display:flex; align-items:center; gap:24px; }
+  .bar .seg { width:280px; font-family:'IBM Plex Mono',monospace; font-size:17px; color:#f8f4ea; text-align:right; letter-spacing:0.02em; text-transform:uppercase; }
+  .bar .fill { height:38px; display:flex; align-items:center; padding:0 14px; font-family:'Playfair Display',serif; font-weight:700; font-size:22px; color:#f8f4ea; }
+  .b1 .fill { background:#9a1818; width:720px; }
+  .b2 .fill { background:#c54848; width:400px; }
+  .b3 .fill { background:#b8863a; width:170px; }
+  .b4 .fill { background:#3f6013; width:138px; }
+  .b5 .fill { background:#5a524b; width:100px; }
+  .foot { position:absolute; bottom:48px; left:0; right:0; text-align:center;
+          font-family:'IBM Plex Mono',monospace; font-size:14px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">One country · 23 segments · F = 1 to 27</div>
+  <h1>Israel is <span class="num">27×</span> wider than OECD</h1>
+  <div class="bars">
+    <div class="bar b1"><div class="seg">Settler</div><div class="fill">F = 27</div></div>
+    <div class="bar b2"><div class="seg">Haredi · Bnei Brak</div><div class="fill">F = 15</div></div>
+    <div class="bar b3"><div class="seg">Secular · Tel Aviv</div><div class="fill">F = 2.5</div></div>
+    <div class="bar b4"><div class="seg">Arab-Israeli</div><div class="fill">F = 1.8</div></div>
+    <div class="bar b5"><div class="seg">Bedouin · unrecognized</div><div class="fill">F = 1</div></div>
+  </div>
+</div>
+<div class="foot">E.N.H.  ·  Hemli Principle  ·  Falsifiable by design</div>
+</body></html>

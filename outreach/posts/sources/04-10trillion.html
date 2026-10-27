@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
+         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; }
+  body::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(154,24,24,0.14) 0%, transparent 55%); }
+  .wrap { position:relative; z-index:1; text-align:center; max-width:1080px; }
+  .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; margin-bottom:48px; }
+  .money { font-family:'Playfair Display',serif; font-weight:900; font-size:160px; color:#9a1818; line-height:0.95; letter-spacing:-0.02em;
+           text-shadow: 0 2px 60px rgba(154,24,24,0.35); margin-bottom:8px; }
+  .currency { font-family:'Playfair Display',serif; font-weight:900; font-size:120px; color:#9a1818; }
+  .words { font-family:'Playfair Display',serif; font-weight:700; font-size:60px; color:#e8d8c0; margin-top:20px; letter-spacing:-0.01em; }
+  .rule { width:88px; height:1px; background:#3f6013; margin:40px auto; }
+  .caption { font-family:'IBM Plex Mono',monospace; font-size:20px; color:#f8f4ea; letter-spacing:0.14em; margin-bottom:12px; opacity:0.95; text-transform:uppercase; }
+  .caption strong { color:#e8d8c0; font-weight:500; }
+  .foot { position:absolute; bottom:48px; left:0; right:0; text-align:center;
+          font-family:'IBM Plex Mono',monospace; font-size:14px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Missing from vulnerable · 78 years</div>
+  <div class="money"><span class="currency">₪</span>10 Trillion</div>
+  <div class="words">₪1.25 million per vulnerable citizen</div>
+  <div class="rule"></div>
+  <div class="caption">Not loss. <strong>Transfer.</strong>  ·  5× annual GDP</div>
+  <div class="caption">From widows, children, elderly, disabled</div>
+</div>
+<div class="foot">E.N.H.  ·  Hemli Principle  ·  Falsifiable by design</div>
+</body></html>

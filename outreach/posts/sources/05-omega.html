@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
+         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; }
+  body::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(154,24,24,0.14) 0%, transparent 55%); }
+  .wrap { position:relative; z-index:1; text-align:center; max-width:1080px; }
+  .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; margin-bottom:60px; }
+  .eq { font-family:'Playfair Display',serif; font-weight:900; font-size:260px; line-height:0.95; letter-spacing:-0.02em; }
+  .eq .omega { color:#9a1818; }
+  .eq .eq-sign { color:#a89e94; margin:0 24px; }
+  .eq .val { color:#f8f4ea; }
+  .label { font-family:'IBM Plex Mono',monospace; font-size:22px; letter-spacing:0.22em; color:#f8f4ea; text-transform:uppercase; margin-top:28px; opacity:0.9; }
+  .rule { width:88px; height:1px; background:#3f6013; margin:48px auto; }
+  .timeline { display:flex; justify-content:space-between; align-items:flex-end; max-width:960px; margin:0 auto; }
+  .tick { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .tick .yr { font-family:'IBM Plex Mono',monospace; font-size:18px; color:#a89e94; letter-spacing:0.08em; }
+  .tick .val { font-family:'Playfair Display',serif; font-weight:700; font-size:52px; }
+  .tick.above .val { color:#3f6013; }
+  .tick.below .val { color:#9a1818; }
+  .threshold-line { font-family:'IBM Plex Mono',monospace; font-size:16px; color:#a89e94; margin-top:36px; letter-spacing:0.14em; }
+  .foot { position:absolute; bottom:48px; left:0; right:0; text-align:center;
+          font-family:'IBM Plex Mono',monospace; font-size:14px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Hemli Point · Phase transition threshold</div>
+  <div class="eq"><span class="omega">Ω</span><span class="eq-sign">=</span><span class="val">0.73106</span></div>
+  <div class="label">= e / (1 + e)</div>
+  <div class="rule"></div>
+  <div class="timeline">
+    <div class="tick above"><div class="yr">2015</div><div class="val">0.84</div></div>
+    <div class="tick below"><div class="yr">2016</div><div class="val">0.67</div></div>
+    <div class="tick below"><div class="yr">2020</div><div class="val">0.22</div></div>
+    <div class="tick below"><div class="yr">2026</div><div class="val">0.075</div></div>
+  </div>
+  <div class="threshold-line">Threshold crossed  ·  2016  ·  Cascade began</div>
+</div>
+<div class="foot">E.N.H.  ·  H = R ↔ E ↔ O  ·  Falsifiable by design</div>
+</body></html>
