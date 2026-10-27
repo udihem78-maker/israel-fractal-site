@@ -326,6 +326,136 @@
   </ol>
 </nav>
 
+<div style="margin:28px 0 8px; padding:16px 20px; border:1px solid #9a1818; background:rgba(154,24,24,0.04);">
+  <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.26em; color:#9a1818; text-transform:uppercase; margin-bottom:6px;">FLASH · T-1 to election</div>
+  <a href="#flash" style="font-family:'Playfair Display',serif; font-size:22px; color:#f8f4ea; text-decoration:none;">
+    The optimal government · post-poll analysis · F = D·U/R scored across 7 coalition scenarios ↓
+  </a>
+</div>
+
+<!-- 00. FLASH · OPTIMAL GOVERNMENT POST-POLL -->
+<section id="flash" style="border:1px solid #9a1818; padding:28px; margin:32px 0; background:rgba(154,24,24,0.04);">
+  <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.28em; color:#9a1818; text-transform:uppercase; margin-bottom:14px;">
+    FLASH · UPDATED 2026-10-27 · T-1 TO ELECTION DAY · POST-POLL
+  </div>
+  <h2 style="margin-bottom:12px;"><span class="sec-no">00</span>The Optimal Government under F = D·U/R</h2>
+  <p style="color:var(--muted); font-size:14.5px; max-width:72ch;">
+    The question: given the Oct 26—27, 2026 pre-election polls — which coalition composition
+    maximizes Israel's F over the next 48 months? The recommendation here is not political.
+    It is the output of a single-variable optimization: F = D·U/R, subject to the mandate
+    constraints the public will set tomorrow.
+  </p>
+
+  <h3>00.1 · Pre-election poll average · Oct 26—27, 2026 (4 polling houses)</h3>
+  <table>
+    <caption>Tab. 80 · Pre-election poll average · Oct 26—27, 2026</caption>
+    <thead><tr><th>Bloc · Party</th><th class="n">Avg mandates</th><th class="n">Range</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Eisenkot bloc (opposition)</td><td class="n">53</td><td class="n">52—54</td><td>Eisenkot, Yesh Atid, Gantz, Democrats</td></tr>
+      <tr class="warning"><td>Netanyahu bloc</td><td class="n">50</td><td class="n">49—51</td><td>Likud, Shas, UTJ, Religious Zionism, Otzma</td></tr>
+      <tr><td>Arab parties</td><td class="n">16</td><td class="n">14—18</td><td>Ra'am, Hadash-Ta'al</td></tr>
+      <tr class="notable"><td>Yachad (Bennett)</td><td class="n">13</td><td class="n">12—14</td><td>October surge — Kantar +2</td></tr>
+      <tr><td>Yisrael Beiteinu (Liberman)</td><td class="n">7</td><td class="n">6—8</td><td>Weakened · Haredi redlines</td></tr>
+      <tr><td>Economic-Reservists (Hendel/Zelekha)</td><td class="n">4</td><td class="n">3.6—4.5</td><td>Threshold — uncertain</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>The cold conclusion</strong>: no bloc reaches 61 without Ra'am or Liberman.
+    Forming a government requires compromise. The question is <em>which compromise maximizes F</em>.
+    (Sources: Channel 12 · Channel 13 · Kan · Maariv · Israel Hayom · Zman Yisrael · 21—27 Oct 2026.)
+  </p>
+
+  <h3>00.2 · F score for 7 coalition scenarios</h3>
+  <table>
+    <caption>Tab. 81 · F score per coalition scenario · D·U/R</caption>
+    <thead><tr><th>Scenario</th><th class="n">Mandates</th><th class="n">D</th><th class="n">U</th><th class="n">R</th><th class="n">F</th></tr></thead>
+    <tbody>
+      <tr class="warning"><td class="rank">01</td><td>Gov 37 continued · Netanyahu + Haredi + hardal</td><td class="n">61</td><td class="n">3.0</td><td class="n">1.2</td><td class="n">6.0</td><td class="n">0.6</td></tr>
+      <tr class="warning"><td class="rank">02</td><td>Netanyahu + Liberman (no Haredi)</td><td class="n">57 · fails</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+      <tr><td class="rank">03</td><td>Eisenkot + Yesh Atid + Gantz + Democrats</td><td class="n">60 · fails</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+      <tr><td class="rank">04</td><td>Eisenkot + Liberman + Bennett + Democrats + Gantz</td><td class="n">76</td><td class="n">6.8</td><td class="n">6.5</td><td class="n">3.0</td><td class="n">14.7</td></tr>
+      <tr class="notable"><td class="rank">05</td><td>Eisenkot + Yesh Atid + Bennett + Democrats + Liberman + Gantz + Ra'am external support</td><td class="n">81</td><td class="n">7.5</td><td class="n">7.8</td><td class="n">2.5</td><td class="n">23.4</td></tr>
+      <tr><td class="rank">06</td><td>National unity · Netanyahu + Eisenkot</td><td class="n">75</td><td class="n">4.0</td><td class="n">3.5</td><td class="n">5.5</td><td class="n">2.5</td></tr>
+      <tr class="warning"><td class="rank">07</td><td>Deadlock · third election in 2027</td><td class="n">—</td><td class="n">1.0</td><td class="n">0.5</td><td class="n">9.0</td><td class="n">0.06</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>Scale</strong>: D (Decision throughput) 0—10 · U (Utility capture) 0—10 · R (Friction) 0—10 · F = D·U/R.
+    <strong>Ω = e/(1+e) = 0.73106</strong> — the Hemli-point phase-transition threshold.
+    F above Ω = functioning system. F below = collapsing system. Today F = 0.6 < Ω.
+  </p>
+
+  <h3>00.3 · The recommendation · Scenario 05 — the "F-maximizing coalition"</h3>
+  <table>
+    <caption>Tab. 82 · Recommended coalition composition</caption>
+    <thead><tr><th>Party</th><th class="n">Mandates</th><th>Proposed portfolio</th><th>Portfolio F fit</th></tr></thead>
+    <tbody>
+      <tr class="notable"><td>Eisenkot · "Israel Ahat"</td><td class="n">22</td><td>Prime Minister · National Security</td><td>Systemic experience · portfolio F 8.5</td></tr>
+      <tr><td>Yesh Atid · Lapid</td><td class="n">20</td><td>Finance · Economy</td><td>Proven record 2021—22 · F 7.2</td></tr>
+      <tr class="notable"><td>Yachad · Bennett</td><td class="n">13</td><td>Foreign · Justice</td><td>Coalition management 2021—22 · F 8.0</td></tr>
+      <tr><td>Democrats · Golan</td><td class="n">8</td><td>Welfare · Health · Social</td><td>Liberal left · F 7.5</td></tr>
+      <tr><td>Yisrael Beiteinu · Liberman</td><td class="n">7</td><td>Interior · Chief Rabbinate reform</td><td>Religion-state separation · F 8.0</td></tr>
+      <tr><td>National Unity · Gantz</td><td class="n">6</td><td>Defense · Oct-7 commission</td><td>Former IDF Chief of Staff · F 7.8</td></tr>
+      <tr><td><strong>Coalition total</strong></td><td class="n"><strong>76</strong></td><td colspan="2">+ Ra'am external support 5 = <strong>81</strong></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:var(--muted); max-width:68ch;">
+    <strong>Ra'am — external support, not in government.</strong> System terms: equal budgets
+    for Arab municipalities · joint agenda on crime in the Arab community · no cabinet
+    portfolios (as in 2021—22). This is the smallest compromise for the largest U gain.
+  </p>
+
+  <h3>00.4 · Why this coalition maximizes F</h3>
+  <ol class="process-list">
+    <li><div><strong>D (Decision throughput) = 7.5.</strong> Six parties, but four of them are ex-executive (Lapid, Bennett, Gantz, Golan — all former ministers / PM / Chief of Staff). Decisions reach the table fast, without waiting on rabbinical rulings or internal High-Court challenges.</div></li>
+    <li><div><strong>U (Utility capture) = 7.8.</strong> No sectoral veto. No Haredi blocking draft or budget. No hardal holding national security hostage. The budget is distributed by need, not bargaining power.</div></li>
+    <li><div><strong>R (Friction) = 2.5.</strong> Breaking 25 years of sectoral extortion. R falls by half within 24 months. ↓R is the single largest multiplier on F.</div></li>
+    <li><div><strong>Projected F = D·U/R = 7.5 × 7.8 / 2.5 = 23.4.</strong> Versus F=0.6 today. A 39× recovery within 24 months — the effect of removing the sectoral veto plus a systemic prime minister.</div></li>
+    <li><div><strong>Crossing back above Ω (0.73106) within 90 days.</strong> Crossing the phase-transition threshold. Exit from collapse. End of the 2016—26 cascade.</div></li>
+  </ol>
+
+  <h3>00.5 · First 100 days · 7 actions that push F above Ω</h3>
+  <table>
+    <caption>Tab. 83 · First 100 days · 7 actions</caption>
+    <thead><tr><th class="rank">#</th><th>Action</th><th>F target</th><th class="n">ΔF projected</th></tr></thead>
+    <tbody>
+      <tr><td class="rank">01</td><td>Haredi conscription law · passage within 60 days · no blanket exemption</td><td>R ↓</td><td class="n">+2.1</td></tr>
+      <tr><td class="rank">02</td><td>State commission of inquiry on Oct-7 · established within 30 days</td><td>U ↑</td><td class="n">+1.8</td></tr>
+      <tr><td class="rank">03</td><td>Chief Rabbinate separation · civil conversion / marriage · liberalization</td><td>R ↓↓</td><td class="n">+2.4</td></tr>
+      <tr><td class="rank">04</td><td>Strengthened Local Authorities Law · ↑ Arab municipal budgets 50%</td><td>U ↑↑</td><td class="n">+1.9</td></tr>
+      <tr><td class="rank">05</td><td>De-regulation · abolish 30% of overlapping regulation within 24 months</td><td>R ↓↓↓</td><td class="n">+3.2</td></tr>
+      <tr><td class="rank">06</td><td>Breakup of media monopolies · Israel Hayom + Channel 14 + Yediot</td><td>D ↑</td><td class="n">+1.4</td></tr>
+      <tr><td class="rank">07</td><td>Coalition Transparency Act · all agreement clauses public · no "confidential" items</td><td>R ↓</td><td class="n">+1.5</td></tr>
+      <tr class="notable"><td><strong>Total</strong></td><td colspan="2"><strong>Cumulative ΔF over 100 days</strong></td><td class="n"><strong>+14.3</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>00.6 · Failure test · 7 conditions that push F back below Ω</h3>
+  <ul style="font-size:14px; color:var(--muted);">
+    <li>If Haredim join with a budget veto → F ↓ 1.0 (partial collapse · 2015 pattern).</li>
+    <li>If Religious Zionism retains National Security → F ↓ 0.4 (continuation of Oct-7).</li>
+    <li>If Liberman exits within 12 months → coalition falls · F ↓ before completion.</li>
+    <li>If Ra'am withdraws over a "Nakba Law" or similar → 81 → 76 → threshold.</li>
+    <li>If Eisenkot "Netanyahu-izes" · F ↓ 2.5 (history repeats).</li>
+    <li>If Lapid/Bennett clash openly (as in 2022) · F ↓ 1.8 · split.</li>
+    <li>If the Oct-7 commission is blocked · trust collapses · F ↓ 2.0.</li>
+  </ul>
+
+  <h3>00.7 · The falsification test</h3>
+  <p style="font-size:14px; max-width:68ch;">
+    <strong>The research is refuted</strong> if Israel's F remains below Ω = 0.73106 after 24
+    months of the recommended coalition. If that happens — the theory is wrong. This is
+    the test the theory sets for itself. <em>Falsifiable by design</em>.
+  </p>
+
+  <p style="font-size:13px; color:var(--muted); max-width:68ch; margin-top:20px; border-top:1px solid #3f6013; padding-top:16px;">
+    <strong>Disclaimer</strong>: this recommendation is based on the F methodology.
+    It is not a vote recommendation for any individual. It is a systemic analysis of the
+    scenario that maximizes governance function over the next 48 months. Each citizen's
+    informed vote — see §22, candidates ranked by SR.
+  </p>
+</section>
+
 <div class="phase-divider" style="margin-top:40px;">
   <div class="num">PART I · OF III</div>
   <div class="label">Methodology</div>
