@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
+         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:70px; }
+  body::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(ellipse at 50% 20%, rgba(63,96,19,0.14) 0%, transparent 55%); }
+  .wrap { position:relative; z-index:1; width:100%; }
+  .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:0.3em; color:#9a1818; text-transform:uppercase; margin-bottom:8px; text-align:center; }
+  h1 { font-family:'Playfair Display',serif; font-weight:700; font-size:46px; color:#f8f4ea; text-align:center; margin-bottom:36px; letter-spacing:-0.01em; line-height:1.1; }
+  h1 .num { color:#3f6013; }
+  .score { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:17px; color:#a89e94; letter-spacing:0.14em; margin-bottom:32px; text-transform:uppercase; }
+  .score .arrow { color:#3f6013; font-weight:600; margin:0 10px; }
+  .score .big { color:#3f6013; font-weight:700; font-family:'Playfair Display',serif; font-size:34px; vertical-align:middle; }
+  .rule { width:88px; height:1px; background:#3f6013; margin:0 auto 32px; }
+  .parties { display:flex; flex-direction:column; gap:14px; max-width:960px; margin:0 auto; }
+  .party { display:flex; align-items:center; gap:20px; padding:14px 20px; border:1px solid rgba(63,96,19,0.3); background:rgba(63,96,19,0.05); }
+  .party .mnd { width:80px; font-family:'Playfair Display',serif; font-weight:900; font-size:40px; color:#3f6013; text-align:center; line-height:1; }
+  .party .nm { flex:1; font-family:'Playfair Display',serif; font-weight:700; font-size:22px; color:#f8f4ea; }
+  .party .role { font-family:'IBM Plex Mono',monospace; font-size:14px; color:#a89e94; letter-spacing:0.08em; text-transform:uppercase; text-align:right; min-width:200px; }
+  .party.ext { border-color:rgba(154,24,24,0.3); background:rgba(154,24,24,0.03); }
+  .party.ext .mnd { color:#c54848; }
+  .total { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:18px; color:#f8f4ea; letter-spacing:0.14em; margin-top:28px; text-transform:uppercase; }
+  .total strong { font-family:'Playfair Display',serif; font-size:30px; color:#3f6013; font-weight:900; vertical-align:middle; margin:0 8px; }
+  .foot { position:absolute; bottom:36px; left:0; right:0; text-align:center;
+          font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Post-poll · T-1 · Oct 27, 2026</div>
+  <h1>הממשלה שממקסמת <span class="num">F</span></h1>
+  <div class="score">F today: 0.6  <span class="arrow">→</span>  Projected 24 months: <span class="big">23.4</span></div>
+  <div class="rule"></div>
+  <div class="parties">
+    <div class="party"><div class="mnd">22</div><div class="nm">אייזנקוט · ישראל אחת</div><div class="role">PM · National Security</div></div>
+    <div class="party"><div class="mnd">20</div><div class="nm">לפיד · יש עתיד</div><div class="role">Finance · Economy</div></div>
+    <div class="party"><div class="mnd">13</div><div class="nm">בנט · ביחד</div><div class="role">Foreign · Justice</div></div>
+    <div class="party"><div class="mnd">8</div><div class="nm">גולן · דמוקרטים</div><div class="role">Welfare · Health</div></div>
+    <div class="party"><div class="mnd">7</div><div class="nm">ליברמן · ישראל ביתנו</div><div class="role">Interior · Rel. Affairs</div></div>
+    <div class="party"><div class="mnd">6</div><div class="nm">גנץ · המחנה הממלכתי</div><div class="role">Defense · Oct 7 Inquiry</div></div>
+    <div class="party ext"><div class="mnd">+5</div><div class="nm">עבאס · רע"ם · תמיכה חיצונית</div><div class="role">External support</div></div>
+  </div>
+  <div class="total">Coalition <strong>76</strong> + support <strong>5</strong> = Total <strong>81</strong></div>
+</div>
+<div class="foot">E.N.H.  ·  F = D · U / R  ·  Falsifiable by design  ·  hemligroups.github.io/israel-fractal-site</div>
+</body></html>
