@@ -3,31 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
-         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; }
+         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:70px; }
   body::before { content:""; position:absolute; inset:0;
-    background: radial-gradient(ellipse at 50% 10%, rgba(154,24,24,0.18) 0%, transparent 50%); }
-  .wrap { position:relative; z-index:1; text-align:center; max-width:960px; }
-  .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; margin-bottom:60px; }
-  .big { font-family:'Playfair Display',serif; font-weight:900; font-size:360px; color:#9a1818; line-height:1; letter-spacing:-0.03em;
-         text-shadow: 0 2px 60px rgba(154,24,24,0.4); }
-  .big .x { font-size:200px; vertical-align:middle; opacity:0.85; }
-  .arrow { color:#9a1818; font-size:200px; vertical-align:middle; }
-  .caption { font-family:'IBM Plex Mono',monospace; font-size:24px; letter-spacing:0.18em; color:#f8f4ea; text-transform:uppercase; margin-top:48px; opacity:0.95; }
-  .rule { width:88px; height:1px; background:#3f6013; margin:40px auto; }
-  .quote { font-family:'Playfair Display',serif; font-size:38px; color:#e8d8c0; line-height:1.3; max-width:780px; margin:0 auto; font-style:italic; font-weight:400; }
-  .foot { position:absolute; bottom:48px; left:0; right:0; text-align:center;
-          font-family:'IBM Plex Mono',monospace; font-size:14px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+    background: radial-gradient(ellipse at 50% 25%, rgba(154,24,24,0.18) 0%, transparent 55%); }
+  .wrap { position:relative; z-index:1; text-align:center; max-width:1060px; direction:rtl; }
+  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:80px; color:#f8f4ea; line-height:1.1; letter-spacing:-0.01em; margin-bottom:48px; direction:rtl; }
+  .hook .faded { color:#a89e94; }
+  .nums { display:flex; justify-content:center; align-items:baseline; gap:60px; margin-bottom:50px; direction:ltr; }
+  .budget { display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .budget .n { font-family:'Playfair Display',serif; font-weight:900; font-size:160px; color:#c8ad6b; line-height:0.9; letter-spacing:-0.02em; }
+  .budget .lb { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.2em; color:#a89e94; text-transform:uppercase; }
+  .vs { font-family:'IBM Plex Mono',monospace; font-size:22px; color:#70645c; letter-spacing:0.4em; align-self:flex-end; margin-bottom:48px; text-transform:uppercase; }
+  .friction { display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .friction .n { font-family:'Playfair Display',serif; font-weight:900; font-size:240px; color:#9a1818; line-height:0.9; letter-spacing:-0.03em;
+                 text-shadow: 0 2px 60px rgba(154,24,24,0.5); }
+  .friction .lb { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.2em; color:#9a1818; text-transform:uppercase; font-weight:500; }
+  .rule { width:88px; height:1px; background:#3f6013; margin:0 auto 36px; }
+  .caption { font-family:'Frank Ruhl Libre',serif; font-size:38px; color:#e8d8c0; line-height:1.2; max-width:900px; margin:0 auto 20px; font-style:italic; font-weight:700; direction:rtl; }
+  .meta { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.16em; color:#70645c; text-transform:uppercase; direction:ltr; }
+  .foot { position:absolute; bottom:36px; left:0; right:0; text-align:center;
+          font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
 </style></head>
 <body>
 <div class="wrap">
-  <div class="eyebrow">Friction · R · 1948 → 2026</div>
-  <div class="big"><span class="arrow">↑</span>232<span class="x">×</span></div>
-  <div class="caption">The bureaucracy, not the budget</div>
+  <div class="hook">ההחלטות מתקבלות.<br><span class="faded">הן לא מגיעות אליך.</span></div>
+  <div class="nums">
+    <div class="budget"><div class="n">×3</div><div class="lb">Budget 1948→2026</div></div>
+    <div class="vs">VS</div>
+    <div class="friction"><div class="n">×232</div><div class="lb">Bureaucracy 1948→2026</div></div>
+  </div>
   <div class="rule"></div>
-  <div class="quote">Decisions are made. They don't reach citizens.</div>
+  <div class="caption">הפער בין השניים — זה שלוקח לך הכל.</div>
+  <div class="meta">hemligroups.github.io/israel-fractal-site</div>
 </div>
-<div class="foot">E.N.H.  ·  Hemli Principle  ·  Falsifiable by design</div>
+<div class="foot">E.N.H.  ·  Friction (R) in F = D·U/R  ·  Falsifiable by design</div>
 </body></html>
