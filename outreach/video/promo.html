@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900;900i&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; background:#0a0908; color:#f8f4ea; overflow:hidden; font-family:'Inter',sans-serif; }
+  body { position:relative; }
+  body::before { content:""; position:absolute; inset:0; z-index:0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(154,24,24,0.14) 0%, transparent 60%); }
+
+  .scene { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+           opacity:0; z-index:2; padding:60px 80px; text-align:center; transition: opacity 0.6s linear; }
+  .scene.on { opacity:1; }
+
+  .eye { font-family:'IBM Plex Mono',monospace; letter-spacing:0.4em; color:#a89e94; text-transform:uppercase; }
+  .mono { font-family:'IBM Plex Mono',monospace; letter-spacing:0.3em; text-transform:uppercase; }
+  .serif { font-family:'Playfair Display',serif; }
+
+  /* Scene 1 — Hero */
+  .s1 .eye { font-size:22px; margin-bottom:40px; }
+  .s1 .big { font-family:'Playfair Display',serif; font-weight:900; font-size:460px; color:#9a1818;
+             line-height:0.9; letter-spacing:-0.03em; text-shadow: 0 2px 90px rgba(154,24,24,0.5);
+             transform:scale(0.9); opacity:0; transition: all 1.5s cubic-bezier(0.2,0.8,0.2,1); }
+  .s1.on .big { transform:scale(1); opacity:1; }
+  .s1 .cap { font-family:'IBM Plex Mono',monospace; font-size:24px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; margin-top:40px; }
+
+  /* Scene 2 — Equation */
+  .s2 .eye { font-size:22px; margin-bottom:60px; }
+  .s2 .eq { font-family:'Playfair Display',serif; font-weight:900; font-size:280px; letter-spacing:-0.02em; line-height:0.95; }
+  .s2 .eq .f { color:#f8f4ea; }
+  .s2 .eq .eq-sign, .s2 .eq .op { color:#a89e94; }
+  .s2 .eq .d { color:#3f6013; }
+  .s2 .eq .u { color:#c8ad6b; }
+  .s2 .eq .r { color:#9a1818; }
+  .s2 .leg { display:flex; gap:80px; margin-top:70px; font-family:'IBM Plex Mono',monospace; font-size:21px; letter-spacing:0.22em; color:#a89e94; text-transform:uppercase; }
+  .s2 .leg span.k { font-family:'Playfair Display',serif; font-weight:900; font-style:italic; font-size:32px; margin-right:14px; vertical-align:middle; }
+  .s2 .leg .d .k { color:#3f6013; }
+  .s2 .leg .u .k { color:#c8ad6b; }
+  .s2 .leg .r .k { color:#9a1818; }
+
+  /* Scene 3 — Trend */
+  .s3 .eye { font-size:22px; margin-bottom:50px; }
+  .s3 svg { width:1500px; height:500px; }
+  .s3 .line { fill:none; stroke:#9a1818; stroke-width:4; stroke-linecap:round; stroke-linejoin:round;
+              filter:drop-shadow(0 0 20px rgba(154,24,24,0.5));
+              stroke-dasharray:1600; stroke-dashoffset:1600; transition: stroke-dashoffset 2.5s cubic-bezier(0.4,0,0.2,1); }
+  .s3.on .line { stroke-dashoffset:0; }
+  .s3 .omega-line { stroke:#3f6013; stroke-width:1.5; stroke-dasharray:8 8; opacity:0.7; }
+  .s3 .omega-label { font-family:'IBM Plex Mono',monospace; font-size:16px; fill:#3f6013; letter-spacing:0.14em; }
+  .s3 .axis { font-family:'IBM Plex Mono',monospace; font-size:17px; fill:#70645c; letter-spacing:0.14em; }
+  .s3 .cap { margin-top:30px; font-family:'IBM Plex Mono',monospace; font-size:22px; letter-spacing:0.22em; color:#f8f4ea; text-transform:uppercase; }
+  .s3 .cap .red { color:#9a1818; font-family:'Playfair Display',serif; font-weight:900; font-style:italic; font-size:32px; margin:0 8px; vertical-align:middle; }
+
+  /* Scene 4 — Results */
+  .s4 .eye { font-size:20px; color:#9a1818; margin-bottom:50px; }
+  .s4 .row { display:flex; gap:140px; margin-bottom:40px; }
+  .s4 .c { display:flex; flex-direction:column; align-items:center; gap:14px; opacity:0; transform:translateY(60px); transition: all 1s cubic-bezier(0.2,0.9,0.2,1); }
+  .s4.on .c.n1 { opacity:1; transform:translateY(0); transition-delay: 0.2s; }
+  .s4.on .c.n2 { opacity:1; transform:translateY(0); transition-delay: 0.5s; }
+  .s4.on .c.n3 { opacity:1; transform:translateY(0); transition-delay: 0.8s; }
+  .s4 .c .n { font-family:'Playfair Display',serif; font-weight:900; font-size:240px; line-height:0.9; letter-spacing:-0.03em; }
+  .s4 .c.n1 .n { color:#9a1818; }
+  .s4 .c.n2 .n { color:#c8ad6b; }
+  .s4 .c.n3 .n { color:#3f6013; }
+  .s4 .c .lb { font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.22em; color:#a89e94; text-transform:uppercase; }
+  .s4 .verdict { margin-top:30px; font-family:'Playfair Display',serif; font-weight:700; font-style:italic; font-size:66px; color:#f8f4ea; opacity:0; transform:translateY(20px); transition: all 1s ease-out; }
+  .s4.on .verdict { opacity:1; transform:translateY(0); transition-delay: 1.5s; }
+
+  /* Scene 5 — No 61 */
+  .s5 .pre { font-family:'IBM Plex Mono',monospace; font-size:26px; letter-spacing:0.4em; color:#a89e94; text-transform:uppercase; margin-bottom:36px; }
+  .s5 .big { font-family:'Playfair Display',serif; font-weight:900; font-size:420px; color:#9a1818; line-height:0.9; letter-spacing:-0.03em;
+             text-shadow: 0 4px 100px rgba(154,24,24,0.65); transform:scale(0.6); opacity:0; transition: all 0.9s cubic-bezier(0.2,0.9,0.2,1); }
+  .s5.on .big { transform:scale(1); opacity:1; transition-delay: 0.3s; }
+  .s5 .post { font-family:'IBM Plex Mono',monospace; font-size:24px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; margin-top:50px; }
+  .s5 .post strong { color:#9a1818; font-family:'Playfair Display',serif; font-weight:900; font-style:italic; font-size:34px; vertical-align:middle; margin:0 8px; }
+
+  /* Scene 6 — Scenario 05 */
+  .s6 .eye { font-size:20px; color:#3f6013; margin-bottom:40px; }
+  .s6 .verd { font-family:'Playfair Display',serif; font-weight:900; font-style:italic; font-size:120px; color:#f8f4ea; margin-bottom:50px; }
+  .s6 .eq { font-family:'IBM Plex Mono',monospace; font-size:32px; letter-spacing:0.22em; color:#a89e94; text-transform:uppercase; }
+  .s6 .eq .green { color:#3f6013; font-family:'Playfair Display',serif; font-weight:900; font-style:italic; font-size:46px; margin:0 10px; vertical-align:middle; }
+  .s6 .omega { margin-top:50px; font-family:'IBM Plex Mono',monospace; font-size:22px; letter-spacing:0.2em; color:#a89e94; text-transform:uppercase; }
+  .s6 .omega .big { color:#3f6013; font-family:'Playfair Display',serif; font-weight:700; font-size:32px; vertical-align:middle; margin:0 8px; }
+
+  /* Scene 7 — Signature */
+  .s7 .enh { font-family:'Playfair Display',serif; font-weight:900; font-size:140px; color:#f8f4ea; letter-spacing:0.08em; }
+  .s7 .rule { width:140px; height:1px; background:#3f6013; margin:40px auto; }
+  .s7 .tag { font-family:'Playfair Display',serif; font-size:46px; font-style:italic; color:#e8d8c0; margin-bottom:40px; }
+  .s7 .mono-l { font-family:'IBM Plex Mono',monospace; font-size:22px; letter-spacing:0.24em; color:#a89e94; text-transform:uppercase; margin-bottom:14px; }
+  .s7 .url { font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:0.14em; color:#9a1818; margin-top:30px; }
+
+  .wm { position:absolute; bottom:30px; left:0; right:0; text-align:center;
+        font-family:'IBM Plex Mono',monospace; font-size:14px; color:#70645c; letter-spacing:0.3em; text-transform:uppercase; z-index:5; opacity:0.75; }
+</style></head>
+<body>
+
+<div class="scene s1" id="scene-1">
+  <div class="eye">The Israel Fractal · 1948 → 2026</div>
+  <div class="big">0.6</div>
+  <div class="cap">The state function F · today</div>
+</div>
+
+<div class="scene s2" id="scene-2">
+  <div class="eye">The methodology · Data Fluidity</div>
+  <div class="eq"><span class="f">F</span> <span class="eq-sign">=</span> <span class="d">D</span> <span class="op">·</span> <span class="u">U</span> <span class="op">/</span> <span class="r">R</span></div>
+  <div class="leg">
+    <div class="d"><span class="k">D</span>Decisions</div>
+    <div class="u"><span class="k">U</span>Utility</div>
+    <div class="r"><span class="k">R</span>Friction</div>
+  </div>
+</div>
+
+<div class="scene s3" id="scene-3">
+  <div class="eye">78 years · the trajectory</div>
+  <svg viewBox="0 0 1500 500">
+    <line class="omega-line" x1="80" y1="110" x2="1420" y2="110"/>
+    <text class="omega-label" x="1430" y="115">Ω = 0.73106</text>
+    <path class="line" d="M 100 60 L 300 70 L 500 95 L 700 150 L 900 230 L 1100 330 L 1300 420 L 1420 460"/>
+    <text class="axis" x="80" y="490">1948 · F = 100</text>
+    <text class="axis" x="1250" y="490">2026 · F = 0.6</text>
+  </svg>
+  <div class="cap">Collapse by a factor of <span class="red">170×</span></div>
+</div>
+
+<div class="scene s4" id="scene-4">
+  <div class="eye">Election results · Oct 28, 2026</div>
+  <div class="row">
+    <div class="c n1"><div class="n">53</div><div class="lb">Netanyahu</div></div>
+    <div class="c n2"><div class="n">48</div><div class="lb">Opposition</div></div>
+    <div class="c n3"><div class="n">19</div><div class="lb">Arab parties</div></div>
+  </div>
+  <div class="verdict">The public has spoken.</div>
+</div>
+
+<div class="scene s5" id="scene-5">
+  <div class="pre">No bloc reaches</div>
+  <div class="big">61</div>
+  <div class="post">Netanyahu <strong>−8</strong> · Opposition <strong>−13</strong></div>
+</div>
+
+<div class="scene s6" id="scene-6">
+  <div class="eye">The math forces one solution</div>
+  <div class="verd">Scenario 05.</div>
+  <div class="eq">Opposition + Arab support = <span class="green">67</span></div>
+  <div class="omega">F mounts above <span class="big">Ω = 0.73106</span>  ·  phase transition reversed</div>
+</div>
+
+<div class="scene s7" id="scene-7">
+  <div class="enh">E.N.H.</div>
+  <div class="rule"></div>
+  <div class="tag">Falsifiable by design.</div>
+  <div class="mono-l">H = R ↔ E ↔ O  ·  The Hemli Principle</div>
+  <div class="url">hemligroups.github.io/israel-fractal-site</div>
+</div>
+
+<div class="wm">E.N.H.  ·  Israel Fractal  ·  Oct 28, 2026</div>
+
+<script>
+// Scene schedule: [sceneIdx, startSec, endSec]
+// Fade-in happens via `.on` class via CSS transitions; fade-out happens by removing `.on` and new scene adding `.on`.
+window.__schedule = [
+  { id: 'scene-1', start: 0.3,  end: 4.5  },
+  { id: 'scene-2', start: 4.5,  end: 8.5  },
+  { id: 'scene-3', start: 8.5,  end: 13.0 },
+  { id: 'scene-4', start: 13.0, end: 18.0 },
+  { id: 'scene-5', start: 18.0, end: 22.0 },
+  { id: 'scene-6', start: 22.0, end: 26.5 },
+  { id: 'scene-7', start: 26.5, end: 30.0 },
+];
+window.__setTime = function(t) {
+  // t is seconds from video start. Set which scenes are `on` based on schedule.
+  for (const s of window.__schedule) {
+    const el = document.getElementById(s.id);
+    if (!el) continue;
+    if (t >= s.start && t < s.end) {
+      el.classList.add('on');
+    } else {
+      el.classList.remove('on');
+    }
+  }
+};
+window.__setTime(0);
+</script>
+</body>
+</html>
