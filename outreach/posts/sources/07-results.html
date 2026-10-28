@@ -6,45 +6,41 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
-         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:70px; }
+         display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
   body::before { content:""; position:absolute; inset:0;
-    background: radial-gradient(ellipse at 50% 20%, rgba(154,24,24,0.16) 0%, transparent 55%); }
-  .wrap { position:relative; z-index:1; width:100%; text-align:center; direction:rtl; }
-  .hook-wrap { margin-bottom:50px; }
-  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:200px; color:#9a1818; line-height:1; letter-spacing:-0.03em;
-          text-shadow: 0 4px 100px rgba(154,24,24,0.5); margin-bottom:16px; direction:rtl; }
-  .hook-sub { font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.3em; color:#a89e94; text-transform:uppercase; direction:ltr; }
-  .blocs { display:flex; justify-content:center; align-items:flex-end; gap:60px; margin-bottom:36px; direction:ltr; }
-  .bloc { display:flex; flex-direction:column; align-items:center; gap:6px; }
-  .bloc .n { font-family:'Playfair Display',serif; font-weight:900; font-size:150px; line-height:0.9; letter-spacing:-0.03em; }
-  .bloc .lb { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.18em; color:#a89e94; text-transform:uppercase; }
-  .bloc .short { font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:0.14em; color:#9a1818; margin-top:4px; font-weight:500; }
-  .bloc.netanyahu .n { color:#9a1818; }
-  .bloc.opp .n { color:#c8ad6b; }
-  .bloc.arab .n { color:#3f6013; }
-  .verdict-line { height:1px; background:#9a1818; width:380px; margin:12px auto 24px; }
-  .verdict { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-style:italic; font-size:48px; color:#f8f4ea; line-height:1.2; margin-bottom:16px; direction:rtl; }
-  .answer-rule { width:88px; height:1px; background:#3f6013; margin:24px auto 20px; }
-  .answer { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.14em; color:#f8f4ea; text-transform:uppercase; opacity:0.95; direction:ltr; }
-  .answer strong { font-family:'Playfair Display',serif; color:#3f6013; font-weight:700; font-style:italic; font-size:28px; vertical-align:middle; margin:0 8px; }
-  .foot { position:absolute; bottom:30px; left:0; right:0; text-align:center;
-          font-family:'IBM Plex Mono',monospace; font-size:12px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+    background: radial-gradient(ellipse at 50% 30%, rgba(63,96,19,0.14) 0%, transparent 55%); }
+  .top { padding:85px 70px 20px; text-align:center; direction:rtl; position:relative; z-index:1; }
+  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:92px; color:#f8f4ea; line-height:1.0; letter-spacing:-0.02em; direction:rtl; }
+  .hook .red { color:#9a1818; }
+  .sub-hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:32px; color:#a89e94; line-height:1.1; margin-top:24px; direction:rtl; }
+  .middle { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:0 70px; position:relative; z-index:1; direction:rtl; text-align:center; }
+  .commitment-rule { width:92px; height:1px; background:#3f6013; margin:0 auto 32px; }
+  .commitment { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-style:italic; font-size:62px; color:#f8f4ea; line-height:1.15; margin-bottom:36px; direction:rtl; max-width:980px; }
+  .threshold { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.2em; color:#a89e94; text-transform:uppercase; margin-bottom:18px; direction:ltr; }
+  .threshold strong { font-family:'Playfair Display',serif; font-weight:900; font-style:italic; color:#3f6013; font-size:30px; vertical-align:middle; margin:0 8px; }
+  .signoff { font-family:'IBM Plex Mono',monospace; font-size:15px; letter-spacing:0.2em; color:#f8f4ea; text-transform:uppercase; margin-top:20px; direction:ltr; }
+  .signoff strong { color:#9a1818; font-family:'Playfair Display',serif; font-weight:900; font-style:italic; font-size:24px; margin:0 6px; vertical-align:middle; }
+  .act { background:#0a0908; border-top:2px solid #3f6013; padding:34px 40px; text-align:center; direction:rtl; position:relative; z-index:2; }
+  .act .label { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.4em; color:#3f6013; text-transform:uppercase; margin-bottom:10px; direction:ltr; }
+  .act .cta { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:46px; color:#f8f4ea; line-height:1.15; direction:rtl; }
+  .act .url { font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:0.14em; color:#3f6013; margin-top:12px; direction:ltr; }
+  .meta { padding:16px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.2em; text-transform:uppercase; background:#06050a; direction:ltr; }
 </style></head>
 <body>
-<div class="wrap">
-  <div class="hook-wrap">
-    <div class="hook">אין רוב 61.</div>
-    <div class="hook-sub">Election Oct 28, 2026 · 85—93% counted · No bloc reaches majority</div>
-  </div>
-  <div class="blocs">
-    <div class="bloc netanyahu"><div class="n">53</div><div class="lb">Netanyahu</div><div class="short">−8</div></div>
-    <div class="bloc opp"><div class="n">48</div><div class="lb">Opposition</div><div class="short">−13</div></div>
-    <div class="bloc arab"><div class="n">19</div><div class="lb">Arab Parties</div><div class="short">kingmaker</div></div>
-  </div>
-  <div class="verdict-line"></div>
-  <div class="verdict">אף אחד לא ניצח. כולם מחכים.</div>
-  <div class="answer-rule"></div>
-  <div class="answer">The only path to 61+: Opposition + Arab support = <strong>67</strong></div>
+<div class="top">
+  <div class="hook">זאת לא עוד תיאוריה.<br><span class="red">תחליף אותה אם היא לא עבדה.</span></div>
+  <div class="sub-hook">זה המבחן שאני מציב למחקר שלי עצמו.</div>
 </div>
-<div class="foot">E.N.H.  ·  Falsifiable by design  ·  hemligroups.github.io/israel-fractal-site</div>
+<div class="middle">
+  <div class="commitment-rule"></div>
+  <div class="commitment">אם תוך 24 חודשים<br>ה־F של ישראל לא יחצה<br>את סף Ω — אני מודה שטעיתי.</div>
+  <div class="threshold">The threshold: F must cross <strong>Ω = 0.73106</strong></div>
+  <div class="signoff">That's the test. <strong>Falsifiable by design.</strong></div>
+</div>
+<div class="act">
+  <div class="label">7 / 7  ·  Follow this · Bookmark this</div>
+  <div class="cta">עקוב. אני אעדכן כל רבעון.</div>
+  <div class="url">hemligroups.github.io/israel-fractal-site</div>
+</div>
+<div class="meta">E.N.H.  ·  The falsification test  ·  Published Oct 28, 2026</div>
 </body></html>

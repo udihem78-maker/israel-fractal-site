@@ -6,40 +6,47 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
-         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:70px; }
+         display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
   body::before { content:""; position:absolute; inset:0;
     background: radial-gradient(ellipse at 20% 20%, rgba(154,24,24,0.12) 0%, transparent 55%); }
-  .wrap { position:relative; z-index:1; width:100%; max-width:1060px; margin:0 auto; direction:rtl; }
-  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:64px; color:#f8f4ea; line-height:1.15; letter-spacing:-0.01em; margin-bottom:14px; text-align:center; direction:rtl; }
-  .hook .red { color:#9a1818; font-weight:900; }
-  .sub-hook { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.22em; color:#a89e94; text-transform:uppercase; margin-bottom:50px; text-align:center; direction:ltr; }
-  .bars { display:flex; flex-direction:column; gap:16px; max-width:980px; margin:0 auto; direction:ltr; }
+  .top { padding:80px 70px 20px; text-align:center; direction:rtl; position:relative; z-index:1; }
+  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:76px; color:#f8f4ea; line-height:1.1; letter-spacing:-0.02em; direction:rtl; }
+  .hook .red { color:#9a1818; }
+  .sub-hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:32px; color:#a89e94; line-height:1.1; margin-top:22px; direction:rtl; }
+  .middle { flex:1; display:flex; flex-direction:column; justify-content:center; padding:10px 70px; position:relative; z-index:1; direction:ltr; }
+  .bars { display:flex; flex-direction:column; gap:14px; max-width:980px; margin:0 auto; }
   .bar { display:flex; align-items:center; gap:20px; }
   .bar .seg { width:280px; font-family:'IBM Plex Mono',monospace; font-size:16px; color:#f8f4ea; text-align:right; letter-spacing:0.03em; text-transform:uppercase; }
-  .bar .fill { height:40px; display:flex; align-items:center; padding:0 16px; font-family:'Playfair Display',serif; font-weight:700; font-size:22px; color:#f8f4ea; }
+  .bar .fill { height:38px; display:flex; align-items:center; padding:0 14px; font-family:'Playfair Display',serif; font-weight:700; font-size:22px; color:#f8f4ea; }
   .b1 .fill { background:#9a1818; width:720px; }
   .b2 .fill { background:#c54848; width:400px; }
   .b3 .fill { background:#b8863a; width:170px; }
   .b4 .fill { background:#3f6013; width:138px; }
   .b5 .fill { background:#5a524b; width:100px; }
-  .caption { font-family:'Frank Ruhl Libre',serif; font-size:32px; color:#e8d8c0; line-height:1.3; max-width:900px; margin:40px auto 0; font-style:italic; font-weight:700; text-align:center; direction:rtl; }
-  .meta { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.16em; color:#70645c; text-transform:uppercase; direction:ltr; text-align:center; margin-top:18px; }
-  .foot { position:absolute; bottom:36px; left:0; right:0; text-align:center;
-          font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+  .explain { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:30px; color:#e8d8c0; line-height:1.3; max-width:980px; margin:38px auto 0; font-style:italic; text-align:center; direction:rtl; }
+  .act { background:#9a1818; padding:34px 40px; text-align:center; direction:rtl; position:relative; z-index:2; }
+  .act .label { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.4em; color:rgba(255,255,255,0.75); text-transform:uppercase; margin-bottom:10px; direction:ltr; }
+  .act .cta { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:46px; color:#ffffff; line-height:1.15; direction:rtl; }
+  .meta { padding:16px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.2em; text-transform:uppercase; background:#06050a; direction:ltr; }
 </style></head>
 <body>
-<div class="wrap">
-  <div class="hook">מתנחל חי במדינה שעובדת<br><span class="red">פי 27 יותר טוב</span><br>מהבדואי בכפר הלא־מוכר.</div>
-  <div class="sub-hook">Same country · One citizenship · 27× gap</div>
-  <div class="bars">
-    <div class="bar b1"><div class="seg">Settler</div><div class="fill">F = 27</div></div>
-    <div class="bar b2"><div class="seg">Haredi · Bnei Brak</div><div class="fill">F = 15</div></div>
-    <div class="bar b3"><div class="seg">Secular · Tel Aviv</div><div class="fill">F = 2.5</div></div>
-    <div class="bar b4"><div class="seg">Arab-Israeli</div><div class="fill">F = 1.8</div></div>
-    <div class="bar b5"><div class="seg">Bedouin · unrecognized</div><div class="fill">F = 1</div></div>
-  </div>
-  <div class="caption">זאת לא אי־שוויון בתוצאה. זה אי־שוויון במדינה.</div>
-  <div class="meta">hemligroups.github.io/israel-fractal-site</div>
+<div class="top">
+  <div class="hook">אתה גר ב<span class="red">אותה מדינה</span><br>שבה בדואי חי פי 27 גרוע יותר<br>ממתנחל ברמת מגדלת.</div>
+  <div class="sub-hook">אותה אזרחות. אותם דרכונים. 27× הבדל במדינה שהם מקבלים.</div>
 </div>
-<div class="foot">E.N.H.  ·  23 segments measured  ·  Falsifiable by design</div>
+<div class="middle">
+  <div class="bars">
+    <div class="bar b1"><div class="seg">Settler · F=27</div><div class="fill">best</div></div>
+    <div class="bar b2"><div class="seg">Haredi · Bnei Brak · F=15</div><div class="fill"></div></div>
+    <div class="bar b3"><div class="seg">Secular · Tel Aviv · F=2.5</div><div class="fill"></div></div>
+    <div class="bar b4"><div class="seg">Arab-Israeli · F=1.8</div><div class="fill"></div></div>
+    <div class="bar b5"><div class="seg">Bedouin unrecognized · F=1</div><div class="fill">worst</div></div>
+  </div>
+  <div class="explain">אין "ישראל אחת". יש 23 ישראלות מקבילות.</div>
+</div>
+<div class="act">
+  <div class="label">3 / 7  ·  Save this</div>
+  <div class="cta">שמור את זה. תראה את זה למי שאומר "זה אותו דין".</div>
+</div>
+<div class="meta">E.N.H.  ·  23 segments measured · hemligroups.github.io/israel-fractal-site</div>
 </body></html>

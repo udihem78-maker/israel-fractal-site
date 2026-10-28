@@ -6,45 +6,48 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
-         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:60px; }
+         display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
   body::before { content:""; position:absolute; inset:0;
     background: radial-gradient(ellipse at 50% 20%, rgba(63,96,19,0.14) 0%, transparent 55%); }
-  .wrap { position:relative; z-index:1; width:100%; max-width:1080px; direction:rtl; }
-  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:62px; color:#f8f4ea; line-height:1.1; letter-spacing:-0.01em; margin-bottom:14px; text-align:center; direction:rtl; }
-  .hook .green { color:#3f6013; font-weight:900; }
-  .sub-hook { font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:0.24em; color:#a89e94; text-transform:uppercase; margin-bottom:30px; text-align:center; direction:ltr; }
-  .score { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:15px; color:#a89e94; letter-spacing:0.14em; margin-bottom:24px; text-transform:uppercase; direction:ltr; }
-  .score .arrow { color:#3f6013; font-weight:600; margin:0 10px; }
-  .score .big { color:#3f6013; font-weight:700; font-family:'Playfair Display',serif; font-size:30px; vertical-align:middle; }
-  .rule { width:72px; height:1px; background:#3f6013; margin:0 auto 24px; }
+  .top { padding:70px 70px 10px; text-align:center; direction:rtl; position:relative; z-index:1; }
+  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:76px; color:#f8f4ea; line-height:1.05; letter-spacing:-0.02em; direction:rtl; }
+  .hook .green { color:#3f6013; }
+  .sub-hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:32px; color:#a89e94; line-height:1.1; margin-top:20px; direction:rtl; }
+  .middle { flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 70px; position:relative; z-index:1; direction:rtl; }
   .parties { display:flex; flex-direction:column; gap:10px; max-width:980px; margin:0 auto; direction:ltr; }
-  .party { display:flex; align-items:center; gap:20px; padding:12px 20px; border:1px solid rgba(63,96,19,0.3); background:rgba(63,96,19,0.05); }
+  .party { display:flex; align-items:center; gap:20px; padding:11px 20px; border:1px solid rgba(63,96,19,0.3); background:rgba(63,96,19,0.05); }
   .party .mnd { width:70px; font-family:'Playfair Display',serif; font-weight:900; font-size:34px; color:#3f6013; text-align:center; line-height:1; }
-  .party .nm { flex:1; font-family:'Playfair Display',serif; font-weight:700; font-size:20px; color:#f8f4ea; }
-  .party .role { font-family:'IBM Plex Mono',monospace; font-size:12px; color:#a89e94; letter-spacing:0.08em; text-transform:uppercase; text-align:right; min-width:190px; }
+  .party .nm { flex:1; font-family:'Playfair Display',serif; font-weight:700; font-size:21px; color:#f8f4ea; }
+  .party .role { font-family:'IBM Plex Mono',monospace; font-size:12px; color:#a89e94; letter-spacing:0.1em; text-transform:uppercase; text-align:right; min-width:190px; }
   .party.ext { border-color:rgba(154,24,24,0.3); background:rgba(154,24,24,0.03); }
   .party.ext .mnd { color:#c54848; }
   .total { text-align:center; font-family:'IBM Plex Mono',monospace; font-size:15px; color:#f8f4ea; letter-spacing:0.14em; margin-top:18px; text-transform:uppercase; direction:ltr; }
   .total strong { font-family:'Playfair Display',serif; font-size:26px; color:#3f6013; font-weight:900; vertical-align:middle; margin:0 8px; }
-  .foot { position:absolute; bottom:30px; left:0; right:0; text-align:center;
-          font-family:'IBM Plex Mono',monospace; font-size:12px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+  .act { background:#3f6013; padding:34px 40px; text-align:center; direction:rtl; position:relative; z-index:2; }
+  .act .label { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.4em; color:rgba(255,255,255,0.75); text-transform:uppercase; margin-bottom:10px; direction:ltr; }
+  .act .cta { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:46px; color:#ffffff; line-height:1.15; direction:rtl; }
+  .meta { padding:16px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.2em; text-transform:uppercase; background:#06050a; direction:ltr; }
 </style></head>
 <body>
-<div class="wrap">
-  <div class="hook">זאת הממשלה היחידה<br>שתעבוד. <span class="green">הנה המספרים.</span></div>
-  <div class="sub-hook">Post-poll · The only path to functional government</div>
-  <div class="score">F today: 0.6  <span class="arrow">→</span>  Projected 24 months: <span class="big">23.4</span></div>
-  <div class="rule"></div>
+<div class="top">
+  <div class="hook">אל תגיד "אין פתרון".<br><span class="green">יש אחד.</span> הוא לא נוח.</div>
+  <div class="sub-hook">הנה הממשלה היחידה שהמתמטיקה מאפשרת.</div>
+</div>
+<div class="middle">
   <div class="parties">
-    <div class="party"><div class="mnd">22</div><div class="nm">אייזנקוט · ישראל אחת</div><div class="role">PM · National Security</div></div>
-    <div class="party"><div class="mnd">20</div><div class="nm">לפיד · יש עתיד</div><div class="role">Finance · Economy</div></div>
+    <div class="party"><div class="mnd">22</div><div class="nm">אייזנקוט · ישראל אחת</div><div class="role">PM</div></div>
+    <div class="party"><div class="mnd">20</div><div class="nm">לפיד · יש עתיד</div><div class="role">Finance</div></div>
     <div class="party"><div class="mnd">13</div><div class="nm">בנט · ביחד</div><div class="role">Foreign · Justice</div></div>
     <div class="party"><div class="mnd">8</div><div class="nm">גולן · דמוקרטים</div><div class="role">Welfare · Health</div></div>
-    <div class="party"><div class="mnd">7</div><div class="nm">ליברמן · ישראל ביתנו</div><div class="role">Interior · Rel. Affairs</div></div>
+    <div class="party"><div class="mnd">7</div><div class="nm">ליברמן · ישראל ביתנו</div><div class="role">Interior</div></div>
     <div class="party"><div class="mnd">6</div><div class="nm">גנץ · המחנה הממלכתי</div><div class="role">Defense · Oct 7 Inquiry</div></div>
     <div class="party ext"><div class="mnd">+5</div><div class="nm">עבאס · רע"ם · תמיכה חיצונית</div><div class="role">External support</div></div>
   </div>
   <div class="total">Coalition <strong>76</strong> + support <strong>5</strong> = Total <strong>81</strong></div>
 </div>
-<div class="foot">E.N.H.  ·  F-maximizing coalition  ·  Falsifiable by design  ·  hemligroups.github.io/israel-fractal-site</div>
+<div class="act">
+  <div class="label">6 / 7  ·  Demand this</div>
+  <div class="cta">שלח לנבחר שלך. דרוש את זה בלבד.</div>
+</div>
+<div class="meta">E.N.H.  ·  The F-maximizing coalition  ·  hemligroups.github.io/israel-fractal-site</div>
 </body></html>

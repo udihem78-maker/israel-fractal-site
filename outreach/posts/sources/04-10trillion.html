@@ -6,34 +6,42 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
-         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:70px; }
+         display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
   body::before { content:""; position:absolute; inset:0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(154,24,24,0.16) 0%, transparent 55%); }
-  .wrap { position:relative; z-index:1; text-align:center; max-width:1060px; direction:rtl; }
-  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:76px; color:#f8f4ea; line-height:1.1; letter-spacing:-0.01em; margin-bottom:50px; direction:rtl; }
-  .hook .red { color:#9a1818; font-weight:900; }
-  .money { font-family:'Playfair Display',serif; font-weight:900; font-size:200px; color:#9a1818; line-height:0.95; letter-spacing:-0.03em;
-           text-shadow: 0 2px 70px rgba(154,24,24,0.4); margin-bottom:16px; }
-  .money .currency { font-size:130px; }
-  .per-person { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:52px; color:#e8d8c0; margin-top:28px; letter-spacing:-0.01em; direction:rtl; }
-  .per-person .red { color:#9a1818; }
-  .rule { width:88px; height:1px; background:#3f6013; margin:48px auto 36px; }
-  .caption { font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:0.22em; color:#f8f4ea; text-transform:uppercase; margin-bottom:12px; direction:ltr; }
-  .caption strong { font-family:'Playfair Display',serif; font-weight:900; color:#9a1818; font-size:26px; vertical-align:middle; margin:0 10px; }
-  .groups { font-family:'IBM Plex Mono',monospace; font-size:15px; letter-spacing:0.18em; color:#a89e94; text-transform:uppercase; direction:ltr; }
-  .meta { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.16em; color:#70645c; text-transform:uppercase; direction:ltr; margin-top:22px; }
-  .foot { position:absolute; bottom:36px; left:0; right:0; text-align:center;
-          font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+    background: radial-gradient(ellipse at 50% 50%, rgba(154,24,24,0.17) 0%, transparent 55%); }
+  .top { padding:90px 70px 20px; text-align:center; direction:rtl; position:relative; z-index:1; }
+  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:100px; color:#f8f4ea; line-height:1; letter-spacing:-0.02em; direction:rtl; }
+  .hook .red { color:#9a1818; }
+  .sub-hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:36px; color:#a89e94; line-height:1.1; margin-top:28px; direction:rtl; }
+  .middle { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:0 70px; position:relative; z-index:1; direction:rtl; text-align:center; }
+  .money-row { display:flex; justify-content:center; align-items:baseline; gap:30px; direction:ltr; margin-bottom:30px; }
+  .money { font-family:'Playfair Display',serif; font-weight:900; font-size:220px; color:#9a1818; line-height:0.9; letter-spacing:-0.03em;
+           text-shadow: 0 2px 70px rgba(154,24,24,0.4); }
+  .money .currency { font-size:140px; }
+  .per { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:40px; color:#e8d8c0; margin-top:24px; letter-spacing:-0.01em; direction:rtl; max-width:980px; }
+  .per .red { color:#9a1818; }
+  .meta-row { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.22em; color:#a89e94; text-transform:uppercase; margin-top:30px; direction:ltr; }
+  .meta-row strong { font-family:'Playfair Display',serif; font-weight:900; color:#f8f4ea; font-size:24px; vertical-align:middle; margin:0 8px; }
+  .act { background:#9a1818; padding:34px 40px; text-align:center; direction:rtl; position:relative; z-index:2; }
+  .act .label { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.4em; color:rgba(255,255,255,0.75); text-transform:uppercase; margin-bottom:10px; direction:ltr; }
+  .act .cta { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:46px; color:#ffffff; line-height:1.15; direction:rtl; }
+  .meta { padding:16px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.2em; text-transform:uppercase; background:#06050a; direction:ltr; }
 </style></head>
 <body>
-<div class="wrap">
-  <div class="hook">גנבו <span class="red">מיליון ורבע שקל</span><br>מכל אזרח פגיע.<br>78 שנה.</div>
-  <div class="money"><span class="currency">₪</span>10T</div>
-  <div class="per-person">= <span class="red">₪1,250,000</span> לכל אלמנה, יתום, קשיש, נכה</div>
-  <div class="rule"></div>
-  <div class="caption">Not loss. <strong>Transfer.</strong>  ·  5× annual GDP</div>
-  <div class="groups">From widows · orphans · elderly · disabled → to the concentrated top 5%</div>
-  <div class="meta">hemligroups.github.io/israel-fractal-site</div>
+<div class="top">
+  <div class="hook">גנבו ממך<br><span class="red">מיליון ורבע שקל</span>.</div>
+  <div class="sub-hook">78 שנה. ברור מי. ברור לאן.</div>
 </div>
-<div class="foot">E.N.H.  ·  78-year vulnerable-population accounting  ·  Falsifiable by design</div>
+<div class="middle">
+  <div class="money-row">
+    <div class="money"><span class="currency">₪</span>10T</div>
+  </div>
+  <div class="per">= <span class="red">₪1,250,000</span> מכל אלמנה, יתום, קשיש, נכה</div>
+  <div class="meta-row">Not loss.  <strong>Transfer.</strong>  ·  5× annual GDP</div>
+</div>
+<div class="act">
+  <div class="label">4 / 7  ·  Repost this</div>
+  <div class="cta">שתף. חייבים לפרסם את זה.</div>
+</div>
+<div class="meta">E.N.H.  ·  78-year vulnerable-population accounting  ·  hemligroups.github.io/israel-fractal-site</div>
 </body></html>

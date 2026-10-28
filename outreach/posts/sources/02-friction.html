@@ -6,38 +6,44 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:1200px; background:#0a0908; color:#f8f4ea; font-family:'Inter',sans-serif;
-         display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden; padding:70px; }
+         display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
   body::before { content:""; position:absolute; inset:0;
-    background: radial-gradient(ellipse at 50% 25%, rgba(154,24,24,0.18) 0%, transparent 55%); }
-  .wrap { position:relative; z-index:1; text-align:center; max-width:1060px; direction:rtl; }
-  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:80px; color:#f8f4ea; line-height:1.1; letter-spacing:-0.01em; margin-bottom:48px; direction:rtl; }
-  .hook .faded { color:#a89e94; }
-  .nums { display:flex; justify-content:center; align-items:baseline; gap:60px; margin-bottom:50px; direction:ltr; }
-  .budget { display:flex; flex-direction:column; align-items:center; gap:10px; }
-  .budget .n { font-family:'Playfair Display',serif; font-weight:900; font-size:160px; color:#c8ad6b; line-height:0.9; letter-spacing:-0.02em; }
-  .budget .lb { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.2em; color:#a89e94; text-transform:uppercase; }
-  .vs { font-family:'IBM Plex Mono',monospace; font-size:22px; color:#70645c; letter-spacing:0.4em; align-self:flex-end; margin-bottom:48px; text-transform:uppercase; }
-  .friction { display:flex; flex-direction:column; align-items:center; gap:10px; }
-  .friction .n { font-family:'Playfair Display',serif; font-weight:900; font-size:240px; color:#9a1818; line-height:0.9; letter-spacing:-0.03em;
-                 text-shadow: 0 2px 60px rgba(154,24,24,0.5); }
-  .friction .lb { font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:0.2em; color:#9a1818; text-transform:uppercase; font-weight:500; }
-  .rule { width:88px; height:1px; background:#3f6013; margin:0 auto 36px; }
-  .caption { font-family:'Frank Ruhl Libre',serif; font-size:38px; color:#e8d8c0; line-height:1.2; max-width:900px; margin:0 auto 20px; font-style:italic; font-weight:700; direction:rtl; }
-  .meta { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.16em; color:#70645c; text-transform:uppercase; direction:ltr; }
-  .foot { position:absolute; bottom:36px; left:0; right:0; text-align:center;
-          font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.14em; text-transform:uppercase; z-index:1; }
+    background: radial-gradient(ellipse at 50% 20%, rgba(154,24,24,0.17) 0%, transparent 55%); }
+  .top { padding:90px 70px 20px; text-align:center; direction:rtl; position:relative; z-index:1; }
+  .hook { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:110px; color:#f8f4ea; line-height:1; letter-spacing:-0.02em; direction:rtl; }
+  .hook .red { color:#9a1818; }
+  .sub-hook { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:40px; color:#a89e94; line-height:1.1; margin-top:28px; direction:rtl; }
+  .middle { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:0 70px; position:relative; z-index:1; direction:rtl; text-align:center; }
+  .compare { display:flex; justify-content:center; align-items:flex-end; gap:80px; direction:ltr; margin-bottom:32px; }
+  .block { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .block .n { font-family:'Playfair Display',serif; font-weight:900; line-height:0.9; letter-spacing:-0.03em; }
+  .block.small .n { font-size:140px; color:#c8ad6b; }
+  .block.big .n { font-size:260px; color:#9a1818; text-shadow: 0 2px 70px rgba(154,24,24,0.4); }
+  .block .lb { font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:0.2em; color:#a89e94; text-transform:uppercase; }
+  .block .yr { font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.18em; color:#70645c; text-transform:uppercase; margin-top:2px; }
+  .vs { font-family:'IBM Plex Mono',monospace; font-size:20px; color:#70645c; letter-spacing:0.4em; text-transform:uppercase; align-self:center; margin-bottom:40px; }
+  .explain { font-family:'Frank Ruhl Libre',serif; font-weight:700; font-size:34px; color:#e8d8c0; line-height:1.3; max-width:900px; margin:0 auto; font-style:italic; direction:rtl; }
+  .act { background:#9a1818; padding:34px 40px; text-align:center; direction:rtl; position:relative; z-index:2; }
+  .act .label { font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.4em; color:rgba(255,255,255,0.75); text-transform:uppercase; margin-bottom:10px; direction:ltr; }
+  .act .cta { font-family:'Frank Ruhl Libre',serif; font-weight:900; font-size:46px; color:#ffffff; line-height:1.15; direction:rtl; }
+  .meta { padding:16px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:13px; color:#70645c; letter-spacing:0.2em; text-transform:uppercase; background:#06050a; direction:ltr; }
 </style></head>
 <body>
-<div class="wrap">
-  <div class="hook">ההחלטות מתקבלות.<br><span class="faded">הן לא מגיעות אליך.</span></div>
-  <div class="nums">
-    <div class="budget"><div class="n">×3</div><div class="lb">Budget 1948→2026</div></div>
-    <div class="vs">VS</div>
-    <div class="friction"><div class="n">×232</div><div class="lb">Bureaucracy 1948→2026</div></div>
-  </div>
-  <div class="rule"></div>
-  <div class="caption">הפער בין השניים — זה שלוקח לך הכל.</div>
-  <div class="meta">hemligroups.github.io/israel-fractal-site</div>
+<div class="top">
+  <div class="hook">אומרים לך<br>"<span class="red">אין תקציב</span>".<br>שיקרו.</div>
+  <div class="sub-hook">הנה המספרים שהם מקווים שלא תראה.</div>
 </div>
-<div class="foot">E.N.H.  ·  Friction (R) in F = D·U/R  ·  Falsifiable by design</div>
+<div class="middle">
+  <div class="compare">
+    <div class="block small"><div class="n">×3</div><div class="lb">Budget grew</div><div class="yr">1948 → 2026</div></div>
+    <div class="vs">VS</div>
+    <div class="block big"><div class="n">×232</div><div class="lb">Bureaucracy grew</div><div class="yr">1948 → 2026</div></div>
+  </div>
+  <div class="explain">התקציב שלושה. הביורוקרטיה 232.<br>הכסף מגיע. הוא פשוט לא יוצא מהצד השני.</div>
+</div>
+<div class="act">
+  <div class="label">2 / 7  ·  Send this</div>
+  <div class="cta">שלח לכל מי שאומר לך "אין פתרון".</div>
+</div>
+<div class="meta">E.N.H.  ·  40 primary sources  ·  hemligroups.github.io/israel-fractal-site</div>
 </body></html>
