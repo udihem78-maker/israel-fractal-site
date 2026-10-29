@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Israel Fractal · Research 1948—2026</title>
+<meta name="description" content="A fractal measurement of 78 years of Israeli governance. Independent academic research applying the Data Fluidity methodology (F = D×U/R) to 1,350 units of analysis across 16 primary sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#ffffff; --ink:#0a0908; --text:#15130f; --muted:#5a524b; --faint:#8e8680; --rule:#bfb6ad; --rule-light:#e4ddd3; --panel:#f0ebe0; --paper:#f8f4ea; --accent:#9a1818; --olive:#3f6013; }
+
+  /* ─── HERO · cinematic Netflix-doc opening ─── */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 60px 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(154,24,24,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(63,96,19,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #a89e94;
+    margin-bottom: 48px;
+  }
+  .hero .score {
+    font-family: 'Rubik', serif;
+    font-weight: 700;
+    font-size: clamp(180px, 32vw, 440px);
+    line-height: 0.9;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    margin: 0;
+    text-shadow: 0 2px 40px rgba(154,24,24,0.3);
+  }
+  .hero .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--paper);
+    margin-top: 24px;
+    opacity: 0.9;
+  }
+  .hero .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--olive);
+    margin: 36px auto;
+  }
+  .hero .factline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--paper);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  .hero .factline strong { color: #e8d8c0; font-weight: 500; }
+  .hero .formula-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #a89e94;
+    margin-top: 40px;
+    letter-spacing: 0.08em;
+  }
+  .hero .signature {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #70645c;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .hero .lang-picker {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .hero .lang-picker a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--paper);
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid #403832;
+    transition: border-color 0.2s, background 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .hero .lang-picker a:hover {
+    border-color: var(--accent);
+    background: rgba(154,24,24,0.12);
+  }
+  .hero .lang-picker a .arrow { opacity: 0.5; margin: 0 6px; }
+  .hero .scroll-cue {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #70645c;
+    text-transform: uppercase;
+    margin-top: 80px;
+  }
+  @media (max-width: 720px) {
+    .hero { padding: 40px 20px; min-height: 90vh; }
+    .hero .eyebrow { margin-bottom: 32px; font-size: 10px; letter-spacing: 0.18em; }
+    .hero .score { font-size: clamp(150px, 48vw, 300px); }
+    .hero .label { font-size: 11px; margin-top: 16px; }
+    .hero .divider { margin: 24px auto; }
+    .hero .factline { font-size: 12px; }
+    .hero .formula-line { font-size: 11px; margin-top: 24px; }
+    .hero .lang-picker { margin-top: 36px; gap: 10px; }
+    .hero .lang-picker a { padding: 10px 20px; font-size: 13px; }
+    .hero .scroll-cue { margin-top: 48px; }
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; text-rendering: optimizeLegibility; }
+  header.site { border-bottom:1px solid var(--ink); padding:20px 40px; display:flex; justify-content:space-between; align-items:baseline; }
+  .mark { font-size:15px; font-weight:600; color:var(--ink); }
+  .mark .sub { color:var(--muted); font-weight:400; margin-left:12px; }
+  .meta { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; }
+
+  main { max-width:1040px; margin:0 auto; padding:48px 40px 32px; width:100%; }
+
+  .doc-title { border-bottom:2px solid var(--ink); padding-bottom:28px; margin-bottom:40px; }
+  .doc-title .pre { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+  h1 { font-size:34px; font-weight:700; line-height:1.2; color:var(--ink); letter-spacing:-0.01em; max-width:30ch; margin-bottom:12px; }
+  .doc-title .subtitle { font-size:17px; color:var(--muted); font-weight:400; max-width:62ch; }
+
+  section { margin-bottom:56px; }
+  section h2 { font-size:23px; font-weight:700; color:var(--ink); margin-bottom:22px; padding-bottom:12px; border-bottom:1px solid var(--ink); display:flex; align-items:baseline; gap:12px; letter-spacing:-0.01em; }
+  section h2 .sec-no { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); font-weight:500; }
+  section p { font-size:16px; line-height:1.7; max-width:68ch; margin-bottom:12px; color:var(--text); }
+  section p strong { color:var(--ink); font-weight:600; }
+  .formula { font-family:'IBM Plex Mono',monospace; font-size:13px; background:#fcf4e8; padding:2px 8px; border:1px solid #e4d08a; border-radius:2px; display:inline-block; font-weight:500; }
+
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 14px 0 0;
+  }
+  .what-grid .what {
+    padding: 18px 22px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .what-grid .what:nth-child(2n) { border-right: none; }
+  .what-grid .what:nth-last-child(-n+2) { border-bottom: none; }
+  .what-grid .what h4 { font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .what-grid .what p { font-size:13.5px; color:var(--text); line-height:1.55; margin:0; max-width:none; }
+
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 10px 0 0;
+  }
+  .flow .step { padding:14px 16px; border-right:1px solid var(--rule); font-size:13px; }
+  .flow .step:last-child { border-right:none; }
+  .flow .step .n { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em; }
+  .flow .step strong { display:block; color:var(--ink); font-weight:600; font-size:13.5px; margin-bottom:3px; }
+  .flow .step span { color:var(--muted); line-height:1.5; font-size:12.5px; }
+
+  .explain-dur { width:100%; border-collapse:collapse; font-size:14px; margin:14px 0 0; border:1px solid var(--rule); }
+  .explain-dur th { text-align:left; padding:10px 14px; background:var(--panel); font-weight:600; font-size:11.5px; text-transform:uppercase; letter-spacing:0.03em; color:var(--muted); border-bottom:1px solid var(--ink); }
+  .explain-dur td { padding:11px 14px; border-bottom:1px solid var(--rule-light); vertical-align:baseline; font-size:13.5px; line-height:1.55; }
+  .explain-dur tr:last-child td { border-bottom:none; }
+  .explain-dur td.var { width:80px; font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--accent); }
+  .explain-dur td.what-col { width:28%; color:var(--ink); font-weight:500; }
+  .explain-dur td.high { color:var(--olive); }
+  .explain-dur td.low { color:var(--accent); }
+
+  .lang-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--rule); margin:14px 0 0; }
+  .lang-card { padding:24px 24px 20px; border-right:1px solid var(--rule); text-decoration:none; color:inherit; transition:background 0.15s; display:flex; flex-direction:column; min-height:200px; }
+  .lang-card:last-child { border-right:none; }
+  .lang-card:hover { background:var(--panel); }
+  .lang-card:hover .enter { color:var(--accent); }
+  .lang-card .code { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
+  .lang-card .name { font-size:28px; font-weight:600; color:var(--ink); line-height:1; margin-bottom:4px; }
+  .lang-card .native { font-size:11.5px; color:var(--muted); margin-bottom:14px; font-family:'IBM Plex Mono',monospace; }
+  .lang-card .lede { font-size:13.5px; color:var(--text); line-height:1.55; flex:1; margin-bottom:16px; }
+  .lang-card .enter { font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; transition:color 0.15s; }
+  .lang-card .enter::after { content:" →"; }
+  .lang-he { font-family:'Rubik',sans-serif; direction:rtl; text-align:right; }
+  .lang-he .enter::after { content:" ←"; }
+  .lang-ar { font-family:'Noto Sans Arabic',sans-serif; direction:rtl; text-align:right; }
+  .lang-ar .enter::after { content:" ←"; }
+
+  .sources-mini { }
+  .sources-mini ul { list-style:none; column-count:2; column-gap:28px; margin:10px 0 0; }
+  .sources-mini li { font-size:12.5px; padding:4px 0; color:var(--text); border-bottom:1px dotted var(--rule-light); line-height:1.5; break-inside:avoid; }
+  .sources-mini li::before { content:"·"; color:var(--muted); margin-right:6px; }
+
+  .downloads { border:1px solid var(--rule); padding:18px 22px; margin-top:12px; }
+  .dl-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px 14px; }
+  .dl-grid a { font-size:12.5px; color:var(--ink); text-decoration:none; padding:6px 10px; border:1px solid var(--rule); background:var(--bg); font-family:'IBM Plex Mono',monospace; display:flex; justify-content:space-between; align-items:center; gap:8px; transition:all 0.15s; }
+  .dl-grid a:hover { border-color:var(--ink); background:var(--panel); }
+  .dl-grid a .size { font-size:10.5px; color:var(--muted); }
+
+  footer { margin-top:auto; border-top:1px solid var(--ink); padding:20px 40px; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; color:var(--muted); gap:24px; flex-wrap:wrap; }
+  footer a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px; }
+  footer a:hover { text-decoration-color:var(--accent); }
+  footer .colophon { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.03em; text-align:right; }
+
+  @media (max-width:900px) {
+    main { padding:32px 20px 20px; }
+    header.site { padding:14px 20px; flex-direction:column; align-items:flex-start; gap:4px; }
+    h1 { font-size:24px; }
+    .doc-title .subtitle { font-size:15px; }
+    .what-grid { grid-template-columns:1fr; }
+    .what-grid .what { border-right:none; border-bottom:1px solid var(--rule); }
+    .what-grid .what:last-child { border-bottom:none; }
+    .flow { grid-template-columns:1fr 1fr; }
+    .flow .step { border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+    .flow .step:nth-child(2n) { border-right:none; }
+    .flow .step:nth-last-child(-n+1) { border-bottom:none; }
+    .lang-grid { grid-template-columns:1fr; }
+    .lang-card { border-right:none; border-bottom:1px solid var(--rule); min-height:auto; }
+    .lang-card:last-child { border-bottom:none; }
+    .explain-dur td.what-col { width:38%; }
+    .sources-mini ul { column-count:1; }
+    .dl-grid { grid-template-columns:repeat(2,1fr); }
+    footer { padding:16px 20px; }
+    footer .colophon { text-align:left; }
+  }
+  .skip-link { position: fixed; inset-block-start: 12px; inset-inline-start: 12px; z-index: 1000; padding: 12px 18px; background: #fff; color: #111; border: 2px solid #111; transform: translateY(-200%); }
+  .skip-link:focus { transform: none; }
+  :focus-visible { outline: 3px solid #0071e3; outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<link rel="stylesheet" href="assets/site-theme.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site">
+  <a class="mark brand-link" href="./" aria-label="Israel Fractal home"><span>Israel Fractal<small>KNOWLEDGE · CURIOSITY · POSSIBILITY</small></span></a>
+  <nav class="langs" aria-label="Choose research language">
+    <a href="he/research.html" lang="he" dir="rtl">עברית</a>
+    <a href="en/" lang="en">English</a>
+    <a href="ar/" lang="ar" dir="rtl">العربية</a>
+  </nav>
+</header>
+
+<section class="welcome" lang="he" dir="rtl" aria-labelledby="welcome-title">
+  <div class="welcome-topline">ישראל פרקטלית · מרחב פתוח לידע ולסקרנות</div>
+  <div class="welcome-grid">
+    <div>
+      <h1 id="welcome-title">מקום לסקרנות.<br><span>מרחב לתקווה.</span></h1>
+      <p class="welcome-description">לקרוא, לשאול ולגלות נקודות מבט חדשות. מפגש של ידע, יצירה ואנשים — ברוח של כבוד הדדי ואהבת הלמידה.</p>
+      <div class="welcome-actions">
+        <a class="primary" href="he/research.html">לקריאה בעברית <span aria-hidden="true">←</span></a>
+        <a href="#read">בחירת שפה <span aria-hidden="true">↙</span></a>
+      </div>
+      <p class="welcome-note">עברית, English, العربية · פתוח לקריאה ללא הרשמה</p>
+    </div>
+    <figure class="flag-art">
+      <div class="flag-label" dir="ltr"><span>ISRAEL / ישראל</span><span>A PLACE TO EXPLORE</span></div>
+      <img src="assets/israel-flag.svg" width="220" height="160" alt="דגל ישראל בכחול ולבן" fetchpriority="high">
+      <figcaption>ידע. יצירה. תקווה.<span lang="en" dir="ltr">BLUE &amp; WHITE</span></figcaption>
+    </figure>
+  </div>
+  <div class="values-grid">
+    <article class="value-card">
+      <span class="value-icon" aria-hidden="true">↗</span>
+      <h2>סקרנות פותחת דלתות</h2>
+      <p>מקום לשאלות טובות, לגילויים חדשים וללמידה שלא נגמרת.</p>
+    </article>
+    <article class="value-card">
+      <span class="value-icon" aria-hidden="true">✧</span>
+      <h2>יצירה מחברת אנשים</h2>
+      <p>רעיונות, שפות ונקודות מבט נפגשים במרחב אחד פתוח.</p>
+    </article>
+    <article class="value-card">
+      <span class="value-icon" aria-hidden="true">∞</span>
+      <h2>ידע נגיש לכולם</h2>
+      <p>קריאה חופשית בשלוש שפות, בקצב שלכם ובדרך שלכם.</p>
+    </article>
+  </div>
+</section>
+
+<div class="research-separator"><span>THE RESEARCH LIBRARY</span><span lang="he" dir="rtl">מכאן: המחקר המקורי, המתודולוגיה והמקורות</span></div>
+<main id="main-content" tabindex="-1">
+
+<div class="doc-title">
+  <div class="pre">INDEPENDENT ACADEMIC RESEARCH · 1948—2026</div>
+  <h2 class="research-title">Israel 1948—2026: A fractal measurement of governance.</h2>
+  <div class="subtitle">
+    A quantitative report on 78 years of Israeli governance, applying the Data Fluidity methodology
+    to 1,350 units of analysis across 16 primary sources — reproducible under MIT license.
+  </div>
+  <details class="research-summary">
+    <summary>Original research snapshot · F = D · U / R</summary>
+    <p><strong>1948:</strong> 100 · <strong>2026:</strong> 0.6 · <strong>Δ:</strong> ↓ 170×</p>
+    <p><strong>Ω = U / R</strong> crossed <strong>e/(1+e) = 0.73106</strong> in 2016.</p>
+    <p>125,000 measurement points · 40 primary sources · MIT License</p>
+    <p>Ehud Naftali Hemli · Hemli Principle · Falsifiable by design</p>
+  </details>
+</div>
+
+<!-- 01. ABOUT -->
+<section id="about">
+  <h2><span class="sec-no">01</span>About this research</h2>
+  <div class="what-grid">
+    <div class="what">
+      <h4>What this is</h4>
+      <p>A quantitative report on 78 years of Israeli governance. Each prime minister, public system, sector, company, and NGO receives a single <strong>F</strong> score summarizing 17 sub-indicators from primary sources.</p>
+    </div>
+    <div class="what">
+      <h4>Why it is needed</h4>
+      <p>Public debate about government performance tends to be dichotomous, event-driven, or partisan. This research measures systemic function — consistent across periods, units of analysis, and independent of political identity.</p>
+    </div>
+    <div class="what">
+      <h4>What is new</h4>
+      <p>Uniform application of one methodology across five parallel units of analysis; direct comparison of all 13 prime ministers on identical metrics; NCR analysis of 100 largest companies and 30,000 NGOs.</p>
+    </div>
+    <div class="what">
+      <h4>What this is not</h4>
+      <p>Not a legal judgment. Not an assessment of individual intent. Not a substitute for elections. A synthetic index intended to support evidence-based debate, not close it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02. HOW WE MEASURE -->
+<section id="how">
+  <h2><span class="sec-no">02</span>How we measure governance</h2>
+  <p>
+    Governance is the process of translating decisions into public benefit. The <strong>Data Fluidity</strong>
+    methodology, developed by Ehud Hemli, quantifies this translation using the composite
+    score <span class="formula">F = (D × U) / R</span> on a <strong>0—100 scale</strong>. The three components:
+  </p>
+  <table class="explain-dur">
+    <thead>
+      <tr>
+        <th>Var.</th>
+        <th>What it measures</th>
+        <th>High score</th>
+        <th>Low score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="var">D</td>
+        <td class="what-col">Decision quality</td>
+        <td class="high">Evidence-based, coordinated</td>
+        <td class="low">Impulsive, uncoordinated</td>
+      </tr>
+      <tr>
+        <td class="var">U</td>
+        <td class="what-col">Utility realized</td>
+        <td class="high">Decisions reach the public</td>
+        <td class="low">Decisions remain on paper</td>
+      </tr>
+      <tr>
+        <td class="var">R</td>
+        <td class="what-col">Resistance / friction</td>
+        <td class="high">Smooth, efficient bureaucracy</td>
+        <td class="low">Entangled, wasteful bureaucracy</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+    D, U, R each decompose into further sub-indicators — <strong>17 metrics in total</strong>, each
+    computed from 3—15 raw data points. See the full page in each language for the complete list
+    and the definition of every metric.
+  </p>
+</section>
+
+<!-- 03. HOW WE DID IT -->
+<section id="process">
+  <h2><span class="sec-no">03</span>How the measurement was performed</h2>
+  <p>Five-step working process, applied uniformly across all 1,350 units of analysis:</p>
+  <div class="flow">
+    <div class="step">
+      <div class="n">Step 01</div>
+      <strong>Collection</strong>
+      <span>Pull raw data from 16 primary sources — originals, not aggregators.</span>
+    </div>
+    <div class="step">
+      <div class="n">Step 02</div>
+      <strong>Cross-verify</strong>
+      <span>Confirm each figure against ≥ 2 independent sources; log discrepancies.</span>
+    </div>
+    <div class="step">
+      <div class="n">Step 03</div>
+      <strong>Normalize</strong>
+      <span>Currencies to 2026 ILS; CPI-adjusted; period and demographic normalization.</span>
+    </div>
+    <div class="step">
+      <div class="n">Step 04</div>
+      <strong>Compute</strong>
+      <span>Run the 17 measurement algorithms. Open source under MIT license.</span>
+    </div>
+    <div class="step">
+      <div class="n">Step 05</div>
+      <strong>Aggregate</strong>
+      <span>Compose F from D, U, R for each of the 1,350 units of analysis.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 04. SOURCES -->
+<section id="sources">
+  <h2><span class="sec-no">04</span>Primary sources</h2>
+  <p>
+    Data drawn strictly from primary sources — government records, regulatory filings, international indices,
+    and peer-reviewed research. No opinion polling, no social media, no press reporting (except for cross-verification).
+  </p>
+  <div class="sources-mini">
+    <ul>
+      <li>Israel Central Bureau of Statistics (CBS)</li>
+      <li>Bank of Israel · annual reports</li>
+      <li>Office of the State Comptroller · 85+ reports</li>
+      <li>Israel Securities Authority filings</li>
+      <li>Registrar of Companies · ownership structures</li>
+      <li>Knesset.gov.il · votes, protocols, queries</li>
+      <li>State Attorney's Office yearbooks</li>
+      <li>OECD Economic Surveys of Israel</li>
+      <li>IMF Article IV Consultation Reports</li>
+      <li>World Bank Worldwide Governance Indicators</li>
+      <li>V-Dem Institute · University of Gothenburg</li>
+      <li>Freedom House · press freedom indices</li>
+      <li>Transparency International · CPI</li>
+      <li>Israel Democracy Institute</li>
+      <li>Taub Center for Social Policy Studies</li>
+      <li>Think-tank publications (polarity analysis)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05. SCOPE / LANGUAGES -->
+<section id="read">
+  <h2><span class="sec-no">05</span>Read the full report</h2>
+  <p>
+    The complete report in each language contains the methodology (Sections 01—04),
+    the F trend chart, the 13 prime minister ranking, the key findings, and the 6-domain power map.
+  </p>
+  <div class="lang-grid">
+    <a href="he/research.html" class="lang-card lang-he">
+      <div class="code">01 · HEB</div>
+      <div class="name">עברית</div>
+      <div class="native">Hebrew edition</div>
+      <div class="lede">הדו"ח המלא בעברית: מתודולוגיה, מקורות, היקף ומגבלות — ואז הממצאים המספריים.</div>
+      <div class="enter">כניסה למחקר</div>
+    </a>
+    <a href="en/" class="lang-card lang-en">
+      <div class="code">02 · ENG</div>
+      <div class="name">English</div>
+      <div class="native">English edition</div>
+      <div class="lede">The complete report: about, methodology, process, sources, scope and limits — then the numerical findings.</div>
+      <div class="enter">Open the research</div>
+    </a>
+    <a href="ar/" class="lang-card lang-ar">
+      <div class="code">03 · ARA</div>
+      <div class="name">العربية</div>
+      <div class="native">Arabic edition</div>
+      <div class="lede">التقرير الكامل بالعربية: المنهجية والمصادر والنطاق والحدود — ثم النتائج العددية.</div>
+      <div class="enter">فتح البحث</div>
+    </a>
+  </div>
+</section>
+
+<!-- 06. DOWNLOADS -->
+<section id="downloads">
+  <h2><span class="sec-no">06</span>Downloads & references</h2>
+  <div class="downloads">
+    <div class="dl-grid">
+      <a href="reports/israel-fractal-he.pdf">PDF · HE <span class="size">2.5M</span></a>
+      <a href="reports/israel-fractal-en.pdf">PDF · EN <span class="size">2.5M</span></a>
+      <a href="reports/israel-fractal-ar.pdf">PDF · AR <span class="size">2.5M</span></a>
+      <a href="reports/v2/israel-fractal-full-he.docx">DOCX <span class="size">20K</span></a>
+      <a href="reports/v2/israel-fractal-full.pptx">PPTX <span class="size">52K</span></a>
+      <a href="reports/v2/israel-fractal-full.epub">EPUB <span class="size">16K</span></a>
+      <a href="reports/v2/israel-fractal-full.md">Markdown <span class="size">18K</span></a>
+      <a href="https://github.com/udihem78-maker/animated-eureka">GitHub <span class="size">40 docs</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>Independent research · <a href="https://github.com/udihem78-maker/animated-eureka">animated-eureka</a> · enh@hemligroups.com · MIT license</span>
+  <span class="colophon">V2 · OCT 2026 · 40 DOCS · 84,100 POINTS</span>
+</footer>
+
+</body>
+</html>

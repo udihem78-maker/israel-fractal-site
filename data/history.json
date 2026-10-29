@@ -1,0 +1,829 @@
+[
+  {
+    "date": "2026-10-29",
+    "fetched_at": "2026-10-29T12:08:10.959191+00:00",
+    "source_activity_end": "2025-08-11",
+    "mk_count": 120,
+    "ministry_count": 34,
+    "people": {
+      "4395": {
+        "role_ids": [
+          "30364",
+          "30686"
+        ],
+        "documented_meetings": 0
+      },
+      "30814": {
+        "role_ids": [
+          "30378"
+        ],
+        "documented_meetings": 0
+      },
+      "427": {
+        "role_ids": [
+          "30460"
+        ],
+        "documented_meetings": 0
+      },
+      "30880": {
+        "role_ids": [
+          "31897"
+        ],
+        "documented_meetings": 0
+      },
+      "30830": {
+        "role_ids": [
+          "30442"
+        ],
+        "documented_meetings": 1
+      },
+      "30701": {
+        "role_ids": [
+          "30368"
+        ],
+        "documented_meetings": 4
+      },
+      "30717": {
+        "role_ids": [
+          "30447",
+          "30702"
+        ],
+        "documented_meetings": 0
+      },
+      "11835": {
+        "role_ids": [
+          "32292"
+        ],
+        "documented_meetings": 0
+      },
+      "30765": {
+        "role_ids": [
+          "30349"
+        ],
+        "documented_meetings": 0
+      },
+      "23551": {
+        "role_ids": [
+          "30379",
+          "30710"
+        ],
+        "documented_meetings": 0
+      },
+      "30685": {
+        "role_ids": [
+          "30425"
+        ],
+        "documented_meetings": 3
+      },
+      "30876": {
+        "role_ids": [
+          "31323"
+        ],
+        "documented_meetings": 1
+      },
+      "560": {
+        "role_ids": [
+          "30451"
+        ],
+        "documented_meetings": 0
+      },
+      "30066": {
+        "role_ids": [
+          "30450"
+        ],
+        "documented_meetings": 0
+      },
+      "30758": {
+        "role_ids": [
+          "30383"
+        ],
+        "documented_meetings": 0
+      },
+      "30811": {
+        "role_ids": [
+          "30376",
+          "32164"
+        ],
+        "documented_meetings": 0
+      },
+      "30693": {
+        "role_ids": [
+          "32271"
+        ],
+        "documented_meetings": 8
+      },
+      "22151": {
+        "role_ids": [
+          "32284"
+        ],
+        "documented_meetings": 0
+      },
+      "30694": {
+        "role_ids": [
+          "30427"
+        ],
+        "documented_meetings": 13
+      },
+      "30831": {
+        "role_ids": [
+          "30431"
+        ],
+        "documented_meetings": 5
+      },
+      "30083": {
+        "role_ids": [
+          "31809"
+        ],
+        "documented_meetings": null
+      },
+      "30832": {
+        "role_ids": [
+          "30438"
+        ],
+        "documented_meetings": 3
+      },
+      "30833": {
+        "role_ids": [
+          "32184"
+        ],
+        "documented_meetings": null
+      },
+      "30300": {
+        "role_ids": [
+          "30357"
+        ],
+        "documented_meetings": 0
+      },
+      "30808": {
+        "role_ids": [
+          "30389"
+        ],
+        "documented_meetings": 3
+      },
+      "30873": {
+        "role_ids": [
+          "33788"
+        ],
+        "documented_meetings": null
+      },
+      "30710": {
+        "role_ids": [
+          "30810"
+        ],
+        "documented_meetings": 5
+      },
+      "2291": {
+        "role_ids": [
+          "30352"
+        ],
+        "documented_meetings": 0
+      },
+      "30835": {
+        "role_ids": [
+          "30429"
+        ],
+        "documented_meetings": 2
+      },
+      "30657": {
+        "role_ids": [
+          "30417"
+        ],
+        "documented_meetings": 0
+      },
+      "965": {
+        "role_ids": [
+          "30372",
+          "30679",
+          "33485"
+        ],
+        "documented_meetings": 0
+      },
+      "30055": {
+        "role_ids": [
+          "30705",
+          "30714"
+        ],
+        "documented_meetings": null
+      },
+      "1027": {
+        "role_ids": [
+          "32040"
+        ],
+        "documented_meetings": null
+      },
+      "1025": {
+        "role_ids": [
+          "30363",
+          "31850"
+        ],
+        "documented_meetings": 0
+      },
+      "30809": {
+        "role_ids": [
+          "31723"
+        ],
+        "documented_meetings": 0
+      },
+      "30807": {
+        "role_ids": [
+          "30388"
+        ],
+        "documented_meetings": 14
+      },
+      "30837": {
+        "role_ids": [
+          "30455"
+        ],
+        "documented_meetings": 1
+      },
+      "23564": {
+        "role_ids": [
+          "31456",
+          "31457",
+          "31458"
+        ],
+        "documented_meetings": null
+      },
+      "23558": {
+        "role_ids": [
+          "30360"
+        ],
+        "documented_meetings": 0
+      },
+      "30840": {
+        "role_ids": [
+          "30448"
+        ],
+        "documented_meetings": 0
+      },
+      "30752": {
+        "role_ids": [
+          "30384"
+        ],
+        "documented_meetings": 0
+      },
+      "30776": {
+        "role_ids": [
+          "30397"
+        ],
+        "documented_meetings": 7
+      },
+      "4397": {
+        "role_ids": [
+          "30418",
+          "32039"
+        ],
+        "documented_meetings": 0
+      },
+      "30702": {
+        "role_ids": [
+          "30812"
+        ],
+        "documented_meetings": 2
+      },
+      "30804": {
+        "role_ids": [
+          "32306"
+        ],
+        "documented_meetings": 0
+      },
+      "556": {
+        "role_ids": [
+          "30695",
+          "32408",
+          "33453",
+          "33454"
+        ],
+        "documented_meetings": null
+      },
+      "30683": {
+        "role_ids": [
+          "30423"
+        ],
+        "documented_meetings": 1
+      },
+      "12938": {
+        "role_ids": [
+          "30463"
+        ],
+        "documented_meetings": 0
+      },
+      "30842": {
+        "role_ids": [
+          "30435"
+        ],
+        "documented_meetings": 1
+      },
+      "30782": {
+        "role_ids": [
+          "30410"
+        ],
+        "documented_meetings": 3
+      },
+      "30860": {
+        "role_ids": [
+          "30430"
+        ],
+        "documented_meetings": 4
+      },
+      "23594": {
+        "role_ids": [
+          "30409"
+        ],
+        "documented_meetings": 0
+      },
+      "30843": {
+        "role_ids": [
+          "30449"
+        ],
+        "documented_meetings": 4
+      },
+      "30722": {
+        "role_ids": [
+          "30462"
+        ],
+        "documented_meetings": 0
+      },
+      "28513": {
+        "role_ids": [
+          "32311"
+        ],
+        "documented_meetings": 0
+      },
+      "30057": {
+        "role_ids": [
+          "30706"
+        ],
+        "documented_meetings": null
+      },
+      "532": {
+        "role_ids": [
+          "30356"
+        ],
+        "documented_meetings": 0
+      },
+      "23560": {
+        "role_ids": [
+          "30461"
+        ],
+        "documented_meetings": 0
+      },
+      "30868": {
+        "role_ids": [
+          "30729"
+        ],
+        "documented_meetings": 6
+      },
+      "30770": {
+        "role_ids": [
+          "30353"
+        ],
+        "documented_meetings": 2
+      },
+      "30720": {
+        "role_ids": [
+          "30407"
+        ],
+        "documented_meetings": 5
+      },
+      "30601": {
+        "role_ids": [
+          "30347"
+        ],
+        "documented_meetings": 5
+      },
+      "30783": {
+        "role_ids": [
+          "30412"
+        ],
+        "documented_meetings": 5
+      },
+      "30775": {
+        "role_ids": [
+          "32277"
+        ],
+        "documented_meetings": 0
+      },
+      "23641": {
+        "role_ids": [
+          "30391"
+        ],
+        "documented_meetings": 2
+      },
+      "30671": {
+        "role_ids": [
+          "32296"
+        ],
+        "documented_meetings": 0
+      },
+      "1056": {
+        "role_ids": [
+          "32307"
+        ],
+        "documented_meetings": 0
+      },
+      "30846": {
+        "role_ids": [
+          "32254"
+        ],
+        "documented_meetings": 0
+      },
+      "30672": {
+        "role_ids": [
+          "33679"
+        ],
+        "documented_meetings": null
+      },
+      "30867": {
+        "role_ids": [
+          "30715"
+        ],
+        "documented_meetings": 1
+      },
+      "30847": {
+        "role_ids": [
+          "30441",
+          "32165"
+        ],
+        "documented_meetings": 0
+      },
+      "30881": {
+        "role_ids": [
+          "31677"
+        ],
+        "documented_meetings": 2
+      },
+      "12951": {
+        "role_ids": [
+          "30371",
+          "30697",
+          "30698",
+          "33450",
+          "33451",
+          "33452"
+        ],
+        "documented_meetings": 0
+      },
+      "1057": {
+        "role_ids": [
+          "33678"
+        ],
+        "documented_meetings": null
+      },
+      "468": {
+        "role_ids": [
+          "30370",
+          "32041"
+        ],
+        "documented_meetings": 0
+      },
+      "30849": {
+        "role_ids": [
+          "30445"
+        ],
+        "documented_meetings": 1
+      },
+      "30708": {
+        "role_ids": [
+          "30428",
+          "31829"
+        ],
+        "documented_meetings": 0
+      },
+      "23597": {
+        "role_ids": [
+          "30404"
+        ],
+        "documented_meetings": 0
+      },
+      "563": {
+        "role_ids": [
+          "32294"
+        ],
+        "documented_meetings": 0
+      },
+      "30917": {
+        "role_ids": [
+          "33882"
+        ],
+        "documented_meetings": null
+      },
+      "30851": {
+        "role_ids": [
+          "30456"
+        ],
+        "documented_meetings": 6
+      },
+      "30470": {
+        "role_ids": [
+          "30354"
+        ],
+        "documented_meetings": 1
+      },
+      "30682": {
+        "role_ids": [
+          "30424"
+        ],
+        "documented_meetings": 2
+      },
+      "30810": {
+        "role_ids": [
+          "30377"
+        ],
+        "documented_meetings": 4
+      },
+      "30921": {
+        "role_ids": [
+          "33889"
+        ],
+        "documented_meetings": null
+      },
+      "30705": {
+        "role_ids": [
+          "30457"
+        ],
+        "documented_meetings": 0
+      },
+      "23632": {
+        "role_ids": [
+          "30408"
+        ],
+        "documented_meetings": 0
+      },
+      "30102": {
+        "role_ids": [
+          "30398"
+        ],
+        "documented_meetings": 0
+      },
+      "30686": {
+        "role_ids": [
+          "30405"
+        ],
+        "documented_meetings": 5
+      },
+      "12959": {
+        "role_ids": [
+          "30709"
+        ],
+        "documented_meetings": null
+      },
+      "30799": {
+        "role_ids": [
+          "31909",
+          "33869"
+        ],
+        "documented_meetings": 1
+      },
+      "30058": {
+        "role_ids": [
+          "30693"
+        ],
+        "documented_meetings": null
+      },
+      "30713": {
+        "role_ids": [
+          "30385"
+        ],
+        "documented_meetings": 0
+      },
+      "23565": {
+        "role_ids": [
+          "30387"
+        ],
+        "documented_meetings": 0
+      },
+      "30749": {
+        "role_ids": [
+          "30346"
+        ],
+        "documented_meetings": 0
+      },
+      "526": {
+        "role_ids": [
+          "30392"
+        ],
+        "documented_meetings": 0
+      },
+      "30777": {
+        "role_ids": [
+          "30403"
+        ],
+        "documented_meetings": 3
+      },
+      "30852": {
+        "role_ids": [
+          "30444"
+        ],
+        "documented_meetings": 1
+      },
+      "30853": {
+        "role_ids": [
+          "30437"
+        ],
+        "documented_meetings": 5
+      },
+      "30877": {
+        "role_ids": [
+          "31409"
+        ],
+        "documented_meetings": 1
+      },
+      "30854": {
+        "role_ids": [
+          "30458"
+        ],
+        "documented_meetings": 6
+      },
+      "30772": {
+        "role_ids": [
+          "30434"
+        ],
+        "documented_meetings": 6
+      },
+      "30700": {
+        "role_ids": [
+          "30361",
+          "30717"
+        ],
+        "documented_meetings": 0
+      },
+      "30106": {
+        "role_ids": [
+          "30386"
+        ],
+        "documented_meetings": 7
+      },
+      "30820": {
+        "role_ids": [
+          "30401"
+        ],
+        "documented_meetings": 4
+      },
+      "30894": {
+        "role_ids": [
+          "32260"
+        ],
+        "documented_meetings": 3
+      },
+      "30067": {
+        "role_ids": [
+          "30452"
+        ],
+        "documented_meetings": 0
+      },
+      "30895": {
+        "role_ids": [
+          "32394"
+        ],
+        "documented_meetings": null
+      },
+      "30121": {
+        "role_ids": [
+          "30464"
+        ],
+        "documented_meetings": 3
+      },
+      "30916": {
+        "role_ids": [
+          "33812"
+        ],
+        "documented_meetings": null
+      },
+      "30719": {
+        "role_ids": [
+          "30453"
+        ],
+        "documented_meetings": 6
+      },
+      "30718": {
+        "role_ids": [
+          "30704"
+        ],
+        "documented_meetings": null
+      },
+      "30857": {
+        "role_ids": [
+          "32085",
+          "32166"
+        ],
+        "documented_meetings": 0
+      },
+      "30786": {
+        "role_ids": [
+          "30711"
+        ],
+        "documented_meetings": null
+      },
+      "30711": {
+        "role_ids": [
+          "30967"
+        ],
+        "documented_meetings": 8
+      },
+      "30893": {
+        "role_ids": [
+          "32074"
+        ],
+        "documented_meetings": 2
+      },
+      "23635": {
+        "role_ids": [
+          "30421"
+        ],
+        "documented_meetings": 0
+      },
+      "30874": {
+        "role_ids": [
+          "32185"
+        ],
+        "documented_meetings": 5
+      },
+      "30859": {
+        "role_ids": [
+          "30446"
+        ],
+        "documented_meetings": 14
+      },
+      "30875": {
+        "role_ids": [
+          "31240"
+        ],
+        "documented_meetings": 1
+      },
+      "23631": {
+        "role_ids": [
+          "30396"
+        ],
+        "documented_meetings": 9
+      },
+      "30706": {
+        "role_ids": [
+          "31325"
+        ],
+        "documented_meetings": 0
+      },
+      "30923": {
+        "role_ids": [
+          "33893"
+        ],
+        "documented_meetings": null
+      },
+      "30691": {
+        "role_ids": [
+          "30399"
+        ],
+        "documented_meetings": 0
+      },
+      "30922": {
+        "role_ids": [
+          "33891"
+        ],
+        "documented_meetings": null
+      },
+      "30861": {
+        "role_ids": [
+          "30433"
+        ],
+        "documented_meetings": 3
+      },
+      "30871": {
+        "role_ids": [
+          "31053"
+        ],
+        "documented_meetings": 7
+      },
+      "30704": {
+        "role_ids": [
+          "30374",
+          "30708"
+        ],
+        "documented_meetings": 0
+      },
+      "30812": {
+        "role_ids": [
+          "30381"
+        ],
+        "documented_meetings": 16
+      },
+      "30863": {
+        "role_ids": [
+          "30465"
+        ],
+        "documented_meetings": 4
+      },
+      "30118": {
+        "role_ids": [
+          "30426"
+        ],
+        "documented_meetings": 0
+      },
+      "30879": {
+        "role_ids": [
+          "31453"
+        ],
+        "documented_meetings": 2
+      }
+    }
+  }
+]

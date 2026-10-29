@@ -1,5 +1,24 @@
 # 🇮🇱 Israel Fractal — Multi-Language Site & Reports
 
+## Public monitor
+
+The root and `/he/` now open a source-labeled national public directory with
+search, filters, profiles, ministry coverage, historical committee figures and
+collection provenance. The previous homepage is at `/research.html` and the
+Hebrew report is at `/he/research.html`; English and Arabic reports remain in place.
+
+This is **not a verified current roster or a live performance rating**.
+The connected secondary source reports Knesset 25 / government 37 assignments;
+committee activity currently ends on 2025-08-11. Missing present-day metrics,
+directors-general and agency heads are explicitly marked as not connected.
+
+See [public monitor setup and data limitations](docs/public-monitor.md) for the
+Python-only synchronizer, tests, source semantics and daily GitHub Actions setup.
+The new refresh/deploy workflow is inactive until merged into the default branch
+and allowed by the repository's Actions/Pages protection settings.
+
+---
+
 Static multi-language website presenting the holistic research of Israel (1948-2026)
 using Data Fluidity methodology. **Separate repo** from the research source.
 
