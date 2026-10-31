@@ -1,0 +1,26 @@
+{
+  "name": "israel-fractal-public-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @workspace/api-server --filter @workspace/israel-public-monitor dev",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm typecheck:libs && pnpm --filter @workspace/api-server --filter @workspace/israel-public-monitor typecheck",
+    "build": "pnpm typecheck && pnpm --filter @workspace/israel-public-monitor build && pnpm --filter @workspace/api-server build",
+    "start": "pnpm --filter @workspace/api-server start",
+    "test": "tsx --test server/src/lib/*.test.ts",
+    "test:integration": "tsx --test tests/integration.test.ts",
+    "db:migrate": "tsx lib/db/src/migrate.ts",
+    "codegen": "pnpm --filter @workspace/api-spec codegen && prettier --write lib/api-client-react/src/generated lib/api-zod/src/generated"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "prettier": "^3.9.10",
+    "tsx": "catalog:",
+    "typescript": "~5.9.3"
+  }
+}

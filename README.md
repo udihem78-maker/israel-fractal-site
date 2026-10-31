@@ -59,6 +59,10 @@ israel-fractal-site/
 
 ## 🚀 Local Preview
 
+The optional [full-stack public monitor](apps/public-monitor/README.md) is an
+isolated Node/PostgreSQL app. It is not served by this static preview or GitHub
+Pages; the existing research site and language routes remain unchanged.
+
 Open `index.html` in any browser, or:
 
 ```bash
