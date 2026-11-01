@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { activeRole, addObservations, buildDirectory } from "./monitor-directory";
 import { csvRows } from "./monitor-download";
-import { loadPinnedSnapshot, validateSnapshot } from "./public-snapshot";
+import { loadPinnedSnapshot, sealSnapshot, validateSnapshot } from "./public-snapshot";
 
 test("role selection excludes expired/future appointments and rejects malformed dates", () => {
   const r = { IsCurrent: "True", StartDate: "2026-01-01", FinishDate: "" };
@@ -49,14 +49,14 @@ test("invalid new collection is rejected before replacing the stored snapshot", 
   const base = JSON.parse(await readFile(new URL("../../data/public-monitor/national.json", import.meta.url), "utf8"));
   const history = JSON.parse(await readFile(new URL("../../data/public-monitor/history.json", import.meta.url), "utf8"));
   const manifest = JSON.parse(await readFile(new URL("../../data/public-monitor/manifest.json", import.meta.url), "utf8"));
-  const valid = { ...base, ...manifest, history };
+  const valid = sealSnapshot({ ...base, ...manifest, history });
   assert.equal(validateSnapshot(valid).people.length, base.people.length);
   const invalid = structuredClone(valid);
   invalid.people[0].metrics.documented_committee_meetings.value = -1;
-  assert.throws(() => validateSnapshot(invalid));
+  assert.throws(() => validateSnapshot(sealSnapshot(invalid)));
   invalid.people[0].metrics.documented_committee_meetings.value = null;
   invalid.people[0].source_url = "https://untrusted.example";
-  assert.throws(() => validateSnapshot(invalid));
+  assert.throws(() => validateSnapshot(sealSnapshot(invalid)));
   assert.deepEqual(valid.people, base.people);
 });
 

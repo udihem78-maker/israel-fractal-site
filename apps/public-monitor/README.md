@@ -73,6 +73,19 @@ deleted afterward. Validated data, collection history and success metadata
 switch in one SQL update. Failure preserves the last good snapshot. Invalid
 stored data returns 503 rather than hiding corruption behind a fallback.
 
+Snapshot/history SHA-256 values cover the schema-normalized API content using
+recursively sorted object keys (arrays retain order). Snapshot content includes
+provenance and collection dates; only the two digest fields, the separately hashed
+history and the runtime `sync_active` flag are excluded. Both digests are checked
+on every stored-data read, including sync status. The pinned files are first
+verified against their original byte hashes in the unchanged manifest, then
+normalized and sealed with the same algorithm used by the collector.
+
+Snapshots stored by the earlier unmerged implementation use a different digest
+format and will fail closed with 503. Do not automatically re-seal stored rows:
+that could bless corrupted data. Before rollout, verify/reimport trusted data or
+use a fresh disposable preview database. No production data conversion is included.
+
 Preserve these domain rules when continuing development:
 
 - Open Knesset is secondary provenance, not independent current-appointment verification.

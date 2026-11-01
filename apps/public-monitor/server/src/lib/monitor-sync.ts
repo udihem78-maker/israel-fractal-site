@@ -1,7 +1,6 @@
-import { createHash } from "node:crypto";
 import { pool } from "@workspace/db";
 import { logger } from "./logger";
-import { loadPinnedSnapshot, validateSnapshot } from "./public-snapshot";
+import { loadPinnedSnapshot, sealSnapshot, validateSnapshot } from "./public-snapshot";
 import { withSources } from "./monitor-download";
 import { buildDirectory, addObservations } from "./monitor-directory";
 import { contentFreshness } from "./monitor-freshness";
@@ -12,7 +11,6 @@ const LOCK = 7364921;
 let enabled = false;
 let busy = false;
 let timer: ReturnType<typeof setInterval> | undefined;
-const digest = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
 const iso = (value: Date | null) => value?.toISOString() ?? null;
 
 export async function getSyncStatus() {
@@ -72,11 +70,11 @@ export async function runCollectionIfDue() {
           ...directory, activity, sources, fetched_at: now, coverage: prior.coverage,
           roster_status: "secondary_source_not_independently_verified",
         };
-        const result = {
+        const result = sealSnapshot({
           ...raw, history, repository: prior.repository, revision: prior.revision,
-          snapshot_sha256: digest(raw), history_sha256: digest(history),
+          snapshot_sha256: "", history_sha256: "",
           imported_at: new Date().toISOString(), sync_active: true, dataset_origin: "direct_collection",
-        };
+        });
         validateSnapshot(result);
         return result;
       });

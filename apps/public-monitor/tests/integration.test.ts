@@ -34,6 +34,21 @@ test("PostgreSQL persistence, read-only API, collection locking and failure reco
     assert.equal(rows.length, 1);
   });
 
+  await t.test("migration CLI fails with the original checksum diagnostic and rolls back", async () => {
+    const { rows: [migration] } = await pool.query("SELECT name, sha256 FROM monitor_migrations LIMIT 1");
+    try {
+      await pool.query("UPDATE monitor_migrations SET sha256=$1 WHERE name=$2", ["0".repeat(64), migration.name]);
+      const result = spawnSync("pnpm", ["db:migrate"], { env: process.env, encoding: "utf8" });
+      assert.equal(result.status, 1);
+      assert.match(result.stderr, /Database migration failed/);
+      assert.match(result.stderr, /Applied migration was changed/);
+      const { rows } = await pool.query("SELECT name FROM monitor_migrations");
+      assert.equal(rows.length, 1);
+    } finally {
+      await pool.query("UPDATE monitor_migrations SET sha256=$1 WHERE name=$2", [migration.sha256, migration.name]);
+    }
+  });
+
   await t.test("empty storage serves the real hash-checked fallback; startup is opt-in", async (ctx) => {
     await pool.query("UPDATE monitor_sync SET snapshot=NULL, last_attempt=NULL, last_success=NULL, next_attempt=NULL, last_error=NULL, running=false WHERE id=1");
     let upstreamRequests = 0;
@@ -101,6 +116,16 @@ test("PostgreSQL persistence, read-only API, collection locking and failure reco
     assert.equal(after.running, false);
     assert.ok(after.last_error);
     assert.ok(after.next_attempt > new Date());
+  });
+
+  await t.test("schema-valid JSONB edits fail closed on both public endpoints", async () => {
+    for (const path of ["{people,0,name}", "{people,0,metrics,documented_committee_meetings,value}", "{history,0,mk_count}"]) {
+      await pool.query("UPDATE monitor_sync SET snapshot=$1::jsonb WHERE id=1", [JSON.stringify(pinned)]);
+      await pool.query("UPDATE monitor_sync SET snapshot=jsonb_set(snapshot, $1::text[], $2::jsonb) WHERE id=1",
+        [path, path.endsWith("name}") ? JSON.stringify("modified name") : "42"]);
+      assert.equal((await fetch(`${url}/public-monitor/snapshot`)).status, 503);
+      assert.equal((await fetch(`${url}/public-monitor/sync-status`)).status, 503);
+    }
   });
 
   await t.test("invalid stored data fails closed rather than silently substituting the fallback", async () => {

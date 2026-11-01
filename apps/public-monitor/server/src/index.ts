@@ -1,4 +1,5 @@
 import app from "./app";
+import { listen } from "./lib/server-listen";
 import { logger } from "./lib/logger";
 import { startMonitorSync, stopMonitorSync } from "./lib/monitor-sync";
 import { pool } from "@workspace/db";
@@ -19,14 +20,15 @@ if (!Number.isInteger(port) || port <= 0 || port > 65535) {
 
 // Fail startup before accepting traffic if migrations/configuration are missing.
 await pool.query("SELECT id FROM monitor_sync LIMIT 1");
-const server = app.listen(port, "0.0.0.0", (err) => {
-  if (err) {
-    logger.error({ err }, "Error listening on port");
+const server = listen(app, port, "0.0.0.0", {
+  onListening: () => {
+    logger.info({ port }, "Server listening");
+    startMonitorSync();
+  },
+  onError: (err) => {
+    logger.error({ err, port }, "Error listening on port");
     process.exit(1);
-  }
-
-  logger.info({ port }, "Server listening");
-  startMonitorSync();
+  },
 });
 
 for (const signal of ["SIGTERM", "SIGINT"] as const) {
