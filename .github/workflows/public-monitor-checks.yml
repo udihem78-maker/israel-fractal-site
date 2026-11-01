@@ -1,0 +1,60 @@
+name: Public monitor checks
+
+on:
+  pull_request:
+    paths:
+      - 'apps/public-monitor/**'
+      - '.github/workflows/public-monitor-checks.yml'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/public-monitor
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: public_monitor_test
+          # Disposable isolated CI service only; never use trust in production.
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d public_monitor_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+          cache-dependency-path: apps/public-monitor/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck && pnpm test && pnpm build
+      - name: Check generated API contracts
+        run: pnpm codegen && git diff --exit-code -- lib/api-client-react/src/generated lib/api-zod/src/generated
+      - name: Check migrations and database/API integration
+        env:
+          MONITOR_TEST_DATABASE: 'true'
+          MONITOR_SYNC_ENABLED: 'false'
+          PGHOST: localhost
+          PGUSER: postgres
+          PGDATABASE: public_monitor_test
+          NODE_ENV: production
+          LOG_LEVEL: silent
+        run: |
+          export DATABASE_URL="$(node -e 'const u = new URL("postgresql://localhost"); u.username=process.env.PGUSER; u.pathname=process.env.PGDATABASE; console.log(u.href)')"
+          pnpm db:migrate
+          pnpm test:integration

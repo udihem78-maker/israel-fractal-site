@@ -1,0 +1,232 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+paths:
+  /public-monitor/sync-status:
+    get:
+      operationId: getMonitorSyncStatus
+      tags: [monitor]
+      summary: Read background source collection status; never triggers a collection
+      responses:
+        "200":
+          description: Persistent collector state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MonitorSyncStatus"
+        "503":
+          description: Collector status unavailable
+  /public-monitor/snapshot:
+    get:
+      operationId: getPublicSnapshot
+      tags: [monitor]
+      summary: Read the last validated snapshot, without triggering upstream requests
+      responses:
+        "200":
+          description: Validated source snapshot with provenance and collection history
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicSnapshot"
+        "503":
+          description: Stored source unavailable or invalid
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+components:
+  schemas:
+    MonitorSyncStatus:
+      type: object
+      required: [enabled, running, interval_hours, retry_hours, last_attempt, last_success, next_attempt, last_error, freshness]
+      properties:
+        enabled: {type: boolean}
+        running: {type: boolean}
+        interval_hours: {type: integer}
+        retry_hours: {type: integer}
+        last_attempt: {type: [string, "null"]}
+        last_success: {type: [string, "null"]}
+        next_attempt: {type: [string, "null"]}
+        last_error: {type: [string, "null"]}
+        freshness:
+          $ref: "#/components/schemas/ContentFreshness"
+    FreshnessSignal:
+      type: object
+      description: Calendar-day age in UTC. Stale strictly above threshold. Missing, invalid or future dates are unknown, never zero. This is not a performance rating.
+      required: [date, age_days, threshold_days, status]
+      properties:
+        date: {type: [string, "null"]}
+        age_days: {type: [integer, "null"]}
+        threshold_days: {type: integer}
+        status: {type: string, enum: [within_threshold, stale, unknown]}
+    SourceFreshness:
+      type: object
+      required: [key, activity, http_modified]
+      properties:
+        key: {type: string}
+        activity:
+          $ref: "#/components/schemas/FreshnessSignal"
+        http_modified:
+          $ref: "#/components/schemas/FreshnessSignal"
+    ContentFreshness:
+      type: object
+      description: Evaluated on each status request against the last valid snapshot, independent of collection success. Activity threshold 30 days; HTTP Last-Modified threshold 7 days. Only attendance currently has an extracted activity date; other sources remain unknown.
+      required: [evaluated_at, snapshot_fetched_at, sources]
+      properties:
+        evaluated_at: {type: string}
+        snapshot_fetched_at: {type: string}
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceFreshness"
+    Role:
+      type: object
+      required: [id, title, organization, start, end]
+      properties:
+        id: {type: string}
+        position_id: {type: string}
+        title: {type: string}
+        organization: {type: string}
+        ministry_id: {type: [string, "null"]}
+        start: {type: string}
+        end: {type: string}
+        updated_at: {type: string}
+    Observation:
+      type: object
+      required: [value, start, end, status, is_attendance_rate]
+      properties:
+        value: {type: [integer, "null"]}
+        start: {type: string}
+        end: {type: string}
+        status: {type: string}
+        is_attendance_rate: {type: boolean}
+    Person:
+      type: object
+      required: [id, name, is_mk, is_minister, is_government, faction, roles, role_history, committees, source_url, metrics]
+      properties:
+        id: {type: string}
+        name: {type: string}
+        is_mk: {type: boolean}
+        is_minister: {type: boolean}
+        is_government: {type: boolean}
+        faction: {type: [string, "null"]}
+        roles:
+          type: array
+          items: {$ref: "#/components/schemas/Role"}
+        role_history:
+          type: array
+          items: {$ref: "#/components/schemas/Role"}
+        committees:
+          type: array
+          items: {type: string}
+        mk_start: {type: [string, "null"]}
+        source_url: {type: string}
+        source_row_updated_at: {type: [string, "null"]}
+        metrics:
+          type: object
+          required: [documented_committee_meetings, current_attendance, vote_participation, service_results, composite_score]
+          properties:
+            documented_committee_meetings: {$ref: "#/components/schemas/Observation"}
+            current_attendance: {type: "null"}
+            vote_participation: {type: "null"}
+            service_results: {type: "null"}
+            composite_score: {type: "null"}
+    Ministry:
+      type: object
+      required: [id, name, government, official_ids, director_general, metrics]
+      properties:
+        id: {type: string}
+        name: {type: string}
+        government: {type: integer}
+        source_row_updated_at: {type: [string, "null"]}
+        official_ids:
+          type: array
+          items: {type: string}
+        director_general: {type: "null"}
+        metrics:
+          type: object
+          required: [budget_execution, service_time, target_delivery]
+          properties:
+            budget_execution: {type: "null"}
+            service_time: {type: "null"}
+            target_delivery: {type: "null"}
+    Source:
+      type: object
+      required: [url, last_modified, sha256, bytes]
+      properties:
+        url: {type: string}
+        last_modified: {type: [string, "null"]}
+        sha256: {type: string}
+        bytes: {type: integer}
+    Collection:
+      type: object
+      required: [date, fetched_at, source_activity_end, mk_count, ministry_count]
+      properties:
+        date: {type: string}
+        fetched_at: {type: string}
+        source_activity_end: {type: [string, "null"]}
+        mk_count: {type: integer}
+        ministry_count: {type: integer}
+    PublicSnapshot:
+      type: object
+      required: [fetched_at, knesset, government, roster_status, activity, people, ministries, sources, history, repository, revision, snapshot_sha256, history_sha256, imported_at, sync_active, coverage]
+      properties:
+        fetched_at: {type: string}
+        knesset: {type: integer}
+        government: {type: integer}
+        roster_status: {type: string}
+        activity:
+          type: object
+          required: [status, start, end, latest_event_at]
+          properties:
+            status: {type: string}
+            start: {type: string}
+            end: {type: string}
+            latest_event_at: {type: string}
+        people:
+          type: array
+          items: {$ref: "#/components/schemas/Person"}
+        ministries:
+          type: array
+          items: {$ref: "#/components/schemas/Ministry"}
+        sources:
+          type: object
+          additionalProperties: {$ref: "#/components/schemas/Source"}
+        coverage:
+          type: object
+          additionalProperties: {type: string}
+        history:
+          type: array
+          items: {$ref: "#/components/schemas/Collection"}
+        repository: {type: string}
+        revision: {type: string}
+        snapshot_sha256: {type: string}
+        history_sha256: {type: string}
+        imported_at: {type: string}
+        sync_active: {type: boolean}
+        dataset_origin: {type: string, enum: [pinned_repository, direct_collection]}
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
