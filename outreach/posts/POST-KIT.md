@@ -26,7 +26,7 @@ Not opinion. Measurement.
 F = D · U / R
 Decision throughput × Utility capture / Friction.
 
-Full: hemligroups.github.io/israel-fractal-site
+Full: udihem78-maker.github.io/israel-fractal-site
 E.N.H. · Falsifiable by design.
 ```
 
@@ -41,7 +41,7 @@ That is the gap.
 Decisions are made.
 They don't reach citizens.
 
-Full: hemligroups.github.io/israel-fractal-site
+Full: udihem78-maker.github.io/israel-fractal-site
 ```
 
 ### 03 — Segments
@@ -54,7 +54,7 @@ than the Bedouin in an unrecognized village.
 Not inequality of outcomes.
 Inequality of state function.
 
-Full: hemligroups.github.io/israel-fractal-site
+Full: udihem78-maker.github.io/israel-fractal-site
 ```
 
 ### 04 — ₪10T
@@ -67,7 +67,7 @@ Not loss. Transfer.
 From widows, children, elderly, disabled
 to a concentrated upper 5%.
 
-Full: hemligroups.github.io/israel-fractal-site
+Full: udihem78-maker.github.io/israel-fractal-site
 ```
 
 ### 05 — Ω
@@ -82,7 +82,7 @@ The Hemli Point — phase transition threshold.
 Falsifiable: when F > 0.73106 sustained, the thesis is refuted.
 That is the test.
 
-E.N.H. · Full paper: hemligroups.github.io/israel-fractal-site
+E.N.H. · Full paper: udihem78-maker.github.io/israel-fractal-site
 ```
 
 ## Rendering
