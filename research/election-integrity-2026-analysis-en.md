@@ -1,6 +1,24 @@
 # Election Integrity 2026 · Corruption and Qatari-funding claims
 ### Hemli-style analysis · claim × finding × probability
-#### E.N.H. · November 3, 2026 · Falsifiable by design
+#### E.N.H. · Updated November 3, 2026 · Round 2 · Falsifiable by design
+
+---
+
+## 🔄 Update · Round 2 (November 3, 2026, afternoon)
+
+**Developing break in the story:**
+
+1. **Solberg himself (the Elections Committee chair who ordered the probe) said:** "The elections were conducted properly... most of the reports are not true." (Calcalist, Nov 1—2)
+2. **Source of the intel behind the arrests exposed:** Ido Norden, Chief of Staff in Prime Minister Netanyahu's office, passed the information to Police Commissioner Dani Levi. (Mako, Nov 1)
+3. **Enforcement sources' assessment:** "The case looks weak · unlikely to result in indictment." (Mako, Nov 1)
+4. **Police acted without search warrants.** (Haaretz, Oct 30)
+5. **Haaretz stated:** "No evidence was found linking the seized funds to any alleged intent to bribe voters."
+6. **ynet stated:** "The investigations will not lead to canceling the election results."
+7. **The suspect's defense (unrefuted):** "The envelopes serve for charity from the mosque." (Mako)
+
+**Updated scores:** T1 ↓ from 2.1 to 1.0 · T3 ↓ from 1.68 to 0.34. A new claim T8 is added (political manufacturing of a scandal by the Prime Minister's Office) at ~6.5.
+
+**Updated conclusion:** "The election was stolen by Qatar" is collapsing. "The Prime Minister's Office manufactured a political scandal to delegitimize the results" is **strengthening**.
 
 ---
 
@@ -20,7 +38,7 @@ Score ≥ 7 = substantiated · 4—6.9 = plausible but unproven · 2—3.9 = wea
 
 ---
 
-## 1 · The 7 central claims (Oct 31 — Nov 3, 2026)
+## 1 · The 8 central claims (Oct 31 — Nov 3, 2026 · 17:00)
 
 | # | Claim | Claimant | Primary source |
 |---|---|---|---|
@@ -31,6 +49,7 @@ Score ≥ 7 = substantiated · 4—6.9 = plausible but unproven · 2—3.9 = wea
 | 5 | Voting slips disappeared in Arab villages | Ra'am · complaint to Elections Committee | Complaint documented |
 | 6 | ~20K ballots disqualified | ynet from Elections Committee count | Official figure |
 | 7 | "Elections stolen by Arab parties supporting terror" | Likud · political statement | Political statement |
+| **8** | **PMO fed intel to police · arrests without warrants · "weak case" per enforcement** | **walla, ynet, mako · police sources** | **Mako exposé · Nov 1** |
 
 ---
 
@@ -75,22 +94,27 @@ Score ≥ 7 = substantiated · 4—6.9 = plausible but unproven · 2—3.9 = wea
 ## 3 · Claim-by-claim analysis
 
 ### T1 — Qatar transferred tens of millions ₪ to Arab lists
-- **E · evidence quality:** 3/10 — based on anonymous Shin Bet leaks, not official statement
-- **A · data alignment:** 5/10 — a +22-point turnout jump *could* indicate a funded mobilization, but equally a sectoral backlash against the current government
-- **I · independent verification:** 2/10 — no official confirmation. Shin Bet "does not comment"
-- **M · mechanism plausibility:** 7/10 — Qatar has funded civil-society entities in Israel before (Al Jazeera, NGOs). History allows it. A transfer to boost turnout is technically possible
-- **Score: 3 · 5 · 2 · 7 / 1000 = 0.21 → score 2.1 (weak)**
-- **Conclusion:** possible claim but unproven. Requires concrete evidence (bank records · transfer documentation · witnesses).
+- **E · evidence quality:** 2/10 ↓ — anonymous leaks · Solberg himself: "Most of the reports are not true"
+- **A · data alignment:** 4/10 ↓ — a +22-point turnout jump *could* indicate a funded mobilization, but equally sectoral backlash, Oct 7, housing crisis. History: 2015 showed a +10-point jump without foreign funding
+- **I · independent verification:** 1/10 ↓ — the Elections Committee chair himself said the process was proper. Shin Bet "does not comment"
+- **M · mechanism plausibility:** 6/10 ↓ — technically possible, but timing of "tens of millions" within a few days requires months of planning · no evidence of that
+- **Updated score: 2 · 4 · 1 · 6 / 1000 = 0.048 → score 1.0 (very weak)** ↓ from 2.1
+- **Conclusion:** the claim is **collapsing**. Solberg's own statement (he ordered the probe) shifts it from "unproven" to "not supported".
 
 ### T2 — Turkish money (Muslim Brotherhood)
 - E 2 · A 4 · I 1 · M 6 → **score 0.48 (very weak)**
 - **Conclusion:** the claim appeared after the Qatar claim. A familiar pattern of allegation expansion without additional evidence.
 
-### T3 — 6 Ra'am activists with ₪10K
-- E 7 · A 6 · I 8 · M 5 → **score 1.68 (weak)**
-- ₪10,000 for 6 activists = ₪1,667 each. A sum too small for systemic "village vote-buying"
-- The activists' alternative explanation ("legitimate campaign donation") has not been excluded
-- **Conclusion:** valid arrest, but context not established. The sum is negligible against a multi-million campaign.
+### T3 — Ra'am activists with ₪10K · the case is collapsing
+- E 7 · A 4 ↓ · I 3 ↓ · M 4 ↓ → **score 0.34 (very weak)** ↓ from 1.68
+- ₪10,000 for 6+ activists = ₪1,667 each. A sum too small for a systemic "village bribery" scheme
+- **Defense statement:** "The envelopes serve for charity from the mosque" (Mako) — unrefuted
+- **Haaretz (Oct 30):** "No evidence was found linking the seized funds to any alleged intent to bribe voters"
+- **Source of the intelligence:** Ido Norden, PMO Chief of Staff → Dani Levi, Police Commissioner (Mako, Nov 1)
+- **Enforcement assessment:** "The case looks weak · unlikely to result in indictment" (Mako)
+- **Police acted without search warrants** (Haaretz)
+- **Named suspects:** Ibrahim Algaribi · Hussein Mas'udin · Sayaf Abu Riyash + 4 others
+- **Conclusion:** the arrest took place, but the context is the opposite of how it was presented. **Not evidence of foreign funding. Per enforcement — not evidence of anything.**
 
 ### T4 — Joint List MK received Qatari money
 - E 2 · A 3 · I 1 · M 6 → **score 0.04 (unsupported)**
@@ -109,6 +133,14 @@ Score ≥ 7 = substantiated · 4—6.9 = plausible but unproven · 2—3.9 = wea
 - E 0 · A 0 · I 0 · M 2 → **score 0 (political statement · not an empirical claim)**
 - Netanyahu received 53 mandates — a gain relative to pre-election polls (50). Gain + Presidential confidence ≠ theft
 - **Conclusion:** political rhetoric, not a claim that can be evaluated
+
+### T8 (new) — PMO fed intel to police · a manufactured affair
+- **E · evidence quality:** 7/10 — Mako exposé names a specific person (Ido Norden) and a specific method (direct transfer to Police Commissioner)
+- **A · data alignment:** 8/10 — explains: (a) no search warrants · (b) enforcement says "weak case" · (c) small sums for a large alleged affair · (d) Likud responded immediately with "Ra'am-gate" before evidence
+- **I · independent verification:** 7/10 — ynet, walla, Haaretz, Mako — all report independently
+- **M · mechanism plausibility:** 9/10 — a familiar pattern in Netanyahu governments: using police for political needs (Case 3000, Case 4000, 2022 investigations)
+- **Score: 7 · 8 · 7 · 9 / 1000 = 3.5 → score 6.5 (plausible)**
+- **Conclusion:** the new claim — that this affair was manufactured politically from the Prime Minister's Office — is **stronger than all of T1—T7 combined**.
 
 ---
 
@@ -135,15 +167,17 @@ Score ≥ 7 = substantiated · 4—6.9 = plausible but unproven · 2—3.9 = wea
 
 ---
 
-## 5 · Summary scoring
+## 5 · Summary scoring · updated Round 2
 
-| Dimension | Score |
-|---|---|
-| **Probability illegal funding activity occurred** | 4.5/10 — possible · not proven |
-| **Probability its scale changed mandate counts** | 1.5/10 — very weak |
-| **Probability democratic process was materially compromised** | 2.0/10 — not supported by current data |
-| **Probability the process was entirely clean** | 5.5/10 — likely, under the shadow of an investigation |
-| **Probability a serious investigation will surface evidence** | 6.5/10 — Solberg did not order a probe without cause |
+| Dimension | Round 1 score | Round 2 score | Change |
+|---|---|---|---|
+| **Probability illegal foreign funding activity occurred** | 4.5/10 | **2.5/10** | ↓↓ (Solberg walked back) |
+| **Probability its scale changed mandate counts** | 1.5/10 | **0.8/10** | ↓ |
+| **Probability democratic process was compromised by external actor** | 2.0/10 | **1.5/10** | ↓ |
+| **Probability the process was entirely clean (on this axis)** | 5.5/10 | **6.5/10** | ↑ (Solberg's endorsement) |
+| **Probability the Qatar investigation will surface meaningful evidence** | 6.5/10 | **3.0/10** | ↓↓ (a week has passed · no evidence) |
+| **Probability PMO weaponized intelligence for political ends** | — | **6.5/10** ⚠ | New claim |
+| **Probability the affair itself damages trust in institutions** | 3.0/10 | **7.0/10** ⚠ | ↑↑ (R rises either way) |
 
 ---
 
