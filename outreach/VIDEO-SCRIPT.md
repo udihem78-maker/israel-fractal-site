@@ -91,7 +91,7 @@ Settlers = green F=27 · Haredim = yellow 15 · Secular = orange 2.5 · Bedouin 
 **VO (final):**
 > "המחקר כולו · 56 סעיפים · 125,000 נקודות מדידה · פתוח לכל אדם.
 > MIT License · שחזורי · ללא פוליטיקה.
-> **udihem78-maker.github.io/israel-fractal-site**
+> **israel-fractal.hemligroups.com**
 > הגיע הזמן לתקן."
 
 **End card:** URL + QR code + "Share with your government. Share with the world."

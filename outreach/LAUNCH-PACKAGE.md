@@ -6,21 +6,21 @@
 ## 🔗 הקישורים (העתק־הדבק)
 
 ### בעברית
-- 🌐 **האתר המלא (he):** https://udihem78-maker.github.io/israel-fractal-site/he/
+- 🌐 **האתר המלא (he):** https://israel-fractal.hemligroups.com/he/
 - 📄 **PDF דוח מלא (he):** https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-he.pdf
 - 📝 **תקציר של עמוד אחד (3 שפות):** https://github.com/udihem78-maker/israel-fractal-site/blob/master/outreach/SUMMARY.md
 - 💻 **מאגר קוד (GitHub):** https://github.com/udihem78-maker/israel-fractal-site · MIT License · reproducible
 
 ### English
-- 🌐 **Full site (en):** https://udihem78-maker.github.io/israel-fractal-site/en/
+- 🌐 **Full site (en):** https://israel-fractal.hemligroups.com/en/
 - 📄 **Full report PDF (en):** https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-en.pdf
 
 ### بالعربية
-- 🌐 **الموقع الكامل (ar):** https://udihem78-maker.github.io/israel-fractal-site/ar/
+- 🌐 **الموقع الكامل (ar):** https://israel-fractal.hemligroups.com/ar/
 - 📄 **التقرير الكامل PDF (ar):** https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-ar.pdf
 
 ### דף נחיתה ראשי (בוחר שפה אוטומטית)
-🏠 https://udihem78-maker.github.io/israel-fractal-site/
+🏠 https://israel-fractal.hemligroups.com/
 
 ---
 
@@ -60,7 +60,7 @@
 הכל זמין פתוח, בחינם, בלי אג'נדה פוליטית. אני לא מבקש כסף,
 לא רוצה כרטיס מועדון, ולא שייך לאף גוף.
 
-🌐 אתר מלא: https://udihem78-maker.github.io/israel-fractal-site/
+🌐 אתר מלא: https://israel-fractal.hemligroups.com/
 📄 תקציר עמוד אחד: בלינק למעלה · סעיף "סיכום"
 📎 PDF מלא (3 שפות): בעמוד הבית
 
@@ -73,7 +73,7 @@
 חוקר עצמאי · פיזיקאי תיאורטי · מהנדס
 Hemli Groups · מיזם אחווה 33
 📧 enh@hemligroups.com
-🔗 https://udihem78-maker.github.io/israel-fractal-site/
+🔗 https://israel-fractal.hemligroups.com/
 ```
 
 ---
@@ -119,7 +119,7 @@ Everything is open, free of charge, with no political agenda.
 I am asking for nothing in return. I am not affiliated with any party
 or institution.
 
-🌐 Full site: https://udihem78-maker.github.io/israel-fractal-site/en/
+🌐 Full site: https://israel-fractal.hemligroups.com/en/
 📄 One-page summary: SUMMARY section on main page
 📎 Full PDF (3 languages): on home page
 
@@ -133,7 +133,7 @@ Ehud Naftali Hemli
 Independent Researcher · Theoretical Physicist · Engineer
 Hemli Groups · Achava 33 Initiative
 📧 enh@hemligroups.com
-🔗 https://udihem78-maker.github.io/israel-fractal-site/en/
+🔗 https://israel-fractal.hemligroups.com/en/
 ```
 
 ---
@@ -176,7 +176,7 @@ Hemli Groups · Achava 33 Initiative
 كل شيء مفتوح، مجاناً، بلا أجندة سياسية. لا أطلب شيئاً مقابل ذلك.
 لست منتسباً إلى أي حزب أو مؤسسة.
 
-🌐 الموقع الكامل: https://udihem78-maker.github.io/israel-fractal-site/ar/
+🌐 الموقع الكامل: https://israel-fractal.hemligroups.com/ar/
 📄 ملخص صفحة واحدة: قسم "الملخص" في الصفحة الرئيسية
 📎 PDF الكامل (3 لغات): في الصفحة الرئيسية
 
@@ -190,7 +190,7 @@ Hemli Groups · Achava 33 Initiative
 باحث مستقل · فيزيائي نظري · مهندس
 Hemli Groups · مبادرة أخوة 33
 📧 enh@hemligroups.com
-🔗 https://udihem78-maker.github.io/israel-fractal-site/ar/
+🔗 https://israel-fractal.hemligroups.com/ar/
 ```
 
 ---

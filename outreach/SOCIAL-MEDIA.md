@@ -2,7 +2,7 @@
 # Social-media promotional kit
 # حملة التواصل الاجتماعي
 
-**Site:** https://udihem78-maker.github.io/israel-fractal-site/
+**Site:** https://israel-fractal.hemligroups.com/
 **Hashtags:** #ישראלפרקטלית #IsraelFractal #DataFluidity #F0point6
 
 ---
@@ -100,7 +100,7 @@
 > = ישראל־OECD בתוך 7—15 שנה.
 >
 > **קרא · הצבע · שתף. הגיע הזמן לתקן.**
-> 🔗 udihem78-maker.github.io/israel-fractal-site
+> 🔗 israel-fractal.hemligroups.com
 
 ---
 
@@ -164,7 +164,7 @@ F of "sacred functioning" = 0.3 — even lower than state F.
 **12/12** Missing capital cumulative: **NIS 10 TRILLION** — 5× annual GDP.
 Fix is possible: ₪170B/yr working diplomacy + ₪63B/yr redirect from "robbery" to vulnerable = Israel reaches OECD in 7—15 years.
 **Read · vote · share. Time to fix.**
-🔗 udihem78-maker.github.io/israel-fractal-site
+🔗 israel-fractal.hemligroups.com
 
 ---
 
@@ -204,7 +204,7 @@ The fix is a political choice, not a technical one:
 - Redirect ₪63B/yr from "robbery" → vulnerable populations
 - **OECD gap closes in 7—15 years.**
 
-The full research is at udihem78-maker.github.io/israel-fractal-site
+The full research is at israel-fractal.hemligroups.com
 Reports in Hebrew, English, Arabic — 6MB PDF each.
 
 If you work in Israeli policy, international diplomacy, civil society, or research —
@@ -246,7 +246,7 @@ sourced. The conclusions are each person's to draw.
 
 הכל פתוח · MIT License · PDF ב־3 שפות (עברית · אנגלית · ערבית · 6MB כל אחד).
 
-🔗 udihem78-maker.github.io/israel-fractal-site
+🔗 israel-fractal.hemligroups.com
 
 הגיע הזמן לתקן. שתפו · הצביעו · קראו · חשבו.
 
@@ -319,7 +319,7 @@ Big "0.6"
 "₪170B דיפלומטיה + ₪63B העברה"
 "= OECD בתוך 7—15 שנה"
 "קרא · חשוב · הצבע · שתף"
-"udihem78-maker.github.io/israel-fractal-site"
+"israel-fractal.hemligroups.com"
 
 ---
 
@@ -342,7 +342,7 @@ Vertical cuts. Sharp. No music. Just numbers.
 Dear [Name],
 
 I've completed a measurement project I've been working on this past year. The full
-research is at udihem78-maker.github.io/israel-fractal-site — 56 sections, 125,000
+research is at israel-fractal.hemligroups.com — 56 sections, 125,000
 data points from 40 primary sources, in Hebrew/English/Arabic, MIT License, fully
 reproducible.
 

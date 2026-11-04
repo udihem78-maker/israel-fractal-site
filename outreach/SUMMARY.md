@@ -2,7 +2,7 @@
 ## Israel Fractal · Executive Summary
 ## إسرائيل الفركتالية · ملخص تنفيذي
 
-**📎 אתר מלא / Full site:** https://udihem78-maker.github.io/israel-fractal-site/
+**📎 אתר מלא / Full site:** https://israel-fractal.hemligroups.com/
 **📂 GitHub repo:** https://github.com/udihem78-maker/israel-fractal-site
 **📄 PDFs (3 שפות / 3 languages):** בעמוד הראשי / on main page
 

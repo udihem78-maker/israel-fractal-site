@@ -157,7 +157,7 @@ C. "ישראל חדשה" → F=15 (OECD) ב־2041
 MIT License · שחזורי מלא.
 כל חוקר יכול לאמת.
 
-🔗 udihem78-maker.github.io/israel-fractal-site
+🔗 israel-fractal.hemligroups.com
 
 14/15 48 שעות לבחירות.
 
@@ -245,7 +245,7 @@ But those indices average segments.
 This thesis doesn't.
 This is why reality feels different from the scores.
 
-10/10 Open data: udihem78-maker.github.io/israel-fractal-site
+10/10 Open data: israel-fractal.hemligroups.com
 CC-BY 4.0. MIT License. All sources public.
 
 Help Israel see itself.
@@ -321,7 +321,7 @@ C. "إسرائيل الجديدة" → F=15 (OECD) بحلول 2041
 • F العربي الإسرائيلي: من 1.8 إلى 10
 • فجوة الأجور بين عربي ويهودي تنغلق في 10 سنوات
 
-10/10 بيانات مفتوحة: udihem78-maker.github.io/israel-fractal-site
+10/10 بيانات مفتوحة: israel-fractal.hemligroups.com
 
 CC-BY 4.0. مصادر عامة. قابلة للتحقق.
 
@@ -373,7 +373,7 @@ OECD־ממוצע: 15
 "מדד F ישראלי: 0.6 מתוך 100. פי 170 ירידה. ועוד — ישראל 23 מדינות באותה מפה."
 
 יש לי:
-• האתר המלא: https://udihem78-maker.github.io/israel-fractal-site/
+• האתר המלא: https://israel-fractal.hemligroups.com/
 • PDF דוח מלא: https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-he.pdf
 • תזה אקדמית: https://github.com/udihem78-maker/israel-fractal-site/blob/master/papers/thesis-he.md
 • גרפים אינטראקטיביים
@@ -387,7 +387,7 @@ OECD־ממוצע: 15
 אהוד נפתלי המלי
 Hemli Groups · מיזם אחווה 33
 📧 enh@hemligroups.com
-🔗 https://udihem78-maker.github.io/israel-fractal-site/
+🔗 https://israel-fractal.hemligroups.com/
 ```
 
 **10 כתובות עדיפות (העתק-הדבק אחת־אחת):**
@@ -510,7 +510,7 @@ R (חיכוך)   ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 ## 🔗 כל הקישורים · העתק-הדבק זמין
 
-- 🏠 **אתר ראשי:** https://udihem78-maker.github.io/israel-fractal-site/
+- 🏠 **אתר ראשי:** https://israel-fractal.hemligroups.com/
 - 📄 **PDF עברית:** https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-he.pdf
 - 📄 **PDF English:** https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-en.pdf
 - 📄 **PDF العربية:** https://github.com/udihem78-maker/israel-fractal-site/raw/master/reports/israel-fractal-ar.pdf
